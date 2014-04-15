@@ -1,0 +1,327 @@
+  
+  [1X5 [33X[0;0YLocal Functions in the [5XPERMUT[105X[101X[1X Package[133X[101X
+  
+  [33X[0;0YIn  the  study  of  permutability,  the usage of local characterisations has
+  become  a  useful  tool  to describe the classes of T-groups, PT-groups, and
+  PST-groups. In this chapter we present some local characterisations of these
+  classes and some functions which allow to check whether or not a group given
+  in [5XGAP[105X satisfies these conditions.[133X
+  
+  [33X[0;0YA  [13Xlocal[113X description of group-theoretical property consists of expressing it
+  as  the  conjunction  of  some  properties  depending  on a prime [22Xp[122X, usually
+  related to the behaviour of [22Xp[122X-elements, [22Xp[122X-subgroups, or [22Xp[122X-chief factors, for
+  all primes [22Xp[122X.[133X
+  
+  
+  [1X5.1 [33X[0;0YA Local Function for Supersolubility[133X[101X
+  
+  [33X[0;0YThe  [5XGAP[105X  library  does  not  contain  methods to check whether a group [22XG[122X is
+  [22Xp[122X-supersoluble, where [22Xp[122X is a prime number. We include such a function in the
+  [5XPERMUT[105X package.[133X
+  
+  [1X5.1-1 IsPSupersolvable[101X
+  
+  [29X[2XIsPSupersolvable[102X( [3XG[103X, [3Xp[103X ) [32X function
+  [29X[2XIsPSupersoluble[102X( [3XG[103X, [3Xp[103X ) [32X function
+  
+  [33X[0;0YThis  function  returns  [9Xtrue[109X  if  the  group [3XG[103X is [22Xp[122X-supersoluble, and [9Xfalse[109X
+  otherwise,  where  [3Xp[103X is a prime number. This function is not defined in [5XGAP[105X.
+  The  method  we have implemented for finite groups includes checking whether
+  the  group is supersoluble (in this case, it must return [9Xtrue[109X). If the group
+  is  not  soluble,  it  computes  a chief series and checks whether all chief
+  factors have order [22Xp[122X or have order not divisible by [22Xp[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=Group((1,2,3,4,5,6,7), (8,9,10,11,12,13,14), (15,16,17,18,19,20,21),[127X[104X
+    [4X[25X>[125X [27X(22,23,24,25,26,27,28), (29,30,31,32,33,34,35),[127X[104X
+    [4X[25X>[125X [27X(1,8,15,22,29)(2,9,16,23,30)(3,10,17,24,31)(4,11,18,25,32)(5,12,19,26,[127X[104X
+    [4X[25X>[125X [27X    33)(6,13,20,27,34)(7,14,21,28,35),[127X[104X
+    [4X[25X>[125X [27X(1,8)(2,9)(3,10)(4,11)(5,12)(6,13)(7,14)); #C7 wr S5[127X[104X
+    [4X[28X<permutation group with 7 generators>[128X[104X
+    [4X[25Xgap>[125X [27XIsPSupersolvable(g,7);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsPSupersolvable(g,11);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=DirectProduct(PSL(2,7),[127X[104X
+    [4X[25X>[125X [27X    Group((1,2,3,4,5,6,7,8,9,10,11), (2,5,6,10,4)(3,9,11,8,7)));[127X[104X
+    [4X[28XGroup([ (3,7,5)(4,8,6), (1,2,6)(3,4,8), (9,10,11,12,13,14,15,16,17,18,19),[128X[104X
+    [4X[28X  (10,13,14,18,12)(11,17,19,16,15) ])[128X[104X
+    [4X[25Xgap>[125X [27XIsPNilpotent(g,5);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsPNilpotent(g,11);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsPSupersolvable(g,11);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsPNilpotent(g,3);[127X[104X
+    [4X[28Xfalse[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X5.2 [33X[0;0YLocal functions for T-groups, PT-groups, and PST-groups[133X[101X
+  
+  [33X[0;0YThe  following  functions  correspond to local description of the classes of
+  soluble  T-groups, PT-groups, and PST-groups. Most of the known useful local
+  characterisations of these classes of groups can be seen to be equivalent to
+  one  of them, either in the universe or all finite groups or in the universe
+  of   all   finite  [22Xp[122X-soluble  groups.  By  a  local  characterisation  of  a
+  group-theoretical  property  [22XR[122X  we mean a group-theoretical property [22XR_p[122X for
+  each  prime  [22Xp[122X such that a group satisfies [22XR[122X if and only if it satisfies [22XR_p[122X
+  for all primes [22Xp[122X.[133X
+  
+  [1X5.2-1 IsCp[101X
+  
+  [29X[2XIsCp[102X( [3XG[103X, [3Xp[103X ) [32X function
+  
+  [33X[0;0YThis  function returns [9Xtrue[109X if the group [3XG[103X satisfies the property [22XC_p[122X, where
+  [22Xp[122X is a prime number, and [9Xfalse[109X otherwise.[133X
+  
+  [33X[0;0YA  group  [22XG[122X satisfies [22XC_p[122X when every subgroup [22XH[122X of a Sylow [22Xp[122X-subgroup [22XP[122X of [22XG[122X
+  is  normal  in  the corresponding Sylow normaliser [22XN_G(P)[122X. This property was
+  introduced  by  Robinson in [Rob68]. A group [22XG[122X is a soluble PST-group if and
+  only if it satisfies [22XC_p[122X for all primes [22Xp[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=AlternatingGroup(5);[127X[104X
+    [4X[28XAlt( [ 1 .. 5 ] )[128X[104X
+    [4X[25Xgap>[125X [27XIsCp(g,3);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsCp(g,5);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsCp(g,7);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsCp(g,2);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27Xg:=SmallGroup(200,44); # semidirect product of Q8 with C5xC5[127X[104X
+    [4X[28X<pc group of size 200 with 5 generators>[128X[104X
+    [4X[25Xgap>[125X [27XIsCp(g,5);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsCp(g,2);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X5.2-2 IsXp[101X
+  
+  [29X[2XIsXp[102X( [3XG[103X, [3Xp[103X ) [32X function
+  
+  [33X[0;0YThis function returns [9Xtrue[109X if [3XG[103X satisfies [22XX_p[122X, where [22Xp[122X is a prime, and [9Xfalse[109X
+  otherwise.[133X
+  
+  [33X[0;0YA group [22XG[122X satisfies [22XX_p[122X when for every subgroup [22XH[122X of a Sylow [22Xp[122X-subgroup [22XP[122X of
+  [22XG[122X,  [22XH[122X  is  permutable  in [22XN_G(P)[122X. This property was introduced by Beidleman,
+  Brewster,  and  Robinson  in [BBR99]. A group [22XG[122X is a soluble PT-group if and
+  only if [22XG[122X satisfies [22XX_p[122X for all primes [22Xp[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=SmallGroup(189,7);[127X[104X
+    [4X[28X<pc group of size 189 with 4 generators>[128X[104X
+    [4X[25Xgap>[125X [27XIsXp(g,3);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsXp(g,7);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsPTGroup(g);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsCp(g,3);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsTGroup(g);[127X[104X
+    [4X[28Xfalse[128X[104X
+  [4X[32X[104X
+  
+  [1X5.2-3 IsYp[101X
+  
+  [29X[2XIsYp[102X( [3XG[103X, [3Xp[103X ) [32X function
+  
+  [33X[0;0YThis function returns [9Xtrue[109X if [3XG[103X satisfies [22XY_p[122X, where [22Xp[122X is a prime, and [9Xfalse[109X
+  otherwise.[133X
+  
+  [33X[0;0YA group [22XG[122X satisfies [22XY_p[122X when for every two subgroups [22XH[122X and [22XK[122X with [22XH≤ K[122X, [22XH[122X is
+  S-permutable  in [22XN_G(K)[122X. This property was introduced by Ballester-Bolinches
+  and  Esteban-Romero  in [BE02]. A group [22XG[122X is a soluble PST-group if and only
+  if [22XG[122X satisfies [22XY_p[122X for all primes [22Xp[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=SmallGroup(200,43); # semidirect product of D8 with C5xC5[127X[104X
+    [4X[28X<pc group of size 200 with 5 generators>[128X[104X
+    [4X[25Xgap>[125X [27XIsCp(g,2);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsXp(g,2);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsYp(g,2);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xg:=Group((1,2,3)(4,5,6),(1,2));[127X[104X
+    [4X[28XGroup([ (1,2,3)(4,5,6), (1,2) ])[128X[104X
+    [4X[25Xgap>[125X [27XIsYp(g,3);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsYp(g,2);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X5.3 [33X[0;0YAuxiliary Functions for T-groups, PT-groups, and PST-groups[133X[101X
+  
+  [33X[0;0YThe  following  functions  are  used  to  check  whether or not a group is a
+  soluble T-group, PT-group, or PST-group.[133X
+  
+  [1X5.3-1 IsAbCp[101X
+  
+  [29X[2XIsAbCp[102X( [3XG[103X, [3Xp[103X ) [32X function
+  
+  [33X[0;0YThis  function  returns  [9Xtrue[109X  if  [3XG[103X has an abelian Sylow [3Xp[103X-subgroup [3XP[103X and [22XG[122X
+  satisfies [22XC_p[122X, and [9Xfalse[109X otherwise.[133X
+  
+  [33X[0;0YThis  function  is  used  to characterise soluble PST-groups: a group [22XG[122X is a
+  soluble  PST-group  if  and  only if [22XG[122X satisfies [22XY_p[122X for all primes [22Xp[122X, and a
+  group  [22XG[122X  satisfies  [22XY_p[122X if and only if [22XG[122X is [22Xp[122X-nilpotent or [22XG[122X has an abelian
+  Sylow  [22Xp[122X-subgroup  and satisfies [22XC_p[122X. A group [22XG[122X satisfies [22XC_p[122X if and only if
+  every  subgroup  of  a  Sylow  [22Xp[122X-subgroup  [22XP[122X  of  [22XG[122X  is  normal in the Sylow
+  normaliser [22XN_G(P)[122X (see [2XIsCp[102X ([14X5.2-1[114X)). Therefore this function checks whether
+  [22XG[122X has an abelian Sylow [22Xp[122X-subgroup and [22XG[122X satisfies [22XC_p[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=AlternatingGroup(5);[127X[104X
+    [4X[28XAlt( [ 1 .. 5 ] )[128X[104X
+    [4X[25Xgap>[125X [27XIsAbCp(g,5);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X5.3-2 IsDedekindSylow[101X
+  
+  [29X[2XIsDedekindSylow[102X( [3XG[103X, [3Xp[103X ) [32X function
+  
+  [33X[0;0YThis  function  returns [9Xtrue[109X if a Sylow [3Xp[103X-subgroup of [3XG[103X is Dedekind, else it
+  returns [9Xfalse[109X.[133X
+  
+  [33X[0;0YA group [22XG[122X is Dedekind when every subgroup of [22XG[122X is normal. If [22Xp[122X is a prime, a
+  Dedekind  [22Xp[122X-group (see for example 2.3.12 in [Sch94]) is abelian or a direct
+  product  of a quaternion group of order [22X8[122X and an elementary abelian [22X2[122X-group.
+  Obviously, a [22Xp[122X-group is Dedekind if and only if it is a T-group.[133X
+  
+  [33X[0;0YThe  algorithm  used  in this function to test whether a non-abelian [22X2[122X-group
+  satisfies  this  condition  checks  that  the  Frattini  subgroup of a Sylow
+  [22X2[122X-subgroup  [22XP[122X  of  [22XG[122X has order [22X2[122X and that the centre of [22XP[122X has exponent [22X2[122X and
+  index  [22X4[122X. In this case, it computes the natural epimorphism from [22XP[122X to [22XP/Z(P)[122X
+  and  it  checks  that  the  preimages  of the generators of [22XP/Z(P)[122X under the
+  natural  epimorphism  have  order  [22X4[122X. If all these conditions hold, then the
+  Sylow [22X2[122X-subgroup is Dedekind, otherwise it is not.[133X
+  
+  [33X[0;0YThis  function  sets  the property [2XIsTGroup[102X ([14X4.2-1[114X) to [9Xtrue[109X or [9Xfalse[109X for the
+  Sylow [22Xp[122X-subgroup, according to the returned value.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=DirectProduct(SmallGroup(8,4),CyclicGroup(5));[127X[104X
+    [4X[28X<pc group of size 40 with 4 generators>[128X[104X
+    [4X[25Xgap>[125X [27XIsDedekindSylow(g,2);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X5.3-3 IwasawaTripleWithSubgroup[101X
+  
+  [29X[2XIwasawaTripleWithSubgroup[102X( [3XG[103X, [3XX[103X, [3Xp[103X ) [32X function
+  
+  [33X[0;0YThis  function  returns  an  Iwasawa triple for a [3Xp[103X-group [3XG[103X such that [3XX[103X is a
+  member  of it, if such a triple exists, and [9Xfail[109X otherwise. This function is
+  used as an auxiliary function to compute an Iwasawa triple for a group [3XG[103X.[133X
+  
+  [33X[0;0YAn  Iwasawa  triple  for  a  [22Xp[122X-group [22XG[122X is a triple [22X(X,b,s)[122X such that [22XX[122X is an
+  abelian  normal  subgroup  of  [22XG[122X with cyclic quotient, [22Xb[122X is a generator of a
+  supplement  to  [22XX[122X  in [22XG[122X, and [22Xb[122X induces a power automorphism in [22XX[122X of the form
+  [22Xx->  x^1+p^s[122X.  A  theorem  of  Iwasawa states that a [22Xp[122X-group [22XG[122X has a modular
+  subgroup  lattice  (or, equivalently, [22XG[122X has all subgroups permutable) if and
+  only  if  [22XG[122X  is  a  direct  product  of a quaternion group of order [22X8[122X and an
+  elementary abelian [22X2[122X-group or [22XG[122X has an Iwasawa triple [22X(X,b,s)[122X with [22Xs ≥ 2[122X.[133X
+  
+  [33X[0;0YThe  construction  of  the  Iwasawa  triple  takes a generator [22Xb[122X of a cyclic
+  supplement  to  [22XX[122X  in [22XG[122X.  Then we consider a generator [22Xa[122X of [22XX[122X of the largest
+  possible order and find an element [22Xc[122X of [22X⟨ b ⟩[122X and an element [22Xs[122X such that [22Xa^c
+  = a^1+p^s[122X. If such an element does not exist, the function returns [9Xfail[109X. For
+  this  element, it checks whether for all generators [22Xt[122X of [22XX[122X, the equality [22Xt^c
+  =  t^1+p^s[122X  holds. If this holds, it returns the triple [22X(X, c, s)[122X; otherwise
+  it returns [9Xfail[109X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xe:=ExtraspecialGroup(27,9);[127X[104X
+    [4X[28X<pc group of size 27 with 3 generators>[128X[104X
+    [4X[25Xgap>[125X [27XIwasawaTripleWithSubgroup(e,Subgroup(e,[e.1,e.3]),3);[127X[104X
+    [4X[28X[ Group([ f1, f3 ]), f2, 1 ][128X[104X
+  [4X[32X[104X
+  
+  [1X5.3-4 IwasawaTriple[101X
+  
+  [29X[2XIwasawaTriple[102X( [3XG[103X ) [32X attribute
+  
+  [33X[0;0YThis function computes an Iwasawa triple for the [22Xp[122X-group [3XG[103X, if it exists. If
+  [3XG[103X  is not Iwasawa, the function returns [9Xfail[109X. If [3XG[103X is a direct product of an
+  elementary  abelian [22X2[122X-group and a quaternion group of order [22X8[122X, it returns an
+  empty list. If [3XG[103X is Iwasawa, then the function returns an Iwasawa triple for
+  [3XG[103X.  An  Iwasawa  triple  for  a  group [3XG[103X is a triple [22X(X, b, s)[122X where [22XX[122X is an
+  abelian  normal subgroup of [22XG[122X such that [22XG/X[122X is cyclic, [22Xb[122X is a generator of a
+  cyclic  supplement  to  [22XX[122X in [22XG[122X, and [22Xs[122X is an integer such that for all [22Xx ∈ X[122X,
+  [22Xx^b  =  x^1+p^s[122X.  A theorem of Iwasawa states that a [22Xp[122X-group [22XG[122X has a modular
+  subgroup  lattice  (or, equivalently, [22XG[122X has all subgroups permutable) if and
+  only  if  [22XG[122X  is  a  direct  product  of  an elementary abelian [22X2[122X-group and a
+  quaternion group of order [22X8[122X or [22XG[122X has an Iwasawa triple [22X(X,b,s)[122X with [22Xs ≥ 2[122X if
+  [22Xp = 2[122X.[133X
+  
+  [33X[0;0YThe  method  used  to  find  an  Iwasawa triple for non-abelian non-Dedekind
+  groups  begins  with  the whole group [22XG[122X. If the group is abelian, it returns
+  the  Iwasawa triple [22X(G,1,log_pexp(G))[122X. If it is not abelian, it constructs a
+  list  [22Xl[122X  initially just containing [22XG[122X. For every element [22XN[122X of [22Xl[122X, it takes the
+  maximal  subgroups  of [22XN[122X which are normal in [22XG[122X and give cyclic quotients. If
+  any of these subgroups is a member of an Iwasawa triple, it is computed with
+  the function [2XIwasawaTripleWithSubgroup[102X ([14X5.3-3[114X) and the value is returned. If
+  not, [22XN[122X is removed from the list [22Xl[122X and these maximal subgroups of [22XN[122X are added
+  to  [22Xl[122X.  This  continues  until  an  Iwasawa triple is found or the list [22Xl[122X is
+  empty. Since normal subgroups with cyclic quotient are contained in a unique
+  maximal chain, no subgroup appears twice in this algorithm.[133X
+  
+  [33X[0;0YThe  algorithm  also  takes  into  account the fact that an Iwasawa group of
+  exponent [22X4[122X  must  be  abelian  or  a direct product of a quaternion group of
+  order [22X8[122X and an elementary abelian [22X2[122X-group.[133X
+  
+  [33X[0;0YFor  the  trivial group, it returns the triple containing the trivial group,
+  its identity element, and the prime [22X3[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xe:=ExtraspecialGroup(27,3);[127X[104X
+    [4X[28X<pc group of size 27 with 3 generators>[128X[104X
+    [4X[25Xgap>[125X [27XIwasawaTriple(e);[127X[104X
+    [4X[28Xfail[128X[104X
+    [4X[25Xgap>[125X [27Xe:=ExtraspecialGroup(27,9);[127X[104X
+    [4X[28X<pc group of size 27 with 3 generators>[128X[104X
+    [4X[25Xgap>[125X [27XIwasawaTriple(e);[127X[104X
+    [4X[28X[ Group([ f1, f3 ]), f2, 1 ][128X[104X
+  [4X[32X[104X
+  
+  [1X5.3-5 IsIwasawaSylow[101X
+  
+  [29X[2XIsIwasawaSylow[102X( [3XG[103X, [3Xp[103X ) [32X function
+  
+  [33X[0;0YThis  function  returns [9Xtrue[109X if [3XG[103X has an Iwasawa (modular) Sylow [3Xp[103X-subgroup,
+  and [9Xfalse[109X otherwise.[133X
+  
+  [33X[0;0YRecall  that  a  [22Xp[122X-group  [22XP[122X has a modular subgroup lattice, or is an Iwasawa
+  group,  when  all  subgroups of [22XP[122X are permutable. It is clear that a [22Xp[122X-group
+  has a modular subgroup lattice if and only if it is a T-group.[133X
+  
+  [33X[0;0YThe  implementation  of  this  function  begins  by  searching for a pair of
+  subgroups that do not permute. In this case, the function returns [9Xfalse[109X. The
+  maximum  number  of  pairs  to be checked here is controlled by the variable
+  [2XPermutMaxTries[102X  ([14X3.2-1[114X), which is assigned to [22X10[122X by default. If no such pair
+  is found, the algorithm looks for an Iwasawa triple for a Sylow [22Xp[122X-subgroup [22XP[122X
+  of [22XG[122X  with  the  help of the function [2XIwasawaTriple[102X ([14X5.3-4[114X). If there exists
+  one  such  triple  [22X(X,b,s)[122X  with  [22Xs  ≥ 2[122X when [22Xp = 2[122X or the group is a direct
+  product  of a quaternion group of order [22X8[122X and an elementary abelian [22X2[122X-group,
+  then it returns [9Xtrue[109X; else it returns [9Xfalse[109X.[133X
+  
+  [33X[0;0YThe  values  of  the attributes [2XIsPTGroup[102X ([14X4.2-2[114X) and [2XIsTGroup[102X ([14X4.2-1[114X) for [22XP[122X
+  are set by the function.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xe:=ExtraspecialGroup(27,9);[127X[104X
+    [4X[28X<pc group of size 27 with 3 generators>[128X[104X
+    [4X[25Xgap>[125X [27XIsIwasawaSylow(e,3);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  

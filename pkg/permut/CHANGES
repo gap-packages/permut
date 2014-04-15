@@ -1,0 +1,64 @@
+v1.00: The package has been accepted by the GAP Council. Changes proposed by Alice Niemeyer and the anonymous referee:
+- Added in AllGeneratorsCyclicPGroup a test for the arguments to be of the correct type.
+- Minor changes to the documentation
+
+
+
+v0.04: Changes proposed by Alice Niemeyer and the anonymous referee:
+- Documentation written in GAPDoc. Minor modifications in the documentation.
+- Changed names of the old `Why' functions:
+  WhyAreNotMutuallyFPermutableSubgroups -> OnePairShowingNotMutuallyFPermutableSubgroups
+  WhyAreNotMutuallyPermutableSubgroups -> OnePairShowingNotMutuallyPermutableSubgroups
+  WhyAreNotTotallyFPermutableSubgroups -> OnePairShowingNotTotallyFPermutableSubgroups
+  WhyAreNotTotallyPermutableSubgroups ->OnePairShowingNotTotallyPermutableSubgroups
+  WhyIsNotConjugatePermutable -> OneConjugateSubgroupNotPermutingWith
+  WhyIsNotCPTGroup -> OneSubnormalNonConjugatePermutableSubgroup
+  WhyIsNotFPermutable -> OneFSubgroupNotPermutingWith
+  WhyIsNotPermutable -> OneSubgroupNotPermutingWith
+  WhyIsNotPSNTGroup -> OneSubnormalNonSNPermutableSubgroup
+  WhyIsNotPSTGroup -> OneSubnormalNonSPermutableSubgroup
+  WhyIsNotPTGroup -> OneSubnormalNonPermutableSubgroup
+  WhyIsNotSNPermutable -> OneSystemNormaliserNotPermutingWith
+  WhyIsNotSPermutable -> OneSylowSubgroupNotPermutingWith
+  WhyIsNotTGroup -> OneSubnormalNonNormalSubgroup
+  WhyIsNotWeaklyNormal -> OneElementShowingNotWeaklyNormal
+  WhyIsNotWeaklyPermutable -> OneElementShowingNotWeaklyPermutable
+  WhyIsNotWeaklySPermutable -> OneElementShowingNotWeaklySPermutable
+  WhyIsNotWithSSubpermutizerCondition -> OneSubgroupInWhichSubnormalNotSPermutable
+  WhyIsNotWithSubnormalizerCondition -> OneSubgroupInWhichSubnormalNotNormal
+  WhyIsNotWithSubpermutizerCondition -> OneSubgroupInWhichSubnormalNotPermutable
+- Modified functions about totally and mutually permutable products to
+  avoid use of AllCyclicSubgroups. We use Zuppos instead. The function AllCyclicSubgroups has been deleted.
+- Modified Permutizer function to detect permutable subgroups and to
+use an enumerator instead of all cyclic subgroups.
+- Added a probabilistic test to detect lack of permutability before
+applying deterministic test in IsPermutable and IsIwasawaSylow.
+- Modified the type of arguments of OneFSubgroupNotPermutingWith and
+IsFPermutable, now the third argument is a list of subgroups of the
+whole group.
+- Modified the arguments of AreMutuallyFPermutableSubgroups,
+AreTotallyFPermutableSubgroups, OnePairSwhowingNotMutuallyPermutable
+and OnePairSwhowingNotMutuallyPermutable to include lists of subgroups of U and
+V, respectively. This allows a greater generality.
+- Deleted functions IsPERMUTPSolvable and IsPERMUTPNilpotent since there
+are methods for non-soluble groups available in GAP 4.7.2. These
+functions have been replaced by IsPSolvable and IsPNilpotent in the
+code. GAP 4.7.2 is required now.
+
+
+v0.03: Deleted InstallFactorMaintenance and InstallSubsetMaintenance
+  statements due to an error in the assignment of IsPSTGroup to
+  quotient groups.
+
+
+v0.02: changes proposed by Leonhard Soicher before refereeing and others:
+- Moved files *.g to lib directory.
+- Created directory htm to include html files.
+- Changed PackageInfo.g to be correctly validated.
+- Rearranged documentation (only chapters).
+- Added a test.
+- Moved IsSylowTowerGroup to psoluble.g[di].
+- Applied Transatlantic.
+
+
+v0.01: initial version

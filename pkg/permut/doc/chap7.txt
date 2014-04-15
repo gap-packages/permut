@@ -1,0 +1,139 @@
+  
+  [1X7 [33X[0;0YOther Functions in the [5XPERMUT[105X[101X[1X Package[133X[101X
+  
+  [33X[0;0YIn  this  chapter we define some miscellaneous functions which have appeared
+  in  the context of permutability, or some functions which have been used for
+  some of the functions of the package.[133X
+  
+  
+  [1X7.1 [33X[0;0YFunctions[133X[101X
+  
+  [1X7.1-1 AllSubnormalSubgroups[101X
+  
+  [29X[2XAllSubnormalSubgroups[102X( [3XG[103X ) [32X attribute
+  
+  [33X[0;0YThis  function  computes  all  subnormal  subgroups of [3XG[103X. The method used to
+  obtain  this list initially considers the lists of all normal subgroups of [3XG[103X
+  and  then  adds  all  normal  subgroups  to this list until no new subnormal
+  subgroups  appear.  This computes the complete list of subgroups, not only a
+  representative of each conjugacy class as other functions do.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=SymmetricGroup(4);[127X[104X
+    [4X[28XSym( [ 1 .. 4 ] )[128X[104X
+    [4X[25Xgap>[125X [27XAllSubnormalSubgroups(g);[127X[104X
+    [4X[28X[ Sym( [ 1 .. 4 ] ), Group([ (2,4,3), (1,4)(2,3), (1,3)(2,4) ]), Group([ (1,4)[128X[104X
+    [4X[28X  (2,3), (1,3)(2,4) ]), Group(()), Group([ (1,3)(2,4) ]), Group([ (1,2)[128X[104X
+    [4X[28X  (3,4) ]), Group([ (1,4)(2,3) ]) ][128X[104X
+  [4X[32X[104X
+  
+  [1X7.1-2 PrimesDividingSize[101X
+  
+  [29X[2XPrimesDividingSize[102X( [3XG[103X ) [32X attribute
+  
+  [33X[0;0YThis  attribute gives a list of primes dividing the size of the finite group
+  [3XG[103X, without repetitions. Its code has been borrowed from the [5XGAP[105X manual.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=SymmetricGroup(4);[127X[104X
+    [4X[28XSym( [ 1 .. 4 ] )[128X[104X
+    [4X[25Xgap>[125X [27XPrimesDividingSize(g);[127X[104X
+    [4X[28X[ 2, 3 ][128X[104X
+  [4X[32X[104X
+  
+  [1X7.1-3 SylowSubgroups[101X
+  
+  [29X[2XSylowSubgroups[102X( [3XG[103X ) [32X attribute
+  
+  [33X[0;0YThis  attribute returns a list containing one Sylow subgroup for every prime
+  dividing  the  size of [3XG[103X. If [3XG[103X is soluble, then it returns a Sylow system or
+  Sylow   basis  of  [3XG[103X  by  means  of  the  function  [2XSylowSystem[102X  ([14XReference:
+  SylowSystem[114X)  (a set containing a Sylow subgroup for each prime dividing the
+  order of [3XG[103X permuting in pairs).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=SymmetricGroup(4);[127X[104X
+    [4X[28XSym( [ 1 .. 4 ] )[128X[104X
+    [4X[25Xgap>[125X [27XSylowSubgroups(g);[127X[104X
+    [4X[28X[ Group([ (1,2), (3,4), (1,3)(2,4) ]), Group([ (1,2,3) ]) ][128X[104X
+    [4X[25Xgap>[125X [27Xs5:=SymmetricGroup(5);[127X[104X
+    [4X[28XSym( [ 1 .. 5 ] )[128X[104X
+    [4X[25Xgap>[125X [27XSylowSubgroups(s5);[127X[104X
+    [4X[28X[ Group([ (1,2), (3,4), (1,3)(2,4) ]), Group([ (1,2,3) ]), Group([ (1,2,3,4,[128X[104X
+    [4X[28X   5) ]) ][128X[104X
+  [4X[32X[104X
+  
+  [1X7.1-4 IsSCGroup[101X
+  
+  [29X[2XIsSCGroup[102X( [3XG[103X ) [32X property
+  
+  [33X[0;0YThis property is [9Xtrue[109X if [3XG[103X is an SC-group, and [9Xfalse[109X otherwise. A group [3XG[103X is
+  an SC-group if all its chief factors are simple. Note that a soluble group [3XG[103X
+  is  an  SC-group  if and only if [3XG[103X is supersoluble. The method used to check
+  this  property  uses the chief series if it is available or the group is not
+  soluble.[133X
+  
+  [33X[0;0YSince  the  methods  for insoluble groups might rely on the computation of a
+  chief  series  with  the function [2XChiefSeries[102X ([14XReference: ChiefSeries[114X), they
+  might not be available if the group is not given as a permutation group.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=SymmetricGroup(4);[127X[104X
+    [4X[28XSym( [ 1 .. 4 ] )[128X[104X
+    [4X[25Xgap>[125X [27XIsSCGroup(g);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27Xg:=GL(2,5);[127X[104X
+    [4X[28XGL(2,5)[128X[104X
+    [4X[25Xgap>[125X [27XIsSCGroup(g);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X7.1-5 IsSylowTowerGroup[101X
+  
+  [29X[2XIsSylowTowerGroup[102X( [3XG[103X ) [32X property
+  
+  [33X[0;0YThis  property  takes  the value [9Xtrue[109X if [22XG[122X has a Sylow tower of supersoluble
+  type, and [9Xfalse[109X otherwise.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=SymmetricGroup(4);[127X[104X
+    [4X[28XSym( [ 1 .. 4 ] )[128X[104X
+    [4X[25Xgap>[125X [27XIsSylowTowerGroup(g);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27Xg:=SmallGroup(75,1);[127X[104X
+    [4X[28X<pc group of size 75 with 3 generators>[128X[104X
+    [4X[25Xgap>[125X [27XIsSylowTowerGroup(g);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X7.1-6 Permutizer[101X
+  
+  [29X[2XPermutizer[102X( [3XG[103X, [3XU[103X ) [32X function
+  [29X[2XPermutiser[102X( [3XG[103X, [3XU[103X ) [32X function
+  
+  [33X[0;0YThe permutiser of a subgroup [3XU[103X of a group [3XG[103X is the subgroup generated by all
+  cyclic  subgroups  of  [3XG[103X  which  permute with [3XU[103X. If [3XU[103X is permutable in [3XG[103X (in
+  particular, if [3XU[103X is normal in [3XG[103X), then its permutizer coincides with [3XG[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=SymmetricGroup(4);[127X[104X
+    [4X[28XSym( [ 1 .. 4 ] )[128X[104X
+    [4X[25Xgap>[125X [27XPermutizer(g,Subgroup(g,[(1,2,3)]));[127X[104X
+    [4X[28XGroup([ (1,2,3), (2,3) ])[128X[104X
+    [4X[25Xgap>[125X [27XSize(last);[127X[104X
+    [4X[28X6[128X[104X
+  [4X[32X[104X
+  
+  [1X7.1-7 AllGeneratorsCyclicPGroup[101X
+  
+  [29X[2XAllGeneratorsCyclicPGroup[102X( [3Xg[103X, [3Xp[103X ) [32X function
+  
+  [33X[0;0YThis  auxiliary  function  returns  the list of all generators of the cyclic
+  [22Xp[122X-group generated by the [22Xp[122X-element [22Xg[122X. Here [22Xp[122X is a prime number.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XAllGeneratorsCyclicPGroup((1,2,3,4,5,6,7,8,9),3);[127X[104X
+    [4X[28X[ (1,2,3,4,5,6,7,8,9), (1,3,5,7,9,2,4,6,8), (1,5,9,4,8,3,7,2,6),[128X[104X
+    [4X[28X  (1,6,2,7,3,8,4,9,5), (1,8,6,4,2,9,7,5,3), (1,9,8,7,6,5,4,3,2) ][128X[104X
+  [4X[32X[104X
+  

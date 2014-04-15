@@ -1,0 +1,39 @@
+  
+  [1X2 [33X[0;0YInstallation and Help of the [5XPERMUT[105X[101X[1X Package[133X[101X
+  
+  [33X[0;0YSince  all  functions of this package are written in the [5XGAP[105X language, it is
+  enough  to  unpack  the  archive file in a directory in the [11Xpkg[111X hierarchy of
+  your [5XGAP[105X 4 distribution. It has been tested on version 4.7.2 of [5XGAP[105X.[133X
+  
+  [33X[0;0YThe  [5XPERMUT[105X  package requires that the package [5XFormat[105X [EW03] be installed on
+  the  system, because it uses the functions [2XPResidual[102X ([14XFORMAT: PResidual[114X) and
+  [2XSystemNormalizer[102X  ([14XFORMAT:  SystemNormalizer[114X)  which  are defined there. The
+  [5XFormat[105X    package    can    be    downloaded   from   the   [5XGAP[105X   web   page
+  ([7Xhttp://www.gap-system.org[107X).[133X
+  
+  [33X[0;0YThe [5XPERMUT[105X package can be loaded with[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XLoadPackage("permut");[127X[104X
+    [4X[28X-----------------------------------------------------------------------------[128X[104X
+    [4X[28XLoading  FORMAT 1.3 (Formations of Finite Soluble Groups)[128X[104X
+    [4X[28Xby Bettina Eick (http://www-public.tu-bs.de:8080/~beick) and[128X[104X
+    [4X[28X   Charles R.B. Wright (http://www.uoregon.edu/~wright).[128X[104X
+    [4X[28X-----------------------------------------------------------------------------[128X[104X
+    [4X[28X#I --------------------------------------------------------[128X[104X
+    [4X[28X#I Loading the GAP package ``permut'' in version 0.04[128X[104X
+    [4X[28X#I (a package to deal with permutability in finite groups)[128X[104X
+    [4X[28X#I by Adolfo Ballester-Bolinches <Adolfo.Ballester@uv.es>,[128X[104X
+    [4X[28X#I    Enric Cosme-Ll\'opez <Enric.Cosme@uv.es>,[128X[104X
+    [4X[28X#I    and Ramon Esteban-Romero <Ramon.Esteban@uv.es> /[128X[104X
+    [4X[28X#I                             <resteban@mat.upv.es>.[128X[104X
+    [4X[28X#I[128X[104X
+    [4X[28X#I    Use ``?permut:'' for help.[128X[104X
+    [4X[28X#I --------------------------------------------------------[128X[104X
+    [4X[28X[128X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YSuggestions,  comments,  and  bug  reports  can be sent to the email address
+  [7Xmailto:Ramon.Esteban@uv.es[107X.[133X
+  

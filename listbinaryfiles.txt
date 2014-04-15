@@ -1,0 +1,15 @@
+permut/doc/permut.pnr
+permut/doc/permut.bbl
+permut/doc/manual.pdf
+permut/doc/permut.idx
+permut/doc/bibxmlext.dtd
+permut/doc/permut.ind
+permut/doc/gapdoc.dtd
+permut/doc/permut.ilg
+permut/doc/permut.brf
+permut/doc/manual.six
+permut/doc/permut.out
+permut/doc/permut.toc
+permut/doc/permut.log
+permut/doc/permut.blg
+permut/doc/permut.aux
