@@ -9,7 +9,7 @@
 <TitlePage>
   <Title><Package>PERMUT</Package></Title>
   <Subtitle>A &GAP;4 package to deal with permutability</Subtitle>
-  <Version>Version 1.00</Version>
+  <Version>Version 1.01</Version>
   <Author>Adolfo Ballester-Bolinches
   <Email>Adolfo.Balester@uv.es</Email>
   <Address>Departament d'Àlgebra, Universitat de València</Address></Author>
@@ -96,8 +96,8 @@ Government (all authors), the grant 11271085 from National Natural
 Science Foundation of China (A. Ballester-Bolinches) and the
 predoctoral grant AP2010-2764 from the <E>Ministerio de Educación</E>,
 Spanish Government (E. Cosme-Llópez). The authors are also indebted to the
-members of the &GAP; council, especially Leonard Soicher and Alice
-Niemeyer, as well as to the anonymous referees, for their comments
+members of the &GAP; council, especially Leonard Soicher, Alice
+Niemeyer, and Alexander Konovalov, as well as to the anonymous referees, for their comments
 which have helped us to improve the package and its documentation.
 <P/>
 
@@ -1074,14 +1074,6 @@ could be a time-consuming task.
 
 
 <Example>
-gap&gt; g:=SmallGroup(24,6);
-&lt;pc group of size 24 with 4 generators&gt;
-gap&gt; IsPSTGroup(g);
-true
-gap&gt; IsPTGroup(g);
-false
-gap&gt; OneSubnormalNonPermutableSubgroup(g);
-Group([ f1*f3, f4 ])
 gap&gt; g:=SmallGroup(24,6);
 &lt;pc group of size 24 with 4 generators&gt;
 gap&gt; IsPSTGroup(g);

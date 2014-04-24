@@ -98,7 +98,7 @@
 {\Huge \textbf{A \textsf{GAP}4 package to deal with permutability\mbox{}}}\\
 \vfill
 
-{\Huge Version 1.00\mbox{}}\\[1cm]
+{\Huge Version 1.01\mbox{}}\\[1cm]
 \mbox{}\\[2cm]
 {\Large \textbf{Adolfo Ballester-Bolinches  \mbox{}}}\\
 {\Large \textbf{Enric Cosme-Ll{\a'o}pez   \mbox{}}}\\
@@ -182,9 +182,9 @@ been described in \cite{BallesterCosmeEsteban13-cejm}.
  The authors acknowledge the support of the grant MTM2010-19938-C03-01 from the \emph{Ministerio de Econom{\a'\i}a y Competitividad}, Spanish Government (all authors), the grant 11271085 from National Natural
 Science Foundation of China (A. Ballester-Bolinches) and the predoctoral grant
 AP2010-2764 from the \emph{Ministerio de Educaci{\a'o}n}, Spanish Government (E. Cosme-Ll{\a'o}pez). The authors are also indebted to
-the members of the \textsf{GAP} council, especially Leonard Soicher and Alice Niemeyer, as well as to the
-anonymous referees, for their comments which have helped us to improve the
-package and its documentation. 
+the members of the \textsf{GAP} council, especially Leonard Soicher, Alice Niemeyer, and Alexander Konovalov,
+as well as to the anonymous referees, for their comments which have helped us
+to improve the package and its documentation. 
 
  }
 
@@ -1141,14 +1141,6 @@ quotients by all normal subgroups, which could be a time-consuming task.
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@g:=SmallGroup(24,6);|
-  <pc group of size 24 with 4 generators>
-  !gapprompt@gap>| !gapinput@IsPSTGroup(g);|
-  true
-  !gapprompt@gap>| !gapinput@IsPTGroup(g);|
-  false
-  !gapprompt@gap>| !gapinput@OneSubnormalNonPermutableSubgroup(g);|
-  Group([ f1*f3, f4 ])
   !gapprompt@gap>| !gapinput@g:=SmallGroup(24,6);|
   <pc group of size 24 with 4 generators>
   !gapprompt@gap>| !gapinput@IsPSTGroup(g);|

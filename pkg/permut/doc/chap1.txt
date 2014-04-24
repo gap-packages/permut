@@ -54,7 +54,7 @@
   China  (A.  Ballester-Bolinches)  and the predoctoral grant AP2010-2764 from
   the  [13XMinisterio  de  Educación[113X,  Spanish  Government  (E. Cosme-Llópez). The
   authors  are  also  indebted  to  the members of the [5XGAP[105X council, especially
-  Leonard  Soicher  and  Alice Niemeyer, as well as to the anonymous referees,
-  for  their  comments  which  have  helped  us to improve the package and its
-  documentation.[133X
+  Leonard  Soicher, Alice Niemeyer, and Alexander Konovalov, as well as to the
+  anonymous  referees,  for their comments which have helped us to improve the
+  package and its documentation.[133X
   
