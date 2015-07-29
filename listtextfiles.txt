@@ -14,6 +14,7 @@ permut/doc/chap0.txt
 permut/doc/chap3.html
 permut/doc/chap1.txt
 permut/doc/permut.tex
+permut/doc/manual.css
 permut/doc/chap2.txt
 permut/doc/chapInd.txt
 permut/doc/chap7.txt

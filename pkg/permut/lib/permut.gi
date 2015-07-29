@@ -2,7 +2,7 @@
 ##
 #W  permut.gi              Permutability GAP library              ABB&ECL&RER
 ##
-#H  @(#)$Id: permut.gi,v 1.00 2014/04/14 21:53:49 gap Exp $
+#H  @(#)$Id: permut.gi,v 0.04 2014/01/16 09:53:49 gap Exp $
 ##
 #Y  Copyright (C)  2000-2014 Adolfo Ballester-Bolinches, Enric Cosme-Ll\'opez
 #Y                           and Ramon Esteban-Romero
@@ -10,7 +10,7 @@
 ##  This file contains methods for permutability
 ##
 Revision.permut_gi := 
-  "@(#)$Id: permut.gi,v 1.00 2014/04/14 21:53:49 gap Exp $";
+  "@(#)$Id: permut.gi,v 0.04 2014/01/16 09:53:49 gap Exp $";
 
 
 #############################################################################
@@ -179,20 +179,7 @@ end
 ##
 
 InstallGlobalFunction(AllGeneratorsCyclicPGroup,function(x,p)
-    local z,t,o;
-    if not IsPrimeInt(p)
-       then
-        Error("<p> must be a prime number");
-    fi;
-    o:=Order(x);
-    if o=infinity
-       then
-        Error("<x> must be an element of finite order");
-    fi;
-    if o<>p^LogInt(o,p)
-       then
-        Error("<x> must be a p-element");
-    fi;
+    local z,t;
     return List(Filtered([1..Order(x)], z->(z mod p)<>0),
                 t->x^t);
 end

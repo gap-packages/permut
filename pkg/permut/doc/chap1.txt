@@ -4,7 +4,7 @@
   [33X[0;0Y[13XAll  functions  defined  in  this  package  deal  only  with  finite groups.[113X
   Moreover,  some of the functions assume that the orders of all subgroups are
   easily  computable  and  that the decomposition of the order of a group as a
-  product of prime numbers can be computed in a reasonable time.[133X
+  product of prime numbers can be done in a reasonable time.[133X
   
   [33X[0;0YThe  package  [5XPERMUT[105X  contains  some functions to deal with permutability in
   finite  groups.  It  includes  functions  to  test  some  subgroup embedding
@@ -13,7 +13,7 @@
   belongs to the classes of T-groups, PT-groups, and PST-groups, which are the
   classes   of   groups   in   which   normality,   permutability,  and  Sylow
   permutability, respectively, are transitive. These properties and classes of
-  groups  have  been  widely studied during the recent years. Most of them are
+  groups  have  been  widely  studied  during the last years. Most of them are
   described in [BEA10].[133X
   
   [33X[0;0YThe  algorithms  for T-groups, PT-groups, and PST-groups of this package use
@@ -23,18 +23,18 @@
   characterisations show that the only difference between all three classes of
   groups   in  the  soluble  universe  corresponds  to  the  Sylow  structure.
   Nevertheless,  for  the sake of completeness, we also provide functions that
-  use  the  definition  of these classes directly. In the case of T-groups and
+  use  directly  the  definition of these classes. In the case of T-groups and
   PST-groups,  as  well  as  for  soluble  PT-groups,  we  reduce  the test to
   subnormal  subgroups  of defect [22X2[122X (see [BER07], [BER09], and [BBCERS09]). Of
   course,  to  do  this  we must introduce some functions to check whether two
   subgroups permute and whether a subgroup is permutable or S-permutable.[133X
   
   [33X[0;0YSome  of  the definitions of group-related concepts appear more than once in
-  this  manual,  in  the  descriptions  of different functions. Although these
+  this  manual,  in  the  description  of  different functions. Although these
   repetitions may seem unnecessary when reading the whole manual, we hope that
   they benefit users who read the online help in [5XGAP[105X.[133X
   
-  [33X[0;0YIn  order  to  obtain  counterexamples  easily  which show that a group or a
+  [33X[0;0YIn  order  to  obtain  easily  counterexamples  which show that a group or a
   subgroup  does  not  satisfy  a certain property, we have introduced what we
   have  called [21XOne[121X functions, which store such counterexamples. In some cases,
   the  property  can  be  checked by proving that these counterexamples do not
@@ -48,13 +48,13 @@
   [33X[0;0YThe  mathematical  foundations  of  the algorithms presented in this package
   have been described in [BCE13].[133X
   
-  [33X[0;0YThe  authors  acknowledge the support of the grant MTM2010-19938-C03-01 from
-  the  [13XMinisterio  de  Economía  y  Competitividad[113X,  Spanish  Government  (all
-  authors),  the  grant  11271085  from National Natural Science Foundation of
-  China  (A.  Ballester-Bolinches)  and the predoctoral grant AP2010-2764 from
-  the  [13XMinisterio  de  Educación[113X,  Spanish  Government  (E. Cosme-Llópez). The
-  authors  are  also  indebted  to  the members of the [5XGAP[105X council, especially
-  Leonard  Soicher, Alice Niemeyer, and Alexander Konovalov, as well as to the
-  anonymous  referees,  for their comments which have helped us to improve the
-  package and its documentation.[133X
+  [33X[0;0YThe  authors  acknowledge the support of the grants MTM2010-19938-C03-01 and
+  MTM2014-54707-C3-1-P  from  the  [13XMinisterio  de  Economía  y Competitividad[113X,
+  Spanish  Government  (all authors), the grant 11271085 from National Natural
+  Science  Foundation  of  China  (A. Ballester-Bolinches) and the predoctoral
+  grant  AP2010-2764  from the [13XMinisterio de Educación[113X, Spanish Government (E.
+  Cosme-Llópez).  The  authors  are  also  indebted  to the members of the [5XGAP[105X
+  council,   especially   Leonard   Soicher,  Alice  Niemeyer,  and  Alexander
+  Konovalov,  as  well  as to the anonymous referees, for their comments which
+  have helped us to improve the package and its documentation.[133X
   

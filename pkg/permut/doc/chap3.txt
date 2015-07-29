@@ -77,17 +77,16 @@
   
   [33X[0;0YThis  property  returns [9Xtrue[109X if the subgroup [3XH[103X is permutable in [3XG[103X, otherwise
   it  returns  [9Xfalse[109X. We say that a subgroup [22XH[122X of a group [22XG[122X is [13Xpermutable[113X in [22XG[122X
-  if  [22XH[122X  permutes  with  all  subgroups  of [22XG[122X,  in  other words, [22XHK=KH[122X for all
-  subgroups [22XK[122X of [22XG[122X.[133X
+  if [22XH[122X permutes with all subgroups of [22XG[122X.[133X
   
   [33X[0;0YIf  the  attribute [2XOneSubgroupNotPermutingWithInParent[102X ([14X3.2-3[114X) has been set,
-  it is used if possible. Otherwise, the algorithm looks for a cyclic subgroup
-  not  permuting  with [3XH[103X. The number of such cyclic subgroups is controlled by
-  the  variable [2XPermutMaxTries[102X ([14X3.2-1[114X), by default, [22X10[122X. If [3XH[103X permutes with all
-  these  subgroups,  then  the  algorithm  checks  whether [3XH[103X is hypercentrally
-  embedded  in  [3XG[103X  and  that  the  Sylow [22Xp[122X-subgroups of [22XH/H_G[122X permute with all
-  cyclic  [22Xp[122X-subgroups  of  [22XG/H_G[122X for each prime [22Xp[122X dividing the order of [22XG/H_G[122X.
-  This is a sufficient condition for permutability.[133X
+  it  is  used if possible. Otherwise, the algorithm checks looks for a cyclic
+  subgroup  not  permuting  with  [3XH[103X.  The  number  of such cyclic subgroups is
+  controlled  by  the  variable  [2XPermutMaxTries[102X  ([14X3.2-1[114X), by default, [22X10[122X. If [3XH[103X
+  permutes  with  all  these subgroups, then the algorithm checks whether [3XH[103X is
+  hypercentrally embedded in [3XG[103X and that the Sylow [22Xp[122X-subgroups of [22XH/H_G[122X permute
+  with  all cyclic [22Xp[122X-subgroups of [22XG/H_G[122X for each prime [22Xp[122X dividing the order of
+  [22XG/H_G[122X. This is a sufficient condition for permutability.[133X
   
   [1X3.2-3 OneSubgroupNotPermutingWith[101X
   
@@ -95,9 +94,9 @@
   [29X[2XOneSubgroupNotPermutingWithInParent[102X( [3XH[103X ) [32X attribute
   
   [33X[0;0YThis  attribute  finds a cyclic subgroup of [3XG[103X which does not permute with [3XH[103X,
-  that is, a subgroup which shows that [3XH[103X is not permutable in [3XG[103X, if it exists;
-  otherwise,  it  returns  [9Xfail[109X.  Recall  that  a  subgroup  [22XH[122X of a group [22XG[122X is
-  [13Xpermutable[113X in [22XG[122X if [22XH[122X permutes with all subgroups of [22XG[122X.[133X
+  that is, a subgroup which shows that [3XH[103X is not permutable in [3XG[103X. Recall that a
+  subgroup  [22XH[122X of a group [22XG[122X is [13Xpermutable[113X in [22XG[122X if [22XH[122X permutes with all subgroups
+  of [22XG[122X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=SymmetricGroup(4);[127X[104X
@@ -148,14 +147,11 @@
   [33X[0;0YIn  this function, [3XH[103X is a subgroup of [3XG[103X and [3Xf[103X must be a list of subgroups of
   [3XG[103X. It returns [9Xtrue[109X if [3XH[103X permutes with all members of [3Xf[103X and [9Xfalse[109X otherwise.[133X
   
-  [33X[0;0YThis  function  uses the function [2XOneFSubgroupNotPermutingWith[102X ([14X3.2-5[114X). If [3XG[103X
-  is   the   parent   of   [3XH[103X,   then  it  uses  the  values  of  the  property
-  [2XIsPermutableInParent[102X  ([14X3.2-2[114X),  if  it  is  set  to  [9Xtrue[109X,  or the attribute
-  [2XOneSubgroupNotPermutingWithInParent[102X  ([14X3.2-3[114X),  if it is set to [9Xfail[109X; in this
-  case,  it returns [9Xtrue[109X. If the function returns [9Xfalse[109X and [3XG[103X is the parent of
-  [3XH[103X,  then  it  sets  the  values of [2XIsPermutableInParent[102X ([14X3.2-2[114X) to [9Xfalse[109X and
-  [2XOneSubgroupNotPermutingWithInParent[102X  ([14X3.2-3[114X)  to  the  subgroup  obtained by
-  [2XOneFSubgroupNotPermutingWith[102X ([14X3.2-5[114X).[133X
+  [33X[0;0YThis  function uses the function [2XOneFSubgroupNotPermutingWith[102X ([14X3.2-5[114X). Hence
+  it   tries   to   use   the   values  of  [2XIsPermutableInParent[102X  ([14X3.2-2[114X)  and
+  [2XOneSubgroupNotPermutingWithInParent[102X ([14X3.2-3[114X) if one of them is set, and if it
+  returns [9Xfalse[109X it tries to set the values of [2XIsPermutableInParent[102X ([14X3.2-2[114X) and
+  [2XOneSubgroupNotPermutingWithInParent[102X ([14X3.2-3[114X).[133X
   
   [1X3.2-5 OneFSubgroupNotPermutingWith[101X
   
@@ -165,12 +161,10 @@
   [3XG[103X.  It  returns  a  subgroup  in  [3Xf[103X  not permuting with [3XH[103X if such a subgroup
   exists, and [9Xfail[109X otherwise.[133X
   
-  [33X[0;0YIf   [3XG[103X   is   the   parent   of   [3XH[103X,   this  function  uses  the  values  of
-  [2XIsPermutableInParent[102X    ([14X3.2-2[114X),    if    it    is    set    to   [9Xtrue[109X,   or
-  [2XOneSubgroupNotPermutingWithInParent[102X  ([14X3.2-3[114X),  if  it is set to [9Xfail[109X. If the
-  function  does  not  return  [9Xfail[109X and [3XG[103X is the parent of [3XH[103X, then it sets the
-  value      of      [2XIsPermutableInParent[102X     ([14X3.2-2[114X)     to     [9Xfalse[109X     and
-  [2XOneSubgroupNotPermutingWithInParent[102X ([14X3.2-3[114X) to the value of the function.[133X
+  [33X[0;0YThis  function  tries  to use the values of [2XIsPermutableInParent[102X ([14X3.2-2[114X) and
+  [2XOneSubgroupNotPermutingWithInParent[102X  ([14X3.2-3[114X)  if  one  of them is set. If it
+  returns [9Xfail[109X, then it tries to set the value of [2XIsPermutableInParent[102X ([14X3.2-2[114X)
+  and [2XOneSubgroupNotPermutingWithInParent[102X ([14X3.2-3[114X).[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=SymmetricGroup(4);[127X[104X
@@ -281,8 +275,8 @@
   [29X[2XIsConjugatePermutable[102X( [3XG[103X, [3XH[103X ) [32X operation
   [29X[2XIsConjugatePermutableInParent[102X( [3XH[103X ) [32X property
   
-  [33X[0;0YThis operation takes the value [9Xtrue[109X if [3XH[103X permutes with all its conjugates in
-  [3XG[103X, and the value [9Xfalse[109X otherwise.[133X
+  [33X[0;0YThis  operation  takes the value [9Xtrue[109X if [3XH[103X permutes with all its conjugates,
+  and the value [9Xfalse[109X otherwise.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=SymmetricGroup(4);[127X[104X
@@ -300,9 +294,9 @@
   [29X[2XOneConjugateSubgroupNotPermutingWith[102X( [3XG[103X, [3XH[103X ) [32X operation
   [29X[2XOneConjugateSubgroupNotPermutingWithInParent[102X( [3XH[103X ) [32X attribute
   
-  [33X[0;0YThis  operation  finds a conjugate subgroup of [3XH[103X in [3XG[103X which does not permute
-  with  [3XH[103X  if such a subgroup exists. If [3XH[103X permutes with all its conjugates in
-  [3XG[103X, then this operation returns [9Xfail[109X.[133X
+  [33X[0;0YThis operation finds a conjugate subgroup of [3XH[103X which does not permute with [3XH[103X
+  if  such a subgroup exists. If [3XH[103X permutes with all its conjugates, then this
+  operation returns [9Xfail[109X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=SmallGroup(16,7);[127X[104X

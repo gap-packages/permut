@@ -28,7 +28,7 @@
   checks  only  that  [22XA[122X  permutes  with  all  cyclic subgroups of [22XB[122X and that [22XB[122X
   permutes with all cyclic subgroups of [22XA[122X.[133X
   
-  [33X[0;0YThe method with two arguments assumes that [22XA[122X and [22XB[122X have a common supergroup.[133X
+  [33X[0;0YThe method with two arguments assume that [22XA[122X and [22XB[122X have a common supergroup.[133X
   
   [1X6.1-2 OnePairShowingNotMutuallyPermutableSubgroups[101X
   
@@ -48,7 +48,7 @@
   and  [9Xfalse[109X  otherwise.  The  method  used here checks only that every cyclic
   subgroup of [22XA[122X permutes with every cyclic subgroup of [22XB[122X.[133X
   
-  [33X[0;0YThe method with two arguments assumes that [22XA[122X and [22XB[122X have a common supergroup.[133X
+  [33X[0;0YThe method with two arguments assume that [22XA[122X and [22XB[122X have a common supergroup.[133X
   
   [1X6.1-4 OnePairShowingNotTotallyPermutableSubgroups[101X
   
@@ -93,10 +93,9 @@
   
   [29X[2XAreMutuallyFPermutableSubgroups[102X( [[3XG[103X, ][3XA[103X, [3XB[103X, [3XfA[103X, [3XfB[103X ) [32X function
   
-  [33X[0;0YThis function returns [9Xtrue[109X if [3XA[103X permutes with [3XB[103X and all elements of [3XfB[103X and [3XB[103X
-  permutes  with  all  elements  of  [3XfA[103X, and [9Xfalse[109X otherwise. Here [3XA[103X and [3XB[103X are
-  subgroups  of [3XG[103X and [3XfA[103X and [3XfB[103X are, respectively, lists of subgroups of [3XA[103X and
-  [3XB[103X, respectively.[133X
+  [33X[0;0YThis   function  returns  [9Xtrue[109X  if  the  subgroups  [3XA[103X  and  [3XB[103X  are  mutually
+  [3Xf[103X-permutable,  and  [9Xfalse[109X  otherwise. Here [3XA[103X and [3XB[103X are subgroups of [3XG[103X and [3XfA[103X
+  and [3XfB[103X are, respectively, lists of subgroups of [3XA[103X and [3XB[103X, respectively.[133X
   
   [33X[0;0YIn the version with four arguments, [22XA[122X and [22XB[122X are assumed to be subgroups of a
   common supergroup.[133X
@@ -105,11 +104,11 @@
   
   [29X[2XOnePairShowingNotMutuallyFPermutableSubgroups[102X( [[3XG[103X, ][3XA[103X, [3XB[103X, [3XfA[103X, [3XfB[103X ) [32X function
   
-  [33X[0;0YThis  function  returns a pair of the form [ [3XA[103X, [3XV[103X ] with [3XV[103X equal to [3XB[103X or [3XV[103X a
-  subgroup in [3XfB[103X, or of the form [ [3XW[103X, [3XB[103X ] with [3XW[103X equal to [3XA[103X or [3XW[103X a subgroup in
-  [3XfA[103X,  in  which  both subgroups do not permute, or [9Xfail[109X if this pair does not
-  exist.  Here [3XA[103X and [3XB[103X are subgroups of [3XG[103X and [3XfA[103X and [3XfB[103X are lists of subgroups
-  of [3XA[103X and [3XB[103X, respectively.[133X
+  [33X[0;0YThis function returns a pair of the form [ [3XA[103X, [3XV[103X ] with [3XV[103X a subgroup in [3XfB[103X or
+  [3XB[103X  or  of  the  form  [ [3XW[103X,  [3XB[103X ]  with  [3XW[103X a subgroup in [3XfA[103X or [3XA[103X in which both
+  subgroups  do not permute, or [9Xfail[109X if this pair does not exist. Here [3XA[103X and [3XB[103X
+  are  subgroups  of  [3XG[103X  and  [3XfA[103X  and  [3XfB[103X  are  lists of subgroups of [3XA[103X and [3XB[103X,
+  respectively.[133X
   
   [33X[0;0YIn the version with four arguments, [3XA[103X and [3XB[103X are assumed to be subgroups of a
   common supergroup.[133X
@@ -118,10 +117,10 @@
   
   [29X[2XAreTotallyFPermutableSubgroups[102X( [[3XG[103X, ][3XA[103X, [3XB[103X, [3XfA[103X, [3XfB[103X ) [32X function
   
-  [33X[0;0YThis function returns [9Xtrue[109X if the subgroup [3XA[103X and all elements of the list [3XfA[103X
-  permute with [3XB[103X and all subgroups in the list [3XfB[103X, and [9Xfalse[109X otherwise. Here [3XA[103X
-  and [3XB[103X are subgroups of [3XG[103X, [3XfA[103X is a list of subgroups of [3XA[103X and [3XfB[103X is a list of
-  subgroups of [3XB[103X.[133X
+  [33X[0;0YThis  function returns [9Xtrue[109X if the subgroup [3XA[103X permutes with all subgroups in
+  the  list  [3XfB[103X  and  [3XB[103X  permutes with all subgroups in the list [3XfA[103X, and [9Xfalse[109X
+  otherwise.  Here  [3XA[103X and [3XB[103X are subgroups of [3XG[103X, [3XfA[103X is a list of subgroups of [3XA[103X
+  and [3XfB[103X is a list of subgroups of [3XB[103X.[133X
   
   [33X[0;0YIn the version with four arguments, [3XA[103X and [3XB[103X are assumed to be subgroups of a
   common supergroup.[133X
@@ -130,11 +129,10 @@
   
   [29X[2XOnePairShowingNotTotallyFPermutableSubgroups[102X( [[3XG[103X, ][3XA[103X, [3XB[103X, [3XfA[103X, [3XfB[103X ) [32X function
   
-  [33X[0;0YThis  function returns a pair of the form [ [3XU[103X, [3XV[103X ], with [3XU[103X equal to [3XA[103X or [3XU[103X a
-  subgroup  in  [3XfA[103X,  and  [3XV[103X  equal  to  [3XB[103X or [3XV[103X a subgroup in [3XfB[103X, in which both
-  subgroups  do not permute, or [9Xfail[109X if this pair does not exist. Here [3XA[103X and [3XB[103X
-  are  subgroups  of  [3XG[103X,  [3XfA[103X  is  a list of subgroups of [3XA[103X and [3XfB[103X is a list of
-  subgroups of [3XB[103X.[133X
+  [33X[0;0YThis function returns a pair of the form [ [3XU[103X, [3XV[103X ] with [3XU[103X a subgroup in [3XfA[103X or
+  [3XA[103X  and  [3XV[103X  a  subgroup in [3XfB[103X or [3XB[103X in which both subgroups do not permute, or
+  [9Xfail[109X  if  this pair does not exist. Here [3XA[103X and [3XB[103X are subgroups of [3XG[103X, [3XfA[103X is a
+  list of subgroups of [3XA[103X and [3XfB[103X is a list of subgroups of [3XB[103X.[133X
   
   [33X[0;0YIn  the version with two arguments, [3XA[103X and [3XB[103X are assumed to be subgroups of a
   common supergroup.[133X

@@ -56,7 +56,7 @@
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AreMutuallyPermutableSubgroups</code>( [<var class="Arg">G</var>, ]<var class="Arg">A</var>, <var class="Arg">B</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>This function returns <code class="keyw">true</code> if the subgroups <span class="SimpleMath">A</span> and <span class="SimpleMath">B</span> of <span class="SimpleMath">G</span> are mutually permutable subgroups, that is, every subgroup of <span class="SimpleMath">A</span> permutes with <span class="SimpleMath">B</span> and every subgroup of <span class="SimpleMath">B</span> permutes with <span class="SimpleMath">A</span>, and <code class="keyw">false</code> otherwise. The method used here checks only that <span class="SimpleMath">A</span> permutes with all cyclic subgroups of <span class="SimpleMath">B</span> and that <span class="SimpleMath">B</span> permutes with all cyclic subgroups of <span class="SimpleMath">A</span>.</p>
 
-<p>The method with two arguments assumes that <span class="SimpleMath">A</span> and <span class="SimpleMath">B</span> have a common supergroup.</p>
+<p>The method with two arguments assume that <span class="SimpleMath">A</span> and <span class="SimpleMath">B</span> have a common supergroup.</p>
 
 <p><a id="X80225ABC79C7875F" name="X80225ABC79C7875F"></a></p>
 
@@ -72,7 +72,7 @@
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AreTotallyPermutableSubgroups</code>( [<var class="Arg">G</var>, ]<var class="Arg">A</var>, <var class="Arg">B</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>This function returns <code class="keyw">true</code> if the subgroups <span class="SimpleMath">A</span> and <span class="SimpleMath">B</span> of <span class="SimpleMath">G</span> are totally permutable, that is, every subgroup of <span class="SimpleMath">A</span> permutes with every subgroup of <span class="SimpleMath">B</span>, and <code class="keyw">false</code> otherwise. The method used here checks only that every cyclic subgroup of <span class="SimpleMath">A</span> permutes with every cyclic subgroup of <span class="SimpleMath">B</span>.</p>
 
-<p>The method with two arguments assumes that <span class="SimpleMath">A</span> and <span class="SimpleMath">B</span> have a common supergroup.</p>
+<p>The method with two arguments assume that <span class="SimpleMath">A</span> and <span class="SimpleMath">B</span> have a common supergroup.</p>
 
 <p><a id="X7B51474D878ACD11" name="X7B51474D878ACD11"></a></p>
 
@@ -118,7 +118,7 @@ true
 <h5>6.1-5 AreMutuallyFPermutableSubgroups</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AreMutuallyFPermutableSubgroups</code>( [<var class="Arg">G</var>, ]<var class="Arg">A</var>, <var class="Arg">B</var>, <var class="Arg">fA</var>, <var class="Arg">fB</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>This function returns <code class="keyw">true</code> if <var class="Arg">A</var> permutes with <var class="Arg">B</var> and all elements of <var class="Arg">fB</var> and <var class="Arg">B</var> permutes with all elements of <var class="Arg">fA</var>, and <code class="keyw">false</code> otherwise. Here <var class="Arg">A</var> and <var class="Arg">B</var> are subgroups of <var class="Arg">G</var> and <var class="Arg">fA</var> and <var class="Arg">fB</var> are, respectively, lists of subgroups of <var class="Arg">A</var> and <var class="Arg">B</var>, respectively.</p>
+<p>This function returns <code class="keyw">true</code> if the subgroups <var class="Arg">A</var> and <var class="Arg">B</var> are mutually <var class="Arg">f</var>-permutable, and <code class="keyw">false</code> otherwise. Here <var class="Arg">A</var> and <var class="Arg">B</var> are subgroups of <var class="Arg">G</var> and <var class="Arg">fA</var> and <var class="Arg">fB</var> are, respectively, lists of subgroups of <var class="Arg">A</var> and <var class="Arg">B</var>, respectively.</p>
 
 <p>In the version with four arguments, <span class="SimpleMath">A</span> and <span class="SimpleMath">B</span> are assumed to be subgroups of a common supergroup.</p>
 
@@ -127,7 +127,7 @@ true
 <h5>6.1-6 OnePairShowingNotMutuallyFPermutableSubgroups</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; OnePairShowingNotMutuallyFPermutableSubgroups</code>( [<var class="Arg">G</var>, ]<var class="Arg">A</var>, <var class="Arg">B</var>, <var class="Arg">fA</var>, <var class="Arg">fB</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>This function returns a pair of the form [ <var class="Arg">A</var>, <var class="Arg">V</var> ] with <var class="Arg">V</var> equal to <var class="Arg">B</var> or <var class="Arg">V</var> a subgroup in <var class="Arg">fB</var>, or of the form [ <var class="Arg">W</var>, <var class="Arg">B</var> ] with <var class="Arg">W</var> equal to <var class="Arg">A</var> or <var class="Arg">W</var> a subgroup in <var class="Arg">fA</var>, in which both subgroups do not permute, or <code class="keyw">fail</code> if this pair does not exist. Here <var class="Arg">A</var> and <var class="Arg">B</var> are subgroups of <var class="Arg">G</var> and <var class="Arg">fA</var> and <var class="Arg">fB</var> are lists of subgroups of <var class="Arg">A</var> and <var class="Arg">B</var>, respectively.</p>
+<p>This function returns a pair of the form [ <var class="Arg">A</var>, <var class="Arg">V</var> ] with <var class="Arg">V</var> a subgroup in <var class="Arg">fB</var> or <var class="Arg">B</var> or of the form [ <var class="Arg">W</var>, <var class="Arg">B</var> ] with <var class="Arg">W</var> a subgroup in <var class="Arg">fA</var> or <var class="Arg">A</var> in which both subgroups do not permute, or <code class="keyw">fail</code> if this pair does not exist. Here <var class="Arg">A</var> and <var class="Arg">B</var> are subgroups of <var class="Arg">G</var> and <var class="Arg">fA</var> and <var class="Arg">fB</var> are lists of subgroups of <var class="Arg">A</var> and <var class="Arg">B</var>, respectively.</p>
 
 <p>In the version with four arguments, <var class="Arg">A</var> and <var class="Arg">B</var> are assumed to be subgroups of a common supergroup.</p>
 
@@ -136,7 +136,7 @@ true
 <h5>6.1-7 AreTotallyFPermutableSubgroups</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AreTotallyFPermutableSubgroups</code>( [<var class="Arg">G</var>, ]<var class="Arg">A</var>, <var class="Arg">B</var>, <var class="Arg">fA</var>, <var class="Arg">fB</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>This function returns <code class="keyw">true</code> if the subgroup <var class="Arg">A</var> and all elements of the list <var class="Arg">fA</var> permute with <var class="Arg">B</var> and all subgroups in the list <var class="Arg">fB</var>, and <code class="keyw">false</code> otherwise. Here <var class="Arg">A</var> and <var class="Arg">B</var> are subgroups of <var class="Arg">G</var>, <var class="Arg">fA</var> is a list of subgroups of <var class="Arg">A</var> and <var class="Arg">fB</var> is a list of subgroups of <var class="Arg">B</var>.</p>
+<p>This function returns <code class="keyw">true</code> if the subgroup <var class="Arg">A</var> permutes with all subgroups in the list <var class="Arg">fB</var> and <var class="Arg">B</var> permutes with all subgroups in the list <var class="Arg">fA</var>, and <code class="keyw">false</code> otherwise. Here <var class="Arg">A</var> and <var class="Arg">B</var> are subgroups of <var class="Arg">G</var>, <var class="Arg">fA</var> is a list of subgroups of <var class="Arg">A</var> and <var class="Arg">fB</var> is a list of subgroups of <var class="Arg">B</var>.</p>
 
 <p>In the version with four arguments, <var class="Arg">A</var> and <var class="Arg">B</var> are assumed to be subgroups of a common supergroup.</p>
 
@@ -145,7 +145,7 @@ true
 <h5>6.1-8 OnePairShowingNotTotallyFPermutableSubgroups</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; OnePairShowingNotTotallyFPermutableSubgroups</code>( [<var class="Arg">G</var>, ]<var class="Arg">A</var>, <var class="Arg">B</var>, <var class="Arg">fA</var>, <var class="Arg">fB</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>This function returns a pair of the form [ <var class="Arg">U</var>, <var class="Arg">V</var> ], with <var class="Arg">U</var> equal to <var class="Arg">A</var> or <var class="Arg">U</var> a subgroup in <var class="Arg">fA</var>, and <var class="Arg">V</var> equal to <var class="Arg">B</var> or <var class="Arg">V</var> a subgroup in <var class="Arg">fB</var>, in which both subgroups do not permute, or <code class="keyw">fail</code> if this pair does not exist. Here <var class="Arg">A</var> and <var class="Arg">B</var> are subgroups of <var class="Arg">G</var>, <var class="Arg">fA</var> is a list of subgroups of <var class="Arg">A</var> and <var class="Arg">fB</var> is a list of subgroups of <var class="Arg">B</var>.</p>
+<p>This function returns a pair of the form [ <var class="Arg">U</var>, <var class="Arg">V</var> ] with <var class="Arg">U</var> a subgroup in <var class="Arg">fA</var> or <var class="Arg">A</var> and <var class="Arg">V</var> a subgroup in <var class="Arg">fB</var> or <var class="Arg">B</var> in which both subgroups do not permute, or <code class="keyw">fail</code> if this pair does not exist. Here <var class="Arg">A</var> and <var class="Arg">B</var> are subgroups of <var class="Arg">G</var>, <var class="Arg">fA</var> is a list of subgroups of <var class="Arg">A</var> and <var class="Arg">fB</var> is a list of subgroups of <var class="Arg">B</var>.</p>
 
 <p>In the version with two arguments, <var class="Arg">A</var> and <var class="Arg">B</var> are assumed to be subgroups of a common supergroup.</p>
 

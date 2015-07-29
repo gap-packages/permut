@@ -11,5 +11,4 @@ permut/doc/manual.six
 permut/doc/permut.out
 permut/doc/permut.toc
 permut/doc/permut.log
-permut/doc/permut.blg
 permut/doc/permut.aux

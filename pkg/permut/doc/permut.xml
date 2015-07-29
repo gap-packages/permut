@@ -9,7 +9,7 @@
 <TitlePage>
   <Title><Package>PERMUT</Package></Title>
   <Subtitle>A &GAP;4 package to deal with permutability</Subtitle>
-  <Version>Version 1.01</Version>
+  <Version>Version 1.02</Version>
   <Author>Adolfo Ballester-Bolinches
   <Email>Adolfo.Balester@uv.es</Email>
   <Address>Departament d'Àlgebra, Universitat de València</Address></Author>
@@ -30,7 +30,7 @@
 groups.</E> Moreover, some of the
 functions assume that the orders of all subgroups are easily computable
 and that the decomposition of the order of a group as a product of
-prime numbers can be computed in a reasonable time.
+prime numbers can be done in a reasonable time.
 <P/>
 
 The package <Package>PERMUT</Package> contains some functions to deal with
@@ -42,7 +42,7 @@ classes of T-groups, PT-groups,
 and PST-groups, which are the classes of groups in which normality,
 permutability, and Sylow permutability, respectively, are
 transitive. These properties and classes of groups have been
-widely studied during the recent years. Most of them are described in
+widely studied during the last years. Most of them are described in
 <Cite Key="BallesterEstebanAsaad10" />.
 <P/>
 
@@ -55,7 +55,7 @@ all three classes of groups in the soluble universe corresponds to the Sylow
 structure.
 
 Nevertheless, for the sake of completeness, we also provide functions
-that use the definition of these classes directly. In the case of
+that use directly the definition of these classes. In the case of
 T-groups and PST-groups, as well as for soluble PT-groups, we reduce
 the test to subnormal subgroups of defect&nbsp;<M>2</M> (see
 <Cite Key="BallesterEstebanRagland07" />, <Cite Key="BallesterEstebanRagland09" />,
@@ -67,11 +67,11 @@ S-permutable.
 
 Some of the definitions of group-related concepts
 appear more than 
-once in this manual, in the descriptions of different functions. Although these
+once in this manual, in the description of different functions. Although these
 repetitions may seem unnecessary when reading the whole manual, we hope that they benefit users who read the online help in &GAP;.
 <P/>
 
-In order to obtain counterexamples easily which show that a group or a
+In order to obtain easily counterexamples which show that a group or a
 subgroup does not satisfy a certain property, we have introduced what
 we have called <Q>One</Q> functions, which store such counterexamples. In
 some cases, the property can be checked by proving that these
@@ -90,7 +90,8 @@ The mathematical foundations of the algorithms presented in this
 package have been described in <Cite Key="BallesterCosmeEsteban13-cejm" />.
 <P/>
 
-The authors acknowledge the support of the grant MTM2010-19938-C03-01
+The authors acknowledge the support of the grants MTM2010-19938-C03-01
+and MTM2014-54707-C3-1-P
 from the <E>Ministerio de Economía y Competitividad</E>, Spanish
 Government (all authors), the grant 11271085 from National Natural
 Science Foundation of China (A. Ballester-Bolinches) and the
@@ -247,11 +248,11 @@ This variable contains the maximum number of random attempts of permutability ch
 This property returns <K>true</K> if the subgroup <A>H</A> is permutable in
 <A>G</A>, otherwise it returns <K>false</K>. We say that a subgroup
 <M>H</M> of a group <M>G</M> is <E>permutable</E> in <M>G</M> if <M>H</M>
-permutes with all subgroups of&nbsp;<M>G</M>, in other words, <M>HK=KH</M> for all subgroups <M>K</M> of <M>G</M>.
+permutes with all subgroups of&nbsp;<M>G</M>.
 <P/>
 
 If the attribute <Ref Attr="OneSubgroupNotPermutingWithInParent" /> has been
-set, it is used if possible. Otherwise, the algorithm looks for a cyclic subgroup not permuting with <A>H</A>. The number of such cyclic subgroups is controlled by the variable <Ref Var="PermutMaxTries" />, by default, <M>10</M>. If <A>H</A> permutes with all these subgroups, then the algorithm checks whether <A>H</A> is hypercentrally embedded in
+set, it is used if possible. Otherwise, the algorithm checks looks for a cyclic subgroup not permuting with <A>H</A>. The number of such cyclic subgroups is controlled by the variable <Ref Var="PermutMaxTries" />, by default, <M>10</M>. If <A>H</A> permutes with all these subgroups, then the algorithm checks whether <A>H</A> is hypercentrally embedded in
 <A>G</A> and that the Sylow <M>p</M>-subgroups of <M>H/H_G</M>  permute with all cyclic
 <M>p</M>-subgroups of <M>G/H_G</M> for each prime <M>p</M> dividing the order of <M>G/H_G</M>. This is a sufficient condition for
 permutability. 
@@ -267,7 +268,7 @@ permutability.
 
 <Description>
 This attribute finds a cyclic subgroup of <A>G</A> which does not permute
-with <A>H</A>, that is, a subgroup which shows that <A>H</A> is not permutable in <A>G</A>, if it exists; otherwise, it returns <K>fail</K>. Recall that a subgroup <M>H</M> of a group <M>G</M> is <E>permutable</E> in
+with <A>H</A>, that is, a subgroup which shows that <A>H</A> is not permutable in <A>G</A>. Recall that a subgroup <M>H</M> of a group <M>G</M> is <E>permutable</E> in
 <M>G</M> if <M>H</M> permutes with all subgroups of&nbsp;<M>G</M>.
 <P/>
 
@@ -329,10 +330,11 @@ In this function, <A>H</A> is a subgroup of <A>G</A> and <A>f</A> must be a list
 <A>f</A> and <K>false</K> otherwise. 
 <P/>
 
-This function uses the function <Ref Attr="OneFSubgroupNotPermutingWith"/>. If <A>G</A> is the parent of <A>H</A>, then it uses the values of the property <Ref Prop="IsPermutableInParent"/>, if it is set to <K>true</K>, or
-the attribute <Ref Attr="OneSubgroupNotPermutingWithInParent" />, if it is set to <K>fail</K>; in this case, it returns
-<K>true</K>. If the function returns <K>false</K> and <A>G</A> is the parent of <A>H</A>, then it sets the values of <Ref Prop="IsPermutableInParent"/> to <K>false</K> and
-<Ref Attr="OneSubgroupNotPermutingWithInParent" /> to the subgroup obtained by <Ref Attr="OneFSubgroupNotPermutingWith" />.
+This function uses the function <Ref Attr="OneFSubgroupNotPermutingWith"/>. Hence it tries
+to use the values of <Ref Prop="IsPermutableInParent"/> and
+<Ref Attr="OneSubgroupNotPermutingWithInParent" /> if one of them is set, and if it returns
+<K>false</K> it tries to set the values of <Ref Prop="IsPermutableInParent"/> and
+<Ref Attr="OneSubgroupNotPermutingWithInParent" />.
 </Description>
 </ManSection>
 
@@ -344,10 +346,10 @@ In this operation, <A>H</A> is a subgroup of <A>G</A> and <A>f</A> must be a lis
 such a subgroup exists, and <K>fail</K> otherwise.
 <P/>
 
-If <A>G</A> is the parent of <A>H</A>, this function uses the values of <Ref Prop="IsPermutableInParent" />, if it is set to <K>true</K>, or
-<Ref Attr="OneSubgroupNotPermutingWithInParent" />, if it is set to <K>fail</K>. If the function does not return
-<K>fail</K> and <A>G</A> is the parent of <A>H</A>, then it sets the value of <Ref Prop="IsPermutableInParent" /> to <K>false</K> and
-<Ref Attr="OneSubgroupNotPermutingWithInParent" /> to the value of the function.
+This function tries to use the values of <Ref Prop="IsPermutableInParent" /> and
+<Ref Attr="OneSubgroupNotPermutingWithInParent" /> if one of them is set. If it returns
+<K>fail</K>, then it tries to set the value of <Ref Prop="IsPermutableInParent" /> and
+<Ref Attr="OneSubgroupNotPermutingWithInParent" />.
 
 <P/>
 
@@ -484,7 +486,7 @@ every subgroup permuting with all its conjugates is subnormal (see
 <Description>
 
 This operation takes the value <K>true</K> if <A>H</A> permutes with all its
-conjugates  in <A>G</A>, and the value <K>false</K> otherwise.
+conjugates, and the value <K>false</K> otherwise.
 <P/>
 
 <Example>
@@ -505,8 +507,8 @@ true
 <Attr Name="OneConjugateSubgroupNotPermutingWithInParent" Arg="H" Comm="returns a conjugate of a subgroup which does not permute with it" />
 <Description>
 
-This operation finds a conjugate subgroup of <A>H</A> in <A>G</A> which does not
-permute with <A>H</A> if such a subgroup exists. If <A>H</A> permutes with all its conjugates in <A>G</A>, then this
+This operation finds a conjugate subgroup of <A>H</A> which does not
+permute with <A>H</A> if such a subgroup exists. If <A>H</A> permutes with all its conjugates, then this
 operation returns <K>fail</K>.
 
 <Example>
@@ -754,11 +756,11 @@ This chapter explains the functions to check whether a given group is
 a T-group, a PT-group, or a PST-group.
 <P/>
 
-Recall that a group <M>G</M> is a:
+Recall that a group <M>G</M> is:
 <List>
-<Mark>T-group</Mark><Item>when every subnormal subgroup of <M>G</M> is normal,</Item>
-<Mark>PT-group</Mark><Item>when every subnormal subgroup of <M>G</M> is permutable,</Item>
-<Mark>PST-group</Mark><Item> when every subnormal subgroup of <M>G</M> is S-permutable.</Item>
+<Mark>a T-group</Mark><Item>when every subnormal subgroup of <M>G</M> is normal,</Item>
+<Mark>a PT-group</Mark><Item>when every subnormal subgroup of <M>G</M> is permutable,</Item>
+<Mark>a PST-group</Mark><Item> when every subnormal subgroup of <M>G</M> is S-permutable.</Item>
 </List>
 <P/>
 
@@ -790,7 +792,8 @@ is a normal subgroup of <M>K</M> and <M>K</M> is a normal subgroup of <M>G</M>, 
 which every subnormal subgroup is normal.
 <P/>
 
-This function sets the property <Ref Prop="IsTGroup" /> to <K>true</K> if the function returns <K>fail</K>,  or to <K>false</K> otherwise.
+This function tries to set the property <Ref Prop="IsTGroup" /> to <K>true</K> or <K>false</K> according
+to its result.
 <P/>
 
 <Example>
@@ -821,7 +824,8 @@ permutable subgroup of <M>G</M>, then <M>H</M> is a permutable subgroupof&nbsp;<
 subnormal subgroup of <M>G</M> is permutable.
 <P/>
 
-This function sets the property <Ref Prop="IsPTGroup" /> to <K>true</K> if it returns <K>fail</K> or to <K>false</K> otherwise.
+This function tries to set the property <Ref Prop="IsPTGroup" /> to <K>true</K> or <K>false</K> according
+to its result.
 <P/>
 
 Since this function checks all subnormal subgroups for permutability,
@@ -862,7 +866,8 @@ Ballester-Bolinches, Esteban-Romero, and Ragland
 check this last condition for all subnormal subgroups of defect&nbsp;<M>2</M>.
 <P/>
 
-This function sets the property <Ref Attr="IsPSTGroup" /> to <K>true</K> if it returns <K>fail</K> or to <K>false</K> otherwise.
+This function tries to set the property <Ref Attr="IsPSTGroup" /> to <K>true</K> or <K>false</K> according
+to its result.
 <P/>
 
 <Example>
@@ -877,7 +882,7 @@ Group([ (1,2)(3,4) ])
 <ManSection>
 <Attr Name="OneSubnormalNonConjugatePermutableSubgroup" Arg="G" Comm="finds a subnormal subgroup not permuting with all its conjugates" />
 <Description>
-This function finds a subnormal subgroup <M>H</M> of <M>G</M> which does not permute
+This function finds a subnormal subgroup <M>H</M> which does not permute
 with all its conjugates, if such a subgroup exist; otherwise, it
 returns <K>fail</K>.
 <P/>
@@ -1001,7 +1006,7 @@ For a soluble group <M>G</M>, the function checks whether for all primes <M>p</M
 has an abelian Sylow <M>p</M>-subgroup and it satisfies the property <Alt Only="LaTeX"><M>{\cal
   C}_p</M></Alt><Alt Not="LaTeX"><M>C_p</M></Alt>
 (that is, every subgroup of a Sylow <M>p</M>-subgroup <M>P</M> of <M>G</M> is normal
-in the Sylow normaliser <M>{\rm N}_G(P)</M>,  see <Ref Func="IsCp" />).
+in the Sylow normaliser <M>{\rm N}_G(P)</M>).
 <P/>
 
 For insoluble groups, the function checks that the group is an
@@ -1053,7 +1058,7 @@ has an abelian Sylow <M>p</M>-subgroup and <M>G</M> satisfies the property
 <Alt Only="LaTeX"><M>{\cal
   C}_p</M></Alt><Alt Not="LaTeX"><M>C_p</M></Alt>
 (that is, every subgroup of a Sylow <M>p</M>-subgroup <M>P</M> of <M>G</M> is normal
-in the Sylow normaliser <M>{\rm N}_G(P)</M>,  see <Ref Func="IsCp" />).
+in the Sylow normaliser <M>{\rm N}_G(P)</M>)
 <P/>
 
 For insoluble groups, the function checks whether the group is an
@@ -1074,6 +1079,14 @@ could be a time-consuming task.
 
 
 <Example>
+gap&gt; g:=SmallGroup(24,6);
+&lt;pc group of size 24 with 4 generators&gt;
+gap&gt; IsPSTGroup(g);
+true
+gap&gt; IsPTGroup(g);
+false
+gap&gt; OneSubnormalNonPermutableSubgroup(g);
+Group([ f1*f3, f4 ])
 gap&gt; g:=SmallGroup(24,6);
 &lt;pc group of size 24 with 4 generators&gt;
 gap&gt; IsPSTGroup(g);
@@ -1316,8 +1329,8 @@ is a prime, and <K>false</K> otherwise.
 <P/>
 
 A group <M>G</M> satisfies <Alt Only="LaTeX"><M>{\cal
-  Y}_p</M></Alt><Alt Not="LaTeX"><M>Y_p</M></Alt> when for every two subgroups <M>H</M> and
-<M>K</M> with <M>H\leq K</M>, <M>H</M> is S-permutable in <M>{\rm N}_G(K)</M>. This property
+  X}_p</M></Alt><Alt Not="LaTeX"><M>Y_p</M></Alt> when for every two subgroups <M>H</M> and
+<M>K</M> with <M>H\leq K</M>, <M>H</M> is S-permutable in <M>{\rm N}_G(P)</M>. This property
 was introduced by Ballester-Bolinches and Esteban-Romero in
 <Cite Key="BallesterEsteban02-sylper1" />. A group <M>G</M> is a soluble PST-group
 if and only if <M>G</M> satisfies <Alt Only="LaTeX"><M>{\cal
@@ -1355,8 +1368,8 @@ soluble T-group, PT-group, or PST-group.
 <Description>
 
 This function returns <K>true</K> if <A>G</A> has an abelian Sylow <A>p</A>-subgroup
-<A>P</A> and <M>G</M> satisfies <Alt Only="LaTeX"><M>{\cal
-  C}_p</M></Alt><Alt Not="LaTeX"><M>C_p</M></Alt>, and <K>false</K> otherwise.
+<A>p</A> such that every subgroup of <M>P</M> is normal in the Sylow normaliser
+<M>{\rm N}_G(P)</M>, and <K>false</K> otherwise.
 <P/>
 
 This function is used to characterise soluble PST-groups: a group <M>G</M>
@@ -1369,7 +1382,7 @@ satisfies <Alt Only="LaTeX"><M>{\cal
   C}_p</M></Alt><Alt Not="LaTeX"><M>C_p</M></Alt>. A group <M>G</M> satisfies <Alt Only="LaTeX"><M>{\cal
   C}_p</M></Alt><Alt Not="LaTeX"><M>C_p</M></Alt> if and only if every
 subgroup of a Sylow <M>p</M>-subgroup <M>P</M> of <M>G</M> is normal in the Sylow
-normaliser <M>{\rm N}_G(P)</M> (see <Ref Func="IsCp" />). Therefore this function checks whether <M>G</M>
+normaliser <M>{\rm N}_G(P)</M>. Therefore this function checks whether <M>G</M>
 has an abelian Sylow <M>p</M>-subgroup and <M>G</M> satisfies <Alt Only="LaTeX"><M>{\cal
   C}_p</M></Alt><Alt Not="LaTeX"><M>C_p</M></Alt>.
 <P/>
@@ -1410,8 +1423,8 @@ epimorphism have order <M>4</M>. If all these conditions hold, then the
 Sylow <M>2</M>-subgroup is Dedekind, otherwise it is not.
 <P/>
 
-This function sets the property <Ref Prop="IsTGroup" /> to <K>true</K> or <K>false</K> for
-the Sylow <M>p</M>-subgroup, according to the returned value.
+This function tries to set the property <Ref Prop="IsTGroup" /> to <K>true</K> or <K>false</K> for
+the Sylow <M>p</M>-subgroup.
 <P/>
 
 <Example>
@@ -1485,27 +1498,27 @@ direct product of an elementary abelian <M>2</M>-group and a quaternion
 group of order&nbsp;<M>8</M> or <M>G</M> has an Iwasawa triple <M>(X,b,s)</M> with <M>s \geq 2</M> if <M>p = 2</M>.
 <P/>
 
-The method used to find an Iwasawa triple for non-abelian
+The method followed to find an Iwasawa triple for non-abelian
 non-Dedekind groups begins with the whole
 group <M>G</M>. If the group is abelian, it returns the Iwasawa triple
 <M>(G,1,\log_p\exp(G))</M>. If it is not abelian, it constructs a list <M>l</M>
-initially just containing&nbsp;<M>G</M>. For every element <M>N</M> of <M>l</M>, it takes the maximal
-subgroups of <M>N</M> which are normal in <M>G</M> and give cyclic quotients. If
+formed by&nbsp;<M>G</M>. For every element <M>N</M> of <M>l</M>, it takes the maximal
+subgroups of <M>N</M> which are normal in <M>G</M> and give cyclic quotient. If
 any of these subgroups is a member of an Iwasawa triple, it is
 computed with the function <Ref Func="IwasawaTripleWithSubgroup" /> and the value is
-returned. If not, <M>N</M> is removed from the list <M>l</M> and these maximal
-subgroups of <M>N</M> are added to <M>l</M>. This continues until an Iwasawa triple is
+returned. If not, <M>N</M> is removed from the <M>l</M> and these maximal
+subgroups of <M>N</M> are added to <M>l</M>. This follows until an Iwasawa triple is
 found or the list <M>l</M> is empty. Since normal subgroups with cyclic
 quotient are contained in a unique maximal chain, no subgroup appears
 twice in this algorithm.
 <P/>
 
-The algorithm also takes into account the fact that an Iwasawa group of
+The algorithm also takes into account the fact that a Iwasawa group of
 exponent&nbsp;<M>4</M> must be abelian or a direct product of a quaternion group
 of order&nbsp;<M>8</M> and an elementary abelian <M>2</M>-group.
 <P/>
 
-For the trivial group, it returns the triple containing the trivial
+For the trivial group, it returns the triple composed by the trivial
 group, its identity element, and the prime&nbsp;<M>3</M>.
 <P/>
 
@@ -1538,7 +1551,7 @@ T-group.
 
 
 The implementation of this function begins by searching for a pair of subgroups that do not permute. In this case, the function returns <K>false</K>. The maximum number of pairs to be checked here is controlled by the variable <Ref Var="PermutMaxTries" />, which is assigned to <M>10</M> by default. If no such pair is found, the algorithm looks for an Iwasawa triple for a
-Sylow <M>p</M>-subgroup <M>P</M> of&nbsp;<M>G</M> with the help of the function <Ref Attr="IwasawaTriple" />. If there exists one such triple <M>(X,b,s)</M> with <M>s \geq 2</M> when
+Sylow <M>p</M>-subgroup <M>P</M> of&nbsp;<M>G</M>. If there exists one such triple <M>(X,b,s)</M> with <M>s \geq 2</M> when
 <M>p = 2</M> or the group is a direct product of a quaternion group of
 order&nbsp;<M>8</M> and an elementary abelian <M>2</M>-group, then it 
 returns <K>true</K>; else it returns <K>false</K>.
@@ -1596,7 +1609,7 @@ used here checks only that <M>A</M> permutes with all cyclic subgroups of
 <M>B</M> and that <M>B</M> permutes with all cyclic subgroups of <M>A</M>.
 <P/>
 
-The method with two arguments assumes that <M>A</M> and <M>B</M> have a common
+The method with two arguments assume that <M>A</M> and <M>B</M> have a common
 supergroup.
 </Description>
 </ManSection>
@@ -1622,7 +1635,7 @@ every cyclic subgroup of
 <M>A</M> permutes with every cyclic subgroup of <M>B</M>.
 <P/>
 
-The method with two arguments assumes that <M>A</M> and <M>B</M> have a common
+The method with two arguments assume that <M>A</M> and <M>B</M> have a common
 supergroup. 
 </Description>
 </ManSection>
@@ -1672,7 +1685,8 @@ true
 <ManSection>
 <Func Name="AreMutuallyFPermutableSubgroups" Arg="[G, ]A, B, fA, fB" Comm="checks whether both subgroups of G are mutually f-permutable" />
 <Description>
-This function returns <K>true</K> if <A>A</A> permutes with <A>B</A> and all elements of <A>fB</A> and <A>B</A> permutes with all elements of <A>fA</A>, and <K>false</K> otherwise. Here <A>A</A> and <A>B</A> are subgroups
+This function returns <K>true</K> if the subgroups <A>A</A> and <A>B</A> are mutually
+<A>f</A>-permutable, and <K>false</K> otherwise. Here <A>A</A> and <A>B</A> are subgroups
 of <A>G</A> and <A>fA</A> and <A>fB</A> are, respectively, lists of
 subgroups of <A>A</A> and <A>B</A>, respectively.
 <P/>
@@ -1685,9 +1699,9 @@ subgroups of a common supergroup.
 <ManSection>
 <Func Name="OnePairShowingNotMutuallyFPermutableSubgroups" Arg="[G, ]A, B, fA, fB" Comm="finds two f-subgroups which do not permute" />
 <Description>
-This function returns a pair of the form [ <A>A</A>, <A>V</A> ] with <A>V</A> equal to <A>B</A> or <A>V</A> a
-subgroup in <A>fB</A>, or of the form [&nbsp;<A>W</A>, <A>B</A>&nbsp;] with <A>W</A> equal to <A>A</A> or <A>W</A> a
-subgroup in <A>fA</A>,
+This function returns a pair of the form [ <A>A</A>, <A>V</A> ] with <A>V</A> a
+subgroup in <A>fB</A> or <A>B</A>  or of the form [&nbsp;<A>W</A>, <A>B</A>&nbsp;] with <A>W</A> a
+subgroup in <A>fA</A> or <A>A</A>
 in which both subgroups do not permute, or <K>fail</K> if this pair does not
 exist. Here <A>A</A> and <A>B</A> are
 subgroups of <A>G</A> and <A>fA</A> and <A>fB</A> are lists of
@@ -1702,8 +1716,9 @@ subgroups of a common supergroup.
 <Func Name="AreTotallyFPermutableSubgroups" Arg="[G, ]A, B, fA, fB" Comm="checks whether two subgroups are totally f-permutable" />
 <Description>
 
-This function returns <K>true</K> if the subgroup <A>A</A> and all elements of the list <A>fA</A> permute
-with <A>B</A> and all subgroups in the list <A>fB</A>, and <K>false</K> otherwise. Here <A>A</A> and <A>B</A> are subgroups
+This function returns <K>true</K> if the subgroup <A>A</A> permutes
+with all subgroups in the list <A>fB</A> and <A>B</A> permutes with
+all subgroups in the list <A>fA</A>, and <K>false</K> otherwise. Here <A>A</A> and <A>B</A> are subgroups
 of <A>G</A>, <A>fA</A> is a list of subgroups of <A>A</A> and <A>fB</A> is a list of subgroups of <A>B</A>.
 <P/>
 
@@ -1715,9 +1730,9 @@ subgroups of a common supergroup.
 <ManSection>
 <Func Name="OnePairShowingNotTotallyFPermutableSubgroups" Arg="[G, ]A, B, fA, fB" Comm="finds two f-subgroups which do not permute." />
 <Description>
-This function returns a pair of the form [ <A>U</A>, <A>V</A> ], with <A>U</A> equal to <A>A</A> or <A>U</A> a
-subgroup in <A>fA</A>, and <A>V</A> equal to <A>B</A> or <A>V</A> a
-subgroup in <A>fB</A>,
+This function returns a pair of the form [ <A>U</A>, <A>V</A> ] with <A>U</A> a
+subgroup in <A>fA</A> or <A>A</A> and <A>V</A> a
+subgroup in <A>fB</A> or <A>B</A>
 in which both subgroups do not permute, or <K>fail</K> if this pair does not
 exist. Here <A>A</A> and <A>B</A> are
 subgroups of <A>G</A>, <A>fA</A> is a list of subgroups of <A>A</A> and <A>fB</A> is a list of subgroups of <A>B</A>.
@@ -1762,7 +1777,9 @@ been used for some of the functions of the package.
 <Description>
 
 This function computes all subnormal subgroups of <A>G</A>. The method used
-to obtain this list initially considers the lists of all normal subgroups of <A>G</A> and then adds all normal subgroups to this list until no new subnormal subgroups appear. This computes the
+to obtain this list consists in beginning with the list of all normal
+subgroups of <A>G</A> and by adding all normal subgroups of the subgroups
+in the list until no new subnormal subgroups appear. This computes the
 complete list of subgroups, not only a representative of each
 conjugacy class as other functions do.
 <P/> 
@@ -1801,10 +1818,10 @@ gap&gt; PrimesDividingSize(g);
 
 <Description>
 
-This attribute returns a list containing one Sylow subgroup for every
+This attribute returns a list composed by one Sylow subgroup for every
 prime dividing the size of&nbsp;<A>G</A>. If <A>G</A> is soluble, then it returns a
 Sylow system or Sylow basis of <A>G</A>  by means of the function
-<Ref Attr="SylowSystem" BookName="Ref" /> (a set containing a Sylow subgroup for each prime
+<Ref Attr="SylowSystem" BookName="Ref" /> (a set composed of a Sylow subgroup for each prime
 dividing the order of <A>G</A> permuting in pairs).
 <P/>
 <Log>
@@ -1829,10 +1846,10 @@ This property is <K>true</K> if <A>G</A> is an SC-group, and <K>false</K>
 otherwise. A group <A>G</A> is an SC-group if all its chief factors are
 simple. Note that a soluble group <A>G</A> is an SC-group if and only if
 <A>G</A> is supersoluble. The method used to check this property uses the
-chief series if it is available or the group is not soluble.
+chief series if its is available or the group is not soluble.
 <P/>
 
-Since the methods for insoluble groups might rely on the computation
+Since the methods for insoluble groups might on the computation
 of a chief series with the function <Ref Oper="ChiefSeries"
 BookName="Ref" />, they might not be available if the group is not
 given as a permutation group.
@@ -1900,7 +1917,9 @@ gap&gt; Size(last);
 
 This auxiliary function returns the list of all generators of the cyclic
 <M>p</M>-group generated by the <M>p</M>-element <M>g</M>. Here
-<M>p</M> is a prime number.
+<M>p</M> is a prime number. Since this function is not intended to be
+used in interactive mode, no check is done that the
+argument is a <M>p</M>-element. 
 
 <Example>
 gap&gt; AllGeneratorsCyclicPGroup((1,2,3,4,5,6,7,8,9),3);

@@ -98,7 +98,7 @@
 {\Huge \textbf{A \textsf{GAP}4 package to deal with permutability\mbox{}}}\\
 \vfill
 
-{\Huge Version 1.01\mbox{}}\\[1cm]
+{\Huge Version 1.02\mbox{}}\\[1cm]
 \mbox{}\\[2cm]
 {\Large \textbf{Adolfo Ballester-Bolinches  \mbox{}}}\\
 {\Large \textbf{Enric Cosme-Ll{\a'o}pez   \mbox{}}}\\
@@ -142,7 +142,7 @@ de Val{\a`e}ncia\end{minipage}
 {
  \emph{All functions defined in this package deal only with finite groups.} Moreover, some of the functions assume that the orders of all subgroups are
 easily computable and that the decomposition of the order of a group as a
-product of prime numbers can be computed in a reasonable time. 
+product of prime numbers can be done in a reasonable time. 
 
  The package \textsf{PERMUT} contains some functions to deal with permutability in finite groups. It
 includes functions to test some subgroup embedding properties related to
@@ -150,7 +150,7 @@ permutability, like permutability or Sylow permutability. It also includes
 some functions to check whether a group belongs to the classes of T-groups,
 PT-groups, and PST-groups, which are the classes of groups in which normality,
 permutability, and Sylow permutability, respectively, are transitive. These
-properties and classes of groups have been widely studied during the recent
+properties and classes of groups have been widely studied during the last
 years. Most of them are described in \cite{BallesterEstebanAsaad10}. 
 
  The algorithms for T-groups, PT-groups, and PST-groups of this package use
@@ -158,17 +158,17 @@ some interesting local descriptions of groups in these classes, that is, given
 in terms of some information related to the primes $p$ dividing their order, usually by looking at $p$-subgroups or $p$-chief factors. These characterisations show that the only difference between
 all three classes of groups in the soluble universe corresponds to the Sylow
 structure. Nevertheless, for the sake of completeness, we also provide
-functions that use the definition of these classes directly. In the case of
+functions that use directly the definition of these classes. In the case of
 T-groups and PST-groups, as well as for soluble PT-groups, we reduce the test
 to subnormal subgroups of defect{\nobreakspace}$2$ (see \cite{BallesterEstebanRagland07}, \cite{BallesterEstebanRagland09}, and \cite{BallesterBeidlemanCosseyEstebanRaglandSchmidt09}). Of course, to do this we must introduce some functions to check whether two
 subgroups permute and whether a subgroup is permutable or S-permutable. 
 
  Some of the definitions of group-related concepts appear more than once in
-this manual, in the descriptions of different functions. Although these
+this manual, in the description of different functions. Although these
 repetitions may seem unnecessary when reading the whole manual, we hope that
 they benefit users who read the online help in \textsf{GAP}. 
 
- In order to obtain counterexamples easily which show that a group or a
+ In order to obtain easily counterexamples which show that a group or a
 subgroup does not satisfy a certain property, we have introduced what we have
 called ``One'' functions, which store such counterexamples. In some cases, the property can
 be checked by proving that these counterexamples do not exist. 
@@ -179,7 +179,8 @@ of groups of small order.
  The mathematical foundations of the algorithms presented in this package have
 been described in \cite{BallesterCosmeEsteban13-cejm}. 
 
- The authors acknowledge the support of the grant MTM2010-19938-C03-01 from the \emph{Ministerio de Econom{\a'\i}a y Competitividad}, Spanish Government (all authors), the grant 11271085 from National Natural
+ The authors acknowledge the support of the grants MTM2010-19938-C03-01 and
+MTM2014-54707-C3-1-P from the \emph{Ministerio de Econom{\a'\i}a y Competitividad}, Spanish Government (all authors), the grant 11271085 from National Natural
 Science Foundation of China (A. Ballester-Bolinches) and the predoctoral grant
 AP2010-2764 from the \emph{Ministerio de Educaci{\a'o}n}, Spanish Government (E. Cosme-Ll{\a'o}pez). The authors are also indebted to
 the members of the \textsf{GAP} council, especially Leonard Soicher, Alice Niemeyer, and Alexander Konovalov,
@@ -316,10 +317,10 @@ checks before trying general deterministic methods in the functions \texttt{IsPe
 }\hfill{\scriptsize (property)}}\\
 
 
- This property returns \texttt{true} if the subgroup \mbox{\texttt{\mdseries\slshape H}} is permutable in \mbox{\texttt{\mdseries\slshape G}}, otherwise it returns \texttt{false}. We say that a subgroup $H$ of a group $G$ is \emph{permutable} in $G$ if $H$ permutes with all subgroups of{\nobreakspace}$G$, in other words, $HK=KH$ for all subgroups $K$ of $G$. 
+ This property returns \texttt{true} if the subgroup \mbox{\texttt{\mdseries\slshape H}} is permutable in \mbox{\texttt{\mdseries\slshape G}}, otherwise it returns \texttt{false}. We say that a subgroup $H$ of a group $G$ is \emph{permutable} in $G$ if $H$ permutes with all subgroups of{\nobreakspace}$G$. 
 
- If the attribute \texttt{OneSubgroupNotPermutingWithInParent} (\ref{OneSubgroupNotPermutingWithInParent}) has been set, it is used if possible. Otherwise, the algorithm looks for a
-cyclic subgroup not permuting with \mbox{\texttt{\mdseries\slshape H}}. The number of such cyclic subgroups is controlled by the variable \texttt{PermutMaxTries} (\ref{PermutMaxTries}), by default, $10$. If \mbox{\texttt{\mdseries\slshape H}} permutes with all these subgroups, then the algorithm checks whether \mbox{\texttt{\mdseries\slshape H}} is hypercentrally embedded in \mbox{\texttt{\mdseries\slshape G}} and that the Sylow $p$-subgroups of $H/H_G$ permute with all cyclic $p$-subgroups of $G/H_G$ for each prime $p$ dividing the order of $G/H_G$. This is a sufficient condition for permutability. }
+ If the attribute \texttt{OneSubgroupNotPermutingWithInParent} (\ref{OneSubgroupNotPermutingWithInParent}) has been set, it is used if possible. Otherwise, the algorithm checks looks
+for a cyclic subgroup not permuting with \mbox{\texttt{\mdseries\slshape H}}. The number of such cyclic subgroups is controlled by the variable \texttt{PermutMaxTries} (\ref{PermutMaxTries}), by default, $10$. If \mbox{\texttt{\mdseries\slshape H}} permutes with all these subgroups, then the algorithm checks whether \mbox{\texttt{\mdseries\slshape H}} is hypercentrally embedded in \mbox{\texttt{\mdseries\slshape G}} and that the Sylow $p$-subgroups of $H/H_G$ permute with all cyclic $p$-subgroups of $G/H_G$ for each prime $p$ dividing the order of $G/H_G$. This is a sufficient condition for permutability. }
 
  
 
@@ -334,7 +335,7 @@ cyclic subgroup not permuting with \mbox{\texttt{\mdseries\slshape H}}. The numb
 }\hfill{\scriptsize (attribute)}}\\
 
 
- This attribute finds a cyclic subgroup of \mbox{\texttt{\mdseries\slshape G}} which does not permute with \mbox{\texttt{\mdseries\slshape H}}, that is, a subgroup which shows that \mbox{\texttt{\mdseries\slshape H}} is not permutable in \mbox{\texttt{\mdseries\slshape G}}, if it exists; otherwise, it returns \texttt{fail}. Recall that a subgroup $H$ of a group $G$ is \emph{permutable} in $G$ if $H$ permutes with all subgroups of{\nobreakspace}$G$. 
+ This attribute finds a cyclic subgroup of \mbox{\texttt{\mdseries\slshape G}} which does not permute with \mbox{\texttt{\mdseries\slshape H}}, that is, a subgroup which shows that \mbox{\texttt{\mdseries\slshape H}} is not permutable in \mbox{\texttt{\mdseries\slshape G}}. Recall that a subgroup $H$ of a group $G$ is \emph{permutable} in $G$ if $H$ permutes with all subgroups of{\nobreakspace}$G$. 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -394,7 +395,7 @@ case is the following.
 
  In this function, \mbox{\texttt{\mdseries\slshape H}} is a subgroup of \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape f}} must be a list of subgroups of \mbox{\texttt{\mdseries\slshape G}}. It returns \texttt{true} if \mbox{\texttt{\mdseries\slshape H}} permutes with all members of \mbox{\texttt{\mdseries\slshape f}} and \texttt{false} otherwise. 
 
- This function uses the function \texttt{OneFSubgroupNotPermutingWith} (\ref{OneFSubgroupNotPermutingWith}). If \mbox{\texttt{\mdseries\slshape G}} is the parent of \mbox{\texttt{\mdseries\slshape H}}, then it uses the values of the property \texttt{IsPermutableInParent} (\ref{IsPermutableInParent}), if it is set to \texttt{true}, or the attribute \texttt{OneSubgroupNotPermutingWithInParent} (\ref{OneSubgroupNotPermutingWithInParent}), if it is set to \texttt{fail}; in this case, it returns \texttt{true}. If the function returns \texttt{false} and \mbox{\texttt{\mdseries\slshape G}} is the parent of \mbox{\texttt{\mdseries\slshape H}}, then it sets the values of \texttt{IsPermutableInParent} (\ref{IsPermutableInParent}) to \texttt{false} and \texttt{OneSubgroupNotPermutingWithInParent} (\ref{OneSubgroupNotPermutingWithInParent}) to the subgroup obtained by \texttt{OneFSubgroupNotPermutingWith} (\ref{OneFSubgroupNotPermutingWith}). }
+ This function uses the function \texttt{OneFSubgroupNotPermutingWith} (\ref{OneFSubgroupNotPermutingWith}). Hence it tries to use the values of \texttt{IsPermutableInParent} (\ref{IsPermutableInParent}) and \texttt{OneSubgroupNotPermutingWithInParent} (\ref{OneSubgroupNotPermutingWithInParent}) if one of them is set, and if it returns \texttt{false} it tries to set the values of \texttt{IsPermutableInParent} (\ref{IsPermutableInParent}) and \texttt{OneSubgroupNotPermutingWithInParent} (\ref{OneSubgroupNotPermutingWithInParent}). }
 
  
 
@@ -408,7 +409,7 @@ case is the following.
 
  In this operation, \mbox{\texttt{\mdseries\slshape H}} is a subgroup of \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape f}} must be a list of subgroups of \mbox{\texttt{\mdseries\slshape G}}. It returns a subgroup in \mbox{\texttt{\mdseries\slshape f}} not permuting with \mbox{\texttt{\mdseries\slshape H}} if such a subgroup exists, and \texttt{fail} otherwise. 
 
- If \mbox{\texttt{\mdseries\slshape G}} is the parent of \mbox{\texttt{\mdseries\slshape H}}, this function uses the values of \texttt{IsPermutableInParent} (\ref{IsPermutableInParent}), if it is set to \texttt{true}, or \texttt{OneSubgroupNotPermutingWithInParent} (\ref{OneSubgroupNotPermutingWithInParent}), if it is set to \texttt{fail}. If the function does not return \texttt{fail} and \mbox{\texttt{\mdseries\slshape G}} is the parent of \mbox{\texttt{\mdseries\slshape H}}, then it sets the value of \texttt{IsPermutableInParent} (\ref{IsPermutableInParent}) to \texttt{false} and \texttt{OneSubgroupNotPermutingWithInParent} (\ref{OneSubgroupNotPermutingWithInParent}) to the value of the function. 
+ This function tries to use the values of \texttt{IsPermutableInParent} (\ref{IsPermutableInParent}) and \texttt{OneSubgroupNotPermutingWithInParent} (\ref{OneSubgroupNotPermutingWithInParent}) if one of them is set. If it returns \texttt{fail}, then it tries to set the value of \texttt{IsPermutableInParent} (\ref{IsPermutableInParent}) and \texttt{OneSubgroupNotPermutingWithInParent} (\ref{OneSubgroupNotPermutingWithInParent}). 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -555,7 +556,7 @@ its conjugates is subnormal (see \cite{Foguel97}).
 }\hfill{\scriptsize (property)}}\\
 
 
- This operation takes the value \texttt{true} if \mbox{\texttt{\mdseries\slshape H}} permutes with all its conjugates in \mbox{\texttt{\mdseries\slshape G}}, and the value \texttt{false} otherwise. 
+ This operation takes the value \texttt{true} if \mbox{\texttt{\mdseries\slshape H}} permutes with all its conjugates, and the value \texttt{false} otherwise. 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -583,7 +584,7 @@ its conjugates is subnormal (see \cite{Foguel97}).
 }\hfill{\scriptsize (attribute)}}\\
 
 
- This operation finds a conjugate subgroup of \mbox{\texttt{\mdseries\slshape H}} in \mbox{\texttt{\mdseries\slshape G}} which does not permute with \mbox{\texttt{\mdseries\slshape H}} if such a subgroup exists. If \mbox{\texttt{\mdseries\slshape H}} permutes with all its conjugates in \mbox{\texttt{\mdseries\slshape G}}, then this operation returns \texttt{fail}. 
+ This operation finds a conjugate subgroup of \mbox{\texttt{\mdseries\slshape H}} which does not permute with \mbox{\texttt{\mdseries\slshape H}} if such a subgroup exists. If \mbox{\texttt{\mdseries\slshape H}} permutes with all its conjugates, then this operation returns \texttt{fail}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=SmallGroup(16,7);|
   <pc group of size 16 with 4 generators>
@@ -858,11 +859,11 @@ embedding property is false.
  This chapter explains the functions to check whether a given group is a
 T-group, a PT-group, or a PST-group. 
 
- Recall that a group $G$ is a: 
+ Recall that a group $G$ is: 
 \begin{description}
-\item[{T-group}] when every subnormal subgroup of $G$ is normal,
-\item[{PT-group}] when every subnormal subgroup of $G$ is permutable,
-\item[{PST-group}]  when every subnormal subgroup of $G$ is S-permutable.
+\item[{a T-group}] when every subnormal subgroup of $G$ is normal,
+\item[{a PT-group}] when every subnormal subgroup of $G$ is permutable,
+\item[{a PST-group}]  when every subnormal subgroup of $G$ is S-permutable.
 \end{description}
  
 
@@ -892,7 +893,7 @@ group is a T-group, it returns \texttt{fail}.
 
  A T-group is a group in which normality is transitive, that is, if $H$ is a normal subgroup of $K$ and $K$ is a normal subgroup of $G$, then $H$ is a normal subgroup of{\nobreakspace}$G$. Finite T-groups are the groups in which every subnormal subgroup is normal. 
 
- This function sets the property \texttt{IsTGroup} (\ref{IsTGroup}) to \texttt{true} if the function returns \texttt{fail}, or to \texttt{false} otherwise. 
+ This function tries to set the property \texttt{IsTGroup} (\ref{IsTGroup}) to \texttt{true} or \texttt{false} according to its result. 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -923,7 +924,7 @@ group is a PT-group, it returns \texttt{fail}.
  A group $G$ is a PT-group when permutability is a transitive relation in $G$, that is, if $H$ is a permutable subgroup of $K$ and $K$ is a permutable subgroup of $G$, then $H$ is a permutable subgroupof{\nobreakspace}$G$. This is equivalent in finite groups to affirming that every subnormal
 subgroup of $G$ is permutable. 
 
- This function sets the property \texttt{IsPTGroup} (\ref{IsPTGroup}) to \texttt{true} if it returns \texttt{fail} or to \texttt{false} otherwise. 
+ This function tries to set the property \texttt{IsPTGroup} (\ref{IsPTGroup}) to \texttt{true} or \texttt{false} according to its result. 
 
  Since this function checks all subnormal subgroups for permutability, it may
 take a long time if there are many subnormal subgroups. 
@@ -962,7 +963,7 @@ subgroup of $G$ is S-permutable. By a result of Ballester-Bolinches, Esteban-Rom
 Ragland \cite{BallesterEstebanRagland07}, it is enough to check this last condition for all subnormal subgroups of
 defect{\nobreakspace}$2$. 
 
- This function sets the property \texttt{IsPSTGroup} (\ref{IsPSTGroup}) to \texttt{true} if it returns \texttt{fail} or to \texttt{false} otherwise. 
+ This function tries to set the property \texttt{IsPSTGroup} (\ref{IsPSTGroup}) to \texttt{true} or \texttt{false} according to its result. 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -983,7 +984,7 @@ defect{\nobreakspace}$2$.
 }\hfill{\scriptsize (attribute)}}\\
 
 
- This function finds a subnormal subgroup $H$ of $G$ which does not permute with all its conjugates, if such a subgroup exist;
+ This function finds a subnormal subgroup $H$ which does not permute with all its conjugates, if such a subgroup exist;
 otherwise, it returns \texttt{fail}. 
 
  
@@ -1094,7 +1095,7 @@ quotients by all normal subgroups, which could be a time-consuming task.
 
  This property takes the value \texttt{true} if \mbox{\texttt{\mdseries\slshape G}} is a PT-group, and the value \texttt{false} otherwise. 
 
- For a soluble group $G$, the function checks whether for all primes $p$, $G$ is $p$-nilpotent and has an Iwasawa Sylow $p$-subgroup or $G$ has an abelian Sylow $p$-subgroup and it satisfies the property ${\cal C}_p$ (that is, every subgroup of a Sylow $p$-subgroup $P$ of $G$ is normal in the Sylow normaliser ${\rm N}_G(P)$, see \texttt{IsCp} (\ref{IsCp})). 
+ For a soluble group $G$, the function checks whether for all primes $p$, $G$ is $p$-nilpotent and has an Iwasawa Sylow $p$-subgroup or $G$ has an abelian Sylow $p$-subgroup and it satisfies the property ${\cal C}_p$ (that is, every subgroup of a Sylow $p$-subgroup $P$ of $G$ is normal in the Sylow normaliser ${\rm N}_G(P)$). 
 
  For insoluble groups, the function checks that the group is an SC-group with
 the function \texttt{IsSCGroup} (\ref{IsSCGroup}), because PT-groups are SC-groups. Since the methods for insoluble groups
@@ -1131,7 +1132,7 @@ quotients by all normal subgroups, which could be a time-consuming task.
  A finite group $G$ is a PST-group if S-permutability (Sylow-permutability) is a transitive
 relation in $G$, that is, if $H$ is S-permutable in $K$ and $K$ is S-permutable in $G$, then $H$ is S-permutable in{\nobreakspace}$G$. This is equivalent to affirming that every subnormal subgroup of $G$ is S-permutable in{\nobreakspace}$G$. 
 
- For a soluble group $G$, the function checks whether for all primes $p$, $G$ is $p$-nilpotent, or $G$ has an abelian Sylow $p$-subgroup and $G$ satisfies the property ${\cal C}_p$ (that is, every subgroup of a Sylow $p$-subgroup $P$ of $G$ is normal in the Sylow normaliser ${\rm N}_G(P)$, see \texttt{IsCp} (\ref{IsCp})). 
+ For a soluble group $G$, the function checks whether for all primes $p$, $G$ is $p$-nilpotent, or $G$ has an abelian Sylow $p$-subgroup and $G$ satisfies the property ${\cal C}_p$ (that is, every subgroup of a Sylow $p$-subgroup $P$ of $G$ is normal in the Sylow normaliser ${\rm N}_G(P)$) 
 
  For insoluble groups, the function checks whether the group is an SC-group
 with the function \texttt{IsSCGroup} (\ref{IsSCGroup}), because PST-groups are SC-groups. Since the methods for insoluble groups
@@ -1141,6 +1142,14 @@ quotients by all normal subgroups, which could be a time-consuming task.
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@g:=SmallGroup(24,6);|
+  <pc group of size 24 with 4 generators>
+  !gapprompt@gap>| !gapinput@IsPSTGroup(g);|
+  true
+  !gapprompt@gap>| !gapinput@IsPTGroup(g);|
+  false
+  !gapprompt@gap>| !gapinput@OneSubnormalNonPermutableSubgroup(g);|
+  Group([ f1*f3, f4 ])
   !gapprompt@gap>| !gapinput@g:=SmallGroup(24,6);|
   <pc group of size 24 with 4 generators>
   !gapprompt@gap>| !gapinput@IsPSTGroup(g);|
@@ -1376,7 +1385,7 @@ all finite $p$-soluble groups. By a local characterisation of a group-theoretica
 
  This function returns \texttt{true} if \mbox{\texttt{\mdseries\slshape G}} satisfies ${\cal Y}_p$, where $p$ is a prime, and \texttt{false} otherwise. 
 
- A group $G$ satisfies ${\cal Y}_p$ when for every two subgroups $H$ and $K$ with $H\leq K$, $H$ is S-permutable in ${\rm N}_G(K)$. This property was introduced by Ballester-Bolinches and Esteban-Romero in \cite{BallesterEsteban02-sylper1}. A group $G$ is a soluble PST-group if and only if $G$ satisfies ${\cal Y}_p$ for all primes $p$. 
+ A group $G$ satisfies ${\cal X}_p$ when for every two subgroups $H$ and $K$ with $H\leq K$, $H$ is S-permutable in ${\rm N}_G(P)$. This property was introduced by Ballester-Bolinches and Esteban-Romero in \cite{BallesterEsteban02-sylper1}. A group $G$ is a soluble PST-group if and only if $G$ satisfies ${\cal Y}_p$ for all primes $p$. 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -1417,9 +1426,9 @@ T-group, PT-group, or PST-group.
 }\hfill{\scriptsize (function)}}\\
 
 
- This function returns \texttt{true} if \mbox{\texttt{\mdseries\slshape G}} has an abelian Sylow \mbox{\texttt{\mdseries\slshape p}}-subgroup \mbox{\texttt{\mdseries\slshape P}} and $G$ satisfies ${\cal C}_p$, and \texttt{false} otherwise. 
+ This function returns \texttt{true} if \mbox{\texttt{\mdseries\slshape G}} has an abelian Sylow \mbox{\texttt{\mdseries\slshape p}}-subgroup \mbox{\texttt{\mdseries\slshape p}} such that every subgroup of $P$ is normal in the Sylow normaliser ${\rm N}_G(P)$, and \texttt{false} otherwise. 
 
- This function is used to characterise soluble PST-groups: a group $G$ is a soluble PST-group if and only if $G$ satisfies ${\cal Y}_p$ for all primes $p$, and a group $G$ satisfies ${\cal Y}_p$ if and only if $G$ is $p$-nilpotent or $G$ has an abelian Sylow $p$-subgroup and satisfies ${\cal C}_p$. A group $G$ satisfies ${\cal C}_p$ if and only if every subgroup of a Sylow $p$-subgroup $P$ of $G$ is normal in the Sylow normaliser ${\rm N}_G(P)$ (see \texttt{IsCp} (\ref{IsCp})). Therefore this function checks whether $G$ has an abelian Sylow $p$-subgroup and $G$ satisfies ${\cal C}_p$. 
+ This function is used to characterise soluble PST-groups: a group $G$ is a soluble PST-group if and only if $G$ satisfies ${\cal Y}_p$ for all primes $p$, and a group $G$ satisfies ${\cal Y}_p$ if and only if $G$ is $p$-nilpotent or $G$ has an abelian Sylow $p$-subgroup and satisfies ${\cal C}_p$. A group $G$ satisfies ${\cal C}_p$ if and only if every subgroup of a Sylow $p$-subgroup $P$ of $G$ is normal in the Sylow normaliser ${\rm N}_G(P)$. Therefore this function checks whether $G$ has an abelian Sylow $p$-subgroup and $G$ satisfies ${\cal C}_p$. 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -1446,7 +1455,7 @@ T-group, PT-group, or PST-group.
 
  The algorithm used in this function to test whether a non-abelian $2$-group satisfies this condition checks that the Frattini subgroup of a Sylow $2$-subgroup $P$ of $G$ has order $2$ and that the centre of $P$ has exponent $2$ and index $4$. In this case, it computes the natural epimorphism from $P$ to $P/{\rm Z}(P)$ and it checks that the preimages of the generators of $P/{\rm Z}(P)$ under the natural epimorphism have order $4$. If all these conditions hold, then the Sylow $2$-subgroup is Dedekind, otherwise it is not. 
 
- This function sets the property \texttt{IsTGroup} (\ref{IsTGroup}) to \texttt{true} or \texttt{false} for the Sylow $p$-subgroup, according to the returned value. 
+ This function tries to set the property \texttt{IsTGroup} (\ref{IsTGroup}) to \texttt{true} or \texttt{false} for the Sylow $p$-subgroup. 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -1497,17 +1506,17 @@ Iwasawa triple for a group \mbox{\texttt{\mdseries\slshape G}}.
 
  This function computes an Iwasawa triple for the $p$-group \mbox{\texttt{\mdseries\slshape G}}, if it exists. If \mbox{\texttt{\mdseries\slshape G}} is not Iwasawa, the function returns \texttt{fail}. If \mbox{\texttt{\mdseries\slshape G}} is a direct product of an elementary abelian $2$-group and a quaternion group of order{\nobreakspace}$8$, it returns an empty list. If \mbox{\texttt{\mdseries\slshape G}} is Iwasawa, then the function returns an Iwasawa triple for \mbox{\texttt{\mdseries\slshape G}}. An Iwasawa triple for a group \mbox{\texttt{\mdseries\slshape G}} is a triple $(X, b, s)$ where $X$ is an abelian normal subgroup of $G$ such that $G/X$ is cyclic, $b$ is a generator of a cyclic supplement to $X$ in $G$, and $s$ is an integer such that for all $x \in X$, $x^b = x^{1+p^s}$. A theorem of Iwasawa states that a $p$-group $G$ has a modular subgroup lattice (or, equivalently, $G$ has all subgroups permutable) if and only if $G$ is a direct product of an elementary abelian $2$-group and a quaternion group of order{\nobreakspace}$8$ or $G$ has an Iwasawa triple $(X,b,s)$ with $s \geq 2$ if $p = 2$. 
 
- The method used to find an Iwasawa triple for non-abelian non-Dedekind groups
-begins with the whole group $G$. If the group is abelian, it returns the Iwasawa triple $(G,1,\log_p\exp(G))$. If it is not abelian, it constructs a list $l$ initially just containing{\nobreakspace}$G$. For every element $N$ of $l$, it takes the maximal subgroups of $N$ which are normal in $G$ and give cyclic quotients. If any of these subgroups is a member of an Iwasawa
-triple, it is computed with the function \texttt{IwasawaTripleWithSubgroup} (\ref{IwasawaTripleWithSubgroup}) and the value is returned. If not, $N$ is removed from the list $l$ and these maximal subgroups of $N$ are added to $l$. This continues until an Iwasawa triple is found or the list $l$ is empty. Since normal subgroups with cyclic quotient are contained in a
+ The method followed to find an Iwasawa triple for non-abelian non-Dedekind
+groups begins with the whole group $G$. If the group is abelian, it returns the Iwasawa triple $(G,1,\log_p\exp(G))$. If it is not abelian, it constructs a list $l$ formed by{\nobreakspace}$G$. For every element $N$ of $l$, it takes the maximal subgroups of $N$ which are normal in $G$ and give cyclic quotient. If any of these subgroups is a member of an Iwasawa
+triple, it is computed with the function \texttt{IwasawaTripleWithSubgroup} (\ref{IwasawaTripleWithSubgroup}) and the value is returned. If not, $N$ is removed from the $l$ and these maximal subgroups of $N$ are added to $l$. This follows until an Iwasawa triple is found or the list $l$ is empty. Since normal subgroups with cyclic quotient are contained in a
 unique maximal chain, no subgroup appears twice in this algorithm. 
 
- The algorithm also takes into account the fact that an Iwasawa group of
+ The algorithm also takes into account the fact that a Iwasawa group of
 exponent{\nobreakspace}$4$ must be abelian or a direct product of a quaternion group of
 order{\nobreakspace}$8$ and an elementary abelian $2$-group. 
 
- For the trivial group, it returns the triple containing the trivial group, its
-identity element, and the prime{\nobreakspace}$3$. 
+ For the trivial group, it returns the triple composed by the trivial group,
+its identity element, and the prime{\nobreakspace}$3$. 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -1538,7 +1547,7 @@ identity element, and the prime{\nobreakspace}$3$.
 
  The implementation of this function begins by searching for a pair of
 subgroups that do not permute. In this case, the function returns \texttt{false}. The maximum number of pairs to be checked here is controlled by the variable \texttt{PermutMaxTries} (\ref{PermutMaxTries}), which is assigned to $10$ by default. If no such pair is found, the algorithm looks for an Iwasawa
-triple for a Sylow $p$-subgroup $P$ of{\nobreakspace}$G$ with the help of the function \texttt{IwasawaTriple} (\ref{IwasawaTriple}). If there exists one such triple $(X,b,s)$ with $s \geq 2$ when $p = 2$ or the group is a direct product of a quaternion group of order{\nobreakspace}$8$ and an elementary abelian $2$-group, then it returns \texttt{true}; else it returns \texttt{false}. 
+triple for a Sylow $p$-subgroup $P$ of{\nobreakspace}$G$. If there exists one such triple $(X,b,s)$ with $s \geq 2$ when $p = 2$ or the group is a direct product of a quaternion group of order{\nobreakspace}$8$ and an elementary abelian $2$-group, then it returns \texttt{true}; else it returns \texttt{false}. 
 
  The values of the attributes \texttt{IsPTGroup} (\ref{IsPTGroup}) and \texttt{IsTGroup} (\ref{IsTGroup}) for $P$ are set by the function. 
 
@@ -1587,7 +1596,7 @@ two subgroups fail to have a certain property.
 
  This function returns \texttt{true} if the subgroups $A$ and $B$ of $G$ are mutually permutable subgroups, that is, every subgroup of $A$ permutes with $B$ and every subgroup of $B$ permutes with $A$, and \texttt{false} otherwise. The method used here checks only that $A$ permutes with all cyclic subgroups of $B$ and that $B$ permutes with all cyclic subgroups of $A$. 
 
- The method with two arguments assumes that $A$ and $B$ have a common supergroup. }
+ The method with two arguments assume that $A$ and $B$ have a common supergroup. }
 
  
 
@@ -1613,7 +1622,7 @@ two subgroups fail to have a certain property.
 
  This function returns \texttt{true} if the subgroups $A$ and $B$ of $G$ are totally permutable, that is, every subgroup of $A$ permutes with every subgroup of $B$, and \texttt{false} otherwise. The method used here checks only that every cyclic subgroup of $A$ permutes with every cyclic subgroup of $B$. 
 
- The method with two arguments assumes that $A$ and $B$ have a common supergroup. }
+ The method with two arguments assume that $A$ and $B$ have a common supergroup. }
 
  
 
@@ -1670,7 +1679,7 @@ two subgroups fail to have a certain property.
 }\hfill{\scriptsize (function)}}\\
 
 
- This function returns \texttt{true} if \mbox{\texttt{\mdseries\slshape A}} permutes with \mbox{\texttt{\mdseries\slshape B}} and all elements of \mbox{\texttt{\mdseries\slshape fB}} and \mbox{\texttt{\mdseries\slshape B}} permutes with all elements of \mbox{\texttt{\mdseries\slshape fA}}, and \texttt{false} otherwise. Here \mbox{\texttt{\mdseries\slshape A}} and \mbox{\texttt{\mdseries\slshape B}} are subgroups of \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape fA}} and \mbox{\texttt{\mdseries\slshape fB}} are, respectively, lists of subgroups of \mbox{\texttt{\mdseries\slshape A}} and \mbox{\texttt{\mdseries\slshape B}}, respectively. 
+ This function returns \texttt{true} if the subgroups \mbox{\texttt{\mdseries\slshape A}} and \mbox{\texttt{\mdseries\slshape B}} are mutually \mbox{\texttt{\mdseries\slshape f}}-permutable, and \texttt{false} otherwise. Here \mbox{\texttt{\mdseries\slshape A}} and \mbox{\texttt{\mdseries\slshape B}} are subgroups of \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape fA}} and \mbox{\texttt{\mdseries\slshape fB}} are, respectively, lists of subgroups of \mbox{\texttt{\mdseries\slshape A}} and \mbox{\texttt{\mdseries\slshape B}}, respectively. 
 
  In the version with four arguments, $A$ and $B$ are assumed to be subgroups of a common supergroup. }
 
@@ -1684,7 +1693,7 @@ two subgroups fail to have a certain property.
 }\hfill{\scriptsize (function)}}\\
 
 
- This function returns a pair of the form [ \mbox{\texttt{\mdseries\slshape A}}, \mbox{\texttt{\mdseries\slshape V}} ] with \mbox{\texttt{\mdseries\slshape V}} equal to \mbox{\texttt{\mdseries\slshape B}} or \mbox{\texttt{\mdseries\slshape V}} a subgroup in \mbox{\texttt{\mdseries\slshape fB}}, or of the form [{\nobreakspace}\mbox{\texttt{\mdseries\slshape W}}, \mbox{\texttt{\mdseries\slshape B}}{\nobreakspace}] with \mbox{\texttt{\mdseries\slshape W}} equal to \mbox{\texttt{\mdseries\slshape A}} or \mbox{\texttt{\mdseries\slshape W}} a subgroup in \mbox{\texttt{\mdseries\slshape fA}}, in which both subgroups do not permute, or \texttt{fail} if this pair does not exist. Here \mbox{\texttt{\mdseries\slshape A}} and \mbox{\texttt{\mdseries\slshape B}} are subgroups of \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape fA}} and \mbox{\texttt{\mdseries\slshape fB}} are lists of subgroups of \mbox{\texttt{\mdseries\slshape A}} and \mbox{\texttt{\mdseries\slshape B}}, respectively. 
+ This function returns a pair of the form [ \mbox{\texttt{\mdseries\slshape A}}, \mbox{\texttt{\mdseries\slshape V}} ] with \mbox{\texttt{\mdseries\slshape V}} a subgroup in \mbox{\texttt{\mdseries\slshape fB}} or \mbox{\texttt{\mdseries\slshape B}} or of the form [{\nobreakspace}\mbox{\texttt{\mdseries\slshape W}}, \mbox{\texttt{\mdseries\slshape B}}{\nobreakspace}] with \mbox{\texttt{\mdseries\slshape W}} a subgroup in \mbox{\texttt{\mdseries\slshape fA}} or \mbox{\texttt{\mdseries\slshape A}} in which both subgroups do not permute, or \texttt{fail} if this pair does not exist. Here \mbox{\texttt{\mdseries\slshape A}} and \mbox{\texttt{\mdseries\slshape B}} are subgroups of \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape fA}} and \mbox{\texttt{\mdseries\slshape fB}} are lists of subgroups of \mbox{\texttt{\mdseries\slshape A}} and \mbox{\texttt{\mdseries\slshape B}}, respectively. 
 
  In the version with four arguments, \mbox{\texttt{\mdseries\slshape A}} and \mbox{\texttt{\mdseries\slshape B}} are assumed to be subgroups of a common supergroup. }
 
@@ -1698,7 +1707,7 @@ two subgroups fail to have a certain property.
 }\hfill{\scriptsize (function)}}\\
 
 
- This function returns \texttt{true} if the subgroup \mbox{\texttt{\mdseries\slshape A}} and all elements of the list \mbox{\texttt{\mdseries\slshape fA}} permute with \mbox{\texttt{\mdseries\slshape B}} and all subgroups in the list \mbox{\texttt{\mdseries\slshape fB}}, and \texttt{false} otherwise. Here \mbox{\texttt{\mdseries\slshape A}} and \mbox{\texttt{\mdseries\slshape B}} are subgroups of \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape fA}} is a list of subgroups of \mbox{\texttt{\mdseries\slshape A}} and \mbox{\texttt{\mdseries\slshape fB}} is a list of subgroups of \mbox{\texttt{\mdseries\slshape B}}. 
+ This function returns \texttt{true} if the subgroup \mbox{\texttt{\mdseries\slshape A}} permutes with all subgroups in the list \mbox{\texttt{\mdseries\slshape fB}} and \mbox{\texttt{\mdseries\slshape B}} permutes with all subgroups in the list \mbox{\texttt{\mdseries\slshape fA}}, and \texttt{false} otherwise. Here \mbox{\texttt{\mdseries\slshape A}} and \mbox{\texttt{\mdseries\slshape B}} are subgroups of \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape fA}} is a list of subgroups of \mbox{\texttt{\mdseries\slshape A}} and \mbox{\texttt{\mdseries\slshape fB}} is a list of subgroups of \mbox{\texttt{\mdseries\slshape B}}. 
 
  In the version with four arguments, \mbox{\texttt{\mdseries\slshape A}} and \mbox{\texttt{\mdseries\slshape B}} are assumed to be subgroups of a common supergroup. }
 
@@ -1712,7 +1721,7 @@ two subgroups fail to have a certain property.
 }\hfill{\scriptsize (function)}}\\
 
 
- This function returns a pair of the form [ \mbox{\texttt{\mdseries\slshape U}}, \mbox{\texttt{\mdseries\slshape V}} ], with \mbox{\texttt{\mdseries\slshape U}} equal to \mbox{\texttt{\mdseries\slshape A}} or \mbox{\texttt{\mdseries\slshape U}} a subgroup in \mbox{\texttt{\mdseries\slshape fA}}, and \mbox{\texttt{\mdseries\slshape V}} equal to \mbox{\texttt{\mdseries\slshape B}} or \mbox{\texttt{\mdseries\slshape V}} a subgroup in \mbox{\texttt{\mdseries\slshape fB}}, in which both subgroups do not permute, or \texttt{fail} if this pair does not exist. Here \mbox{\texttt{\mdseries\slshape A}} and \mbox{\texttt{\mdseries\slshape B}} are subgroups of \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape fA}} is a list of subgroups of \mbox{\texttt{\mdseries\slshape A}} and \mbox{\texttt{\mdseries\slshape fB}} is a list of subgroups of \mbox{\texttt{\mdseries\slshape B}}. 
+ This function returns a pair of the form [ \mbox{\texttt{\mdseries\slshape U}}, \mbox{\texttt{\mdseries\slshape V}} ] with \mbox{\texttt{\mdseries\slshape U}} a subgroup in \mbox{\texttt{\mdseries\slshape fA}} or \mbox{\texttt{\mdseries\slshape A}} and \mbox{\texttt{\mdseries\slshape V}} a subgroup in \mbox{\texttt{\mdseries\slshape fB}} or \mbox{\texttt{\mdseries\slshape B}} in which both subgroups do not permute, or \texttt{fail} if this pair does not exist. Here \mbox{\texttt{\mdseries\slshape A}} and \mbox{\texttt{\mdseries\slshape B}} are subgroups of \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape fA}} is a list of subgroups of \mbox{\texttt{\mdseries\slshape A}} and \mbox{\texttt{\mdseries\slshape fB}} is a list of subgroups of \mbox{\texttt{\mdseries\slshape B}}. 
 
  In the version with two arguments, \mbox{\texttt{\mdseries\slshape A}} and \mbox{\texttt{\mdseries\slshape B}} are assumed to be subgroups of a common supergroup. 
 
@@ -1759,10 +1768,10 @@ of the functions of the package.
 }\hfill{\scriptsize (attribute)}}\\
 
 
- This function computes all subnormal subgroups of \mbox{\texttt{\mdseries\slshape G}}. The method used to obtain this list initially considers the lists of all
-normal subgroups of \mbox{\texttt{\mdseries\slshape G}} and then adds all normal subgroups to this list until no new subnormal
-subgroups appear. This computes the complete list of subgroups, not only a
-representative of each conjugacy class as other functions do. 
+ This function computes all subnormal subgroups of \mbox{\texttt{\mdseries\slshape G}}. The method used to obtain this list consists in beginning with the list of
+all normal subgroups of \mbox{\texttt{\mdseries\slshape G}} and by adding all normal subgroups of the subgroups in the list until no new
+subnormal subgroups appear. This computes the complete list of subgroups, not
+only a representative of each conjugacy class as other functions do. 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -1806,8 +1815,8 @@ representative of each conjugacy class as other functions do.
 }\hfill{\scriptsize (attribute)}}\\
 
 
- This attribute returns a list containing one Sylow subgroup for every prime
-dividing the size of{\nobreakspace}\mbox{\texttt{\mdseries\slshape G}}. If \mbox{\texttt{\mdseries\slshape G}} is soluble, then it returns a Sylow system or Sylow basis of \mbox{\texttt{\mdseries\slshape G}} by means of the function \texttt{SylowSystem} (\textbf{Reference: SylowSystem}) (a set containing a Sylow subgroup for each prime dividing the order of \mbox{\texttt{\mdseries\slshape G}} permuting in pairs). 
+ This attribute returns a list composed by one Sylow subgroup for every prime
+dividing the size of{\nobreakspace}\mbox{\texttt{\mdseries\slshape G}}. If \mbox{\texttt{\mdseries\slshape G}} is soluble, then it returns a Sylow system or Sylow basis of \mbox{\texttt{\mdseries\slshape G}} by means of the function \texttt{SylowSystem} (\textbf{Reference: SylowSystem}) (a set composed of a Sylow subgroup for each prime dividing the order of \mbox{\texttt{\mdseries\slshape G}} permuting in pairs). 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -1834,10 +1843,10 @@ dividing the size of{\nobreakspace}\mbox{\texttt{\mdseries\slshape G}}. If \mbox
 
 
  This property is \texttt{true} if \mbox{\texttt{\mdseries\slshape G}} is an SC-group, and \texttt{false} otherwise. A group \mbox{\texttt{\mdseries\slshape G}} is an SC-group if all its chief factors are simple. Note that a soluble group \mbox{\texttt{\mdseries\slshape G}} is an SC-group if and only if \mbox{\texttt{\mdseries\slshape G}} is supersoluble. The method used to check this property uses the chief series
-if it is available or the group is not soluble. 
+if its is available or the group is not soluble. 
 
- Since the methods for insoluble groups might rely on the computation of a
-chief series with the function \texttt{ChiefSeries} (\textbf{Reference: ChiefSeries}), they might not be available if the group is not given as a permutation
+ Since the methods for insoluble groups might on the computation of a chief
+series with the function \texttt{ChiefSeries} (\textbf{Reference: ChiefSeries}), they might not be available if the group is not given as a permutation
 group. 
 
  
@@ -1914,7 +1923,8 @@ group.
 }\hfill{\scriptsize (function)}}\\
 
 
- This auxiliary function returns the list of all generators of the cyclic $p$-group generated by the $p$-element $g$. Here $p$ is a prime number. 
+ This auxiliary function returns the list of all generators of the cyclic $p$-group generated by the $p$-element $g$. Here $p$ is a prime number. Since this function is not intended to be used in
+interactive mode, no check is done that the argument is a $p$-element. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@AllGeneratorsCyclicPGroup((1,2,3,4,5,6,7,8,9),3);|
   [ (1,2,3,4,5,6,7,8,9), (1,3,5,7,9,2,4,6,8), (1,5,9,4,8,3,7,2,6),

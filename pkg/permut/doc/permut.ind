@@ -1,43 +1,43 @@
 \begin{theindex}
 
-  \item \texttt  {AllGeneratorsCyclicPGroup}, \hyperpage{34}
-  \item \texttt  {AllSubnormalSubgroups}, \hyperpage{32}
-  \item \texttt  {AreMutuallyFPermutableSubgroups}, \hyperpage{29}
-  \item \texttt  {AreMutuallyPermutableSubgroups}, \hyperpage{28}
+  \item \texttt  {AllGeneratorsCyclicPGroup}, \hyperpage{32}
+  \item \texttt  {AllSubnormalSubgroups}, \hyperpage{30}
+  \item \texttt  {AreMutuallyFPermutableSubgroups}, \hyperpage{28}
+  \item \texttt  {AreMutuallyPermutableSubgroups}, \hyperpage{27}
   \item \texttt  {ArePermutableSubgroups}, \hyperpage{6}
-  \item \texttt  {AreTotallyFPermutableSubgroups}, \hyperpage{30}
-  \item \texttt  {AreTotallyPermutableSubgroups}, \hyperpage{29}
+  \item \texttt  {AreTotallyFPermutableSubgroups}, \hyperpage{29}
+  \item \texttt  {AreTotallyPermutableSubgroups}, \hyperpage{28}
 
   \indexspace
 
-  \item \texttt  {IsAbCp}, \hyperpage{25}
+  \item \texttt  {IsAbCp}, \hyperpage{24}
   \item \texttt  {IsConjugatePermutable}, \hyperpage{11}
   \item \texttt  {IsConjugatePermutableInParent}, \hyperpage{11}
-  \item \texttt  {IsCp}, \hyperpage{23}
-  \item \texttt  {IsCPTGroup}, \hyperpage{20}
-  \item \texttt  {IsDedekindSylow}, \hyperpage{25}
+  \item \texttt  {IsCp}, \hyperpage{22}
+  \item \texttt  {IsCPTGroup}, \hyperpage{19}
+  \item \texttt  {IsDedekindSylow}, \hyperpage{24}
   \item \texttt  {IsFPermutable}, \hyperpage{8}
-  \item \texttt  {IsIwasawaSylow}, \hyperpage{27}
+  \item \texttt  {IsIwasawaSylow}, \hyperpage{26}
   \item \texttt  {IsPermutable}, \hyperpage{7}
   \item \texttt  {IsPermutableInParent}, \hyperpage{7}
-  \item \texttt  {IsPSNTGroup}, \hyperpage{21}
-  \item \texttt  {IsPSTGroup}, \hyperpage{20}
-  \item \texttt  {IsPSupersoluble}, \hyperpage{22}
-  \item \texttt  {IsPSupersolvable}, \hyperpage{22}
-  \item \texttt  {IsPTGroup}, \hyperpage{19}
-  \item \texttt  {IsSCGroup}, \hyperpage{33}
+  \item \texttt  {IsPSNTGroup}, \hyperpage{20}
+  \item \texttt  {IsPSTGroup}, \hyperpage{19}
+  \item \texttt  {IsPSupersoluble}, \hyperpage{21}
+  \item \texttt  {IsPSupersolvable}, \hyperpage{21}
+  \item \texttt  {IsPTGroup}, \hyperpage{18}
+  \item \texttt  {IsSCGroup}, \hyperpage{31}
   \item \texttt  {IsSNPermutable}, \hyperpage{10}
   \item \texttt  {IsSNPermutableInParent}, \hyperpage{10}
   \item \texttt  {IsSPermutable}, \hyperpage{9}
   \item \texttt  {IsSPermutableInParent}, \hyperpage{9}
-  \item \texttt  {IsSylowTowerGroup}, \hyperpage{33}
-  \item \texttt  {IsTGroup}, \hyperpage{18}
+  \item \texttt  {IsSylowTowerGroup}, \hyperpage{31}
+  \item \texttt  {IsTGroup}, \hyperpage{17}
   \item \texttt  {IsWeaklyNormal}, \hyperpage{12}
   \item \texttt  {IsWeaklyNormalInParent}, \hyperpage{12}
   \item \texttt  {IsWeaklyPermutable}, \hyperpage{12}
   \item \texttt  {IsWeaklyPermutableInParent}, \hyperpage{12}
-  \item \texttt  {IsWeaklySPermutable}, \hyperpage{12}
-  \item \texttt  {IsWeaklySPermutableInParent}, \hyperpage{12}
+  \item \texttt  {IsWeaklySPermutable}, \hyperpage{11}
+  \item \texttt  {IsWeaklySPermutableInParent}, \hyperpage{11}
   \item \texttt  {IsWithSSubpermutiserCondition}, \hyperpage{14}
   \item \texttt  {IsWith}\discretionary {-}{}{}\texttt  {S}\discretionary {-}{}{}\texttt  {Subpermutiser}\discretionary {-}{}{}\texttt  {Condition}\discretionary {-}{}{}\texttt  {In}\discretionary {-}{}{}\texttt  {Parent}, 
 		\hyperpage{14}
@@ -52,14 +52,14 @@
 		\hyperpage{13}
   \item \texttt  {IsWithSubpermutiserCondition}, \hyperpage{13}
   \item \texttt  {IsWith}\discretionary {-}{}{}\texttt  {Subpermutiser}\discretionary {-}{}{}\texttt  {Condition}\discretionary {-}{}{}\texttt  {In}\discretionary {-}{}{}\texttt  {Parent}, 
-		\hyperpage{14}
+		\hyperpage{13}
   \item \texttt  {IsWithSubpermutizerCondition}, \hyperpage{13}
   \item \texttt  {IsWith}\discretionary {-}{}{}\texttt  {Subpermutizer}\discretionary {-}{}{}\texttt  {Condition}\discretionary {-}{}{}\texttt  {In}\discretionary {-}{}{}\texttt  {Parent}, 
 		\hyperpage{13}
-  \item \texttt  {IsXp}, \hyperpage{24}
-  \item \texttt  {IsYp}, \hyperpage{24}
-  \item \texttt  {IwasawaTriple}, \hyperpage{26}
-  \item \texttt  {IwasawaTripleWithSubgroup}, \hyperpage{25}
+  \item \texttt  {IsXp}, \hyperpage{23}
+  \item \texttt  {IsYp}, \hyperpage{23}
+  \item \texttt  {IwasawaTriple}, \hyperpage{25}
+  \item \texttt  {IwasawaTripleWithSubgroup}, \hyperpage{24}
 
   \indexspace
 
@@ -67,9 +67,9 @@
 		\hyperpage{11}
   \item \texttt  {One}\discretionary {-}{}{}\texttt  {Conjugate}\discretionary {-}{}{}\texttt  {Subgroup}\discretionary {-}{}{}\texttt  {Not}\discretionary {-}{}{}\texttt  {Permuting}\discretionary {-}{}{}\texttt  {With}\discretionary {-}{}{}\texttt  {In}\discretionary {-}{}{}\texttt  {Parent}, 
 		\hyperpage{11}
-  \item \texttt  {OneElementShowingNotWeaklyNormal}, \hyperpage{13}
+  \item \texttt  {OneElementShowingNotWeaklyNormal}, \hyperpage{12}
   \item \texttt  {One}\discretionary {-}{}{}\texttt  {Element}\discretionary {-}{}{}\texttt  {Showing}\discretionary {-}{}{}\texttt  {Not}\discretionary {-}{}{}\texttt  {Weakly}\discretionary {-}{}{}\texttt  {Normal}\discretionary {-}{}{}\texttt  {In}\discretionary {-}{}{}\texttt  {Parent}, 
-		\hyperpage{13}
+		\hyperpage{12}
   \item \texttt  {One}\discretionary {-}{}{}\texttt  {Element}\discretionary {-}{}{}\texttt  {Showing}\discretionary {-}{}{}\texttt  {Not}\discretionary {-}{}{}\texttt  {Weakly}\discretionary {-}{}{}\texttt  {Permutable}, 
 		\hyperpage{12}
   \item \texttt  {One}\discretionary {-}{}{}\texttt  {Element}\discretionary {-}{}{}\texttt  {Showing}\discretionary {-}{}{}\texttt  {Not}\discretionary {-}{}{}\texttt  {Weakly}\discretionary {-}{}{}\texttt  {Permutable}\discretionary {-}{}{}\texttt  {In}\discretionary {-}{}{}\texttt  {Parent}, 
@@ -80,21 +80,21 @@
 		\hyperpage{12}
   \item \texttt  {OneFSubgroupNotPermutingWith}, \hyperpage{9}
   \item \texttt  {One}\discretionary {-}{}{}\texttt  {Pair}\discretionary {-}{}{}\texttt  {Showing}\discretionary {-}{}{}\texttt  {Not}\discretionary {-}{}{}\texttt  {Mutually}\discretionary {-}{}{}\texttt  {F}\discretionary {-}{}{}\texttt  {Permutable}\discretionary {-}{}{}\texttt  {Subgroups}, 
-		\hyperpage{30}
-  \item \texttt  {One}\discretionary {-}{}{}\texttt  {Pair}\discretionary {-}{}{}\texttt  {Showing}\discretionary {-}{}{}\texttt  {Not}\discretionary {-}{}{}\texttt  {Mutually}\discretionary {-}{}{}\texttt  {Permutable}\discretionary {-}{}{}\texttt  {Subgroups}, 
-		\hyperpage{28}
-  \item \texttt  {One}\discretionary {-}{}{}\texttt  {Pair}\discretionary {-}{}{}\texttt  {Showing}\discretionary {-}{}{}\texttt  {Not}\discretionary {-}{}{}\texttt  {Totally}\discretionary {-}{}{}\texttt  {F}\discretionary {-}{}{}\texttt  {Permutable}\discretionary {-}{}{}\texttt  {Subgroups}, 
-		\hyperpage{30}
-  \item \texttt  {One}\discretionary {-}{}{}\texttt  {Pair}\discretionary {-}{}{}\texttt  {Showing}\discretionary {-}{}{}\texttt  {Not}\discretionary {-}{}{}\texttt  {Totally}\discretionary {-}{}{}\texttt  {Permutable}\discretionary {-}{}{}\texttt  {Subgroups}, 
 		\hyperpage{29}
+  \item \texttt  {One}\discretionary {-}{}{}\texttt  {Pair}\discretionary {-}{}{}\texttt  {Showing}\discretionary {-}{}{}\texttt  {Not}\discretionary {-}{}{}\texttt  {Mutually}\discretionary {-}{}{}\texttt  {Permutable}\discretionary {-}{}{}\texttt  {Subgroups}, 
+		\hyperpage{27}
+  \item \texttt  {One}\discretionary {-}{}{}\texttt  {Pair}\discretionary {-}{}{}\texttt  {Showing}\discretionary {-}{}{}\texttt  {Not}\discretionary {-}{}{}\texttt  {Totally}\discretionary {-}{}{}\texttt  {F}\discretionary {-}{}{}\texttt  {Permutable}\discretionary {-}{}{}\texttt  {Subgroups}, 
+		\hyperpage{29}
+  \item \texttt  {One}\discretionary {-}{}{}\texttt  {Pair}\discretionary {-}{}{}\texttt  {Showing}\discretionary {-}{}{}\texttt  {Not}\discretionary {-}{}{}\texttt  {Totally}\discretionary {-}{}{}\texttt  {Permutable}\discretionary {-}{}{}\texttt  {Subgroups}, 
+		\hyperpage{28}
   \item \texttt  {One}\discretionary {-}{}{}\texttt  {Subgroup}\discretionary {-}{}{}\texttt  {In}\discretionary {-}{}{}\texttt  {Which}\discretionary {-}{}{}\texttt  {Subnormal}\discretionary {-}{}{}\texttt  {Not}\discretionary {-}{}{}\texttt  {Normal}, 
 		\hyperpage{13}
   \item \texttt  {One}\discretionary {-}{}{}\texttt  {Subgroup}\discretionary {-}{}{}\texttt  {In}\discretionary {-}{}{}\texttt  {Which}\discretionary {-}{}{}\texttt  {Subnormal}\discretionary {-}{}{}\texttt  {Not}\discretionary {-}{}{}\texttt  {Normal}\discretionary {-}{}{}\texttt  {In}\discretionary {-}{}{}\texttt  {Parent}, 
 		\hyperpage{13}
   \item \texttt  {One}\discretionary {-}{}{}\texttt  {Subgroup}\discretionary {-}{}{}\texttt  {In}\discretionary {-}{}{}\texttt  {Which}\discretionary {-}{}{}\texttt  {Subnormal}\discretionary {-}{}{}\texttt  {Not}\discretionary {-}{}{}\texttt  {Permutable}, 
-		\hyperpage{14}
+		\hyperpage{13}
   \item \texttt  {One}\discretionary {-}{}{}\texttt  {Subgroup}\discretionary {-}{}{}\texttt  {In}\discretionary {-}{}{}\texttt  {Which}\discretionary {-}{}{}\texttt  {Subnormal}\discretionary {-}{}{}\texttt  {Not}\discretionary {-}{}{}\texttt  {Permutable}\discretionary {-}{}{}\texttt  {In}\discretionary {-}{}{}\texttt  {Parent}, 
-		\hyperpage{14}
+		\hyperpage{13}
   \item \texttt  {One}\discretionary {-}{}{}\texttt  {Subgroup}\discretionary {-}{}{}\texttt  {In}\discretionary {-}{}{}\texttt  {Which}\discretionary {-}{}{}\texttt  {Subnormal}\discretionary {-}{}{}\texttt  {Not}\discretionary {-}{}{}\texttt  {S}\discretionary {-}{}{}\texttt  {Permutable}, 
 		\hyperpage{14}
   \item \texttt  {One}\discretionary {-}{}{}\texttt  {Subgroup}\discretionary {-}{}{}\texttt  {In}\discretionary {-}{}{}\texttt  {Which}\discretionary {-}{}{}\texttt  {Subnormal}\discretionary {-}{}{}\texttt  {Not}\discretionary {-}{}{}\texttt  {S}\discretionary {-}{}{}\texttt  {Permutable}\discretionary {-}{}{}\texttt  {In}\discretionary {-}{}{}\texttt  {Parent}, 
@@ -102,11 +102,11 @@
   \item \texttt  {OneSubgroupNotPermutingWith}, \hyperpage{7}
   \item \texttt  {OneSubgroupNotPermutingWithInParent}, \hyperpage{7}
   \item \texttt  {One}\discretionary {-}{}{}\texttt  {Subnormal}\discretionary {-}{}{}\texttt  {Non}\discretionary {-}{}{}\texttt  {Conjugate}\discretionary {-}{}{}\texttt  {Permutable}\discretionary {-}{}{}\texttt  {Subgroup}, 
-		\hyperpage{18}
-  \item \texttt  {OneSubnormalNonNormalSubgroup}, \hyperpage{16}
-  \item \texttt  {OneSubnormalNonPermutableSubgroup}, \hyperpage{17}
-  \item \texttt  {OneSubnormalNonSNPermutableSubgroup}, \hyperpage{18}
-  \item \texttt  {OneSubnormalNonSPermutableSubgroup}, \hyperpage{17}
+		\hyperpage{17}
+  \item \texttt  {OneSubnormalNonNormalSubgroup}, \hyperpage{15}
+  \item \texttt  {OneSubnormalNonPermutableSubgroup}, \hyperpage{16}
+  \item \texttt  {OneSubnormalNonSNPermutableSubgroup}, \hyperpage{17}
+  \item \texttt  {OneSubnormalNonSPermutableSubgroup}, \hyperpage{16}
   \item \texttt  {OneSylowSubgroupNotPermutingWith}, \hyperpage{10}
   \item \texttt  {One}\discretionary {-}{}{}\texttt  {Sylow}\discretionary {-}{}{}\texttt  {Subgroup}\discretionary {-}{}{}\texttt  {Not}\discretionary {-}{}{}\texttt  {Permuting}\discretionary {-}{}{}\texttt  {With}\discretionary {-}{}{}\texttt  {In}\discretionary {-}{}{}\texttt  {Parent}, 
 		\hyperpage{10}
@@ -116,13 +116,13 @@
 
   \indexspace
 
-  \item \texttt  {Permutiser}, \hyperpage{34}
-  \item \texttt  {Permutizer}, \hyperpage{34}
+  \item \texttt  {Permutiser}, \hyperpage{32}
+  \item \texttt  {Permutizer}, \hyperpage{32}
   \item \texttt  {PermutMaxTries}, \hyperpage{7}
-  \item \texttt  {PrimesDividingSize}, \hyperpage{32}
+  \item \texttt  {PrimesDividingSize}, \hyperpage{30}
 
   \indexspace
 
-  \item \texttt  {SylowSubgroups}, \hyperpage{33}
+  \item \texttt  {SylowSubgroups}, \hyperpage{31}
 
 \end{theindex}
