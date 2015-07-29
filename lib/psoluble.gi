@@ -2,7 +2,7 @@
 ##
 #W  psoluble.gi              Permutability GAP library            ABB&ECL&RER
 ##
-#H  @(#)$Id: psoluble.gi,v 1.00 2014/04/14 21:54:00 gap Exp $
+#H  @(#)$Id: psoluble.gi,v 0.04 2014/01/16 09:54:00 gap Exp $
 ##
 #Y  Copyright (C)  2000-2014 Adolfo Ballester-Bolinches, Enric Cosme-Ll\'opez
 #Y                           and Ramon Esteban-Romero
@@ -11,7 +11,7 @@
 ##  and p-nilpotent groups
 ##
 Revision.psoluble_gi := 
-  "@(#)$Id: psoluble.gi,v 1.00 2014/04/14 21:54:00 gap Exp $";
+  "@(#)$Id: psoluble.gi,v 0.04 2014/01/16 09:54:00 gap Exp $";
 
 
 

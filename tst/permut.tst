@@ -3,7 +3,7 @@
 #W  permut.tst                GAP tests                    ABB&ECL&RER
 ##
 ##
-#Y  Copyright (C)  2014,  Adolfo Ballester-Bolinches, Enric Cosme-Ll\'opez,
+#Y  Copyright (C)  2015,  Adolfo Ballester-Bolinches, Enric Cosme-Ll\'opez,
 ##                        and Ramon Esteban-Romero
 ##
 ##  This  file  tests  some functions that  deal with permutability
@@ -11,7 +11,6 @@
 gap> START_TEST("permut.tst");
 
 gap> LoadPackage("permut", false);;
-#I Package ``permut'' has been loaded.
 gap> sym4:=SymmetricGroup(4);
 Sym( [ 1 .. 4 ] )
 gap> ArePermutableSubgroups(sym4, Subgroup(sym4, [(1,2)(3,4)]), Subgroup(sym4, [(1,2,3)]));

@@ -2,7 +2,7 @@
 ##
 #W  permut.gd              Permutability GAP library              ABB&ECL&RER
 ##
-#H  @(#)$Id: permut.gd,v 1.00 2014/04/14 21:52:49 gap Exp $
+#H  @(#)$Id: permut.gd,v 0.04 2014/01/16 09:52:49 gap Exp $
 ##
 #Y  Copyright (C)  2000-2014 Adolfo Ballester-Bolinches, Enric Cosme-Ll\'opez
 #Y                           and Ramon Esteban-Romero
@@ -10,7 +10,7 @@
 ##  This file contains declarations of methods for permutability
 ##
 Revision.permut_gd := 
-  "@(#)$Id: permut.gd,v 1.00 2014/04/14 21:52:49 gap Exp $";
+  "@(#)$Id: permut.gd,v 0.04 2014/01/16 09:52:49 gap Exp $";
 
 #############################################################################
 ##

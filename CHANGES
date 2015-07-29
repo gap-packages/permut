@@ -1,11 +1,16 @@
+v1.02:
+- Removed a repetition in one name in PackageInfo.g, as suggested by Alexander Konovalov.
+- Corrected test.
+- Added CSS to tar.bz.
+
 v1.01: 
-- Changed the path of PackageInfo.g, as suggested by Alexander Konovalov
+- Changed the path of PackageInfo.g, as suggested by Alexander Konovalov.
 - Corected two typos in the manual.
   
 
 v1.00: The package has been accepted by the GAP Council. Changes proposed by Alice Niemeyer and the anonymous referee:
 - Added in AllGeneratorsCyclicPGroup a test for the arguments to be of the correct type.
-- Minor changes to the documentation
+- Minor changes to the documentation.
 
 
 
