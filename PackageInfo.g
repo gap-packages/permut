@@ -2,7 +2,7 @@
 ##
 #W  PackageInfo.g              Permutability GAP library          ABB&ECL&RER
 ##
-#H  @(#)$Id: PackageInfo.g,v 1.01 2015/07/29 13:52:49 gap Exp $
+#H  @(#)$Id: PackageInfo.g,v 1.03 2015/07/30 16:20:39 gap Exp $
 ##
 #Y  Copyright (C)  2000-2015 Adolfo Ballester-Bolinches, Enric Cosme-Ll\'opez and
 #Y                           Ramon Esteban-Romero
@@ -11,10 +11,10 @@
 SetPackageInfo( rec(
         PackageName := "permut",
         Subtitle:= "A package to deal with permutability in finite groups",
-        Date:="29/07/2015",
+        Date:="30/07/2015",
         PackageInfoURL:="http://www.uv.es/permut/gap/permut/PackageInfo.g",
         AbstractHTML:="This package provides functions for computing with permutability in finite groups.",
-        Version := "1.02",
+        Version := "1.03",
         README_URL := Concatenation(
                               [
                                "http://www.uv.es/permut/gap/permut-",
