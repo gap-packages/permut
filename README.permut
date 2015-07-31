@@ -1,7 +1,7 @@
 The package `permut' contains some functions to deal with
 permutability in finite groups.
 
-To install this package, just decompress the file permut-1.01.tar.bz2
+To install this package, just decompress the file permut-1.03.tar.bz2
 in a directory in the pkg hierarchy of the GAP installation. It
 requires the package `format' to be previously installed. Use then
   LoadPackage("permut");

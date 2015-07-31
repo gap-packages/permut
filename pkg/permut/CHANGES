@@ -1,7 +1,10 @@
+v1.03:
+- Replaced the version number in the manual (it was incorrect).
+
 v1.02:
 - Removed a repetition in one name in PackageInfo.g, as suggested by Alexander Konovalov.
 - Corrected test.
-- Added CSS to tar.bz.
+- Added CSS and LAB files to tar.bz.
 
 v1.01: 
 - Changed the path of PackageInfo.g, as suggested by Alexander Konovalov.

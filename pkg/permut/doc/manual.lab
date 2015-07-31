@@ -1,0 +1,108 @@
+\GAPDocLabFile{permut}
+\makelabel{permut:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{permut:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{permut:Introduction to the PERMUT Package}{1}{X7CFD56687E07E513}
+\makelabel{permut:Installation and Help of the PERMUT Package}{2}{X7AD658FC8472E37B}
+\makelabel{permut:Permutability of Subgroups in Finite Groups}{3}{X7B87CECD83EA77DF}
+\makelabel{permut:Permutability functions}{3.1}{X834D77E17960C0B7}
+\makelabel{permut:Embedding properties related to permutability}{3.2}{X875BEB9B7D0DBC9A}
+\makelabel{permut:T-groups, PT-groups, and PST-groups}{4}{X7E7EFDD1878F599D}
+\makelabel{permut:"One" functions}{4.1}{X86666B808617161E}
+\makelabel{permut:Group properties related to permutability}{4.2}{X7B13DA0A800D8635}
+\makelabel{permut:Local Functions in the PERMUT Package}{5}{X8785816E84A9751E}
+\makelabel{permut:A Local Function for Supersolubility}{5.1}{X7E8389FD7DE9769C}
+\makelabel{permut:Local functions for T-groups, PT-groups, and PST-groups}{5.2}{X7C4B2A9A7F2D7E0B}
+\makelabel{permut:Auxiliary Functions for T-groups, PT-groups, and PST-groups}{5.3}{X8540D4B679519F8B}
+\makelabel{permut:Totally and Mutually Permutable Products}{6}{X82E82E45786E1B22}
+\makelabel{permut:Functions for Mutually and Totally Permutable Products}{6.1}{X85291E9D86736F21}
+\makelabel{permut:Other Functions in the PERMUT Package}{7}{X813075638264F9A9}
+\makelabel{permut:Functions}{7.1}{X86FA580F8055B274}
+\makelabel{permut:Bibliography}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{permut:References}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{permut:Index}{Ind}{X83A0356F839C696F}
+\makelabel{permut:ArePermutableSubgroups}{3.1.1}{X862727A87C26B10B}
+\makelabel{permut:PermutMaxTries}{3.2.1}{X85CFBEBB83245E3A}
+\makelabel{permut:IsPermutable}{3.2.2}{X80C15D427EC11A5F}
+\makelabel{permut:IsPermutableInParent}{3.2.2}{X80C15D427EC11A5F}
+\makelabel{permut:OneSubgroupNotPermutingWith}{3.2.3}{X8244918D7D1C2703}
+\makelabel{permut:OneSubgroupNotPermutingWithInParent}{3.2.3}{X8244918D7D1C2703}
+\makelabel{permut:IsFPermutable}{3.2.4}{X865C7F81823FFA10}
+\makelabel{permut:OneFSubgroupNotPermutingWith}{3.2.5}{X826D28757824F83E}
+\makelabel{permut:IsSPermutable}{3.2.6}{X7BA6690983912C09}
+\makelabel{permut:IsSPermutableInParent}{3.2.6}{X7BA6690983912C09}
+\makelabel{permut:OneSylowSubgroupNotPermutingWith}{3.2.7}{X83E103AF7C3DC9B7}
+\makelabel{permut:OneSylowSubgroupNotPermutingWithInParent}{3.2.7}{X83E103AF7C3DC9B7}
+\makelabel{permut:IsSNPermutable}{3.2.8}{X86A62A52831BE00E}
+\makelabel{permut:IsSNPermutableInParent}{3.2.8}{X86A62A52831BE00E}
+\makelabel{permut:OneSystemNormaliserNotPermutingWith}{3.2.9}{X83D1BF5778D6790A}
+\makelabel{permut:OneSystemNormaliserNotPermutingWithInParent}{3.2.9}{X83D1BF5778D6790A}
+\makelabel{permut:IsConjugatePermutable}{3.2.10}{X7B2E052E7F9C4251}
+\makelabel{permut:IsConjugatePermutableInParent}{3.2.10}{X7B2E052E7F9C4251}
+\makelabel{permut:OneConjugateSubgroupNotPermutingWith}{3.2.11}{X809E1C8E8384ADE8}
+\makelabel{permut:OneConjugateSubgroupNotPermutingWithInParent}{3.2.11}{X809E1C8E8384ADE8}
+\makelabel{permut:IsWeaklySPermutable}{3.2.12}{X7AC58CFF87770C6C}
+\makelabel{permut:IsWeaklySPermutableInParent}{3.2.12}{X7AC58CFF87770C6C}
+\makelabel{permut:OneElementShowingNotWeaklySPermutable}{3.2.13}{X870923B4798E5097}
+\makelabel{permut:OneElementShowingNotWeaklySPermutableInParent}{3.2.13}{X870923B4798E5097}
+\makelabel{permut:IsWeaklyPermutable}{3.2.14}{X85E85FBF78DAB08E}
+\makelabel{permut:IsWeaklyPermutableInParent}{3.2.14}{X85E85FBF78DAB08E}
+\makelabel{permut:OneElementShowingNotWeaklyPermutable}{3.2.15}{X8427C8DD78732D56}
+\makelabel{permut:OneElementShowingNotWeaklyPermutableInParent}{3.2.15}{X8427C8DD78732D56}
+\makelabel{permut:IsWeaklyNormal}{3.2.16}{X84BE89EF8140D2C0}
+\makelabel{permut:IsWeaklyNormalInParent}{3.2.16}{X84BE89EF8140D2C0}
+\makelabel{permut:OneElementShowingNotWeaklyNormal}{3.2.17}{X82C8AE027E578ACF}
+\makelabel{permut:OneElementShowingNotWeaklyNormalInParent}{3.2.17}{X82C8AE027E578ACF}
+\makelabel{permut:IsWithSubnormalizerCondition}{3.2.18}{X872EA72A7CEC3E65}
+\makelabel{permut:IsWithSubnormalizerConditionInParent}{3.2.18}{X872EA72A7CEC3E65}
+\makelabel{permut:IsWithSubnormaliserCondition}{3.2.18}{X872EA72A7CEC3E65}
+\makelabel{permut:IsWithSubnormaliserConditionInParent}{3.2.18}{X872EA72A7CEC3E65}
+\makelabel{permut:OneSubgroupInWhichSubnormalNotNormal}{3.2.19}{X7FBEC9DD7C8AED52}
+\makelabel{permut:OneSubgroupInWhichSubnormalNotNormalInParent}{3.2.19}{X7FBEC9DD7C8AED52}
+\makelabel{permut:IsWithSubpermutizerCondition}{3.2.20}{X87CA542C7E1FEEF3}
+\makelabel{permut:IsWithSubpermutizerConditionInParent}{3.2.20}{X87CA542C7E1FEEF3}
+\makelabel{permut:IsWithSubpermutiserCondition}{3.2.20}{X87CA542C7E1FEEF3}
+\makelabel{permut:IsWithSubpermutiserConditionInParent}{3.2.20}{X87CA542C7E1FEEF3}
+\makelabel{permut:OneSubgroupInWhichSubnormalNotPermutable}{3.2.21}{X79648B4F8758E187}
+\makelabel{permut:OneSubgroupInWhichSubnormalNotPermutableInParent}{3.2.21}{X79648B4F8758E187}
+\makelabel{permut:IsWithSSubpermutizerCondition}{3.2.22}{X831F5B8787BB111F}
+\makelabel{permut:IsWithSSubpermutizerConditionInParent}{3.2.22}{X831F5B8787BB111F}
+\makelabel{permut:IsWithSSubpermutiserCondition}{3.2.22}{X831F5B8787BB111F}
+\makelabel{permut:IsWithSSubpermutiserConditionInParent}{3.2.22}{X831F5B8787BB111F}
+\makelabel{permut:OneSubgroupInWhichSubnormalNotSPermutable}{3.2.23}{X7AC9002B7D5AB2DA}
+\makelabel{permut:OneSubgroupInWhichSubnormalNotSPermutableInParent}{3.2.23}{X7AC9002B7D5AB2DA}
+\makelabel{permut:OneSubnormalNonNormalSubgroup}{4.1.1}{X7E15C5F778535A28}
+\makelabel{permut:OneSubnormalNonPermutableSubgroup}{4.1.2}{X7F5EE21F85A8D14F}
+\makelabel{permut:OneSubnormalNonSPermutableSubgroup}{4.1.3}{X7D7717657B9C7BEB}
+\makelabel{permut:OneSubnormalNonConjugatePermutableSubgroup}{4.1.4}{X7878496C869CB90C}
+\makelabel{permut:OneSubnormalNonSNPermutableSubgroup}{4.1.5}{X7B23E3857CA178FE}
+\makelabel{permut:IsTGroup}{4.2.1}{X7930E5AD817BE4B3}
+\makelabel{permut:IsPTGroup}{4.2.2}{X7CF2634F84EC572B}
+\makelabel{permut:IsPSTGroup}{4.2.3}{X7BB4D5A782FF5B0E}
+\makelabel{permut:IsCPTGroup}{4.2.4}{X8789176282320022}
+\makelabel{permut:IsPSNTGroup}{4.2.5}{X7B9EBEA07DBE246F}
+\makelabel{permut:IsPSupersolvable}{5.1.1}{X7B9F19A37F4A5B35}
+\makelabel{permut:IsPSupersoluble}{5.1.1}{X7B9F19A37F4A5B35}
+\makelabel{permut:IsCp}{5.2.1}{X780657F179FFB7EE}
+\makelabel{permut:IsXp}{5.2.2}{X82953B4878F88327}
+\makelabel{permut:IsYp}{5.2.3}{X8304885C78E4A584}
+\makelabel{permut:IsAbCp}{5.3.1}{X8775CAFD80D3FC02}
+\makelabel{permut:IsDedekindSylow}{5.3.2}{X7A6372D3871E8E55}
+\makelabel{permut:IwasawaTripleWithSubgroup}{5.3.3}{X812C3A017F534CC0}
+\makelabel{permut:IwasawaTriple}{5.3.4}{X7E86B21086879C48}
+\makelabel{permut:IsIwasawaSylow}{5.3.5}{X8121A92F7EABEA0C}
+\makelabel{permut:AreMutuallyPermutableSubgroups}{6.1.1}{X876F4E0D7C796134}
+\makelabel{permut:OnePairShowingNotMutuallyPermutableSubgroups}{6.1.2}{X80225ABC79C7875F}
+\makelabel{permut:AreTotallyPermutableSubgroups}{6.1.3}{X7D58DFE57AA4573B}
+\makelabel{permut:OnePairShowingNotTotallyPermutableSubgroups}{6.1.4}{X7B51474D878ACD11}
+\makelabel{permut:AreMutuallyFPermutableSubgroups}{6.1.5}{X823C6D68813B3AC8}
+\makelabel{permut:OnePairShowingNotMutuallyFPermutableSubgroups}{6.1.6}{X83E0517A800AB839}
+\makelabel{permut:AreTotallyFPermutableSubgroups}{6.1.7}{X7B9DA1C2834CA53D}
+\makelabel{permut:OnePairShowingNotTotallyFPermutableSubgroups}{6.1.8}{X7CD0B5737A25C1AD}
+\makelabel{permut:AllSubnormalSubgroups}{7.1.1}{X81EA23787BCD8633}
+\makelabel{permut:PrimesDividingSize}{7.1.2}{X858C07DA815A2E9A}
+\makelabel{permut:SylowSubgroups}{7.1.3}{X7B07AAD37F7CEDEB}
+\makelabel{permut:IsSCGroup}{7.1.4}{X7E01D1C47814DA3C}
+\makelabel{permut:IsSylowTowerGroup}{7.1.5}{X798736C17DD23F8A}
+\makelabel{permut:Permutizer}{7.1.6}{X81FCDD7C7A5D1658}
+\makelabel{permut:Permutiser}{7.1.6}{X81FCDD7C7A5D1658}
+\makelabel{permut:AllGeneratorsCyclicPGroup}{7.1.7}{X7D47DF77826C1BE0}

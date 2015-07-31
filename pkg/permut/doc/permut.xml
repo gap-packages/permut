@@ -9,7 +9,7 @@
 <TitlePage>
   <Title><Package>PERMUT</Package></Title>
   <Subtitle>A &GAP;4 package to deal with permutability</Subtitle>
-  <Version>Version 1.02</Version>
+  <Version>Version 1.03</Version>
   <Author>Adolfo Ballester-Bolinches
   <Email>Adolfo.Balester@uv.es</Email>
   <Address>Departament d'Àlgebra, Universitat de València</Address></Author>
@@ -123,7 +123,7 @@ which have helped us to improve the package and its documentation.
 
 Since all functions of this package are written in the &GAP; language,
 it is enough to unpack the archive file in a directory in the <F>pkg</F>
-hierarchy of your &GAP; 4 distribution. It has been tested on version 4.7.2 of
+hierarchy of your &GAP; 4 distribution. It has been tested on version 4.7.4 of
 &GAP;.
 <P/>
 
@@ -144,7 +144,7 @@ by Bettina Eick (http://www-public.tu-bs.de:8080/~beick) and
    Charles R.B. Wright (http://www.uoregon.edu/~wright).
 -----------------------------------------------------------------------------
 #I --------------------------------------------------------
-#I Loading the GAP package ``permut'' in version 0.04
+#I Loading the GAP package ``permut'' in version 1.03
 #I (a package to deal with permutability in finite groups)
 #I by Adolfo Ballester-Bolinches &lt;Adolfo.Ballester@uv.es&gt;,
 #I    Enric Cosme-Ll\'opez &lt;Enric.Cosme@uv.es&gt;,

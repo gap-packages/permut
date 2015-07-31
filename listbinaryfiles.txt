@@ -6,6 +6,7 @@ permut/doc/bibxmlext.dtd
 permut/doc/permut.ind
 permut/doc/gapdoc.dtd
 permut/doc/permut.ilg
+permut/doc/manual.lab
 permut/doc/permut.brf
 permut/doc/manual.six
 permut/doc/permut.out
