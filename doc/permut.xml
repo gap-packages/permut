@@ -143,17 +143,13 @@ Loading  FORMAT 1.3 (Formations of Finite Soluble Groups)
 by Bettina Eick (http://www-public.tu-bs.de:8080/~beick) and
    Charles R.B. Wright (http://www.uoregon.edu/~wright).
 -----------------------------------------------------------------------------
-#I --------------------------------------------------------
-#I Loading the GAP package ``permut'' in version 1.03
-#I (a package to deal with permutability in finite groups)
-#I by Adolfo Ballester-Bolinches &lt;Adolfo.Ballester@uv.es&gt;,
-#I    Enric Cosme-Ll\'opez &lt;Enric.Cosme@uv.es&gt;,
-#I    and Ramon Esteban-Romero &lt;Ramon.Esteban@uv.es&gt; /
-#I                             &lt;resteban@mat.upv.es&gt;.
-#I
-#I    Use ``?permut:'' for help.
-#I --------------------------------------------------------
-
+-----------------------------------------------------------------------------
+Loading  permut 1.03 (PERMUT: A package to deal with permutability in finite groups)
+by Adolfo Ballester-Bolinches (Adolfo.Ballester@uv.es),
+   Enric Cosme-Ll\'opez (http://www.uv.es/coslloen), and
+   Ram\'on Esteban-Romero (http://www.uv.es/estebanr).
+Homepage: http://www.uv.es/permut/gap/permut-1.03/
+-----------------------------------------------------------------------------
 true
 </Log>
 <P/>

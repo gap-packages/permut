@@ -43,20 +43,6 @@ SetPackageInfo( rec(
                       CommunicatedBy := "Alice Niemeyer (Perth)",
                       # format: mm/yyyy
                       AcceptDate := "04/2014",
-                      BannerString:= Concatenation( [
-                              "#I --------------------------------------------------------\n",
-                              "#I Loading the GAP package ``",
-                              ~.PackageName,
-                              "'' in version ",
-                              ~.Version, "\n",
-                              "#I (a package to deal with permutability in finite groups)\n",           
-                              "#I by Adolfo Ballester-Bolinches <Adolfo.Ballester@uv.es>,\n",
-                              "#I    Enric Cosme-Ll\\'opez <Enric.Cosme@uv.es>,\n",
-                              "#I    and Ramon Esteban-Romero <Ramon.Esteban@uv.es> /\n",
-                              "#I                             <resteban@mat.upv.es>.\n",
-                              "#I\n#I\n#I    Use ``?permut:'' for help.\n",
-                              "#I --------------------------------------------------------\n","\n"
-                              ] ),
                       Persons:=[
                               rec(
                                 LastName:="Ballester-Bolinches",
