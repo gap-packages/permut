@@ -9,9 +9,6 @@
 ##
 ##  This file contains methods for permutability
 ##
-Revision.permut_gi := 
-  "@(#)$Id: permut.gi,v 0.04 2014/01/16 09:53:49 gap Exp $";
-
 
 #############################################################################
 ##

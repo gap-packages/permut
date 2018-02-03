@@ -9,8 +9,6 @@
 ##
 ##  This file contains declarations of methods for permutability
 ##
-Revision.permut_gd := 
-  "@(#)$Id: permut.gd,v 0.04 2014/01/16 09:52:49 gap Exp $";
 
 #############################################################################
 ##

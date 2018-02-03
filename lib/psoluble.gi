@@ -10,10 +10,6 @@
 ##  This file contains methods for p-soluble, p-supersoluble,
 ##  and p-nilpotent groups
 ##
-Revision.psoluble_gi := 
-  "@(#)$Id: psoluble.gi,v 0.04 2014/01/16 09:54:00 gap Exp $";
-
-
 
 
 #############################################################################

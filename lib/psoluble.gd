@@ -10,8 +10,6 @@
 ##  This file contains declaration for p-soluble,
 ##  p-supersoluble, p-nilpotent groups
 ##
-Revision.psoluble_gd := 
-  "@(#)$Id: psoluble.gd,v 0.04 2014/01/16 09:55:00 gap Exp $";
 
 #############################################################################
 ##
