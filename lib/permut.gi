@@ -434,16 +434,7 @@ end);
 ##
 InstallMethod(PrimesDividingSize, "for finite groups", [IsGroup and
         IsFinite],
-        function(G)
-    if Size(G)=1 
-       then
-        return [];
-    else 
-        return Set(Factors(Size(G)));
-    fi;
-end);
-
-
+        G -> PrimeDivisors(Size(G)));
 
 
 #############################################################################
@@ -521,7 +512,6 @@ end
 InstallMethod(SylowSubgroups, "for finite soluble groups",
         [IsGroup and IsFinite and IsSolvableGroup],
         function(g)
-    local p;
     return SylowSystem(g);
 end);
 
@@ -530,7 +520,6 @@ end);
 InstallMethod(SylowSubgroups, "for finite groups", [IsGroup and
         IsFinite],
         function(g)
-    local p;
     return List(PrimesDividingSize(g),p->SylowSubgroup(g,p));
 end);
 
