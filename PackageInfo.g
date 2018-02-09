@@ -12,18 +12,18 @@ SetPackageInfo( rec(
         PackageName := "permut",
         Subtitle:= "A package to deal with permutability in finite groups",
         Date:="30/07/2015",
-        PackageInfoURL:="http://www.uv.es/permut/gap/permut/PackageInfo.g",
+        PackageInfoURL:="https://www.uv.es/permut/gap/permut/PackageInfo.g",
         AbstractHTML:="This package provides functions for computing with permutability in finite groups.",
         Version := "1.03",
         README_URL := Concatenation(
                               [
-                               "http://www.uv.es/permut/gap/permut-",
+                               "https://www.uv.es/permut/gap/permut-",
                                ~.Version,
                                "/README.permut"
                                ]
                               ),
                       PackageWWWHome:=Concatenation(
-                              ["http://www.uv.es/permut/gap/permut-",
+                              ["https://www.uv.es/permut/gap/permut-",
                              ~.Version, 
                              "/"]
                             ),
@@ -64,7 +64,7 @@ SetPackageInfo( rec(
                                 FirstNames:="Enric",
                                 IsAuthor:=true,
                                 IsMaintainer:=false,
-                                WWWHome:="http://www.uv.es/coslloen",
+                                WWWHome:="https://www.uv.es/coslloen",
                                 Email:="Enric.Cosme@uv.es",
                                 PostalAddres:=Concatenation(
                                         ["Enric Cosme-Ll\\'opez\n",
@@ -80,7 +80,7 @@ SetPackageInfo( rec(
                                 FirstNames:="Ram\\'on",
                                 IsAuthor:=true,
                                 IsMaintainer:=true,
-                                WWWHome:="http://www.uv.es/estebanr",
+                                WWWHome:="https://www.uv.es/estebanr",
                                 Email:="Ramon.Esteban@uv.es",
                                 PostalAddres:=Concatenation(
                                         ["Ramon Esteban-Romero\n",
@@ -103,7 +103,7 @@ SetPackageInfo( rec(
 #                                IsAuthor:=true,
 #                                IsMaintainer:=true,
 #                                Email:="resteban@mat.upv.es",
-#                                WWWHome:="http://personales.upv.es/~resteban/",
+#                                WWWHome:="https://personales.upv.es/~resteban/",
 #                                PostalAddress:=Concatenation(
 #                                        ["Ramon Esteban-Romero\n",
 #                                         "Institut Universitari de Matem\\`atica Pura i Aplicada\n",
