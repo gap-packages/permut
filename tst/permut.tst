@@ -9,8 +9,6 @@
 ##  This  file  tests  some functions that  deal with permutability
 ##
 gap> START_TEST("permut.tst");
-
-gap> LoadPackage("permut", false);;
 gap> sym4:=SymmetricGroup(4);
 Sym( [ 1 .. 4 ] )
 gap> ArePermutableSubgroups(sym4, Subgroup(sym4, [(1,2)(3,4)]), Subgroup(sym4, [(1,2,3)]));
