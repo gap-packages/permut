@@ -12,8 +12,8 @@ Inside GAP, help can be obtained by using
 
 The tst/ directory contains the file permut.tst which can be used to
 test the installation. In the doc/ directory, the file manual.pdf
-contains the manual in PDF format. The HTML version appears in the
-file chapters.html of the htm/ directory.
+contains the manual in PDF format. The HTML version starting page is
+the file chap0.html of the doc/ directory.
 
 If you need help, please send a message to <Ramon.Esteban@uv.es>.
 
