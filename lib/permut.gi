@@ -2,7 +2,6 @@
 ##
 #W  permut.gi              Permutability GAP library              ABB&ECL&RER
 ##
-#H  @(#)$Id: permut.gi,v 1.04 2018/02/11 19:36:48 gap Exp $
 ##
 #Y  Copyright (C)  2000-2018 Adolfo Ballester-Bolinches, Enric Cosme-Ll\'opez
 #Y                           and Ramon Esteban-Romero

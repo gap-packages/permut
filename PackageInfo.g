@@ -2,19 +2,18 @@
 ##
 #W  PackageInfo.g              Permutability GAP library          ABB&ECL&RER
 ##
-#H  @(#)$Id: PackageInfo.g,v 1.03 2015/07/30 16:20:39 gap Exp $
 ##
-#Y  Copyright (C)  2000-2015 Adolfo Ballester-Bolinches, Enric Cosme-Ll\'opez and
+#Y  Copyright (C)  2000-2018 Adolfo Ballester-Bolinches, Enric Cosme-Ll\'opez and
 #Y                           Ramon Esteban-Romero
 ##
 ##
 SetPackageInfo( rec(
         PackageName := "permut",
         Subtitle:= "A package to deal with permutability in finite groups",
-        Date:="30/07/2015",
+        Date:="11/02/2018",
         PackageInfoURL:="https://www.uv.es/permut/gap/permut/PackageInfo.g",
         AbstractHTML:="This package provides functions for computing with permutability in finite groups.",
-        Version := "1.03",
+        Version := "1.04",
         README_URL := Concatenation(
                               [
                                "https://www.uv.es/permut/gap/permut-",
@@ -52,12 +51,12 @@ SetPackageInfo( rec(
                                 Email:="Adolfo.Ballester@uv.es",
                                 PostalAddres:=Concatenation(
                                         ["Adolfo Ballester-Bolinches\n",
-                                         "Departament d'\\`Algebra\n",
+                                         "Departament de Matem\\`atiques\n",
                                          "Universitat de Val\\`encia\n",
                                          "Dr.\\ Moliner, 50\n",
                                          "46100 Burjassot, Val\\`encia, Spain"]),
                                 Place:="Burjassot, Val\\`encia",
-                                Institution:="Departament d'\\`Algebra, Universitat de Val\\`encia"
+                                Institution:="Departament de Matem\\`atiques, Universitat de Val\\`encia"
                                 ),
                             rec(
                                 LastName:="Cosme-Ll\\'opez",
@@ -68,12 +67,12 @@ SetPackageInfo( rec(
                                 Email:="Enric.Cosme@uv.es",
                                 PostalAddres:=Concatenation(
                                         ["Enric Cosme-Ll\\'opez\n",
-                                         "Departament d'\\`Algebra\n",
+                                         "Departament de Matem\\`atiques\n",
                                          "Universitat de Val\\`encia\n",
                                          "Dr.\\ Moliner, 50\n",
                                          "46100 Burjassot, Val\\`encia, Spain"]),
                                 Place:="Burjassot, Val\\`encia",
-                                Institution:="Departament d'\\`Algebra, Universitat de Val\\`encia"
+                                Institution:="Departament de Matem\\`atiques, Universitat de Val\\`encia"
                                 ),
                             rec(
                                 LastName:="Esteban-Romero",
@@ -84,7 +83,7 @@ SetPackageInfo( rec(
                                 Email:="Ramon.Esteban@uv.es",
                                 PostalAddres:=Concatenation(
                                         ["Ramon Esteban-Romero\n",
-                                         "Departament d'\\`Algebra\n",
+                                         "Departament de Matem\\`atiques\n",
                                          "Universitat de Val\\`encia\n",
                                          "Dr.\\ Moliner, 50\n",
                                          "46100 Burjassot, Val\\`encia, Spain\n",
@@ -94,25 +93,8 @@ SetPackageInfo( rec(
                                          "Cam{\\'\\i} de Vera, s/n\n",
                                          "46022 Val\\`encia, Spain"]),
                                 Place:="Burjassot, Val\\`encia",
-                                Institution:="Departament d'\\`Algebra, Universitat de Val\\`encia"
+                                Institution:="Departament de Matem\\`atiques, Universitat de Val\\`encia"
                                 )
-#                              ,
-#                            rec(
-#                                LastName:="Esteban-Romero",
-#                                FirstNames:="Ramon",
-#                                IsAuthor:=true,
-#                                IsMaintainer:=true,
-#                                Email:="resteban@mat.upv.es",
-#                                WWWHome:="https://personales.upv.es/~resteban/",
-#                                PostalAddress:=Concatenation(
-#                                        ["Ramon Esteban-Romero\n",
-#                                         "Institut Universitari de Matem\\`atica Pura i Aplicada\n",
-#                                         "Universitat Polit\\`ecnica de Val\\`encia\n",
-#                                         "Cam{\\'\\i} de Vera, s/n\n",
-#                                         "46022 Val\\`encia, Spain"]),
-#                                Place:="Val\\`encia",
-#                                Institution:="Institut Universitari de Matem\\`atica Pura i Aplicada, Universitat Polit\\`ecnica de Val\\`encia"
-#                                )
                             ],
                     
                     Keywords:=[

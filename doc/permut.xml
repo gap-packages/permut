@@ -9,16 +9,17 @@
 <TitlePage>
   <Title><Package>PERMUT</Package></Title>
   <Subtitle>A &GAP;4 package to deal with permutability</Subtitle>
-  <Version>Version 1.03</Version>
+  <Version>Version 1.04</Version>
   <Author>Adolfo Ballester-Bolinches
   <Email>Adolfo.Balester@uv.es</Email>
-  <Address>Departament d'Àlgebra, Universitat de València</Address></Author>
+  <Address>Departament de Matemàtiques, Universitat de València</Address></Author>
   <Author>Enric Cosme-Llópez
   <Homepage>https://www.uv.es/coslloen/</Homepage>
   <Email>Enric.Cosme@uv.es</Email>
-  <Address>Departament d'Àlgebra, Universitat de València</Address></Author>
+  <Address>Departament de Matemàtiques, Universitat de València</Address></Author>
   <Author>Ramón Esteban-Romero
-  <Email>Ramon.Esteban@uv.es</Email><Homepage>https://www.uv.es/estebanr/</Homepage><Address>Departament d'Àlgebra, Universitat de València. Permanent: Institut Universitari de Matemàtica Pura i Aplicada, Universitat Politècnica de València</Address></Author>
+  <Email>Ramon.Esteban@uv.es</Email><Homepage>https://www.uv.es/estebanr/</Homepage><Address>Departament
+  de Matemàtiques, Universitat de València. Permanent: Institut Universitari de Matemàtica Pura i Aplicada, Universitat Politècnica de València</Address></Author>
 </TitlePage>
 
 <TableOfContents/>
@@ -93,12 +94,14 @@ package have been described in <Cite Key="BallesterCosmeEsteban13-cejm" />.
 The authors acknowledge the support of the grants MTM2010-19938-C03-01
 and MTM2014-54707-C3-1-P
 from the <E>Ministerio de Economía y Competitividad</E>, Spanish
-Government (all authors), the grant 11271085 from National Natural
+Government (all authors), the grant PROMETEO/2017/057
+from the <E>Generalitat</E>, Valencian Goverment
+(A. Ballester-Bolinches and R. Esteban-Romero), the grant 11271085 from National Natural
 Science Foundation of China (A. Ballester-Bolinches) and the
 predoctoral grant AP2010-2764 from the <E>Ministerio de Educación</E>,
 Spanish Government (E. Cosme-Llópez). The authors are also indebted to the
 members of the &GAP; council, especially Leonard Soicher, Alice
-Niemeyer, and Alexander Konovalov, as well as to the anonymous referees, for their comments
+Niemeyer, Max Horn, and Alexander Konovalov, as well as to the anonymous referees, for their comments
 which have helped us to improve the package and its documentation.
 <P/>
 
@@ -144,11 +147,11 @@ by Bettina Eick (http://www-public.tu-bs.de:8080/~beick) and
    Charles R.B. Wright (http://www.uoregon.edu/~wright).
 -----------------------------------------------------------------------------
 -----------------------------------------------------------------------------
-Loading  permut 1.03 (PERMUT: A package to deal with permutability in finite groups)
+Loading  permut 1.04 (PERMUT: A package to deal with permutability in finite groups)
 by Adolfo Ballester-Bolinches (Adolfo.Ballester@uv.es),
    Enric Cosme-Ll\'opez (https://www.uv.es/coslloen), and
    Ram\'on Esteban-Romero (https://www.uv.es/estebanr).
-Homepage: https://www.uv.es/permut/gap/permut-1.03/
+Homepage: https://www.uv.es/permut/gap/permut-1.04/
 -----------------------------------------------------------------------------
 true
 </Log>

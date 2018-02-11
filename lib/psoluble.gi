@@ -2,9 +2,8 @@
 ##
 #W  psoluble.gi              Permutability GAP library            ABB&ECL&RER
 ##
-#H  @(#)$Id: psoluble.gi,v 0.04 2014/01/16 09:54:00 gap Exp $
 ##
-#Y  Copyright (C)  2000-2014 Adolfo Ballester-Bolinches, Enric Cosme-Ll\'opez
+#Y  Copyright (C)  2000-2018 Adolfo Ballester-Bolinches, Enric Cosme-Ll\'opez
 #Y                           and Ramon Esteban-Romero
 ##
 ##  This file contains methods for p-soluble, p-supersoluble,
