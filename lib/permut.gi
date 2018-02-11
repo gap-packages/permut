@@ -1781,12 +1781,19 @@ InstallMethod(OneSubgroupInWhichSubnormalNotNormalOp, "for finite groups",
     fi;
     
     bool1:=IsSubgroup(Parent(h),g);
-    if IsNormal(g,h) or
+    if 
        (bool1 and HasIsWithSubnormalizerConditionInParent(h) and
         IsWithSubnormalizerConditionInParent(h))
+       or
+       IsNormal(g,h)
        then
         return fail;
     fi;
+    if IsNormal(g,h)
+    then
+        return fail;
+    fi;
+    
     bool2:=IsSubgroup(g,Parent(h));
     if IsSubnormal(g,h) then
         #
@@ -1801,7 +1808,7 @@ InstallMethod(OneSubgroupInWhichSubnormalNotNormalOp, "for finite groups",
         return OneSubgroupInWhichSubnormalNotNormalInParent(h);
     fi;
     int:=IntermediateSubgroups(g,h);
-    cex:=First(int.subgroups, t->not IsNormal(t,h) and IsSubnormal(t,h));
+    cex:=First(Concatenation(int.subgroups,[g]), t->not IsNormal(t,h) and IsSubnormal(t,h));
     if  bool1 and bool2 then
         if cex=fail
            then
@@ -1889,25 +1896,33 @@ InstallMethod(OneSubgroupInWhichSubnormalNotPermutableOp, "for finite groups",
         [IsGroup and IsFinite, IsGroup and IsFinite ],
         function(g,h)
     local x,int,t,cex,bool1,bool2;
-    if not IsSubgroup(g,h)
+            
+            if not IsSubgroup(g,h)
        then
         Error("<h> must be a subgroup of <g>");
     fi;    
     bool1:=IsSubgroup(Parent(h),g);
     if bool1 and
        (
-        IsNormal(g,h) or
-        IsPermutable(g,h) or
         (HasIsWithSubnormalizerConditionInParent(h) and
          IsWithSubnormalizerConditionInParent(h))
         or
         (HasIsWithSubpermutizerConditionInParent(h) and
          IsWithSubpermutizerConditionInParent(h)
-         )
+        )
+        or
+        IsNormal(g,h) or
+        IsPermutable(g,h)
         )
        then
         return fail;
     fi;
+    if IsNormal(g,h) or
+       IsPermutable(g,h)
+    then
+        return fail;
+    fi;
+    
     if IsSubnormal(g,h) then
         #
         # h cannot be permutable in g
@@ -1919,17 +1934,21 @@ InstallMethod(OneSubgroupInWhichSubnormalNotPermutableOp, "for finite groups",
         if       
           (HasOneSubgroupInWhichSubnormalNotPermutableInParent(h)
            and OneSubgroupInWhichSubnormalNotPermutableInParent(h)<>fail)
-          then 
+        then
+            
             return OneSubgroupInWhichSubnormalNotPermutableInParent(h);
         elif
           (HasOneSubgroupInWhichSubnormalNotSPermutableInParent(h)
            and OneSubgroupInWhichSubnormalNotSPermutableInParent(h)<>fail)
-          then
+        then
+            
             return OneSubgroupInWhichSubnormalNotSPermutableInParent(h);
         fi;
     fi;
+    
     int:=IntermediateSubgroups(g,h);
-    cex:=First(int.subgroups, t->not IsNormal(t,h) and IsSubnormal(t,h));
+    
+    cex:=First(Concatenation(int.subgroups,[g]), t->not IsNormal(t,h) and IsSubnormal(t,h));
     if bool1 and bool2 then
         if cex=fail 
            then
@@ -2028,8 +2047,6 @@ InstallMethod(OneSubgroupInWhichSubnormalNotSPermutableOp, "for finite groups",
     bool1:=IsSubgroup(Parent(h),g);
     if bool1 and
        (
-        IsNormal(g,h) or
-        IsPermutable(g,h) or
         IsSPermutable(g,h) or
         (HasIsWithSubnormalizerConditionInParent(h) and
          IsWithSubnormalizerConditionInParent(h))
@@ -2039,10 +2056,20 @@ InstallMethod(OneSubgroupInWhichSubnormalNotSPermutableOp, "for finite groups",
         or
         (HasIsWithSSubpermutizerConditionInParent(h) and
          IsWithSSubpermutizerConditionInParent(h))
-        )
+       )
+       or
+       IsNormal(g,h) or
+       IsPermutable(g,h)
+
        then
         return fail;
     fi;
+    if IsNormal(g,h) or
+       IsPermutable(g,h)
+    then
+        return fail;
+    fi;
+    
     if IsSubnormal(g,h) then
         #
         # h cannot be S-permutable in g
@@ -2064,7 +2091,7 @@ InstallMethod(OneSubgroupInWhichSubnormalNotSPermutableOp, "for finite groups",
         fi;
     fi;
     int:=IntermediateSubgroups(g,h);
-    cex:=First(int.subgroups, t->not IsNormal(t,h) and IsSubnormal(t,h));
+    cex:=First(Concatenation(int.subgroups,[g]), t->not IsNormal(t,h) and IsSubnormal(t,h));
     if bool1 and bool2 then
         if cex=fail 
            then
