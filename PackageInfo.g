@@ -20,7 +20,7 @@ SetPackageInfo( rec(
                      SupportEmail   := "Ramon.Esteban@uv.es",
                      PackageWWWHome  := "https://gap-packages.github.io/permut/",
                      PackageInfoURL  := Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
-                     README_URL      := Concatenation( ~.PackageWWWHome, "README.md" ),
+                     README_URL      := Concatenation( ~.PackageWWWHome, "README.permut" ),
                      ArchiveURL      := Concatenation( ~.SourceRepository.URL,
                                                        "/releases/download/v", ~.Version,
                                                        "/", ~.PackageName, "-", ~.Version ),
