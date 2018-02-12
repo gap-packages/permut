@@ -27,7 +27,7 @@ SetPackageInfo( rec(
                      
                      ArchiveFormats := ".tar.gz",
                      AbstractHTML:="This package provides functions for computing with permutability in finite groups.",
-                                         ),
+#                                         ),
                      Status:="accepted",
                      ##  You must provide the next two entries if and only if the status is 
                      ##  "accepted":
