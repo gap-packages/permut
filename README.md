@@ -7,11 +7,14 @@ permutability in finite groups.
 To install this package, just decompress the file `permut-1.04.tar.bz2`
 in a directory in the `pkg` hierarchy of the GAP installation. It
 requires the package `format` to be previously installed. Use then
-  `LoadPackage("permut");`
+
+`  LoadPackage("permut");`
+
 to load it.
 GAP 4.7.4 or later is required.
 Inside GAP, help can be obtained by using
-  `?permut:`
+
+`  ?permut:`
 
 The `tst/` directory contains the file permut.tst which can be used to
 test the installation. In the `doc/` directory, the file `manual.pdf`
