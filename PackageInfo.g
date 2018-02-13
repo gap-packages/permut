@@ -94,7 +94,6 @@ SetPackageInfo( rec(
                                  "T-group", "mutually permutable", "totally permutable",
                                  "Dedekind group", "Iwasawa group"
                      ],
-                     Autoload:=false,
                      Dependencies:=
                      rec(
                           GAP := "4.7.4",
@@ -109,9 +108,8 @@ SetPackageInfo( rec(
                                         SixFile   := "doc/manual.six",
                                         ArchiveURLSubset:=["doc"],
                                         HTMLStart :="doc/chap0.html",
-                                        PDFFile:="doc/manual.pdf",
-                                        Autoload  := true ),
-                     TestFile  := "tst/permut.tst"
+                                        PDFFile:="doc/manual.pdf"),
+                     TestFile  := "tst/testall.g"
                                       
                                       
                     ) );
