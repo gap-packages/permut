@@ -141,18 +141,19 @@ defined there. The <Package>Format</Package> package can be downloaded from the 
 The <Package>PERMUT</Package> package can be loaded with
 <Log>
 gap&gt; LoadPackage("permut");
------------------------------------------------------------------------------
+─────────────────────────────────────────────────────────────────────────────
 Loading  FORMAT 1.3 (Formations of Finite Soluble Groups)
-by Bettina Eick (http://www-public.tu-bs.de:8080/~beick) and
+by Bettina Eick (http://www.icm.tu-bs.de/~beick) and
    Charles R.B. Wright (http://www.uoregon.edu/~wright).
------------------------------------------------------------------------------
------------------------------------------------------------------------------
+Homepage: http://www.uoregon.edu/~wright/RESEARCH/format/
+─────────────────────────────────────────────────────────────────────────────
+─────────────────────────────────────────────────────────────────────────────
 Loading  permut 1.04 (PERMUT: A package to deal with permutability in finite groups)
 by Adolfo Ballester-Bolinches (Adolfo.Ballester@uv.es),
    Enric Cosme-Ll\'opez (https://www.uv.es/coslloen), and
    Ram\'on Esteban-Romero (https://www.uv.es/estebanr).
-Homepage: https://www.uv.es/permut/gap/permut-1.04/
------------------------------------------------------------------------------
+Homepage: https://gap-packages.github.io/permut/
+─────────────────────────────────────────────────────────────────────────────
 true
 </Log>
 <P/>
