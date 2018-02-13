@@ -3,7 +3,7 @@
 #W  permut.tst                GAP tests                    ABB&ECL&RER
 ##
 ##
-#Y  Copyright (C)  2015,  Adolfo Ballester-Bolinches, Enric Cosme-Ll\'opez,
+#Y  Copyright (C)  2015-2018, Adolfo Ballester-Bolinches, Enric Cosme-Ll\'opez,
 ##                        and Ramon Esteban-Romero
 ##
 ##  This  file  tests  some functions that  deal with permutability
@@ -36,6 +36,11 @@ gap> OnePairShowingNotTotallyPermutableSubgroups(sym4, AlternatingGroup(4), Subg
 [ Group([ (2,4,3) ]), Group([ (1,2)(3,4) ]) ]
 gap> Size(Permutizer(sym4, Subgroup(sym4, [(1,2,3)])));
 6
+gap> "The following result was wrong in previous versions of permut\n";
+"The following result was wrong in previous versions of permut\n"
+gap> g:=SymmetricGroup(3);;h:=Subgroup(g,[(1,2,3)]);;k:=Subgroup(h,[(1,2,3)]);;
+gap> OneSubgroupInWhichSubnormalNotPermutable(g,k);
+fail
 gap> STOP_TEST( "permut.tst", 7000000 );
 permut.tst
 
