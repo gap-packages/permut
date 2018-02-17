@@ -6,9 +6,9 @@ The package `permut` contains some functions to deal with
 permutability in finite groups.
 
 ## Installation 
-To install this package, just decompress the file `permut-X.YY.tar.bz2`
+To install this package, just decompress the file `permut-X.Y.Z.tar.gz`
 in a directory in the `pkg` hierarchy of the GAP installation, where
-`X.YY` is the version number. It requires the package `format` to be
+`X.Y.Z` is the version number. It requires the package `format` to be
 previously installed. Use then
 
 `  LoadPackage("permut");`
