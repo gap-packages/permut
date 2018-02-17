@@ -140,7 +140,7 @@ defined there. The <Package>Format</Package> package can be downloaded from the 
 
 The <Package>PERMUT</Package> package can be loaded with
 <Log>
-gap&gt; LoadPackage("permut");
+gap> LoadPackage("permut");
 ─────────────────────────────────────────────────────────────────────────────
 Loading  FORMAT 1.3 (Formations of Finite Soluble Groups)
 by Bettina Eick (http://www.icm.tu-bs.de/~beick) and
@@ -199,26 +199,26 @@ supergroup for <A>U</A> and <A>V</A>.
 
 <P/>
 
-<Example>
-gap&gt; g:=SymmetricGroup(4);
+<Example><![CDATA[
+gap> g:=SymmetricGroup(4);
 Sym( [ 1 .. 4 ] )
-gap&gt; a:=Subgroup(g,[(1,2)(3,4)]);
+gap> a:=Subgroup(g,[(1,2)(3,4)]);
 Group([ (1,2)(3,4) ])
-gap&gt; b:=Subgroup(g,[(1,2,3)]);
+gap> b:=Subgroup(g,[(1,2,3)]);
 Group([ (1,2,3) ])
-gap&gt; c:=Subgroup(g,[(1,2)]);
+gap> c:=Subgroup(g,[(1,2)]);
 Group([ (1,2) ])
-gap&gt; ArePermutableSubgroups(g,a,b);
+gap> ArePermutableSubgroups(g,a,b);
 false
-gap&gt; ArePermutableSubgroups(g,a,c);
+gap> ArePermutableSubgroups(g,a,c);
 true
-gap&gt; ArePermutableSubgroups(g,b,c);
+gap> ArePermutableSubgroups(g,b,c);
 true
-gap&gt; ArePermutableSubgroups(b,c);
+gap> ArePermutableSubgroups(b,c);
 true
-gap&gt; ArePermutableSubgroups(b,a);
+gap> ArePermutableSubgroups(b,a);
 false
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -273,44 +273,44 @@ with <A>H</A>, that is, a subgroup which shows that <A>H</A> is not permutable i
 <P/>
 
 
-<Example>
-gap&gt; g:=SymmetricGroup(4);
+<Example><![CDATA[
+gap> g:=SymmetricGroup(4);
 Sym( [ 1 .. 4 ] )
-gap&gt; a:=Subgroup(g,[(1,2)(3,4)]);
+gap> a:=Subgroup(g,[(1,2)(3,4)]);
 Group([ (1,2)(3,4) ])
-gap&gt; b:=Subgroup(g,[(1,2,3)]);
+gap> b:=Subgroup(g,[(1,2,3)]);
 Group([ (1,2,3) ])
-gap&gt; c:=Subgroup(g,[(1,2)]);
+gap> c:=Subgroup(g,[(1,2)]);
 Group([ (1,2) ])
-gap&gt; IsPermutable(g,a);
+gap> IsPermutable(g,a);
 false
-gap&gt; IsPermutable(g,b);
+gap> IsPermutable(g,b);
 false
-gap&gt; IsPermutable(g,c);
+gap> IsPermutable(g,c);
 false
-gap&gt; OneSubgroupNotPermutingWith(g,b);
+gap> OneSubgroupNotPermutingWith(g,b);
 Group([ (1,3,4) ])
-gap&gt; v:=Subgroup(g,[(1,2)(3,4),(1,3)(2,4)]);
+gap> v:=Subgroup(g,[(1,2)(3,4),(1,3)(2,4)]);
 Group([ (1,2)(3,4), (1,3)(2,4) ])
-gap&gt; OneSubgroupNotPermutingWith(g,v);
+gap> OneSubgroupNotPermutingWith(g,v);
 fail
-gap&gt; IsPermutable(g,b);
+gap> IsPermutable(g,b);
 false
-gap&gt; IsPermutable(g,v);
+gap> IsPermutable(g,v);
 true
-</Example>
+]]></Example>
 <P/>
 
-<Example>
-gap&gt; g:=SmallGroup(16,6);
-&lt;pc group of size 16 with 4 generators&gt;
-gap&gt; h:=Subgroup(g,[g.2]);
+<Example><![CDATA[
+gap> g:=SmallGroup(16,6);
+<pc group of size 16 with 4 generators>
+gap> h:=Subgroup(g,[g.2]);
 Group([ f2 ])
-gap&gt; IsNormal(g,h);
+gap> IsNormal(g,h);
 false
-gap&gt; IsPermutable(g,h);
+gap> IsPermutable(g,h);
 true
-</Example>
+]]></Example>
 
 </Description>
 </ManSection>
@@ -354,32 +354,32 @@ This function tries to use the values of <Ref Prop="IsPermutableInParent" /> and
 <P/>
 
 <Log>
-gap&gt; g:=SymmetricGroup(4);
+gap> g:=SymmetricGroup(4);
 Sym( [ 1 .. 4 ] )
-gap&gt; a:=Subgroup(g,[(1,2,3,4),(1,3)]);
+gap> a:=Subgroup(g,[(1,2,3,4),(1,3)]);
 Group([ (1,2,3,4), (1,3) ])
-gap&gt; Size(a);
+gap> Size(a);
 8
-gap&gt; OneFSubgroupNotPermutingWith(g,a,MaximalSubgroups(g));
+gap> OneFSubgroupNotPermutingWith(g,a,MaximalSubgroups(g));
 Group([ (1,2), (3,4), (1,3)(2,4) ])
-gap&gt; IsFPermutable(g,a,MaximalSubgroups(g));
+gap> IsFPermutable(g,a,MaximalSubgroups(g));
 false
-gap&gt; HasIsPermutableInParent(a);
+gap> HasIsPermutableInParent(a);
 true
-gap&gt; IsPermutableInParent(a);
+gap> IsPermutableInParent(a);
 false
-gap&gt; HasOneSubgroupNotPermutingWithInParent(a);
+gap> HasOneSubgroupNotPermutingWithInParent(a);
 true
-gap&gt; OneSubgroupNotPermutingWithInParent(a);
+gap> OneSubgroupNotPermutingWithInParent(a);
 Group([ (1,2), (3,4), (1,3)(2,4) ])
-gap&gt; IsFPermutable(g,a,AllSubnormalSubgroups(g));
+gap> IsFPermutable(g,a,AllSubnormalSubgroups(g));
 true
-gap&gt; OneFSubgroupNotPermutingWith(g,a,AllSubnormalSubgroups(g));
+gap> OneFSubgroupNotPermutingWith(g,a,AllSubnormalSubgroups(g));
 fail
-gap&gt; sylows:=g->Union(List(SylowSubgroups(g),
-&gt;           t->ConjugacyClassSubgroups(g,t)));
+gap> sylows:=g->Union(List(SylowSubgroups(g),
+>           t->ConjugacyClassSubgroups(g,t)));
 function( g ) ... end
-gap&gt; OneFSubgroupNotPermutingWith(g,a,sylows(g));
+gap> OneFSubgroupNotPermutingWith(g,a,sylows(g));
 Group([ (3,4), (1,4)(2,3), (1,3)(2,4) ])
 </Log>
 </Description>
@@ -400,14 +400,14 @@ This operation returns <K>true</K> if a subgroup <A>H</A> of <A>G</A> is S-permu
 that is, <A>H</A> permutes with all Sylow subgroups of <A>G</A>, and returns <K>false</K> otherwise.
 <P/>
 
-<Example>
-gap&gt; g:=SmallGroup(8,3);
-&lt;pc group of size 8 with 3 generators&gt;
-gap&gt; IsSPermutable(g,Subgroup(g,[g.1]));
+<Example><![CDATA[
+gap> g:=SmallGroup(8,3);
+<pc group of size 8 with 3 generators>
+gap> IsSPermutable(g,Subgroup(g,[g.1]));
 true
-gap&gt; IsPermutable(g,Subgroup(g,[g.1]));
+gap> IsPermutable(g,Subgroup(g,[g.1]));
 false
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -423,12 +423,12 @@ subgroup <M>H</M> of a group <M>G</M> is S-permutable in <M>G</M> if <M>H</M> pe
 with all Sylow subgroups of&nbsp;<M>G</M>.
 <P/>
 
-<Example>
-gap&gt; g:=SymmetricGroup(4);;
-gap&gt; a:=Subgroup(g,[(1,2)(3,4)]);;
-gap&gt; OneSylowSubgroupNotPermutingWith(g,a);
+<Example><![CDATA[
+gap> g:=SymmetricGroup(4);;
+gap> a:=Subgroup(g,[(1,2)(3,4)]);;
+gap> OneSylowSubgroupNotPermutingWith(g,a);
 Group([ (2,4,3) ])
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -458,16 +458,16 @@ returns <K>fail</K>. Otherwise, it returns a system normaliser <M>D</M> of <M>G<
 not permute with <M>D</M>. If the group <A>G</A> is not soluble, then
 it gives an error.
 
-<Example>
-gap&gt; g:=Group((1,2,3),(4,5,6),(1,2));
+<Example><![CDATA[
+gap> g:=Group((1,2,3),(4,5,6),(1,2));
 Group([ (1,2,3), (4,5,6), (1,2) ])
-gap&gt; a:=Subgroup(g,[(1,2,3)(4,5,6)]);
+gap> a:=Subgroup(g,[(1,2,3)(4,5,6)]);
 Group([ (1,2,3)(4,5,6) ])
-gap&gt; IsSNPermutable(g,a);
+gap> IsSNPermutable(g,a);
 true
-gap&gt; IsSPermutable(g,a);
+gap> IsSPermutable(g,a);
 false
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -489,16 +489,16 @@ This operation takes the value <K>true</K> if <A>H</A> permutes with all its
 conjugates, and the value <K>false</K> otherwise.
 <P/>
 
-<Example>
-gap&gt; g:=SymmetricGroup(4);
+<Example><![CDATA[
+gap> g:=SymmetricGroup(4);
 Sym( [ 1 .. 4 ] )
-gap&gt; a:=Subgroup(g,[(1,2)(3,4)]);
+gap> a:=Subgroup(g,[(1,2)(3,4)]);
 Group([ (1,2)(3,4) ])
-gap&gt; IsPermutable(g,a);
+gap> IsPermutable(g,a);
 false
-gap&gt; IsConjugatePermutable(g,a);
+gap> IsConjugatePermutable(g,a);
 true
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -511,16 +511,16 @@ This operation finds a conjugate subgroup of <A>H</A> which does not
 permute with <A>H</A> if such a subgroup exists. If <A>H</A> permutes with all its conjugates, then this
 operation returns <K>fail</K>.
 
-<Example>
-gap&gt; g:=SmallGroup(16,7);
-&lt;pc group of size 16 with 4 generators&gt;
-gap&gt; h:=Subgroup(g,[g.1*g.4]);
+<Example><![CDATA[
+gap> g:=SmallGroup(16,7);
+<pc group of size 16 with 4 generators>
+gap> h:=Subgroup(g,[g.1*g.4]);
 Group([ f1*f4 ])
-gap&gt; IsConjugatePermutable(g,h);
+gap> IsConjugatePermutable(g,h);
 false
-gap&gt; OneConjugateSubgroupNotPermutingWith(g,h);
+gap> OneConjugateSubgroupNotPermutingWith(g,h);
 Group([ f1*f3 ])
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -609,22 +609,22 @@ If <A>H</A> is a weakly normal subgruop of <A>G</A>, then this
 function returns <K>fail</K>. Otherwise, the value returned by this operation is an element <M>g</M> such that <M>H^g\leq {\rm N}_G(H)</M> is a subgroup of <M>{\rm N}_G(H)</M> but <M>g \notin{\rm N}_G(H)</M>.
 <P/>
 
-<Example>
-gap&gt; g:=DihedralGroup(8);
-&lt;pc group of size 8 with 3 generators&gt;
-gap&gt; a:=Subgroup(g,[g.1]);
+<Example><![CDATA[
+gap> g:=DihedralGroup(8);
+<pc group of size 8 with 3 generators>
+gap> a:=Subgroup(g,[g.1]);
 Group([ f1 ])
-gap&gt; IsWeaklySPermutable(g,a);
+gap> IsWeaklySPermutable(g,a);
 true
-gap&gt; IsWeaklyPermutable(g,a);
+gap> IsWeaklyPermutable(g,a);
 false
-gap&gt; x:=OneElementShowingNotWeaklyPermutable(g,a);
+gap> x:=OneElementShowingNotWeaklyPermutable(g,a);
 f2
-gap&gt; IsSubgroup(Normalizer(g,a),ConjugateSubgroup(a,x));
+gap> IsSubgroup(Normalizer(g,a),ConjugateSubgroup(a,x));
 true
-gap&gt; x in Normalizer(g,a);
+gap> x in Normalizer(g,a);
 false
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -713,24 +713,24 @@ in <M>K</M> and <M>H</M> is not S-permutable in&nbsp;<M>K</M> if such
 a subgroup exists; otherwise it returns <K>fail</K>.
 <P/>
 
-<Example>
-gap&gt; g:=SmallGroup(324,160);
-&lt;pc group of size 324 with 6 generators&gt;
-gap&gt; a:=Subgroup(g,[g.3,g.5]);
+<Example><![CDATA[
+gap> g:=SmallGroup(324,160);
+<pc group of size 324 with 6 generators>
+gap> a:=Subgroup(g,[g.3,g.5]);
 Group([ f3, f5 ])
-gap&gt; IsWithSubnormalizerCondition(g,a);
+gap> IsWithSubnormalizerCondition(g,a);
 true
-gap&gt; IsWeaklyNormal(g,a);
+gap> IsWeaklyNormal(g,a);
 false
-gap&gt; IsWeaklySPermutable(g,a);
+gap> IsWeaklySPermutable(g,a);
 false
-gap&gt; x:=OneElementShowingNotWeaklyNormal(g,a);
+gap> x:=OneElementShowingNotWeaklyNormal(g,a);
 f1
-gap&gt; ConjugateSubgroup(a,x)=a;
+gap> ConjugateSubgroup(a,x)=a;
 false
-gap&gt; IsSubset(Normalizer(g,a),ConjugateSubgroup(a,x));
+gap> IsSubset(Normalizer(g,a),ConjugateSubgroup(a,x));
 true
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -796,16 +796,16 @@ This function tries to set the property <Ref Prop="IsTGroup" /> to <K>true</K> o
 to its result.
 <P/>
 
-<Example>
-gap&gt; g:=SmallGroup(320,152);
-&lt;pc group of size 320 with 7 generators&gt;
-gap&gt; x:=OneSubnormalNonNormalSubgroup(g);
+<Example><![CDATA[
+gap> g:=SmallGroup(320,152);
+<pc group of size 320 with 7 generators>
+gap> x:=OneSubnormalNonNormalSubgroup(g);
 Group([ f2, f3, f5, f7 ])
-gap&gt; IsNormal(g,x);
+gap> IsNormal(g,x);
 false
-gap&gt; IsSubnormal(g,x);
+gap> IsSubnormal(g,x);
 true
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -832,18 +832,18 @@ Since this function checks all subnormal subgroups for permutability,
 it may take a long time if there are many subnormal subgroups.
 <P/>
 
-<Example>
-gap&gt; g:=SmallGroup(320,152);
-&lt;pc group of size 320 with 7 generators&gt;
-gap&gt; OneSubnormalNonPermutableSubgroup(g);
+<Example><![CDATA[
+gap> g:=SmallGroup(320,152);
+<pc group of size 320 with 7 generators>
+gap> OneSubnormalNonPermutableSubgroup(g);
 fail
-gap&gt; IsPTGroup(g);
+gap> IsPTGroup(g);
 true
-gap&gt; g:=SmallGroup(8,3);
-&lt;pc group of size 8 with 3 generators&gt;
-gap&gt; OneSubnormalNonPermutableSubgroup(g);
+gap> g:=SmallGroup(8,3);
+<pc group of size 8 with 3 generators>
+gap> OneSubnormalNonPermutableSubgroup(g);
 Group([ f1*f3 ])
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -870,12 +870,12 @@ This function tries to set the property <Ref Attr="IsPSTGroup" /> to <K>true</K>
 to its result.
 <P/>
 
-<Example>
-gap&gt; g:=AlternatingGroup(4);
+<Example><![CDATA[
+gap> g:=AlternatingGroup(4);
 Alt( [ 1 .. 4 ] )
-gap&gt; OneSubnormalNonSPermutableSubgroup(g);
+gap> OneSubnormalNonSPermutableSubgroup(g);
 Group([ (1,2)(3,4) ])
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -887,22 +887,22 @@ with all its conjugates, if such a subgroup exist; otherwise, it
 returns <K>fail</K>.
 <P/>
 
-<Example>
-gap&gt; g:=AlternatingGroup(4);
+<Example><![CDATA[
+gap> g:=AlternatingGroup(4);
 Alt( [ 1 .. 4 ] )
-gap&gt; OneSubnormalNonConjugatePermutableSubgroup(g);
+gap> OneSubnormalNonConjugatePermutableSubgroup(g);
 fail
-gap&gt; g:=DihedralGroup(16);
-&lt;pc group of size 16 with 4 generators&gt;
-gap&gt; OneSubnormalNonConjugatePermutableSubgroup(g);
+gap> g:=DihedralGroup(16);
+<pc group of size 16 with 4 generators>
+gap> OneSubnormalNonConjugatePermutableSubgroup(g);
 Group([ f1*f4 ])
-gap&gt; g:=SymmetricGroup(4);
+gap> g:=SymmetricGroup(4);
 Sym( [ 1 .. 4 ] )
-gap&gt; OneSubnormalNonConjugatePermutableSubgroup(g);
+gap> OneSubnormalNonConjugatePermutableSubgroup(g);
 fail
-gap&gt; OneSubnormalNonPermutableSubgroup(g);
+gap> OneSubnormalNonPermutableSubgroup(g);
 Group([ (1,2)(3,4) ])
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -918,18 +918,18 @@ Func="SystemNormalizer" BookName="Format" /> of the
 <Package>Format</Package> package.
 <P/>
 
-<Example>
-gap&gt; g:=SymmetricGroup(4);
+<Example><![CDATA[
+gap> g:=SymmetricGroup(4);
 Sym( [ 1 .. 4 ] )
-gap&gt; OneSubnormalNonSNPermutableSubgroup(g);
+gap> OneSubnormalNonSNPermutableSubgroup(g);
 Group([ (1,3)(2,4) ])
-gap&gt; g:=Group((1,2,3)(4,5,6),(1,2));
+gap> g:=Group((1,2,3)(4,5,6),(1,2));
 Group([ (1,2,3)(4,5,6), (1,2) ])
-gap&gt; OneSubnormalNonSNPermutableSubgroup(g);
+gap> OneSubnormalNonSNPermutableSubgroup(g);
 fail
-gap&gt; OneSubnormalNonSPermutableSubgroup(g); 
+gap> OneSubnormalNonSPermutableSubgroup(g); 
 Group([ (1,2,3)(4,6,5) ])
-</Example>
+]]></Example>
 
 </Description>
 </ManSection>
@@ -977,16 +977,16 @@ require the computation of quotients by all normal subgroups, which
 could be a time-consuming task.
 <P/>
 
-<Example>
-gap&gt; g:=SmallGroup(40,4);
-&lt;pc group of size 40 with 4 generators&gt;
-gap&gt; IsTGroup(g);
+<Example><![CDATA[
+gap> g:=SmallGroup(40,4);
+<pc group of size 40 with 4 generators>
+gap> IsTGroup(g);
 true
-gap&gt; g:=SymmetricGroup(3);
+gap> g:=SymmetricGroup(3);
 Sym( [ 1 .. 3 ] )
-gap&gt; IsTGroup(g);
+gap> IsTGroup(g);
 true
-</Example>
+]]></Example>
 <P/>
 </Description>
 </ManSection>
@@ -1025,16 +1025,16 @@ could be a time-consuming task.
 <P/>
 
 
-<Example>
-gap&gt; g:=SmallGroup(1323,37);
-&lt;pc group of size 1323 with 5 generators&gt;
-gap&gt; IsPTGroup(g);
+<Example><![CDATA[
+gap> g:=SmallGroup(1323,37);
+<pc group of size 1323 with 5 generators>
+gap> IsPTGroup(g);
 true
-gap&gt; IsTGroup(g);
+gap> IsTGroup(g);
 false
-gap&gt; OneSubnormalNonNormalSubgroup(g);
+gap> OneSubnormalNonNormalSubgroup(g);
 Group([ f2*f3, f4, f5 ])
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -1078,26 +1078,26 @@ could be a time-consuming task.
 <P/>
 
 
-<Example>
-gap&gt; g:=SmallGroup(24,6);
-&lt;pc group of size 24 with 4 generators&gt;
-gap&gt; IsPSTGroup(g);
+<Example><![CDATA[
+gap> g:=SmallGroup(24,6);
+<pc group of size 24 with 4 generators>
+gap> IsPSTGroup(g);
 true
-gap&gt; IsPTGroup(g);
+gap> IsPTGroup(g);
 false
-gap&gt; OneSubnormalNonPermutableSubgroup(g);
+gap> OneSubnormalNonPermutableSubgroup(g);
 Group([ f1*f3, f4 ])
-gap&gt; g:=SmallGroup(24,6);
-&lt;pc group of size 24 with 4 generators&gt;
-gap&gt; IsPSTGroup(g);
+gap> g:=SmallGroup(24,6);
+<pc group of size 24 with 4 generators>
+gap> IsPSTGroup(g);
 true
-gap&gt; IsPTGroup(g);
+gap> IsPTGroup(g);
 false
-gap&gt; OneSubnormalNonPermutableSubgroup(g);
+gap> OneSubnormalNonPermutableSubgroup(g);
 Group([ f1*f3, f4 ])
-gap&gt; OneSubgroupNotPermutingWith(g,last);
+gap> OneSubgroupNotPermutingWith(g,last);
 Group([ f1*f2 ])
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -1109,16 +1109,16 @@ This property returns true if every subnormal subgroup of <A>G</A> permutes
 with all its conjugates, and false otherwise.
 <P/>
 
-<Example>
-gap&gt; g:=SymmetricGroup(4);
+<Example><![CDATA[
+gap> g:=SymmetricGroup(4);
 Sym( [ 1 .. 4 ] )
-gap&gt; IsCPTGroup(g);
+gap> IsCPTGroup(g);
 true
-gap&gt; IsPTGroup(g);
+gap> IsPTGroup(g);
 false
-gap&gt; IsPSTGroup(g);
+gap> IsPSTGroup(g);
 false
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 <ManSection>
@@ -1131,28 +1131,28 @@ and <K>false</K> otherwise. If the function is applied to an insoluble
 group, it gives an error.
 <P/>
 
-<Example>
-gap&gt; g:=Group((1,2,3)(4,5,6),(1,3));
+<Example><![CDATA[
+gap> g:=Group((1,2,3)(4,5,6),(1,3));
 Group([ (1,2,3)(4,5,6), (1,3) ])
-gap&gt; IsPSTGroup(g);
+gap> IsPSTGroup(g);
 false
-gap&gt; IsPSNTGroup(g);
+gap> IsPSNTGroup(g);
 true
-gap&gt; IsCPTGroup(g);
+gap> IsCPTGroup(g);
 true
-gap&gt; g:=SmallGroup(16,7);
-&lt;pc group of size 16 with 4 generators&gt;
-gap&gt; IsPSTGroup(g);
+gap> g:=SmallGroup(16,7);
+<pc group of size 16 with 4 generators>
+gap> IsPSTGroup(g);
 true
-gap&gt; IsCPTGroup(g);
+gap> IsCPTGroup(g);
 false
-gap&gt; g:=SymmetricGroup(4);
+gap> g:=SymmetricGroup(4);
 Sym( [ 1 .. 4 ] )
-gap&gt; IsPSNTGroup(g);
+gap> IsPSNTGroup(g);
 false
-gap&gt; IsCPTGroup(g);
+gap> IsCPTGroup(g);
 true
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 </Section>
@@ -1195,33 +1195,33 @@ all chief factors have order <M>p</M> or have order not divisible
 by&nbsp;<M>p</M>.
 <P/>
 
-<Example>
-gap&gt; g:=Group((1,2,3,4,5,6,7), (8,9,10,11,12,13,14), (15,16,17,18,19,20,21),
-&gt; (22,23,24,25,26,27,28), (29,30,31,32,33,34,35),
-&gt; (1,8,15,22,29)(2,9,16,23,30)(3,10,17,24,31)(4,11,18,25,32)(5,12,19,26,
-&gt;     33)(6,13,20,27,34)(7,14,21,28,35),
-&gt; (1,8)(2,9)(3,10)(4,11)(5,12)(6,13)(7,14)); #C7 wr S5
-&lt;permutation group with 7 generators&gt;
-gap&gt; IsPSupersolvable(g,7);
+<Example><![CDATA[
+gap> g:=Group((1,2,3,4,5,6,7), (8,9,10,11,12,13,14), (15,16,17,18,19,20,21),
+> (22,23,24,25,26,27,28), (29,30,31,32,33,34,35),
+> (1,8,15,22,29)(2,9,16,23,30)(3,10,17,24,31)(4,11,18,25,32)(5,12,19,26,
+>     33)(6,13,20,27,34)(7,14,21,28,35),
+> (1,8)(2,9)(3,10)(4,11)(5,12)(6,13)(7,14)); #C7 wr S5
+<permutation group with 7 generators>
+gap> IsPSupersolvable(g,7);
 false
-gap&gt; IsPSupersolvable(g,11);
+gap> IsPSupersolvable(g,11);
 true
-</Example>
+]]></Example>
 
-<Example>
-gap&gt; g:=DirectProduct(PSL(2,7),
-&gt;     Group((1,2,3,4,5,6,7,8,9,10,11), (2,5,6,10,4)(3,9,11,8,7)));
+<Example><![CDATA[
+gap> g:=DirectProduct(PSL(2,7),
+>     Group((1,2,3,4,5,6,7,8,9,10,11), (2,5,6,10,4)(3,9,11,8,7)));
 Group([ (3,7,5)(4,8,6), (1,2,6)(3,4,8), (9,10,11,12,13,14,15,16,17,18,19),
   (10,13,14,18,12)(11,17,19,16,15) ])
-gap&gt; IsPNilpotent(g,5);
+gap> IsPNilpotent(g,5);
 true
-gap&gt; IsPNilpotent(g,11);
+gap> IsPNilpotent(g,11);
 false
-gap&gt; IsPSupersolvable(g,11);
+gap> IsPSupersolvable(g,11);
 true
-gap&gt; IsPNilpotent(g,3);
+gap> IsPNilpotent(g,3);
 false
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 </Section>
@@ -1262,24 +1262,24 @@ PST-group if and only if it satisfies <Alt Only="LaTeX"><M>{\cal
   C}_p</M></Alt><Alt Not="LaTeX"><M>C_p</M></Alt> for all primes <M>p</M>.
 <P/>
 
-<Example>
-gap&gt; g:=AlternatingGroup(5);
+<Example><![CDATA[
+gap> g:=AlternatingGroup(5);
 Alt( [ 1 .. 5 ] )
-gap&gt; IsCp(g,3);
+gap> IsCp(g,3);
 true
-gap&gt; IsCp(g,5);
+gap> IsCp(g,5);
 true
-gap&gt; IsCp(g,7);
+gap> IsCp(g,7);
 true
-gap&gt; IsCp(g,2);
+gap> IsCp(g,2);
 false
-gap&gt; g:=SmallGroup(200,44); # semidirect product of Q8 with C5xC5
-&lt;pc group of size 200 with 5 generators&gt;
-gap&gt; IsCp(g,5);
+gap> g:=SmallGroup(200,44); # semidirect product of Q8 with C5xC5
+<pc group of size 200 with 5 generators>
+gap> IsCp(g,5);
 false
-gap&gt; IsCp(g,2);
+gap> IsCp(g,2);
 true
-</Example>
+]]></Example>
 <P/>
 </Description>
 </ManSection>
@@ -1302,20 +1302,20 @@ if and only if <M>G</M> satisfies <Alt Only="LaTeX"><M>{\cal
   X}_p</M></Alt><Alt Not="LaTeX"><M>X_p</M></Alt> for all primes <M>p</M>.
 <P/>
 
-<Example>
-gap&gt; g:=SmallGroup(189,7);
-&lt;pc group of size 189 with 4 generators&gt;
-gap&gt; IsXp(g,3);
+<Example><![CDATA[
+gap> g:=SmallGroup(189,7);
+<pc group of size 189 with 4 generators>
+gap> IsXp(g,3);
 true
-gap&gt; IsXp(g,7);
+gap> IsXp(g,7);
 true
-gap&gt; IsPTGroup(g);
+gap> IsPTGroup(g);
 true
-gap&gt; IsCp(g,3);
+gap> IsCp(g,3);
 false
-gap&gt; IsTGroup(g);
+gap> IsTGroup(g);
 false
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -1337,22 +1337,22 @@ if and only if <M>G</M> satisfies <Alt Only="LaTeX"><M>{\cal
   Y}_p</M></Alt><Alt Not="LaTeX"><M>Y_p</M></Alt> for all primes <M>p</M>.
 <P/>
 
-<Example>
-gap&gt; g:=SmallGroup(200,43); # semidirect product of D8 with C5xC5
-&lt;pc group of size 200 with 5 generators&gt;
-gap&gt; IsCp(g,2);
+<Example><![CDATA[
+gap> g:=SmallGroup(200,43); # semidirect product of D8 with C5xC5
+<pc group of size 200 with 5 generators>
+gap> IsCp(g,2);
 false
-gap&gt; IsXp(g,2);
+gap> IsXp(g,2);
 false
-gap&gt; IsYp(g,2);
+gap> IsYp(g,2);
 true
-gap&gt; g:=Group((1,2,3)(4,5,6),(1,2));
+gap> g:=Group((1,2,3)(4,5,6),(1,2));
 Group([ (1,2,3)(4,5,6), (1,2) ])
-gap&gt; IsYp(g,3);
+gap> IsYp(g,3);
 false
-gap&gt; IsYp(g,2);
+gap> IsYp(g,2);
 true
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -1387,12 +1387,12 @@ has an abelian Sylow <M>p</M>-subgroup and <M>G</M> satisfies <Alt Only="LaTeX">
   C}_p</M></Alt><Alt Not="LaTeX"><M>C_p</M></Alt>.
 <P/>
 
-<Example>
-gap&gt; g:=AlternatingGroup(5);
+<Example><![CDATA[
+gap> g:=AlternatingGroup(5);
 Alt( [ 1 .. 5 ] )
-gap&gt; IsAbCp(g,5);
+gap> IsAbCp(g,5);
 true
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -1427,12 +1427,12 @@ This function tries to set the property <Ref Prop="IsTGroup" /> to <K>true</K> o
 the Sylow <M>p</M>-subgroup.
 <P/>
 
-<Example>
-gap&gt; g:=DirectProduct(SmallGroup(8,4),CyclicGroup(5));
-&lt;pc group of size 40 with 4 generators&gt;
-gap&gt; IsDedekindSylow(g,2);
+<Example><![CDATA[
+gap> g:=DirectProduct(SmallGroup(8,4),CyclicGroup(5));
+<pc group of size 40 with 4 generators>
+gap> IsDedekindSylow(g,2);
 true
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -1467,12 +1467,12 @@ it checks whether for all generators <M>t</M> of <M>X</M>, the equality
 s)</M>; otherwise it returns <K>fail</K>.
 <P/>
 
-<Example>
-gap&gt; e:=ExtraspecialGroup(27,9);
-&lt;pc group of size 27 with 3 generators&gt;
-gap&gt; IwasawaTripleWithSubgroup(e,Subgroup(e,[e.1,e.3]),3);
+<Example><![CDATA[
+gap> e:=ExtraspecialGroup(27,9);
+<pc group of size 27 with 3 generators>
+gap> IwasawaTripleWithSubgroup(e,Subgroup(e,[e.1,e.3]),3);
 [ Group([ f1, f3 ]), f2, 1 ]
-</Example>
+]]></Example>
 <P/>
 </Description>
 </ManSection>
@@ -1522,16 +1522,16 @@ For the trivial group, it returns the triple composed by the trivial
 group, its identity element, and the prime&nbsp;<M>3</M>.
 <P/>
 
-<Example>
-gap&gt; e:=ExtraspecialGroup(27,3);
-&lt;pc group of size 27 with 3 generators&gt;
-gap&gt; IwasawaTriple(e);
+<Example><![CDATA[
+gap> e:=ExtraspecialGroup(27,3);
+<pc group of size 27 with 3 generators>
+gap> IwasawaTriple(e);
 fail
-gap&gt; e:=ExtraspecialGroup(27,9);
-&lt;pc group of size 27 with 3 generators&gt;
-gap&gt; IwasawaTriple(e);
+gap> e:=ExtraspecialGroup(27,9);
+<pc group of size 27 with 3 generators>
+gap> IwasawaTriple(e);
 [ Group([ f1, f3 ]), f2, 1 ]
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -1561,12 +1561,12 @@ The values of the attributes <Ref Prop="IsPTGroup" /> and <Ref Prop="IsTGroup" /
 by the function.
 <P/>
 
-<Example>
-gap&gt; e:=ExtraspecialGroup(27,9);
-&lt;pc group of size 27 with 3 generators&gt;
-gap&gt; IsIwasawaSylow(e,3);
+<Example><![CDATA[
+gap> e:=ExtraspecialGroup(27,9);
+<pc group of size 27 with 3 generators>
+gap> IsIwasawaSylow(e,3);
 true
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -1649,36 +1649,36 @@ not permute, or <K>fail</K> if this pair does not exist because the product
 is totally permutable.
 <P/>
 
-<Example>
-gap&gt; g:=SymmetricGroup(4);
+<Example><![CDATA[
+gap> g:=SymmetricGroup(4);
 Sym( [ 1 .. 4 ] )
-gap&gt; a:=AlternatingGroup(4);
+gap> a:=AlternatingGroup(4);
 Alt( [ 1 .. 4 ] )
-gap&gt; b:=Subgroup(g,[(1,2,3,4),(1,3)]);
+gap> b:=Subgroup(g,[(1,2,3,4),(1,3)]);
 Group([ (1,2,3,4), (1,3) ])
-gap&gt; AreMutuallyPermutableSubgroups(g,a,b);
+gap> AreMutuallyPermutableSubgroups(g,a,b);
 true
-gap&gt; AreTotallyPermutableSubgroups(g,a,b);
+gap> AreTotallyPermutableSubgroups(g,a,b);
 false
-gap&gt; OnePairShowingNotTotallyPermutableSubgroups(g,a,b);
+gap> OnePairShowingNotTotallyPermutableSubgroups(g,a,b);
 [ Group([ (2,3,4) ]), Group([ (1,2)(3,4) ]) ]
-gap&gt; c:=Subgroup(g,[(1,2,3)]);
+gap> c:=Subgroup(g,[(1,2,3)]);
 Group([ (1,2,3) ])
-gap&gt; AreMutuallyPermutableSubgroups(g,a,c);
+gap> AreMutuallyPermutableSubgroups(g,a,c);
 false
-gap&gt; OnePairShowingNotMutuallyPermutableSubgroups(g,a,c);
+gap> OnePairShowingNotMutuallyPermutableSubgroups(g,a,c);
 [ Group([ (2,3,4) ]), Group([ (1,2,3) ]) ]
-gap&gt; AreMutuallyPermutableSubgroups(a,c);
+gap> AreMutuallyPermutableSubgroups(a,c);
 false
-gap&gt; g:=SymmetricGroup(3);
+gap> g:=SymmetricGroup(3);
 Sym( [ 1 .. 3 ] )
-gap&gt; a:=AlternatingGroup(3);
+gap> a:=AlternatingGroup(3);
 Alt( [ 1 .. 3 ] )
-gap&gt; b:=Subgroup(g,[(1,2)]);
+gap> b:=Subgroup(g,[(1,2)]);
 Group([ (1,2) ])
-gap&gt; AreTotallyPermutableSubgroups(g,a,b);
+gap> AreTotallyPermutableSubgroups(g,a,b);
 true
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -1742,22 +1742,22 @@ In the version with two arguments, <A>A</A> and <A>B</A> are assumed to be
 subgroups of a common supergroup.
 <P/>
 
-<Example>
-gap&gt; g:=SymmetricGroup(4);
+<Example><![CDATA[
+gap> g:=SymmetricGroup(4);
 Sym( [ 1 .. 4 ] )
-gap&gt; a:=AlternatingGroup(4);
+gap> a:=AlternatingGroup(4);
 Alt( [ 1 .. 4 ] )
-gap&gt; b:=Subgroup(g,[(1,2,3,4),(1,3)]);
+gap> b:=Subgroup(g,[(1,2,3,4),(1,3)]);
 Group([ (1,2,3,4), (1,3) ])
-gap&gt; AreTotallyFPermutableSubgroups(g,a,b,
-&gt;      MaximalSubgroups(a),MaximalSubgroups(b));
+gap> AreTotallyFPermutableSubgroups(g,a,b,
+>      MaximalSubgroups(a),MaximalSubgroups(b));
 false
-gap&gt; OnePairShowingNotTotallyFPermutableSubgroups(g,a,b,
-&gt;      MaximalSubgroups(a),MaximalSubgroups(b));
+gap> OnePairShowingNotTotallyFPermutableSubgroups(g,a,b,
+>      MaximalSubgroups(a),MaximalSubgroups(b));
 [ Group([ (1,2,3) ]), Group([ (2,4), (1,3)(2,4) ]) ]
-gap&gt; AreTotallyFPermutableSubgroups(g,a,b,DerivedSeries(a),DerivedSeries(b));
+gap> AreTotallyFPermutableSubgroups(g,a,b,DerivedSeries(a),DerivedSeries(b));
 true
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -1784,14 +1784,14 @@ complete list of subgroups, not only a representative of each
 conjugacy class as other functions do.
 <P/> 
 
-<Example>
-gap&gt; g:=SymmetricGroup(4);
+<Example><![CDATA[
+gap> g:=SymmetricGroup(4);
 Sym( [ 1 .. 4 ] )
-gap&gt; AllSubnormalSubgroups(g);
+gap> AllSubnormalSubgroups(g);
 [ Sym( [ 1 .. 4 ] ), Group([ (2,4,3), (1,4)(2,3), (1,3)(2,4) ]), Group([ (1,4)
   (2,3), (1,3)(2,4) ]), Group(()), Group([ (1,3)(2,4) ]), Group([ (1,2)
   (3,4) ]), Group([ (1,4)(2,3) ]) ]
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -1804,12 +1804,12 @@ group <A>G</A>, without repetitions. Its code has been borrowed from the
 &GAP; manual.
 <P/>
 
-<Example>
-gap&gt; g:=SymmetricGroup(4);
+<Example><![CDATA[
+gap> g:=SymmetricGroup(4);
 Sym( [ 1 .. 4 ] )
-gap&gt; PrimesDividingSize(g);
+gap> PrimesDividingSize(g);
 [ 2, 3 ]
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -1825,13 +1825,13 @@ Sylow system or Sylow basis of <A>G</A>  by means of the function
 dividing the order of <A>G</A> permuting in pairs).
 <P/>
 <Log>
-gap&gt; g:=SymmetricGroup(4);
+gap> g:=SymmetricGroup(4);
 Sym( [ 1 .. 4 ] )
-gap&gt; SylowSubgroups(g);
+gap> SylowSubgroups(g);
 [ Group([ (1,2), (3,4), (1,3)(2,4) ]), Group([ (1,2,3) ]) ]
-gap&gt; s5:=SymmetricGroup(5);
+gap> s5:=SymmetricGroup(5);
 Sym( [ 1 .. 5 ] )
-gap&gt; SylowSubgroups(s5);
+gap> SylowSubgroups(s5);
 [ Group([ (1,2), (3,4), (1,3)(2,4) ]), Group([ (1,2,3) ]), Group([ (1,2,3,4,
    5) ]) ]
 </Log>
@@ -1855,16 +1855,16 @@ BookName="Ref" />, they might not be available if the group is not
 given as a permutation group.
 <P/>
 
-<Example>
-gap&gt; g:=SymmetricGroup(4);
+<Example><![CDATA[
+gap> g:=SymmetricGroup(4);
 Sym( [ 1 .. 4 ] )
-gap&gt; IsSCGroup(g);
+gap> IsSCGroup(g);
 false
-gap&gt; g:=GL(2,5);
+gap> g:=GL(2,5);
 GL(2,5)
-gap&gt; IsSCGroup(g);
+gap> IsSCGroup(g);
 true
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -1875,16 +1875,16 @@ true
 This property takes the value <K>true</K> if <M>G</M> has a Sylow tower of
 supersoluble type, and <K>false</K> otherwise.
 <P/>
-<Example>
-gap&gt; g:=SymmetricGroup(4);
+<Example><![CDATA[
+gap> g:=SymmetricGroup(4);
 Sym( [ 1 .. 4 ] )
-gap&gt; IsSylowTowerGroup(g);
+gap> IsSylowTowerGroup(g);
 false
-gap&gt; g:=SmallGroup(75,1);
-&lt;pc group of size 75 with 3 generators&gt;
-gap&gt; IsSylowTowerGroup(g);
+gap> g:=SmallGroup(75,1);
+<pc group of size 75 with 3 generators>
+gap> IsSylowTowerGroup(g);
 true
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -1899,14 +1899,14 @@ subgroups of <A>G</A> which permute with <A>U</A>. If <A>U</A> is
 permutable in <A>G</A> (in particular, if <A>U</A> is normal in <A>G</A>), then its
 permutizer coincides with&nbsp;<A>G</A>.
 <P/>
-<Example>
-gap&gt; g:=SymmetricGroup(4);
+<Example><![CDATA[
+gap> g:=SymmetricGroup(4);
 Sym( [ 1 .. 4 ] )
-gap&gt; Permutizer(g,Subgroup(g,[(1,2,3)]));
+gap> Permutizer(g,Subgroup(g,[(1,2,3)]));
 Group([ (1,2,3), (2,3) ])
-gap&gt; Size(last);
+gap> Size(last);
 6
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -1921,11 +1921,11 @@ This auxiliary function returns the list of all generators of the cyclic
 used in interactive mode, no check is done that the
 argument is a <M>p</M>-element. 
 
-<Example>
-gap&gt; AllGeneratorsCyclicPGroup((1,2,3,4,5,6,7,8,9),3);
+<Example><![CDATA[
+gap> AllGeneratorsCyclicPGroup((1,2,3,4,5,6,7,8,9),3);
 [ (1,2,3,4,5,6,7,8,9), (1,3,5,7,9,2,4,6,8), (1,5,9,4,8,3,7,2,6),
   (1,6,2,7,3,8,4,9,5), (1,8,6,4,2,9,7,5,3), (1,9,8,7,6,5,4,3,2) ]
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 

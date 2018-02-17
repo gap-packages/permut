@@ -10,7 +10,7 @@
 SetPackageInfo( rec(
                      PackageName := "permut",
                      Subtitle:= "A package to deal with permutability in finite groups",
-                     Date:="11/02/2018",
+                     Date:="17/02/2018",
                      Version := "1.04",
                      SourceRepository := rec(
                                               Type := "git",
