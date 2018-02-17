@@ -1,7 +1,9 @@
-v1.04:
+v2.0.0:
 - Included code in GitHub.
 - Fixed a bug in functions OneSubgroupInWhichSubnormalNotNormal, Permutable, SPermutable that gave incorrect results because of an incorrect treatment of the relation with the parent group.
 - Modified banner, improved PrimesDividingSize, deleted obsolete code and other minor changes suggested by Max Horn and Alexander Konovalov.
+- New numbering system for versions.
+- Use GitHubPagesForGAP for the web page
 
 v1.03:
 - Replaced the version number in the manual (it was incorrect).
