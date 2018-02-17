@@ -11,7 +11,7 @@ SetPackageInfo( rec(
                      PackageName := "permut",
                      Subtitle:= "A package to deal with permutability in finite groups",
                      Date:="17/02/2018",
-                     Version := "1.04",
+                     Version := "2.0.0",
                      SourceRepository := rec(
                                               Type := "git",
                                               URL := Concatenation( "https://github.com/gap-packages/", ~.PackageName ),
