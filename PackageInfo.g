@@ -10,7 +10,7 @@
 SetPackageInfo( rec(
                      PackageName := "permut",
                      Subtitle:= "A package to deal with permutability in finite groups",
-                     Date:="17/02/2018",
+                     Date:="18/02/2018",
                      Version := "2.0.0",
                      SourceRepository := rec(
                                               Type := "git",
@@ -20,7 +20,7 @@ SetPackageInfo( rec(
                      SupportEmail   := "Ramon.Esteban@uv.es",
                      PackageWWWHome  := "https://gap-packages.github.io/permut/",
                      PackageInfoURL  := Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
-                     README_URL      := Concatenation( ~.PackageWWWHome, "README.permut" ),
+                     README_URL      := Concatenation( ~.PackageWWWHome, "README.md" ),
                      ArchiveURL      := Concatenation( ~.SourceRepository.URL,
                                                        "/releases/download/v", ~.Version,
                                                        "/", ~.PackageName, "-", ~.Version ),
