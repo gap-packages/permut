@@ -11,7 +11,7 @@ SetPackageInfo( rec(
                      PackageName := "permut",
                      Subtitle:= "A package to deal with permutability in finite groups",
                      Date:="18/02/2018",
-                     Version := "2.0.0",
+                     Version := "2.0.1",
                      SourceRepository := rec(
                                               Type := "git",
                                               URL := Concatenation( "https://github.com/gap-packages/", ~.PackageName ),
@@ -25,7 +25,7 @@ SetPackageInfo( rec(
                                                        "/releases/download/v", ~.Version,
                                                        "/", ~.PackageName, "-", ~.Version ),
                      
-                     ArchiveFormats := ".tar.gz",
+                     ArchiveFormats := ".tar.gz .tar.bz2 .zip",
                      AbstractHTML:="This package provides functions for computing with permutability in finite groups.",
                      Status:="accepted",
                      ##  You must provide the next two entries if and only if the status is 
