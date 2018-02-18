@@ -51,7 +51,7 @@ SetPackageInfo( rec(
                                      Institution:="Departament de Matem\\`atiques, Universitat de Val\\`encia"
                                     ),
                                 rec(
-                                     LastName:="Cosme-Ll\\'opez",
+                                     LastName:="Cosme-Llópez",
                                      FirstNames:="Enric",
                                      IsAuthor:=true,
                                      IsMaintainer:=false,
@@ -68,7 +68,7 @@ SetPackageInfo( rec(
                                     ),
                                 rec(
                                      LastName:="Esteban-Romero",
-                                     FirstNames:="Ram\\'on",
+                                     FirstNames:="Ramón",
                                      IsAuthor:=true,
                                      IsMaintainer:=true,
                                      WWWHome:="https://www.uv.es/estebanr",
