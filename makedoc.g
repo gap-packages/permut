@@ -6,7 +6,7 @@
 LoadPackage( "GAPDoc" );
 
 MakeGAPDocDoc( "doc",     # path to the directory containing the main file
-               "main",    # the name of the main file (without extension)
+               "permut",    # the name of the main file (without extension)
                           # list of (probably source code) files relative 
                           # to path which contain pieces of documentation 
                           # which must be included in the document
