@@ -1,5 +1,5 @@
 LoadPackage("permut");
-path := Directory("/home/estebanr/Baixades/gap4r8p10/pkg/permut/doc");;
+path := Directory("doc");;
 main:="permut.xml";;
 files:=["../lib/permut.gd", "../lib/psoluble.gd", "../lib/permut.gi", "../lib/psoluble.gi"];;
 bookname:="permut";;
