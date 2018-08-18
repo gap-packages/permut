@@ -13,10 +13,8 @@ gap> sym4:=SymmetricGroup(4);
 Sym( [ 1 .. 4 ] )
 gap> ArePermutableSubgroups(sym4, Subgroup(sym4, [(1,2)(3,4)]), Subgroup(sym4, [(1,2,3)]));
 false
-gap> Set(AllSubnormalSubgroups(sym4));
-[ Group(()), Sym( [ 1 .. 4 ] ), Group([ (2,4,3), (1,4)(2,3), (1,3)(2,4) ]), 
-  Group([ (1,2)(3,4) ]), Group([ (1,4)(2,3), (1,3)(2,4) ]), Group([ (1,3)
-  (2,4) ]), Group([ (1,4)(2,3) ]) ]
+gap> List(Set(AllSubnormalSubgroups(sym4), IdGroup));
+[ [ 1, 1 ], [ 2, 1 ], [ 4, 2 ], [ 12, 3 ], [ 24, 12 ] ]
 gap> IsTGroup(SymmetricGroup(3));
 true
 gap> IsPTGroup(ExtraspecialGroup(125, 5));
