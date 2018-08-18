@@ -1,3 +1,9 @@
+v2.0.3:
+- Add the modification of v2.0.2 in this file
+
+v2.0.2:
+- Replace a test whose output has changed
+
 v2.0.1:
 - Add more formats for the web page
 - Add to the archives the `.js` and `.css` files

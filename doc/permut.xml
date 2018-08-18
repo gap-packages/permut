@@ -9,7 +9,7 @@
 <TitlePage>
   <Title><Package>PERMUT</Package></Title>
   <Subtitle>A &GAP;4 package to deal with permutability</Subtitle>
-  <Version>Version 2.0.2</Version>
+  <Version>Version 2.0.3</Version>
   <Author>Adolfo Ballester-Bolinches
   <Email>Adolfo.Ballester@uv.es</Email>
   <Address>Departament de Matemàtiques, Universitat de València</Address></Author>
@@ -148,7 +148,7 @@ by Bettina Eick (http://www.icm.tu-bs.de/~beick) and
 Homepage: http://www.uoregon.edu/~wright/RESEARCH/format/
 ─────────────────────────────────────────────────────────────────────────────
 ─────────────────────────────────────────────────────────────────────────────
-Loading  permut 2.0.2 (PERMUT: A package to deal with permutability in finite groups)
+Loading  permut 2.0.3 (PERMUT: A package to deal with permutability in finite groups)
 by Adolfo Ballester-Bolinches (Adolfo.Ballester@uv.es),
    Enric Cosme-Ll\'opez (https://www.uv.es/coslloen), and
    Ram\'on Esteban-Romero (https://www.uv.es/estebanr).
