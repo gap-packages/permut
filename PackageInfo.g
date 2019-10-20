@@ -41,7 +41,7 @@ SetPackageInfo( rec(
                                      IsAuthor:=true,
                                      IsMaintainer:=false,
                                      Email:="Adolfo.Ballester@uv.es",
-                                     PostalAddres:=Concatenation(
+                                     PostalAddress:=Concatenation(
                                                                   ["Adolfo Ballester-Bolinches\n",
                                                                    "Departament de Matem\\`atiques\n",
                                                                    "Universitat de Val\\`encia\n",
@@ -57,7 +57,7 @@ SetPackageInfo( rec(
                                      IsMaintainer:=false,
                                      WWWHome:="https://www.uv.es/coslloen",
                                      Email:="Enric.Cosme@uv.es",
-                                     PostalAddres:=Concatenation(
+                                     PostalAddress:=Concatenation(
                                                                   ["Enric Cosme-Ll\\'opez\n",
                                                                    "Departament de Matem\\`atiques\n",
                                                                    "Universitat de Val\\`encia\n",
