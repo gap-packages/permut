@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/gap-packages/permut.svg?branch=master)](https://travis-ci.org/gap-packages/permut)
+[![Build Status](https://github.com/gap-packages/permut/workflows/CI/badge.svg?branch=master)](https://github.com/gap-packages/permut/actions?query=workflow%3ACI+branch%3Amaster)
 [![Code Coverage](https://codecov.io/github/gap-packages/permut/coverage.svg?branch=master&token=)](https://codecov.io/gh/gap-packages/permut)
 # PERMUT: a GAP4 package to deal with permutability
 
