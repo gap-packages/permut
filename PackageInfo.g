@@ -3,14 +3,14 @@
 #W  PackageInfo.g              Permutability GAP library          ABB&ECL&RER
 ##
 ##
-#Y  Copyright (C)  2000-2018 Adolfo Ballester-Bolinches, Enric Cosme-Ll\'opez and
+#Y  Copyright (C)  2000-2022 Adolfo Ballester-Bolinches, Enric Cosme-Ll\'opez and
 #Y                           Ramon Esteban-Romero
 ##
 ##
 SetPackageInfo( rec(
                      PackageName := "permut",
                      Subtitle:= "A package to deal with permutability in finite groups",
-                     Date:="20/12/2019", # dd/mm/yyyy format
+                     Date:="27/03/2022", # dd/mm/yyyy format
                      License :="GPL-2.0-or-later",
                      Version := "2.0.4",
                      SourceRepository := rec(
@@ -79,12 +79,7 @@ SetPackageInfo( rec(
                                                                    "Departament de Matem\\`atiques\n",
                                                                    "Universitat de Val\\`encia\n",
                                                                    "Dr.\\ Moliner, 50\n",
-                                                                   "46100 Burjassot, Val\\`encia, Spain\n",
-                                                                   "Permanent: \n",
-                                                                   "Institut Universitari de Matem\\`atica Pura i Aplicada\n",
-                                                                   "Universitat Polit\\`ecnica de Val\\`encia\n",
-                                                                   "Cam{\\'\\i} de Vera, s/n\n",
-                                                                   "46022 Val\\`encia, Spain"]),
+                                                                   "46100 Burjassot, Val\\`encia, Spain\n"]),
                                      Place:="Burjassot, Val\\`encia",
                                      Institution:="Departament de Matem\\`atiques, Universitat de Val\\`encia"
                                     )
