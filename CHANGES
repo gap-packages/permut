@@ -1,6 +1,7 @@
 v2.0.4:
 - Change mispelled name PostalAddres by PostalAddress in PackageInfo.g
 - Add license field, revise travis files
+- Removed old address of RER in PackageInfo.g
 
 v2.0.3:
 - Add the modification of v2.0.2 in this file
