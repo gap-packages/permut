@@ -1,102 +1,111 @@
 #############################################################################
-##  
-##  Demo PackageInfo.g for the GitHubPagesForGAP
 ##
-
+#W  PackageInfo.g              Permutability GAP library          ABB&ECL&RER
+##
+##
+#Y  Copyright (C)  2000-2022 Adolfo Ballester-Bolinches, Enric Cosme-Ll\'opez and
+#Y                           Ramon Esteban-Romero
+##
+##
 SetPackageInfo( rec(
-
-PackageName := "GitHubPagesForGAP",
-
-Subtitle := "A GitHub Pages generator for GAP packages",
-Version := "0.3",
-Date := "10/11/2019", # dd/mm/yyyy format
-License := "0BSD",
-
-Persons := [
-  rec(
-    LastName      := "Horn",
-    FirstNames    := "Max",
-    IsAuthor      := true,
-    IsMaintainer  := true,
-    Email         := "max.horn@uni-siegen.de",
-    WWWHome       := "https://www.quendi.de/math",
-    PostalAddress := Concatenation(
-                       "Department Mathematik\n",
-                       "Universität Siegen\n",
-                       "Walter-Flex-Straße 3\n",
-                       "57072 Siegen\n",
-                       "Germany" ),
-    Place         := "Siegen",
-    Institution   := "Universität Siegen"
-  ),
-
-  rec(
-    LastName      := "Thor",
-    FirstNames    := "A. U.",
-    IsAuthor      := true,
-    IsMaintainer  := false,
-    #Email         := "author@example.com",
-  ),
-
-  rec(
-    LastName      := "Itor",
-    FirstNames    := "Jan",
-    IsAuthor      := false,
-    IsMaintainer  := true,
-    #Email         := "janitor@example.com",
-  ),
-],
-
-Status := "other",
-
-# The following are not strictly necessary in your own PackageInfo.g
-# (in the sense that update.g only looks at the usual fields
-# like PackageWWWHome, ArchiveURL etc.). But they are convenient
-# if you use exactly the scheme for your package website that we propose.
-GithubUser := "gap-system",
-GithubRepository := ~.PackageName,
-GithubWWW := Concatenation("https://github.com/", ~.GithubUser, "/", ~.GithubRepository),
-
-PackageWWWHome := Concatenation("https://", ~.GithubUser, ".github.io/", ~.GithubRepository, "/"),
-README_URL     := Concatenation( ~.PackageWWWHome, "README.md" ),
-PackageInfoURL := Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
-# The following assumes you are using the Github releases system. If not, adjust
-# it accordingly.
-ArchiveURL     := Concatenation(~.GithubWWW,
-                    "/releases/download/v", ~.Version, "/",
-                    ~.GithubRepository, "-", ~.Version),
-
-ArchiveFormats := ".tar.gz .tar.bz2",
-
-AbstractHTML := 
-  "This is a pseudo package that contains no actual\
-  <span class=\"pkgname\">GAP</span> code. Instead, it is a template for other\
-  GAP packages that allows to quickly setup GitHub Pages.",
-
-PackageDoc := rec(
-  BookName  := "GitHubPagesForGAP",
-  ArchiveURLSubset := ["doc"],
-  HTMLStart := "doc/chap0.html",
-  PDFFile   := "doc/manual.pdf",
-  SixFile   := "doc/manual.six",
-  LongTitle := "A GitHub Pages generator for GAP packages",
-),
-
-# The following dependencies are fake and for testing / demo purposes
-Dependencies := rec(
-  GAP := ">=4.8.1",
-  NeededOtherPackages := [
-    ["GAPDoc", ">= 1.2"],
-    ["IO", ">= 4.1"],
-  ],
-  SuggestedOtherPackages := [["orb", ">= 4.2"]],
-  ExternalConditions := []
-),
-
-AvailabilityTest := ReturnTrue,
-
-Keywords := ["GitHub Pages", "GAP"]
-
-));
-
-
+                     PackageName := "permut",
+                     Subtitle:= "A package to deal with permutability in finite groups",
+                     Date:="27/03/2022", # dd/mm/yyyy format
+                     License :="GPL-2.0-or-later",
+                     Version := "2.0.4",
+                     SourceRepository := rec(
+                                              Type := "git",
+                                              URL := Concatenation( "https://github.com/gap-packages/", ~.PackageName ),
+                                             ),
+                     IssueTrackerURL := Concatenation( ~.SourceRepository.URL, "/issues" ),
+                     SupportEmail   := "Ramon.Esteban@uv.es",
+                     PackageWWWHome  := "https://gap-packages.github.io/permut/",
+                     PackageInfoURL  := Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
+                     README_URL      := Concatenation( ~.PackageWWWHome, "README.md" ),
+                     ArchiveURL      := Concatenation( ~.SourceRepository.URL,
+                                                       "/releases/download/v", ~.Version,
+                                                       "/", ~.PackageName, "-", ~.Version ),
+                     
+                     ArchiveFormats := ".tar.gz .tar.bz2 .zip",
+                     AbstractHTML:="This package provides functions for computing with permutability in finite groups.",
+                     Status:="accepted",
+                     ##  You must provide the next two entries if and only if the status is 
+                     ##  "accepted":
+                     # format: 'name (place)'
+                     CommunicatedBy := "Alice Niemeyer (Perth)",
+                     # format: mm/yyyy
+                     AcceptDate := "04/2014",
+                     Persons:=[
+                                rec(
+                                     LastName:="Ballester-Bolinches",
+                                     FirstNames:="Adolfo",
+                                     IsAuthor:=true,
+                                     IsMaintainer:=false,
+                                     Email:="Adolfo.Ballester@uv.es",
+                                     PostalAddress:=Concatenation(
+                                                                  ["Adolfo Ballester-Bolinches\n",
+                                                                   "Departament de Matem\\`atiques\n",
+                                                                   "Universitat de Val\\`encia\n",
+                                                                   "Dr.\\ Moliner, 50\n",
+                                                                   "46100 Burjassot, Val\\`encia, Spain"]),
+                                     Place:="Burjassot, Val\\`encia",
+                                     Institution:="Departament de Matem\\`atiques, Universitat de Val\\`encia"
+                                    ),
+                                rec(
+                                     LastName:="Cosme-Llópez",
+                                     FirstNames:="Enric",
+                                     IsAuthor:=true,
+                                     IsMaintainer:=false,
+                                     WWWHome:="https://www.uv.es/coslloen",
+                                     Email:="Enric.Cosme@uv.es",
+                                     PostalAddress:=Concatenation(
+                                                                  ["Enric Cosme-Ll\\'opez\n",
+                                                                   "Departament de Matem\\`atiques\n",
+                                                                   "Universitat de Val\\`encia\n",
+                                                                   "Dr.\\ Moliner, 50\n",
+                                                                   "46100 Burjassot, Val\\`encia, Spain"]),
+                                     Place:="Burjassot, Val\\`encia",
+                                     Institution:="Departament de Matem\\`atiques, Universitat de Val\\`encia"
+                                    ),
+                                rec(
+                                     LastName:="Esteban-Romero",
+                                     FirstNames:="Ramón",
+                                     IsAuthor:=true,
+                                     IsMaintainer:=true,
+                                     WWWHome:="https://www.uv.es/estebanr",
+                                     Email:="Ramon.Esteban@uv.es",
+                                     PostalAddres:=Concatenation(
+                                                                  ["Ramon Esteban-Romero\n",
+                                                                   "Departament de Matem\\`atiques\n",
+                                                                   "Universitat de Val\\`encia\n",
+                                                                   "Dr.\\ Moliner, 50\n",
+                                                                   "46100 Burjassot, Val\\`encia, Spain\n"]),
+                                     Place:="Burjassot, Val\\`encia",
+                                     Institution:="Departament de Matem\\`atiques, Universitat de Val\\`encia"
+                                    )
+                     ],
+                     
+                     Keywords:=[
+                                 "permutability", "PT-group", "PST-group",
+                                 "T-group", "mutually permutable", "totally permutable",
+                                 "Dedekind group", "Iwasawa group"
+                     ],
+                     Dependencies:=
+                     rec(
+                          GAP := "4.7.4",
+                          NeededOtherPackages:=[["format", "1.3"]],
+                          SuggestedOtherPackages:=[],
+                          ExternalConditions:=[]
+                         ),
+                     AvailabilityTest := ReturnTrue,
+                     PackageDoc := rec(
+                                        BookName  := "PERMUT",
+                                        LongTitle := "PERMUT: A package to deal with permutability in finite groups",
+                                        SixFile   := "doc/manual.six",
+                                        ArchiveURLSubset:=["doc"],
+                                        HTMLStart :="doc/chap0.html",
+                                        PDFFile:="doc/manual.pdf"),
+                     TestFile  := "tst/testall.g"
+                                      
+                                      
+                    ) );

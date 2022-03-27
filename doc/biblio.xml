@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE file SYSTEM "bibxmlext.dtd">
+<file>
+<string key="berlin" value="Berlin, Heidelberg, New York"/>
+<string key="grund" value="Grund. Math. Wiss."/>
+<string key="jalg" value="J. Algebra"/>
+<string key="springer" value="Springer"/>
+<entry id="BallesterBeidlemanCosseyEstebanRaglandSchmidt09"><article>
+  <author>
+    <name><first>A.</first><last>Ballester-Bolinches</last></name>
+    <name><first>J. C.</first><last>Beidleman</last></name>
+    <name><first>J.</first><last>Cossey</last></name>
+    <name><first>R.</first><last>Esteban-Romero</last></name>
+    <name><first>M. F.</first><last>Ragland</last></name>
+    <name><first>J.</first><last>Schmidt</last></name>
+  </author>  
+  <title>Permutable subnormal subgroups of finite groups</title>
+  <journal>Arch. Math.</journal>
+  <year>2009</year>
+  <volume>92</volume>
+  <pages>549-557</pages>
+</article></entry>
+<entry id="BallesterBeidlemanHeineken03-commalg"><article>
+  <author>
+    <name><first>A.</first><last>Ballester-Bolinches</last></name>
+    <name><first>J. C.</first><last>Beidleman</last></name>
+    <name><first>H.</first><last>Heineken</last></name>
+  </author>  
+  <title>A local approach to certain classes of finite
+                  groups</title>
+  <journal>Comm. Algebra</journal>
+  <year>2003</year>
+  <volume>31</volume>
+  <number>12</number>
+  <pages>5931-5942</pages>
+</article></entry>
+<entry id="BallesterBeidlemanHeineken03-illinois"><article>
+  <author>
+    <name><first>A.</first><last>Ballester-Bolinches</last></name>
+    <name><first>J. C.</first><last>Beidleman</last></name>
+    <name><first>H.</first><last>Heineken</last></name>
+  </author>  
+  <title>Groups in which <C>S</C>ylow subgroups and subnormal
+                  subgroups permute</title>
+  <journal>Illinois J. Math</journal>
+  <year>2003</year>
+  <volume>47</volume>
+  <number>1-2</number>
+  <pages>63-69</pages>
+</article></entry>
+<entry id="BallesterBeidlemanHeineken03"><article>
+  <author>
+    <name><first>A.</first><last>Ballester-Bolinches</last></name>
+    <name><first>J. C.</first><last>Beidleman</last></name>
+    <name><first>H.</first><last>Heineken</last></name>
+  </author>  
+  <title>A local approach to certain classes of finite
+                  groups</title>
+  <journal>Comm. Algebra</journal>
+  <year>2003</year>
+  <volume>31</volume>
+  <number>12</number>
+  <pages>5931-5942</pages>
+</article></entry>
+<entry id="BallesterEsteban02-sylper1"><article>
+  <author>
+    <name><first>A.</first><last>Ballester-Bolinches</last></name>
+    <name><first>R.</first><last>Esteban-Romero</last></name>
+  </author>  
+  <title><C>S</C>ylow permutable subnormal subgroups of finite
+                  groups</title>
+  <journal><value key="jalg"/></journal>
+  <year>2002</year>
+  <volume>251</volume>
+  <number>2</number>
+  <pages>727-738</pages>
+</article></entry>
+<entry id="BallesterEstebanAsaad10"><book>
+  <author>
+    <name><first>A.</first><last>Ballester-Bolinches</last></name>
+    <name><first>R.</first><last>Esteban-Romero</last></name>
+    <name><first>M.</first><last>Asaad</last></name>
+  </author>  
+  <title>Products of finite groups</title>
+  <publisher>Walter de Gruyter</publisher>
+  <year>2010</year>
+  <address>Berlin</address>
+</book></entry>
+<entry id="BallesterCosmeEsteban13-cejm"><article>
+  <author>
+    <name><first>A.</first><last>Ballester-Bolinches</last></name>
+    <name><first>E.</first><last>Cosme-Llópez</last></name>
+    <name><first>R.</first><last>Esteban-Romero</last></name>
+  </author>  
+  <title>Algorithms for permutability in finite groups</title>
+  <journal>Cent. Eur. J. Math.</journal>
+  <year>2013</year>
+  <volume>11</volume>
+  <number>11</number>
+  <pages>1914-1922</pages>
+</article></entry>
+<entry id="BallesterEstebanRagland07"><article>
+  <author>
+    <name><first>A.</first><last>Ballester-Bolinches</last></name>
+    <name><first>R.</first><last>Esteban-Romero</last></name>
+    <name><first>M.</first><last>Ragland</last></name>
+  </author>  
+  <title>A note on finite <C>PST</C>-groups</title>
+  <journal>J. Group Theory</journal>
+  <year>2007</year>
+  <volume>10</volume>
+  <number>2</number>
+  <pages>205-210</pages>
+</article></entry>
+<entry id="BallesterEstebanRagland09"><article>
+  <author>
+    <name><first>A.</first><last>Ballester-Bolinches</last></name>
+    <name><first>R.</first><last>Esteban-Romero</last></name>
+    <name><first>M.</first><last>Ragland</last></name>
+  </author>  
+  <title>Corrigendum: A note on finite <C>PST</C>-groups</title>
+  <journal>J. Group Theory</journal>
+  <year>2009</year>
+  <volume>12</volume>
+  <number>6</number>
+  <pages>961-963</pages>
+</article></entry>
+<entry id="BeidlemanBrewsterRobinson99"><article>
+  <author>
+    <name><first>J. C.</first><last>Beidleman</last></name>
+    <name><first>B.</first><last>Brewster</last></name>
+    <name><first>D. J. S.</first><last>Robinson</last></name>
+  </author>  
+  <title>Criteria for Permutability to Be Transitive in
+                  Finite Groups</title>
+  <journal><value key="jalg"/></journal>
+  <year>1999</year>
+  <volume>222</volume>
+  <number>2</number>
+  <pages>400-412</pages>
+</article></entry>
+<entry id="BeidlemanHeineken03-jgt"><article>
+  <author>
+    <name><first>J. C.</first><last>Beidleman</last></name>
+    <name><first>H.</first><last>Heineken</last></name>
+  </author>  
+  <title>Finite soluble groups whose subnormal subgroups
+                  permute with certain classes of subgroups</title>
+  <journal>J. Group Theory</journal>
+  <year>2003</year>
+  <volume>6</volume>
+  <number>2</number>
+  <pages>139-158</pages>
+  <keywords>{PST-groups; subnormal subgroups; Carter subgroups;
+                  hypercentrally embedded subgroups}</keywords>
+  <other type="classmath">{*20D10 Solvable finite groups 20D35 Subnormal
+                  subgroups of finite groups 20D40 Products of
+                  subgroups of finite groups}</other>
+  <other type="reviewer">{Hans Lausch (Clayton)}</other>
+</article></entry>
+<entry id="Deskins63"><article>
+  <author>
+    <name><first>W. E.</first><last>Deskins</last></name>
+  </author>  
+  <title>On quasinormal subgroups of finite groups</title>
+  <journal>Math. Z.</journal>
+  <year>1963</year>
+  <volume>82</volume>
+  <pages>125-132</pages>
+</article></entry>
+<entry id="Foguel97"><article>
+  <author>
+    <name><first>T.</first><last>Foguel</last></name>
+  </author>  
+  <title>Conjugate-permutable subgroups</title>
+  <journal><value key="jalg"/></journal>
+  <year>1997</year>
+  <volume>191</volume>
+  <pages>235-239</pages>
+</article></entry>
+<entry id="Huppert67"><book>
+  <author>
+    <name><first>B.</first><last>Huppert</last></name>
+  </author>  
+  <title><C>E</C>ndliche <C>G</C>ruppen <C>I</C></title>
+  <publisher><value key="springer"/></publisher>
+  <year>1967</year>
+  <volume>134</volume>
+  <series><value key="grund"/></series>
+  <address><value key="berlin"/></address>
+</book></entry>
+<entry id="Kegel62"><article>
+  <author>
+    <name><first>O. H.</first><last>Kegel</last></name>
+  </author>  
+  <title><C>S</C>ylow-<C>G</C>ruppen und <C>S</C>ubnormalteiler endlicher
+                  <C>G</C>ruppen</title>
+  <journal>Math. Z.</journal>
+  <year>1962</year>
+  <volume>78</volume>
+  <pages>205-221</pages>
+</article></entry>
+<entry id="MaierSchmid73"><article>
+  <author>
+    <name><first>R.</first><last>Maier</last></name>
+    <name><first>P.</first><last>Schmid</last></name>
+  </author>  
+  <title>The Embedding of Quasinormal Subgroups in Finite
+                  Groups</title>
+  <journal>Math. Z.</journal>
+  <year>1973</year>
+  <volume>131</volume>
+  <pages>269-272</pages>
+</article></entry>
+<entry id="Robinson68"><article>
+  <author>
+    <name><first>D. J. S.</first><last>Robinson</last></name>
+  </author>  
+  <title>A note on finite groups in which normality is
+                  transitive</title>
+  <journal>Proc. Amer. Math. Soc.</journal>
+  <year>1968</year>
+  <volume>19</volume>
+  <pages>933-937</pages>
+</article></entry>
+<entry id="Schmidt94"><book>
+  <author>
+    <name><first>R.</first><last>Schmidt</last></name>
+  </author>  
+  <title>Subgroup lattices of groups</title>
+  <publisher>Walter de Gruyter</publisher>
+  <year>1994</year>
+  <volume>14</volume>
+  <series>De Gruyter Expositions in Mathematics</series>
+  <address>Berlin</address>
+  <isbn>3110112132</isbn>
+  <keywords>{modular lattices; complements; projectivities;
+                  subgroup lattices; lattices of normal subgroups;
+                  lattices of subnormal subgroups; lattices of
+                  centralizers; lattices of cosets}</keywords>
+  <other type="classmath">{*20-02 Research monographs (group theory) 20E15
+                  Chains and lattices of subgroups of groups 20D30
+                  Series and lattices of subgroups of finite groups
+                  06B15 Representation theory of lattices}</other>
+  <other type="reviewer">{H.Heineken (Würzburg)}</other>
+</book></entry>
+<entry id="Schmid98"><article>
+  <author>
+    <name><first>P.</first><last>Schmid</last></name>
+  </author>  
+  <title>Subgroups Permutable with All <C>S</C>ylow Subgroups</title>
+  <journal><value key="jalg"/></journal>
+  <year>1998</year>
+  <volume>207</volume>
+  <pages>285-293</pages>
+</article></entry>
+<entry id="EickWright03-FORMAT"><manual>
+  <author>
+    <name><first>B.</first><last>Eick</last></name>
+    <name><first>C. R. B.</first><last>Wright</last></name>
+  </author>  
+  <title>GAP package FORMAT --- Computing with formations of finite solvable
+      groups v.~1.3</title>
+  <year>2003</year>
+  <note>Available on
+      <URL>https://www.uoregon.edu/~wright/RESEARCH/format/</URL> (last visited 30th July
+      2015)</note>
+</manual></entry>
+</file>

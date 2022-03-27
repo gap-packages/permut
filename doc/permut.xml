@@ -1,0 +1,1937 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--   Documentation for the PERMUT package
+-->
+
+<!DOCTYPE Book SYSTEM "gapdoc.dtd">
+
+<Book Name="PERMUT">
+<TitlePage>
+  <Title><Package>PERMUT</Package></Title>
+  <Subtitle>A &GAP;4 package to deal with permutability</Subtitle>
+  <Version>Version 2.0.4</Version>
+  <Author>Adolfo Ballester-Bolinches
+  <Email>Adolfo.Ballester@uv.es</Email>
+  <Address>Departament de Matemàtiques, Universitat de València</Address></Author>
+  <Author>Enric Cosme-Llópez
+  <Homepage>https://www.uv.es/coslloen/</Homepage>
+  <Email>Enric.Cosme@uv.es</Email>
+  <Address>Departament de Matemàtiques, Universitat de València</Address></Author>
+  <Author>Ramón Esteban-Romero
+  <Email>Ramon.Esteban@uv.es</Email><Homepage>https://www.uv.es/estebanr/</Homepage><Address>Departament
+  de Matemàtiques, Universitat de València. Permanent: Institut Universitari de Matemàtica Pura i Aplicada, Universitat Politècnica de València</Address></Author>
+</TitlePage>
+
+<TableOfContents/>
+
+<Body>
+
+<Chapter><Heading>Introduction to the <Package>PERMUT</Package> Package</Heading>
+<E>All functions defined in this package deal only with finite
+groups.</E> Moreover, some of the
+functions assume that the orders of all subgroups are easily computable
+and that the decomposition of the order of a group as a product of
+prime numbers can be done in a reasonable time.
+<P/>
+
+The package <Package>PERMUT</Package> contains some functions to deal with
+permutability in finite groups. It includes functions to test some
+subgroup embedding properties related to permutability, like
+permutability or Sylow permutability. It also
+includes some functions to check whether a group belongs to the
+classes of T-groups, PT-groups,
+and PST-groups, which are the classes of groups in which normality,
+permutability, and Sylow permutability, respectively, are
+transitive. These properties and classes of groups have been
+widely studied during the last years. Most of them are described in
+<Cite Key="BallesterEstebanAsaad10" />.
+<P/>
+
+The algorithms for T-groups, PT-groups, and PST-groups of this package
+use some interesting local descriptions of groups in these classes, that is,
+given in terms of some information related to the primes <M>p</M> dividing their
+order, usually by looking at <M>p</M>-subgroups or <M>p</M>-chief factors. These
+characterisations show that the only difference between
+all three classes of groups in the soluble universe corresponds to the Sylow
+structure.
+
+Nevertheless, for the sake of completeness, we also provide functions
+that use directly the definition of these classes. In the case of
+T-groups and PST-groups, as well as for soluble PT-groups, we reduce
+the test to subnormal subgroups of defect&nbsp;<M>2</M> (see
+<Cite Key="BallesterEstebanRagland07" />, <Cite Key="BallesterEstebanRagland09" />,
+and <Cite Key="BallesterBeidlemanCosseyEstebanRaglandSchmidt09" />). Of
+course, to do this we must introduce some functions to
+check whether two subgroups permute and whether a subgroup is permutable or
+S-permutable.
+<P/>
+
+Some of the definitions of group-related concepts
+appear more than 
+once in this manual, in the description of different functions. Although these
+repetitions may seem unnecessary when reading the whole manual, we hope that they benefit users who read the online help in &GAP;.
+<P/>
+
+In order to obtain easily counterexamples which show that a group or a
+subgroup does not satisfy a certain property, we have introduced what
+we have called <Q>One</Q> functions, which store such counterexamples. In
+some cases, the property can be checked by proving that these
+counterexamples do not exist.
+<P/>
+
+
+This package requires the <Package>Format</Package> package by B. Eick and
+C. R. B. Wright (see <Cite Key="EickWright03-FORMAT" />), because it uses the
+functions <Ref Oper="PResidual" BookName="format"/> and <Ref Oper="SystemNormalizer" BookName="format"/>, which are defined
+there.
+Some of the examples in this manual use the library of groups of small order.
+<P/>
+
+The mathematical foundations of the algorithms presented in this
+package have been described in <Cite Key="BallesterCosmeEsteban13-cejm" />.
+<P/>
+
+The authors acknowledge the support of the grants MTM2010-19938-C03-01
+and MTM2014-54707-C3-1-P
+funded by the <E>Ministerio de Economía y Competitividad</E>, Spanish
+Government (all authors), PGC2018-095140-B-I00, funded by MCIN/AEI/10.13039/501100011033 and by ``ERDF A way of making Europe'' (all authors), the grant PROMETEO/2017/057
+funded by GVA/10.13039/501100003359
+(A. Ballester-Bolinches and R. Esteban-Romero), the grant 11271085 from National Natural
+Science Foundation of China (A. Ballester-Bolinches) and the
+predoctoral grant AP2010-2764 from the <E>Ministerio de Educación</E>,
+Spanish Government (E. Cosme-Llópez). The authors are also indebted to the
+members of the &GAP; council, especially Leonard Soicher, Alice
+Niemeyer, Max Horn, and Alexander Konovalov, as well as to the anonymous referees, for their comments
+which have helped us to improve the package and its documentation.
+<P/>
+
+
+</Chapter>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<Chapter><Heading>Installation and Help of the <Package>PERMUT</Package> Package</Heading>
+
+Since all functions of this package are written in the &GAP; language,
+it is enough to unpack the archive file in a directory in the <F>pkg</F>
+hierarchy of your &GAP; 4 distribution. It has been tested on version 4.7.4 of
+&GAP;.
+<P/>
+
+
+The <Package>PERMUT</Package> package requires that the package <Package>Format</Package>
+<Cite Key="EickWright03-FORMAT" /> be installed on the system, because it uses
+the functions <Ref Oper="PResidual" BookName="format"/> and <Ref Oper="SystemNormalizer" BookName="format"/> which are
+defined there. The <Package>Format</Package> package can be downloaded from the &GAP; web page
+(<URL>https://www.gap-system.org</URL>).
+<P/>
+
+The <Package>PERMUT</Package> package can be loaded with
+<Log>
+gap> LoadPackage("permut");
+─────────────────────────────────────────────────────────────────────────────
+Loading  FORMAT 1.3 (Formations of Finite Soluble Groups)
+by Bettina Eick (http://www.icm.tu-bs.de/~beick) and
+   Charles R.B. Wright (http://www.uoregon.edu/~wright).
+Homepage: http://www.uoregon.edu/~wright/RESEARCH/format/
+─────────────────────────────────────────────────────────────────────────────
+─────────────────────────────────────────────────────────────────────────────
+Loading  permut 2.0.3 (PERMUT: A package to deal with permutability in finite groups)
+by Adolfo Ballester-Bolinches (Adolfo.Ballester@uv.es),
+   Enric Cosme-Ll\'opez (https://www.uv.es/coslloen), and
+   Ram\'on Esteban-Romero (https://www.uv.es/estebanr).
+Homepage: https://gap-packages.github.io/permut/
+─────────────────────────────────────────────────────────────────────────────
+true
+</Log>
+<P/>
+
+Suggestions, comments, and bug reports can be sent to the email
+address <Email>Ramon.Esteban@uv.es</Email>.
+
+
+</Chapter>
+<Chapter><Heading>Permutability of Subgroups in Finite Groups</Heading>
+This chapter describes functions to check permutability of
+subgroups in a given group. First we present a function to check
+whether a subgroup permutes with another one, then we present
+functions to test whether a subgroup permutes with the members of a given family of subgroups, and finally we introduce
+some other subgroup embedding properties related to permutability.
+<P/>
+
+<Section Label="permut-functions"><Heading>Permutability functions</Heading>
+
+<ManSection>
+<Func Name="ArePermutableSubgroups" Arg="[G, ]U, V" Comm="with three arguments" />
+<Description>
+This function returns <K>true</K> if <A>U</A> and <A>V</A> permute in <A>G</A>. The
+groups <A>U</A> and <A>V</A> must be subgroups of <A>G</A>. The
+subgroups <M>U</M> and <M>V</M> <E>permute</E> when <M>UV = VU</M>. This is equivalent to
+affirming that <M>UV</M> is a subgroup of&nbsp;<M>G</M>.
+<P/>
+
+This is done by checking that the order of <M>\langle U, V \rangle</M> is
+the order of their Frobenius product <M>UV</M>, that is, <M>|U||V|/|U \cap
+V|</M>. Hence the performance of this function depends strongly on the
+existence of good 
+algorithms to compute the intersection of two subgroups and, of
+course, the order of a subgroup. Shorthands are provided for
+the cases in which
+one of <A>U</A> and <A>V</A> is a subgroup of the other one or <A>U</A> or <A>V</A> are
+permutable in a common supergroup.
+<P/>
+
+In the version with two arguments, <A>U</A> and <A>V</A> must have a common
+parent or <Code>ClosureGroup( U, V )</Code> (see <Ref Func="ClosureGroup" BookName="Ref" />) is called to construct a common
+supergroup for <A>U</A> and <A>V</A>.
+
+<P/>
+
+<Example><![CDATA[
+gap> g:=SymmetricGroup(4);
+Sym( [ 1 .. 4 ] )
+gap> a:=Subgroup(g,[(1,2)(3,4)]);
+Group([ (1,2)(3,4) ])
+gap> b:=Subgroup(g,[(1,2,3)]);
+Group([ (1,2,3) ])
+gap> c:=Subgroup(g,[(1,2)]);
+Group([ (1,2) ])
+gap> ArePermutableSubgroups(g,a,b);
+false
+gap> ArePermutableSubgroups(g,a,c);
+true
+gap> ArePermutableSubgroups(g,b,c);
+true
+gap> ArePermutableSubgroups(b,c);
+true
+gap> ArePermutableSubgroups(b,a);
+false
+]]></Example>
+</Description>
+</ManSection>
+
+
+</Section>
+<Section Label="permut-embedding-properties"><Heading>Embedding properties related to permutability</Heading>
+
+In the following we describe some functions which allow us to test
+whether a subgroup permutes with the members of some families of
+subgroups. We pay special attention to the families of all subgroups and all Sylow
+subgroups of the group. In some cases, we have introduced some <Q>One</Q>
+functions, which give an element or a subgroup in the relevant family of subgroups
+of the group which shows that the given property fails, or
+<K>fail</K> otherwise.
+<P/>
+<ManSection>
+<Var Name="PermutMaxTries" Comm="bound for the number of probabilistic tests" />
+<Description>
+This variable contains the maximum number of random attempts of permutability checks before trying general deterministic methods in the functions <Ref Oper="IsPermutable" /> and <Ref Func="IsIwasawaSylow" />. Its default value is <M>10</M>.
+</Description>
+</ManSection>
+<ManSection>
+<Oper Name="IsPermutable" Arg="G, H" Comm="test for permutability" />
+<Prop Name="IsPermutableInParent" Arg="H" Comm="test for permutability" />
+
+<Description>
+This property returns <K>true</K> if the subgroup <A>H</A> is permutable in
+<A>G</A>, otherwise it returns <K>false</K>. We say that a subgroup
+<M>H</M> of a group <M>G</M> is <E>permutable</E> in <M>G</M> if <M>H</M>
+permutes with all subgroups of&nbsp;<M>G</M>.
+<P/>
+
+If the attribute <Ref Attr="OneSubgroupNotPermutingWithInParent" /> has been
+set, it is used if possible. Otherwise, the algorithm checks looks for a cyclic subgroup not permuting with <A>H</A>. The number of such cyclic subgroups is controlled by the variable <Ref Var="PermutMaxTries" />, by default, <M>10</M>. If <A>H</A> permutes with all these subgroups, then the algorithm checks whether <A>H</A> is hypercentrally embedded in
+<A>G</A> and that the Sylow <M>p</M>-subgroups of <M>H/H_G</M>  permute with all cyclic
+<M>p</M>-subgroups of <M>G/H_G</M> for each prime <M>p</M> dividing the order of <M>G/H_G</M>. This is a sufficient condition for
+permutability. 
+</Description>
+</ManSection>
+
+
+
+
+<ManSection>
+<Func Name="OneSubgroupNotPermutingWith" Arg="G, H" Comm="finds why a subgroup is not permutable"/>
+<Attr Name="OneSubgroupNotPermutingWithInParent" Arg="H" Comm="finds why a subgroup is not permutable"/>
+
+<Description>
+This attribute finds a cyclic subgroup of <A>G</A> which does not permute
+with <A>H</A>, that is, a subgroup which shows that <A>H</A> is not permutable in <A>G</A>. Recall that a subgroup <M>H</M> of a group <M>G</M> is <E>permutable</E> in
+<M>G</M> if <M>H</M> permutes with all subgroups of&nbsp;<M>G</M>.
+<P/>
+
+
+<Example><![CDATA[
+gap> g:=SymmetricGroup(4);
+Sym( [ 1 .. 4 ] )
+gap> a:=Subgroup(g,[(1,2)(3,4)]);
+Group([ (1,2)(3,4) ])
+gap> b:=Subgroup(g,[(1,2,3)]);
+Group([ (1,2,3) ])
+gap> c:=Subgroup(g,[(1,2)]);
+Group([ (1,2) ])
+gap> IsPermutable(g,a);
+false
+gap> IsPermutable(g,b);
+false
+gap> IsPermutable(g,c);
+false
+gap> OneSubgroupNotPermutingWith(g,b);
+Group([ (1,3,4) ])
+gap> v:=Subgroup(g,[(1,2)(3,4),(1,3)(2,4)]);
+Group([ (1,2)(3,4), (1,3)(2,4) ])
+gap> OneSubgroupNotPermutingWith(g,v);
+fail
+gap> IsPermutable(g,b);
+false
+gap> IsPermutable(g,v);
+true
+]]></Example>
+<P/>
+
+<Example><![CDATA[
+gap> g:=SmallGroup(16,6);
+<pc group of size 16 with 4 generators>
+gap> h:=Subgroup(g,[g.2]);
+Group([ f2 ])
+gap> IsNormal(g,h);
+false
+gap> IsPermutable(g,h);
+true
+]]></Example>
+
+</Description>
+</ManSection>
+
+Sometimes one does not require a subgroup to permute with all subgroups of
+the group, but only with a selected family of subgroups of the
+group. The general case is the following.
+<P/>
+
+
+<ManSection>
+<Func Name="IsFPermutable" Arg="G, H, f" Comm="property, whether object is f-permutable" />
+
+<Description>
+
+In this function, <A>H</A> is a subgroup of <A>G</A> and <A>f</A> must be a list of subgroups of <A>G</A>. It returns <K>true</K> if <A>H</A> permutes with all members of
+<A>f</A> and <K>false</K> otherwise. 
+<P/>
+
+This function uses the function <Ref Attr="OneFSubgroupNotPermutingWith"/>. Hence it tries
+to use the values of <Ref Prop="IsPermutableInParent"/> and
+<Ref Attr="OneSubgroupNotPermutingWithInParent" /> if one of them is set, and if it returns
+<K>false</K> it tries to set the values of <Ref Prop="IsPermutableInParent"/> and
+<Ref Attr="OneSubgroupNotPermutingWithInParent" />.
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="OneFSubgroupNotPermutingWith" Arg="G, H, f"  Comm="finds a non f-permutable subgroup" />
+
+<Description>
+In this operation, <A>H</A> is a subgroup of <A>G</A> and <A>f</A> must be a list of subgroups of <A>G</A>. It returns a subgroup in <A>f</A> not permuting with <A>H</A> if
+such a subgroup exists, and <K>fail</K> otherwise.
+<P/>
+
+This function tries to use the values of <Ref Prop="IsPermutableInParent" /> and
+<Ref Attr="OneSubgroupNotPermutingWithInParent" /> if one of them is set. If it returns
+<K>fail</K>, then it tries to set the value of <Ref Prop="IsPermutableInParent" /> and
+<Ref Attr="OneSubgroupNotPermutingWithInParent" />.
+
+<P/>
+
+<Log>
+gap> g:=SymmetricGroup(4);
+Sym( [ 1 .. 4 ] )
+gap> a:=Subgroup(g,[(1,2,3,4),(1,3)]);
+Group([ (1,2,3,4), (1,3) ])
+gap> Size(a);
+8
+gap> OneFSubgroupNotPermutingWith(g,a,MaximalSubgroups(g));
+Group([ (1,2), (3,4), (1,3)(2,4) ])
+gap> IsFPermutable(g,a,MaximalSubgroups(g));
+false
+gap> HasIsPermutableInParent(a);
+true
+gap> IsPermutableInParent(a);
+false
+gap> HasOneSubgroupNotPermutingWithInParent(a);
+true
+gap> OneSubgroupNotPermutingWithInParent(a);
+Group([ (1,2), (3,4), (1,3)(2,4) ])
+gap> IsFPermutable(g,a,AllSubnormalSubgroups(g));
+true
+gap> OneFSubgroupNotPermutingWith(g,a,AllSubnormalSubgroups(g));
+fail
+gap> sylows:=g->Union(List(SylowSubgroups(g),
+>           t->ConjugacyClassSubgroups(g,t)));
+function( g ) ... end
+gap> OneFSubgroupNotPermutingWith(g,a,sylows(g));
+Group([ (3,4), (1,4)(2,3), (1,3)(2,4) ])
+</Log>
+</Description>
+</ManSection>
+
+The following functions can be considered as particular cases of the
+previous function for some subgroup embedding functors. However, they
+can be stored as <Q>in parent</Q> attributes or properties and in some
+cases we have tried to give  more efficient code.
+<P/>
+
+
+<ManSection>
+<Oper Name="IsSPermutable" Arg="G, H" Comm="test for S-permutability" />
+<Prop Name="IsSPermutableInParent" Arg="H" Comm="test for S-permutability" />
+<Description>
+This operation returns <K>true</K> if a subgroup <A>H</A> of <A>G</A> is S-permutable in <A>G</A>,
+that is, <A>H</A> permutes with all Sylow subgroups of <A>G</A>, and returns <K>false</K> otherwise.
+<P/>
+
+<Example><![CDATA[
+gap> g:=SmallGroup(8,3);
+<pc group of size 8 with 3 generators>
+gap> IsSPermutable(g,Subgroup(g,[g.1]));
+true
+gap> IsPermutable(g,Subgroup(g,[g.1]));
+false
+]]></Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="OneSylowSubgroupNotPermutingWith" Arg="G, H" Comm="finds why a subgroup is not S-permutable" />
+<Attr Name="OneSylowSubgroupNotPermutingWithInParent" Arg="H" Comm="finds why a subgroup is not S-permutable" />
+
+<Description>
+
+The argument <A>H</A> must be a subgroup of <A>G</A>. If <A>H</A> is S-permutable in <A>G</A>, then it returns <K>fail</K>. Otherwise, it returns a Sylow subgroup of <A>G</A> which does not permute
+with <A>H</A>. We say that a
+subgroup <M>H</M> of a group <M>G</M> is S-permutable in <M>G</M> if <M>H</M> permutes
+with all Sylow subgroups of&nbsp;<M>G</M>.
+<P/>
+
+<Example><![CDATA[
+gap> g:=SymmetricGroup(4);;
+gap> a:=Subgroup(g,[(1,2)(3,4)]);;
+gap> OneSylowSubgroupNotPermutingWith(g,a);
+Group([ (2,4,3) ])
+]]></Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="IsSNPermutable" Arg="G, H" Comm="checks whether a subgroup is system normalizer permutable" />
+<Attr Name="IsSNPermutableInParent" Arg="H" Comm="checks whether a subgroup is system normalizer permutable" />
+<Description>
+This operation returns <K>true</K> if <A>H</A> permutes with all system
+normalisers of <A>G</A>, and <K>false</K> otherwise. Here <A>G</A>
+must be a soluble group and <A>H</A> must be a subgroup of
+<A>G</A>. If the function is applied to an insoluble group, it gives
+an error.
+</Description>
+
+</ManSection>
+
+<ManSection>
+<Oper Name="OneSystemNormaliserNotPermutingWith" Arg="G, H" Comm="checks why a subgroup is not system normalizer permutable" />
+<Attr Name="OneSystemNormaliserNotPermutingWithInParent" Arg="H" Comm="checks why a subgroup is not system normalizer permutable" />
+<Description>
+
+Here <A>G</A>
+must be a soluble group and <A>H</A> must be a subgroup of <A>G</A>.
+If <A>H</A> permutes with all system normalisers of <A>G</A>, then
+this operation
+returns <K>fail</K>. Otherwise, it returns a system normaliser <M>D</M> of <M>G</M> such that <M>H</M> does
+not permute with <M>D</M>. If the group <A>G</A> is not soluble, then
+it gives an error.
+
+<Example><![CDATA[
+gap> g:=Group((1,2,3),(4,5,6),(1,2));
+Group([ (1,2,3), (4,5,6), (1,2) ])
+gap> a:=Subgroup(g,[(1,2,3)(4,5,6)]);
+Group([ (1,2,3)(4,5,6) ])
+gap> IsSNPermutable(g,a);
+true
+gap> IsSPermutable(g,a);
+false
+]]></Example>
+</Description>
+</ManSection>
+
+<P/>
+
+The next functions are not particular cases of <Ref Oper="IsFPermutable" /> or
+<Ref Oper="OneFSubgroupNotPermutingWith" />, but we include them in the package because
+every subgroup permuting with all its conjugates is subnormal (see
+<Cite Key="Foguel97" />).
+<P/>
+
+<ManSection>
+<Oper Name="IsConjugatePermutable" Arg="G, H" Comm="checks whether the subgroup permutes with all its conjugates" />
+<Prop Name="IsConjugatePermutableInParent" Arg="H" Comm="checks whether the subgroup permutes with all its conjugates" />
+
+<Description>
+
+This operation takes the value <K>true</K> if <A>H</A> permutes with all its
+conjugates, and the value <K>false</K> otherwise.
+<P/>
+
+<Example><![CDATA[
+gap> g:=SymmetricGroup(4);
+Sym( [ 1 .. 4 ] )
+gap> a:=Subgroup(g,[(1,2)(3,4)]);
+Group([ (1,2)(3,4) ])
+gap> IsPermutable(g,a);
+false
+gap> IsConjugatePermutable(g,a);
+true
+]]></Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="OneConjugateSubgroupNotPermutingWith" Arg="G, H" Comm="returns a conjugate of a subgroup which does not permute with it" />
+<Attr Name="OneConjugateSubgroupNotPermutingWithInParent" Arg="H" Comm="returns a conjugate of a subgroup which does not permute with it" />
+<Description>
+
+This operation finds a conjugate subgroup of <A>H</A> which does not
+permute with <A>H</A> if such a subgroup exists. If <A>H</A> permutes with all its conjugates, then this
+operation returns <K>fail</K>.
+
+<Example><![CDATA[
+gap> g:=SmallGroup(16,7);
+<pc group of size 16 with 4 generators>
+gap> h:=Subgroup(g,[g.1*g.4]);
+Group([ f1*f4 ])
+gap> IsConjugatePermutable(g,h);
+false
+gap> OneConjugateSubgroupNotPermutingWith(g,h);
+Group([ f1*f3 ])
+]]></Example>
+</Description>
+</ManSection>
+
+<P/>
+
+Next we introduce some subgroup embedding functions related
+to permutability which have proved to be useful in some
+characterisations of soluble T-groups, PT-groups, and PST-groups. The
+<Q>One</Q> functions return a value which proves that the corresponding
+subgroup embedding property is false.
+<P/>
+
+
+<ManSection>
+<Oper Name="IsWeaklySPermutable" Arg="G, H" Comm="checks whether a subgroup is weakly S-permutable" />
+<Prop Name="IsWeaklySPermutableInParent" Arg="H" Comm="checks whether a subgroup is weakly S-permutable" />
+
+<Description>
+The value returned by this operation is <K>true</K> when  <A>H</A> is a <E>weakly S-permutable</E>
+subgroup of <A>G</A>, that is, <M>H</M> is S-permutable in <M>\langle H, H^g \rangle</M>
+implies that <M>H</M> is S-permutable in <M>\langle H, g \rangle</M>, and <K>false</K>
+otherwise.
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="OneElementShowingNotWeaklySPermutable" Arg="G, H" Comm="returns why a subgroup is not weakly S-permutable" />
+<Attr Name="OneElementShowingNotWeaklySPermutableInParent" Arg="H" Comm="returns why a subgroup is not weakly S-permutable" />
+<Description>
+
+If <A>H</A> is a weakly S-permutable subgroup of <A>G</A>, then this
+operation returns <K>fail</K>. Otherwise, the value returned by this operation is an
+element <M>g \in G</M> such that <A>H</A> is
+S-permutable in <M>\langle H, H^g \rangle</M>, but <M>H</M> is not S-permutable
+in <M>\langle H, g \rangle</M>. A subgroup <M>H</M> of a group <M>G</M> is said to be
+weakly S-permutable if <M>H</M> is S-permutable in <M>\langle H,
+H^g \rangle</M> implies that <M>H</M> is S-permutable in <M>\langle H, g \rangle</M>.
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="IsWeaklyPermutable" Arg="G, H" Comm="returns whether a subgroup is weakly permutable" />
+<Prop Name="IsWeaklyPermutableInParent" Arg="H" Comm="returns whether a subgroup is weakly permutable" />
+
+<Description>
+
+This operation returns <K>true</K> if <A>H</A> is weakly permutable in <A>G</A>, and
+<K>false</K> otherwise. A subgroup <M>H</M> of <M>G</M> is <E>weakly
+permutable</E> if the fact that <M>H</M> is S-permutable in <M>\langle
+H, H^g \rangle</M>, implies that <M>H</M> is S-permutable in <M>\langle H, g \rangle</M>.
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="OneElementShowingNotWeaklyPermutable" Arg="G, H" Comm="returns why a subgroup is not weakly permutable" />
+<Attr Name="OneElementShowingNotWeaklyPermutableInParent" Arg="H" Comm="returns why a subgroup is not weakly permutable" />
+<Description>
+
+If <A>H</A> is a weakly permutable subgroup of <A>G</A>, then this
+operation returns <K>fail</K>. Otherwise, the value returned by this operation is an element <M>g \in G</M> such that <A>H</A> is
+permutable in <M>\langle H, H^g \rangle</M>, but <M>H</M> is not permutable
+in <M>\langle H, g \rangle</M>. A subgroup <M>H</M> of a group <M>G</M> is said to be
+<E>weakly permutable</E> if the fact that <M>H</M> is permutable in <M>\langle H,
+H^g \rangle</M> implies that <M>H</M> is permutable in <M>\langle H, g \rangle</M>.
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="IsWeaklyNormal" Arg="G, H" Comm="returns whether a subgroup is weakly normal" />
+<Prop Name="IsWeaklyNormalInParent" Arg="H" Comm="returns whether a subgroup is weakly normal" />
+
+<Description>
+
+This operation returns <K>true</K> if <A>H</A> is weakly normal in <A>G</A>, and
+<K>false</K> otherwise. A subgroup <M>H</M> of <M>G</M> is <E>weakly normal</E> whenever if 
+<M>H^g \leq {\rm N}_G(H)</M>, then <M>g \in {\rm N}_G(H)</M>.
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="OneElementShowingNotWeaklyNormal" Arg="G, H" Comm="returns why a subgroup is not weakly normal" />
+<Attr Name="OneElementShowingNotWeaklyNormalInParent" Arg="H" Comm="returns why a subgroup is not weakly normal" />
+<Description>
+
+If <A>H</A> is a weakly normal subgruop of <A>G</A>, then this
+function returns <K>fail</K>. Otherwise, the value returned by this operation is an element <M>g</M> such that <M>H^g\leq {\rm N}_G(H)</M> is a subgroup of <M>{\rm N}_G(H)</M> but <M>g \notin{\rm N}_G(H)</M>.
+<P/>
+
+<Example><![CDATA[
+gap> g:=DihedralGroup(8);
+<pc group of size 8 with 3 generators>
+gap> a:=Subgroup(g,[g.1]);
+Group([ f1 ])
+gap> IsWeaklySPermutable(g,a);
+true
+gap> IsWeaklyPermutable(g,a);
+false
+gap> x:=OneElementShowingNotWeaklyPermutable(g,a);
+f2
+gap> IsSubgroup(Normalizer(g,a),ConjugateSubgroup(a,x));
+true
+gap> x in Normalizer(g,a);
+false
+]]></Example>
+</Description>
+</ManSection>
+
+
+<ManSection>
+<Oper Name="IsWithSubnormalizerCondition" Arg="G, H" Comm="checks whether a subgroup has the subnormalizer condition" />
+<Prop Name="IsWithSubnormalizerConditionInParent" Arg="H" Comm="checks whether a subgroup has the subnormalizer condition" />
+<Oper Name="IsWithSubnormaliserCondition" Arg="G, H" Comm="checks whether a subgroup has the subnormalizer condition" />
+<Prop Name="IsWithSubnormaliserConditionInParent" Arg="H" Comm="checks whether a subgroup has the subnormalizer condition" />
+<Description>
+
+This operation returns <K>true</K> if the subgroup <M>H</M> satisfies the
+subnormaliser condition in <M>G</M>, and <K>false</K> otherwise.
+<P/>
+
+A subgroup <M>H</M> is said to <E>satisfy the subnormaliser condition</E> in <M>G</M>
+if the condition that <M>H</M> is subnormal in a subgroup <M>K</M> of
+<M>G</M> implies that <M>H</M> is normal
+in&nbsp;<M>K</M>.
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="OneSubgroupInWhichSubnormalNotNormal" Arg="G, H" Comm="returns why a subgroup does not have the subnormalizer condition" />
+<Attr Name="OneSubgroupInWhichSubnormalNotNormalInParent" Arg="H" Comm="returns why a subgroup does not have the subnormalizer condition" />
+<Description>
+
+This function returns a subgroup <M>K</M> of <M>G</M> such that <M>H</M> is subnormal
+in <M>K</M> and <M>H</M> is not normal in&nbsp;<M>K</M>, if this
+subgroup exists; otherwise, it returns <K>fail</K>.
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="IsWithSubpermutizerCondition" Arg="G, H" Comm="checks whether a subgroup has the subpermutizer condition" />
+<Prop Name="IsWithSubpermutizerConditionInParent" Arg="H" Comm="checks whether a subgroup has the subpermutizer condition" />
+<Oper Name="IsWithSubpermutiserCondition" Arg="G, H" Comm="checks whether a subgroup has the subpermutiser condition" />
+<Prop Name="IsWithSubpermutiserConditionInParent" Arg="H" Comm="checks whether a subgroup has the subpermutiser condition" />
+<Description>
+This operation returns <K>true</K> if the subgroup <M>H</M> satisfies the
+subpermutiser condition in <M>G</M>, and <K>false</K> otherwise.
+<P/>
+
+A subgroup <M>H</M> is said to <E>satisfy the subpermutiser condition</E> in <M>G</M>
+if the condition that <M>H</M> is subnormal in a subgroup <M>K</M> of
+<M>G</M> implies that <M>H</M> is permutable
+in&nbsp;<M>K</M>.
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="OneSubgroupInWhichSubnormalNotPermutable" Arg="G, H" Comm="returns why a subgroup does not have the subpermutizer condition" />
+<Attr Name="OneSubgroupInWhichSubnormalNotPermutableInParent" Arg="H" Comm="returns why a subgroup does not have the subpermutizer condition" />
+<Description>
+This function returns a subgroup <M>K</M> of <M>G</M> such that <M>H</M> is subnormal
+in <M>K</M> and <M>H</M> is not permutable in&nbsp;<M>K</M> if this
+subgroup exists; otherwise it returns <K>fail</K>.
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="IsWithSSubpermutizerCondition" Arg="G, H" Comm="returns whether a subgroup has the S-subpermutizer condition" />
+<Prop Name="IsWithSSubpermutizerConditionInParent" Arg="H" Comm="returns whether a subgroup has the S-subpermutizer condition" />
+<Oper Name="IsWithSSubpermutiserCondition" Arg="G, H" Comm="returns whether a subgroup has the S-subpermutizer condition" />
+<Prop Name="IsWithSSubpermutiserConditionInParent" Arg="H" Comm="returns whether a subgroup has the S-subpermutizer condition" />
+<Description>
+This operation returns <K>true</K> if the subgroup <M>H</M> satisfies the
+S-subpermutiser condition in <M>G</M>, and <K>false</K> otherwise.
+<P/>
+
+A subgroup <M>H</M> is said to <E>satisfy the S-subpermutiser condition</E> in <M>G</M>
+if the condition that <M>H</M> is subnormal in a subgroup <M>K</M> of
+<M>G</M> implies that <M>H</M> is S-permutable
+in&nbsp;<M>K</M>.
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="OneSubgroupInWhichSubnormalNotSPermutable" Arg="G, H" Comm="returns why a subgroup does not have the S-subpermutizer condition" />
+<Attr Name="OneSubgroupInWhichSubnormalNotSPermutableInParent" Arg="H" Comm="returns why a subgroup does not have the S-subpermutizer condition" />
+
+<Description>
+
+This function returns a subgroup <M>K</M> of <M>G</M> such that <M>H</M> is subnormal
+in <M>K</M> and <M>H</M> is not S-permutable in&nbsp;<M>K</M> if such
+a subgroup exists; otherwise it returns <K>fail</K>.
+<P/>
+
+<Example><![CDATA[
+gap> g:=SmallGroup(324,160);
+<pc group of size 324 with 6 generators>
+gap> a:=Subgroup(g,[g.3,g.5]);
+Group([ f3, f5 ])
+gap> IsWithSubnormalizerCondition(g,a);
+true
+gap> IsWeaklyNormal(g,a);
+false
+gap> IsWeaklySPermutable(g,a);
+false
+gap> x:=OneElementShowingNotWeaklyNormal(g,a);
+f1
+gap> ConjugateSubgroup(a,x)=a;
+false
+gap> IsSubset(Normalizer(g,a),ConjugateSubgroup(a,x));
+true
+]]></Example>
+</Description>
+</ManSection>
+
+
+
+
+
+
+
+
+
+
+</Section>
+
+</Chapter>
+
+
+
+
+
+<Chapter><Heading>T-groups, PT-groups, and PST-groups</Heading>
+This chapter explains the functions to check whether a given group is
+a T-group, a PT-group, or a PST-group.
+<P/>
+
+Recall that a group <M>G</M> is:
+<List>
+<Mark>a T-group</Mark><Item>when every subnormal subgroup of <M>G</M> is normal,</Item>
+<Mark>a PT-group</Mark><Item>when every subnormal subgroup of <M>G</M> is permutable,</Item>
+<Mark>a PST-group</Mark><Item> when every subnormal subgroup of <M>G</M> is S-permutable.</Item>
+</List>
+<P/>
+
+We also present functions to identify groups in other classes related
+to these ones. 
+<P/>
+
+The <Q>One</Q> functions are defined to provide examples of subgroups or
+elements showing that a group theoretical property for a group or for
+a subgroup is false.
+<P/>
+
+
+<Section Label="permut-embedding-properties-one"><Heading><Q>One</Q> functions</Heading>
+
+<ManSection>
+<Attr Name="OneSubnormalNonNormalSubgroup" Arg="G" Comm="why a group is not a T-group" />
+<Description>
+
+<Ref Attr="OneSubnormalNonNormalSubgroup" /> returns a subnormal subgroup of defect&nbsp;<M>2</M> which is
+not normal in the group <A>G</A>, if such a subgroup exists. If such a subgroup does not exist
+because the group is a T-group, it returns
+<K>fail</K>.
+<P/>
+
+A T-group is a group in which normality is transitive, that is, if <M>H</M>
+is a normal subgroup of <M>K</M> and <M>K</M> is a normal subgroup of <M>G</M>, then 
+<M>H</M> is a normal subgroup of&nbsp;<M>G</M>. Finite T-groups are the groups in
+which every subnormal subgroup is normal.
+<P/>
+
+This function tries to set the property <Ref Prop="IsTGroup" /> to <K>true</K> or <K>false</K> according
+to its result.
+<P/>
+
+<Example><![CDATA[
+gap> g:=SmallGroup(320,152);
+<pc group of size 320 with 7 generators>
+gap> x:=OneSubnormalNonNormalSubgroup(g);
+Group([ f2, f3, f5, f7 ])
+gap> IsNormal(g,x);
+false
+gap> IsSubnormal(g,x);
+true
+]]></Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Attr Name="OneSubnormalNonPermutableSubgroup" Arg="G" Comm="returns a non-permutable subgroup" />
+<Description>
+<Ref Attr="OneSubnormalNonPermutableSubgroup" /> returns a subnormal subgroup which is
+not permutable in the group <A>G</A>, if such a subgroup exists. If such a subgroup does not
+exist because the group is a PT-group, it returns
+<K>fail</K>.
+<P/>
+
+A group <M>G</M> is a PT-group when permutability is a transitive relation
+in <M>G</M>, that is, if <M>H</M> is a permutable subgroup of <M>K</M> and <M>K</M> is a
+permutable subgroup of <M>G</M>, then <M>H</M> is a permutable subgroupof&nbsp;<M>G</M>. This is equivalent in finite groups to affirming that every
+subnormal subgroup of <M>G</M> is permutable.
+<P/>
+
+This function tries to set the property <Ref Prop="IsPTGroup" /> to <K>true</K> or <K>false</K> according
+to its result.
+<P/>
+
+Since this function checks all subnormal subgroups for permutability,
+it may take a long time if there are many subnormal subgroups.
+<P/>
+
+<Example><![CDATA[
+gap> g:=SmallGroup(320,152);
+<pc group of size 320 with 7 generators>
+gap> OneSubnormalNonPermutableSubgroup(g);
+fail
+gap> IsPTGroup(g);
+true
+gap> g:=SmallGroup(8,3);
+<pc group of size 8 with 3 generators>
+gap> OneSubnormalNonPermutableSubgroup(g);
+Group([ f1*f3 ])
+]]></Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Attr Name="OneSubnormalNonSPermutableSubgroup" Arg="G" Comm="returns a non-S-permutable subgroup" />
+<Description>
+
+<Ref Attr="OneSubnormalNonSPermutableSubgroup" /> returns a subnormal subgroup of defect&nbsp;<M>2</M> which is
+not S-permutable in <A>G</A>, if such a subgroup exists. If such a subgroup does not exist
+because the group is a PST-group, it returns
+<K>fail</K>.
+<P/>
+
+A group <M>G</M> is a PST-group when S-permutability (Sylow permutability) is a transitive relation
+in <M>G</M>, that is, if <M>H</M> is an S-permutable subgroup of <M>K</M> and <M>K</M> is an
+S-permutable subgroup of <M>G</M>, then <M>H</M> is an S-permutable subgroup of&nbsp;<M>G</M>. This is equivalent in finite groups to affirming that every
+subnormal subgroup of <M>G</M> is S-permutable. By a result of
+Ballester-Bolinches, Esteban-Romero, and Ragland
+<Cite Key="BallesterEstebanRagland07" />, it is enough to
+check this last condition for all subnormal subgroups of defect&nbsp;<M>2</M>.
+<P/>
+
+This function tries to set the property <Ref Attr="IsPSTGroup" /> to <K>true</K> or <K>false</K> according
+to its result.
+<P/>
+
+<Example><![CDATA[
+gap> g:=AlternatingGroup(4);
+Alt( [ 1 .. 4 ] )
+gap> OneSubnormalNonSPermutableSubgroup(g);
+Group([ (1,2)(3,4) ])
+]]></Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Attr Name="OneSubnormalNonConjugatePermutableSubgroup" Arg="G" Comm="finds a subnormal subgroup not permuting with all its conjugates" />
+<Description>
+This function finds a subnormal subgroup <M>H</M> which does not permute
+with all its conjugates, if such a subgroup exist; otherwise, it
+returns <K>fail</K>.
+<P/>
+
+<Example><![CDATA[
+gap> g:=AlternatingGroup(4);
+Alt( [ 1 .. 4 ] )
+gap> OneSubnormalNonConjugatePermutableSubgroup(g);
+fail
+gap> g:=DihedralGroup(16);
+<pc group of size 16 with 4 generators>
+gap> OneSubnormalNonConjugatePermutableSubgroup(g);
+Group([ f1*f4 ])
+gap> g:=SymmetricGroup(4);
+Sym( [ 1 .. 4 ] )
+gap> OneSubnormalNonConjugatePermutableSubgroup(g);
+fail
+gap> OneSubnormalNonPermutableSubgroup(g);
+Group([ (1,2)(3,4) ])
+]]></Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Attr Name="OneSubnormalNonSNPermutableSubgroup" Arg="G" Comm="finds a subgroup not permuting with a system normalizer" />
+<Description>
+
+This attribute returns a subnormal subgroup <M>H</M> of the soluble group
+<M>G</M> such that <M>H</M> does not permute with a system normaliser
+if such a subgroup exists; otherwise, it returns <K>fail</K>. This
+system normaliser is obtained with the function <Ref
+Func="SystemNormalizer" BookName="Format" /> of the
+<Package>Format</Package> package.
+<P/>
+
+<Example><![CDATA[
+gap> g:=SymmetricGroup(4);
+Sym( [ 1 .. 4 ] )
+gap> OneSubnormalNonSNPermutableSubgroup(g);
+Group([ (1,3)(2,4) ])
+gap> g:=Group((1,2,3)(4,5,6),(1,2));
+Group([ (1,2,3)(4,5,6), (1,2) ])
+gap> OneSubnormalNonSNPermutableSubgroup(g);
+fail
+gap> OneSubnormalNonSPermutableSubgroup(g); 
+Group([ (1,2,3)(4,6,5) ])
+]]></Example>
+
+</Description>
+</ManSection>
+
+</Section>
+<Section Label="T-properties"><Heading>Group properties related to permutability</Heading>
+
+The next function names correspond to properties.
+<P/>
+
+<ManSection>
+<Prop Name="IsTGroup" Arg="G" Comm="checks whether the group is a T-group" />
+<Description>
+
+This function returns <K>true</K> if <A>G</A> is a T-group, and <K>false</K>
+otherwise.
+<P/>
+
+T-groups are the groups in which normality is a transitive relation,
+that is, if <M>H</M> is a subgroup of <M>K</M> and <M>K</M> is a subgroup of <M>G</M>,
+then <M>H</M> is a subgroup of&nbsp;<M>G</M>. In the finite case, they are the groups
+in which every subnormal subgroup is normal.
+<P/>
+
+For soluble groups, the algorithm checks that for every prime
+<M>p</M> dividing its order, <M>G</M> is <M>p</M>-nilpotent and has a Dedekind Sylow
+<M>p</M>-subgroup or <M>G</M> has an abelian Sylow <M>p</M>-subgroup <M>P</M> and
+every subgroup of <M>P</M> is normal in <M>{\rm N}_G(P)</M>.
+<P/>
+
+For insoluble groups, the function checks
+whether the group is an
+SC-group with the function <Ref Prop="IsSCGroup" />, because
+PT-groups are SC-groups. Since the methods
+for insoluble groups depend on the computation of a chief series with
+the function <Ref Oper="ChiefSeries" BookName="Ref" />, they might not
+be available if the group is not given as a permutation group. Then 
+it is checked that every subnormal subgroup of
+defect&nbsp;<M>2</M> is normal with the help of the function
+<Ref Oper="OneSubnormalNonNormalSubgroup" />. The methods based on the ideas of
+<Cite Key="BallesterBeidlemanHeineken03-illinois" />,
+<Cite Key="BallesterBeidlemanHeineken03-commalg" />, and
+<Cite Key="BeidlemanHeineken03-jgt" /> have not been implemented so far because they
+require the computation of quotients by all normal subgroups, which
+could be a time-consuming task.
+<P/>
+
+<Example><![CDATA[
+gap> g:=SmallGroup(40,4);
+<pc group of size 40 with 4 generators>
+gap> IsTGroup(g);
+true
+gap> g:=SymmetricGroup(3);
+Sym( [ 1 .. 3 ] )
+gap> IsTGroup(g);
+true
+]]></Example>
+<P/>
+</Description>
+</ManSection>
+
+<ManSection>
+<Prop Name="IsPTGroup" Arg="G" Comm="checks whether the group is a PT-group" />
+<Description>
+
+
+This property takes the value <K>true</K> if <A>G</A> is a PT-group, and the
+value <K>false</K>
+otherwise.
+<P/>
+
+For a soluble group <M>G</M>, the function checks whether for all primes <M>p</M>,
+<M>G</M> is <M>p</M>-nilpotent and has an Iwasawa Sylow <M>p</M>-subgroup or <M>G</M>
+has an abelian Sylow <M>p</M>-subgroup and it satisfies the property <Alt Only="LaTeX"><M>{\cal
+  C}_p</M></Alt><Alt Not="LaTeX"><M>C_p</M></Alt>
+(that is, every subgroup of a Sylow <M>p</M>-subgroup <M>P</M> of <M>G</M> is normal
+in the Sylow normaliser <M>{\rm N}_G(P)</M>).
+<P/>
+
+For insoluble groups, the function checks that the group is an
+SC-group with the function <Ref Prop="IsSCGroup" />, because PT-groups
+are SC-groups. Since the methods for insoluble groups depend on the
+computation of a chief series with the function <Ref
+Oper="ChiefSeries" BookName="Ref" />, they might not be available if
+the group is not given as a permutation group. Then
+it uses the function <Ref Attr="OneSubnormalNonPermutableSubgroup" /> to check
+whether or not every subnormal subgroup is permutable. The methods based on the ideas of
+<Cite Key="BallesterBeidlemanHeineken03-illinois" />,
+<Cite Key="BallesterBeidlemanHeineken03-commalg" />, and
+<Cite Key="BeidlemanHeineken03-jgt" /> have not been implemented so far because they
+require the computation of quotients by all normal subgroups, which
+could be a time-consuming task.
+<P/>
+
+
+<Example><![CDATA[
+gap> g:=SmallGroup(1323,37);
+<pc group of size 1323 with 5 generators>
+gap> IsPTGroup(g);
+true
+gap> IsTGroup(g);
+false
+gap> OneSubnormalNonNormalSubgroup(g);
+Group([ f2*f3, f4, f5 ])
+]]></Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Prop Name="IsPSTGroup" Arg="G" Comm="checks whether a group is a PST-group" />
+<Description>
+
+This function returns true if the group <A>G</A> is a
+PST-group, and false otherwise.
+<P/>
+
+A finite group <M>G</M> is a PST-group if S-permutability (Sylow-permutability) is a transitive
+relation in <M>G</M>, that is, if <M>H</M> is S-permutable in <M>K</M> and <M>K</M> is
+S-permutable in <M>G</M>, then <M>H</M> is S-permutable in&nbsp;<M>G</M>. This is
+equivalent to affirming that every subnormal subgroup of <M>G</M> is S-permutable in&nbsp;<M>G</M>.
+<P/>
+
+For a soluble group <M>G</M>, the function checks whether for all primes <M>p</M>,
+<M>G</M> is <M>p</M>-nilpotent, or <M>G</M>
+has an abelian Sylow <M>p</M>-subgroup and <M>G</M> satisfies the property
+<Alt Only="LaTeX"><M>{\cal
+  C}_p</M></Alt><Alt Not="LaTeX"><M>C_p</M></Alt>
+(that is, every subgroup of a Sylow <M>p</M>-subgroup <M>P</M> of <M>G</M> is normal
+in the Sylow normaliser <M>{\rm N}_G(P)</M>)
+<P/>
+
+For insoluble groups, the function checks whether the group is an
+SC-group with the function <Ref Prop="IsSCGroup" />, because
+PST-groups are SC-groups. Since the methods
+for insoluble groups depend on the computation of a chief series with
+the function <Ref Oper="ChiefSeries" BookName="Ref" />, they might not
+be available if the group is not given as a permutation group. Then 
+it uses the function <Ref Attr="OneSubnormalNonSPermutableSubgroup" /> to check
+whether or not every subnormal subgroup of defect&nbsp;<M>2</M> is
+S-permutable. The methods based on the ideas of
+<Cite Key="BallesterBeidlemanHeineken03-illinois" />,
+<Cite Key="BallesterBeidlemanHeineken03-commalg" />, and
+<Cite Key="BeidlemanHeineken03-jgt" /> have not been implemented so far because they
+require the computation of quotients by all normal subgroups, which
+could be a time-consuming task.
+<P/>
+
+
+<Example><![CDATA[
+gap> g:=SmallGroup(24,6);
+<pc group of size 24 with 4 generators>
+gap> IsPSTGroup(g);
+true
+gap> IsPTGroup(g);
+false
+gap> OneSubnormalNonPermutableSubgroup(g);
+Group([ f1*f3, f4 ])
+gap> g:=SmallGroup(24,6);
+<pc group of size 24 with 4 generators>
+gap> IsPSTGroup(g);
+true
+gap> IsPTGroup(g);
+false
+gap> OneSubnormalNonPermutableSubgroup(g);
+Group([ f1*f3, f4 ])
+gap> OneSubgroupNotPermutingWith(g,last);
+Group([ f1*f2 ])
+]]></Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Prop Name="IsCPTGroup" Arg="G" Comm="checks whether every subnormal subgroup is conjugate-permutable" />
+<Description>
+
+This property returns true if every subnormal subgroup of <A>G</A> permutes
+with all its conjugates, and false otherwise.
+<P/>
+
+<Example><![CDATA[
+gap> g:=SymmetricGroup(4);
+Sym( [ 1 .. 4 ] )
+gap> IsCPTGroup(g);
+true
+gap> IsPTGroup(g);
+false
+gap> IsPSTGroup(g);
+false
+]]></Example>
+</Description>
+</ManSection>
+<ManSection>
+<Prop Name="IsPSNTGroup" Arg="G" Comm="checks whether every subnormal subgroup permutes with every system normalizer" />
+<Description>
+
+This property takes the value <K>true</K> if every subnormal subgroup of
+the soluble group <M>G</M> permutes with every system normaliser of <M>G</M>,
+and <K>false</K> otherwise. If the function is applied to an insoluble
+group, it gives an error.
+<P/>
+
+<Example><![CDATA[
+gap> g:=Group((1,2,3)(4,5,6),(1,3));
+Group([ (1,2,3)(4,5,6), (1,3) ])
+gap> IsPSTGroup(g);
+false
+gap> IsPSNTGroup(g);
+true
+gap> IsCPTGroup(g);
+true
+gap> g:=SmallGroup(16,7);
+<pc group of size 16 with 4 generators>
+gap> IsPSTGroup(g);
+true
+gap> IsCPTGroup(g);
+false
+gap> g:=SymmetricGroup(4);
+Sym( [ 1 .. 4 ] )
+gap> IsPSNTGroup(g);
+false
+gap> IsCPTGroup(g);
+true
+]]></Example>
+</Description>
+</ManSection>
+</Section>
+</Chapter>
+<Chapter><Heading>Local Functions in the <Package>PERMUT</Package> Package</Heading>
+
+
+
+In the study of permutability, the usage of local characterisations
+has become a useful tool to describe the classes of T-groups,
+PT-groups, and PST-groups. In this chapter we present some local
+characterisations of these classes and some functions which allow to
+check whether or not a group given in &GAP; satisfies these
+conditions.
+<P/>
+
+A <E>local</E> description of group-theoretical property consists of
+expressing it as the conjunction of some properties depending on a prime
+<M>p</M>, usually related to the behaviour of <M>p</M>-elements, <M>p</M>-subgroups,
+or <M>p</M>-chief factors,  for all primes <M>p</M>.
+<P/>
+
+
+
+<Section Label="solvable"><Heading>A Local Function for Supersolubility</Heading>
+The &GAP; library does not contain methods to check whether a group <M>G</M> is <M>p</M>-supersoluble, where <M>p</M> is a prime number. We include such a function in the <Package>PERMUT</Package> package.
+
+<ManSection>
+<Func Name="IsPSupersolvable" Arg="G, p" Comm="checks whether the group is p-supersolvable" />
+<Func Name="IsPSupersoluble" Arg="G, p" Comm="checks whether the group is p-supersolvable" />
+
+<Description>
+
+This function returns <K>true</K> if the group <A>G</A> is <M>p</M>-supersoluble, and
+<K>false</K> otherwise, where <A>p</A> is a prime number. This function is not defined in &GAP;. The
+method we have implemented for finite groups includes checking whether the
+group is supersoluble (in this case, it must return <K>true</K>). If the
+group is not soluble, it computes a chief series and checks whether
+all chief factors have order <M>p</M> or have order not divisible
+by&nbsp;<M>p</M>.
+<P/>
+
+<Example><![CDATA[
+gap> g:=Group((1,2,3,4,5,6,7), (8,9,10,11,12,13,14), (15,16,17,18,19,20,21),
+> (22,23,24,25,26,27,28), (29,30,31,32,33,34,35),
+> (1,8,15,22,29)(2,9,16,23,30)(3,10,17,24,31)(4,11,18,25,32)(5,12,19,26,
+>     33)(6,13,20,27,34)(7,14,21,28,35),
+> (1,8)(2,9)(3,10)(4,11)(5,12)(6,13)(7,14)); #C7 wr S5
+<permutation group with 7 generators>
+gap> IsPSupersolvable(g,7);
+false
+gap> IsPSupersolvable(g,11);
+true
+]]></Example>
+
+<Example><![CDATA[
+gap> g:=DirectProduct(PSL(2,7),
+>     Group((1,2,3,4,5,6,7,8,9,10,11), (2,5,6,10,4)(3,9,11,8,7)));
+Group([ (3,7,5)(4,8,6), (1,2,6)(3,4,8), (9,10,11,12,13,14,15,16,17,18,19),
+  (10,13,14,18,12)(11,17,19,16,15) ])
+gap> IsPNilpotent(g,5);
+true
+gap> IsPNilpotent(g,11);
+false
+gap> IsPSupersolvable(g,11);
+true
+gap> IsPNilpotent(g,3);
+false
+]]></Example>
+</Description>
+</ManSection>
+</Section>
+<Section Label="local-T-groups"><Heading>Local functions for T-groups, PT-groups, and PST-groups</Heading>
+
+
+The following functions correspond to local description of the
+classes of soluble T-groups, PT-groups, and PST-groups. Most of the
+known useful local characterisations of these classes of groups can be
+seen to be equivalent to one of them, either in the universe or all
+finite groups or in the universe of all finite <M>p</M>-soluble
+groups. By a local characterisation of a group-theoretical property
+<Alt Only="LaTeX"><M>{\cal
+  R}</M></Alt><Alt Not="LaTeX"><M>R</M></Alt> we
+mean a group-theoretical property <Alt Only="LaTeX"><M>{\cal
+  R}_p</M></Alt><Alt Not="LaTeX"><M>R_p</M></Alt> for each prime <M>p</M> such that a
+group satisfies <Alt Only="LaTeX"><M>{\cal
+  R}</M></Alt><Alt Not="LaTeX"><M>R</M></Alt> if and only if it satisfies <Alt Only="LaTeX"><M>{\cal
+  R}_p</M></Alt><Alt Not="LaTeX"><M>R_p</M></Alt> for
+all primes <M>p</M>.
+
+<ManSection>
+<Func Name="IsCp" Arg="G, p" Comm="checks whether the group satisfies Cp" />
+
+<Description>
+This function returns <K>true</K> if the group <A>G</A> satisfies the property
+<Alt Only="LaTeX"><M>{\cal
+  C}_p</M></Alt><Alt Not="LaTeX"><M>C_p</M></Alt>, where <M>p</M> is a
+  prime number, and <K>false</K> otherwise.
+
+<P />
+A group <M>G</M> satisfies <Alt Only="LaTeX"><M>{\cal
+  C}_p</M></Alt><Alt Not="LaTeX"><M>C_p</M></Alt>
+when every subgroup <M>H</M> of a Sylow <M>p</M>-subgroup <M>P</M> of <M>G</M> is normal
+in the corresponding Sylow normaliser <M>{\rm N}_G(P)</M>. This property was
+introduced by Robinson in <Cite Key="Robinson68" />. A group <M>G</M> is a soluble
+PST-group if and only if it satisfies <Alt Only="LaTeX"><M>{\cal
+  C}_p</M></Alt><Alt Not="LaTeX"><M>C_p</M></Alt> for all primes <M>p</M>.
+<P/>
+
+<Example><![CDATA[
+gap> g:=AlternatingGroup(5);
+Alt( [ 1 .. 5 ] )
+gap> IsCp(g,3);
+true
+gap> IsCp(g,5);
+true
+gap> IsCp(g,7);
+true
+gap> IsCp(g,2);
+false
+gap> g:=SmallGroup(200,44); # semidirect product of Q8 with C5xC5
+<pc group of size 200 with 5 generators>
+gap> IsCp(g,5);
+false
+gap> IsCp(g,2);
+true
+]]></Example>
+<P/>
+</Description>
+</ManSection>
+
+<ManSection>
+<Func Name="IsXp" Arg="G, p" Comm="checks whether the group satisfies Xp" />
+<Description>
+
+This function returns <K>true</K> if <A>G</A> satisfies <Alt Only="LaTeX"><M>{\cal
+  X}_p</M></Alt><Alt Not="LaTeX"><M>X_p</M></Alt>, where <M>p</M>
+is a prime, and <K>false</K> otherwise.
+<P/>
+
+A group <M>G</M> satisfies <Alt Only="LaTeX"><M>{\cal
+  X}_p</M></Alt><Alt Not="LaTeX"><M>X_p</M></Alt> when for every subgroup <M>H</M> of a Sylow
+<M>p</M>-subgroup <M>P</M> of <M>G</M>, <M>H</M> is permutable in <M>{\rm N}_G(P)</M>. This
+property was introduced by Beidleman, Brewster, and Robinson in
+<Cite Key="BeidlemanBrewsterRobinson99" />. A group <M>G</M> is a soluble PT-group
+if and only if <M>G</M> satisfies <Alt Only="LaTeX"><M>{\cal
+  X}_p</M></Alt><Alt Not="LaTeX"><M>X_p</M></Alt> for all primes <M>p</M>.
+<P/>
+
+<Example><![CDATA[
+gap> g:=SmallGroup(189,7);
+<pc group of size 189 with 4 generators>
+gap> IsXp(g,3);
+true
+gap> IsXp(g,7);
+true
+gap> IsPTGroup(g);
+true
+gap> IsCp(g,3);
+false
+gap> IsTGroup(g);
+false
+]]></Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Func Name="IsYp" Arg="G, p" Comm="checks whether a group satisfies Yp" />
+<Description>
+
+This function returns <K>true</K> if <A>G</A> satisfies <Alt Only="LaTeX"><M>{\cal
+  Y}_p</M></Alt><Alt Not="LaTeX"><M>Y_p</M></Alt>, where <M>p</M>
+is a prime, and <K>false</K> otherwise.
+<P/>
+
+A group <M>G</M> satisfies <Alt Only="LaTeX"><M>{\cal
+  X}_p</M></Alt><Alt Not="LaTeX"><M>Y_p</M></Alt> when for every two subgroups <M>H</M> and
+<M>K</M> with <M>H\leq K</M>, <M>H</M> is S-permutable in <M>{\rm N}_G(P)</M>. This property
+was introduced by Ballester-Bolinches and Esteban-Romero in
+<Cite Key="BallesterEsteban02-sylper1" />. A group <M>G</M> is a soluble PST-group
+if and only if <M>G</M> satisfies <Alt Only="LaTeX"><M>{\cal
+  Y}_p</M></Alt><Alt Not="LaTeX"><M>Y_p</M></Alt> for all primes <M>p</M>.
+<P/>
+
+<Example><![CDATA[
+gap> g:=SmallGroup(200,43); # semidirect product of D8 with C5xC5
+<pc group of size 200 with 5 generators>
+gap> IsCp(g,2);
+false
+gap> IsXp(g,2);
+false
+gap> IsYp(g,2);
+true
+gap> g:=Group((1,2,3)(4,5,6),(1,2));
+Group([ (1,2,3)(4,5,6), (1,2) ])
+gap> IsYp(g,3);
+false
+gap> IsYp(g,2);
+true
+]]></Example>
+</Description>
+</ManSection>
+
+</Section>
+<Section Label="aux-local"><Heading>Auxiliary Functions for T-groups, PT-groups, and PST-groups</Heading>
+
+The following functions are used to check whether or not a group is a
+soluble T-group, PT-group, or PST-group.
+<P/>
+
+<ManSection>
+<Func Name="IsAbCp" Arg="G, p" Comm="checks whether a group has abelian Sylow p-subgroups and satisfies Cp" />
+<Description>
+
+This function returns <K>true</K> if <A>G</A> has an abelian Sylow <A>p</A>-subgroup
+<A>p</A> such that every subgroup of <M>P</M> is normal in the Sylow normaliser
+<M>{\rm N}_G(P)</M>, and <K>false</K> otherwise.
+<P/>
+
+This function is used to characterise soluble PST-groups: a group <M>G</M>
+is a soluble PST-group if and only if <M>G</M> satisfies <Alt Only="LaTeX"><M>{\cal
+  Y}_p</M></Alt><Alt Not="LaTeX"><M>Y_p</M></Alt> for all
+primes <M>p</M>, and a group <M>G</M> satisfies <Alt Only="LaTeX"><M>{\cal
+  Y}_p</M></Alt><Alt Not="LaTeX"><M>Y_p</M></Alt> if and only if <M>G</M>
+is <M>p</M>-nilpotent or <M>G</M> has an abelian Sylow <M>p</M>-subgroup and
+satisfies <Alt Only="LaTeX"><M>{\cal
+  C}_p</M></Alt><Alt Not="LaTeX"><M>C_p</M></Alt>. A group <M>G</M> satisfies <Alt Only="LaTeX"><M>{\cal
+  C}_p</M></Alt><Alt Not="LaTeX"><M>C_p</M></Alt> if and only if every
+subgroup of a Sylow <M>p</M>-subgroup <M>P</M> of <M>G</M> is normal in the Sylow
+normaliser <M>{\rm N}_G(P)</M>. Therefore this function checks whether <M>G</M>
+has an abelian Sylow <M>p</M>-subgroup and <M>G</M> satisfies <Alt Only="LaTeX"><M>{\cal
+  C}_p</M></Alt><Alt Not="LaTeX"><M>C_p</M></Alt>.
+<P/>
+
+<Example><![CDATA[
+gap> g:=AlternatingGroup(5);
+Alt( [ 1 .. 5 ] )
+gap> IsAbCp(g,5);
+true
+]]></Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Func Name="IsDedekindSylow" Arg="G, p" Comm="checks whether the group has Dedekind Sylow subgroups" />
+
+<Description>
+
+This function returns <K>true</K> if a Sylow <A>p</A>-subgroup of <A>G</A> is
+Dedekind, else it returns <K>false</K>.
+<P/>
+
+A group <M>G</M> is Dedekind when every subgroup of <M>G</M> is normal. If <M>p</M>
+is a prime, a Dedekind <M>p</M>-group (see for example 2.3.12 in
+<Cite Key="Schmidt94" />) is abelian or a
+direct product of a quaternion group of order <M>8</M> and an elementary
+abelian <M>2</M>-group. Obviously, a <M>p</M>-group is Dedekind if and only if
+it is a T-group.
+<P/>
+
+The algorithm used in this function to test whether a non-abelian
+<M>2</M>-group satisfies this condition checks that the Frattini subgroup
+of a Sylow <M>2</M>-subgroup <M>P</M> of <M>G</M> has order <M>2</M> and that the centre
+of <M>P</M> has exponent <M>2</M> and index <M>4</M>. In this case, it computes the
+natural epimorphism from <M>P</M> to <Alt Only="LaTeX"><M>P/{\rm Z}(P)</M></Alt><Alt Not="LaTeX"><M>P/Z(P)</M></Alt> and it checks that the
+preimages of the generators of <Alt Only="LaTeX"><M>P/{\rm Z}(P)</M></Alt><Alt Not="LaTeX"><M>P/Z(P)</M></Alt> under the natural
+epimorphism have order <M>4</M>. If all these conditions hold, then the
+Sylow <M>2</M>-subgroup is Dedekind, otherwise it is not.
+<P/>
+
+This function tries to set the property <Ref Prop="IsTGroup" /> to <K>true</K> or <K>false</K> for
+the Sylow <M>p</M>-subgroup.
+<P/>
+
+<Example><![CDATA[
+gap> g:=DirectProduct(SmallGroup(8,4),CyclicGroup(5));
+<pc group of size 40 with 4 generators>
+gap> IsDedekindSylow(g,2);
+true
+]]></Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Func Name="IwasawaTripleWithSubgroup" Arg="G, X, p" Comm="computes an Iwasawa triple with a given subgroup" />
+
+<Description>
+
+This function returns an Iwasawa triple for a <A>p</A>-group <A>G</A> such that
+<A>X</A> is a member of it, if such a triple exists, and <K>fail</K> otherwise. This function is used as an auxiliary function
+to compute an Iwasawa triple for a group <A>G</A>.
+<P/>
+
+An Iwasawa triple for a <M>p</M>-group <M>G</M> is a triple <M>(X,b,s)</M> such that
+<M>X</M> is an abelian normal subgroup of <M>G</M> with cyclic quotient, <M>b</M> is
+a generator of a supplement to <M>X</M> in <M>G</M>, and <M>b</M> induces a power
+automorphism in <M>X</M> of the form <M>x\to x^{1+p^s}</M>. A theorem of
+Iwasawa states that a <M>p</M>-group <M>G</M> has a modular subgroup lattice
+(or, equivalently, <M>G</M> has all subgroups permutable) if
+and only if <M>G</M> is a direct product of a quaternion group of order&nbsp;<M>8</M>
+and an elementary abelian <M>2</M>-group or <M>G</M> has an Iwasawa triple
+<M>(X,b,s)</M> with <M>s \geq 2</M>.
+<P/>
+
+The construction of the Iwasawa triple takes a generator <M>b</M> of a
+cyclic supplement to <M>X</M> in&nbsp;<M>G</M>. Then we consider a generator <M>a</M> of
+<M>X</M> of the largest possible order and find an element <M>c</M> of <M>\langle
+b \rangle</M> and an element <M>s</M> such that <M>a^c = a^{1+p^s}</M>. If such an
+element does not exist, the function returns <K>fail</K>. For this element,
+it checks whether for all generators <M>t</M> of <M>X</M>, the equality
+<M>t^c = t^{1+p^s}</M> holds. If this holds, it returns the triple <M>(X, c,
+s)</M>; otherwise it returns <K>fail</K>.
+<P/>
+
+<Example><![CDATA[
+gap> e:=ExtraspecialGroup(27,9);
+<pc group of size 27 with 3 generators>
+gap> IwasawaTripleWithSubgroup(e,Subgroup(e,[e.1,e.3]),3);
+[ Group([ f1, f3 ]), f2, 1 ]
+]]></Example>
+<P/>
+</Description>
+</ManSection>
+
+
+<ManSection>
+<Attr Name="IwasawaTriple" Arg="G" Comm="computes an Iwasawa triple for a p-group" />
+<Description>
+
+This function computes an Iwasawa triple for the <M>p</M>-group
+<A>G</A>, if it exists. If <A>G</A>
+is not Iwasawa, the function returns <K>fail</K>. If <A>G</A> is a
+direct product of an elementary abelian <M>2</M>-group and a quaternion
+group of order&nbsp;<M>8</M>, it returns an empty list. If <A>G</A> is Iwasawa, then
+the function returns an Iwasawa triple for <A>G</A>. An Iwasawa triple for
+a group <A>G</A> is a triple <M>(X, b, s)</M> where <M>X</M> is an abelian normal
+subgroup of <M>G</M> such that <M>G/X</M> is cyclic, <M>b</M> is a generator of a
+cyclic supplement to <M>X</M> in <M>G</M>, and <M>s</M> is an integer such that for
+all <M>x \in X</M>, <M>x^b = x^{1+p^s}</M>. A theorem of Iwasawa states that a
+<M>p</M>-group <M>G</M> has a modular subgroup lattice (or, equivalently, <M>G</M>
+has all subgroups permutable) if and only if <M>G</M> is a
+direct product of an elementary abelian <M>2</M>-group and a quaternion
+group of order&nbsp;<M>8</M> or <M>G</M> has an Iwasawa triple <M>(X,b,s)</M> with <M>s \geq 2</M> if <M>p = 2</M>.
+<P/>
+
+The method followed to find an Iwasawa triple for non-abelian
+non-Dedekind groups begins with the whole
+group <M>G</M>. If the group is abelian, it returns the Iwasawa triple
+<M>(G,1,\log_p\exp(G))</M>. If it is not abelian, it constructs a list <M>l</M>
+formed by&nbsp;<M>G</M>. For every element <M>N</M> of <M>l</M>, it takes the maximal
+subgroups of <M>N</M> which are normal in <M>G</M> and give cyclic quotient. If
+any of these subgroups is a member of an Iwasawa triple, it is
+computed with the function <Ref Func="IwasawaTripleWithSubgroup" /> and the value is
+returned. If not, <M>N</M> is removed from the <M>l</M> and these maximal
+subgroups of <M>N</M> are added to <M>l</M>. This follows until an Iwasawa triple is
+found or the list <M>l</M> is empty. Since normal subgroups with cyclic
+quotient are contained in a unique maximal chain, no subgroup appears
+twice in this algorithm.
+<P/>
+
+The algorithm also takes into account the fact that a Iwasawa group of
+exponent&nbsp;<M>4</M> must be abelian or a direct product of a quaternion group
+of order&nbsp;<M>8</M> and an elementary abelian <M>2</M>-group.
+<P/>
+
+For the trivial group, it returns the triple composed by the trivial
+group, its identity element, and the prime&nbsp;<M>3</M>.
+<P/>
+
+<Example><![CDATA[
+gap> e:=ExtraspecialGroup(27,3);
+<pc group of size 27 with 3 generators>
+gap> IwasawaTriple(e);
+fail
+gap> e:=ExtraspecialGroup(27,9);
+<pc group of size 27 with 3 generators>
+gap> IwasawaTriple(e);
+[ Group([ f1, f3 ]), f2, 1 ]
+]]></Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Func Name="IsIwasawaSylow" Arg="G, p" Comm="checks whether the group has an Iwasawa Sylow p-subgroup" />
+<Description>
+
+This function returns <K>true</K> if <A>G</A> has an Iwasawa (modular) Sylow
+<A>p</A>-subgroup, and <K>false</K> otherwise.
+<P/>
+
+Recall that a <M>p</M>-group <M>P</M> has a modular subgroup lattice, or is an
+Iwasawa group, when all subgroups of <M>P</M> are permutable. It is clear
+that a <M>p</M>-group has a modular subgroup lattice if and only if it is a
+T-group.
+<P/>
+
+
+The implementation of this function begins by searching for a pair of subgroups that do not permute. In this case, the function returns <K>false</K>. The maximum number of pairs to be checked here is controlled by the variable <Ref Var="PermutMaxTries" />, which is assigned to <M>10</M> by default. If no such pair is found, the algorithm looks for an Iwasawa triple for a
+Sylow <M>p</M>-subgroup <M>P</M> of&nbsp;<M>G</M>. If there exists one such triple <M>(X,b,s)</M> with <M>s \geq 2</M> when
+<M>p = 2</M> or the group is a direct product of a quaternion group of
+order&nbsp;<M>8</M> and an elementary abelian <M>2</M>-group, then it 
+returns <K>true</K>; else it returns <K>false</K>.
+<P/>
+
+The values of the attributes <Ref Prop="IsPTGroup" /> and <Ref Prop="IsTGroup" /> for <M>P</M> are set
+by the function.
+<P/>
+
+<Example><![CDATA[
+gap> e:=ExtraspecialGroup(27,9);
+<pc group of size 27 with 3 generators>
+gap> IsIwasawaSylow(e,3);
+true
+]]></Example>
+</Description>
+</ManSection>
+
+</Section>
+</Chapter>
+<Chapter><Heading>Totally and Mutually Permutable Products</Heading>
+<P/>
+
+In recent years, many authors have considered totally and
+mutually permutable subgroups. Recall that two subgroups <M>A</M> and <M>B</M>
+of a group <M>G</M> are <E>totally permutable</E> if every subgroup of <M>A</M>
+permutes with every subgroup of <M>B</M>, and they are <E>mutually
+permutable</E> if every subgroup of <M>A</M> permutes with <M>B</M> and every
+subgroup of <M>B</M> permutes with <M>A</M>.
+<P/>
+
+We have defined some <Q>One</Q> functions which give a pair of
+subgroups which do not permute and prove that two subgroups fail to
+have a certain property.
+<P/>
+
+We have also defined some functions to work with totally and mutually
+<M>f</M>-permutable subgroups, where <M>f</M> is a subgroup embedding functor.
+<P/>
+
+The functions of this chapter are defined in a preliminary state.
+<P/>
+
+<Section><Heading>Functions for Mutually and Totally Permutable Products</Heading>
+
+<ManSection>
+
+<Func Name="AreMutuallyPermutableSubgroups" Arg="[G, ]A, B" Comm="checks whether two subgroups are mutually permutable" />
+<Description>
+This function returns <K>true</K> if the subgroups <M>A</M> and <M>B</M> of <M>G</M> are
+mutually permutable
+subgroups, that is, every subgroup of <M>A</M> permutes with <M>B</M> and every
+subgroup of <M>B</M> permutes with <M>A</M>, and <K>false</K> otherwise. The method
+used here checks only that <M>A</M> permutes with all cyclic subgroups of
+<M>B</M> and that <M>B</M> permutes with all cyclic subgroups of <M>A</M>.
+<P/>
+
+The method with two arguments assume that <M>A</M> and <M>B</M> have a common
+supergroup.
+</Description>
+</ManSection>
+
+<ManSection>
+<Func Name="OnePairShowingNotMutuallyPermutableSubgroups" Arg="[G, ]A, B" Comm="finds two subgroups which do not permute" />
+<Description>
+This function returns a pair of the form [ <A>A</A>, <A>V</A> ] with <A>V</A> a
+subgroup of <A>B</A> or of the form [ <A>W</A>, <A>B</A> ] with <A>W</A> a subgroup of <A>A</A>
+in which both subgroups do not permute, or <K>fail</K> if this pair does not
+exist because the product is mutually permutable.
+</Description>
+</ManSection>
+
+<ManSection>
+<Func Name="AreTotallyPermutableSubgroups" Arg="[G, ]A, B" Comm="checks whether both subgroups are totally permutable" />
+<Description>
+This function returns <K>true</K> if the subgroups <M>A</M> and <M>B</M> of <M>G</M> are
+totally permutable,
+that is, every subgroup of <M>A</M> permutes with every subgroup of
+<M>B</M>, and <K>false</K> otherwise. The method used here checks only that
+every cyclic subgroup of
+<M>A</M> permutes with every cyclic subgroup of <M>B</M>.
+<P/>
+
+The method with two arguments assume that <M>A</M> and <M>B</M> have a common
+supergroup. 
+</Description>
+</ManSection>
+
+<ManSection>
+<Func Name="OnePairShowingNotTotallyPermutableSubgroups" Arg="[G, ]A, B" Comm="finds two subgroups which do not permute" />
+<Description>
+This function returns a pair of the form [ <A>V</A>, <A>W</A> ], with <A>V</A> a
+subgroup of <A>A</A> and <A>W</A> a subgroup of <A>B</A>, such that both subgroups do
+not permute, or <K>fail</K> if this pair does not exist because the product
+is totally permutable.
+<P/>
+
+<Example><![CDATA[
+gap> g:=SymmetricGroup(4);
+Sym( [ 1 .. 4 ] )
+gap> a:=AlternatingGroup(4);
+Alt( [ 1 .. 4 ] )
+gap> b:=Subgroup(g,[(1,2,3,4),(1,3)]);
+Group([ (1,2,3,4), (1,3) ])
+gap> AreMutuallyPermutableSubgroups(g,a,b);
+true
+gap> AreTotallyPermutableSubgroups(g,a,b);
+false
+gap> OnePairShowingNotTotallyPermutableSubgroups(g,a,b);
+[ Group([ (2,3,4) ]), Group([ (1,2)(3,4) ]) ]
+gap> c:=Subgroup(g,[(1,2,3)]);
+Group([ (1,2,3) ])
+gap> AreMutuallyPermutableSubgroups(g,a,c);
+false
+gap> OnePairShowingNotMutuallyPermutableSubgroups(g,a,c);
+[ Group([ (2,3,4) ]), Group([ (1,2,3) ]) ]
+gap> AreMutuallyPermutableSubgroups(a,c);
+false
+gap> g:=SymmetricGroup(3);
+Sym( [ 1 .. 3 ] )
+gap> a:=AlternatingGroup(3);
+Alt( [ 1 .. 3 ] )
+gap> b:=Subgroup(g,[(1,2)]);
+Group([ (1,2) ])
+gap> AreTotallyPermutableSubgroups(g,a,b);
+true
+]]></Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Func Name="AreMutuallyFPermutableSubgroups" Arg="[G, ]A, B, fA, fB" Comm="checks whether both subgroups of G are mutually f-permutable" />
+<Description>
+This function returns <K>true</K> if the subgroups <A>A</A> and <A>B</A> are mutually
+<A>f</A>-permutable, and <K>false</K> otherwise. Here <A>A</A> and <A>B</A> are subgroups
+of <A>G</A> and <A>fA</A> and <A>fB</A> are, respectively, lists of
+subgroups of <A>A</A> and <A>B</A>, respectively.
+<P/>
+
+In the version with four arguments, <M>A</M> and <M>B</M> are assumed to be
+subgroups of a common supergroup.
+</Description>
+</ManSection>
+
+<ManSection>
+<Func Name="OnePairShowingNotMutuallyFPermutableSubgroups" Arg="[G, ]A, B, fA, fB" Comm="finds two f-subgroups which do not permute" />
+<Description>
+This function returns a pair of the form [ <A>A</A>, <A>V</A> ] with <A>V</A> a
+subgroup in <A>fB</A> or <A>B</A>  or of the form [&nbsp;<A>W</A>, <A>B</A>&nbsp;] with <A>W</A> a
+subgroup in <A>fA</A> or <A>A</A>
+in which both subgroups do not permute, or <K>fail</K> if this pair does not
+exist. Here <A>A</A> and <A>B</A> are
+subgroups of <A>G</A> and <A>fA</A> and <A>fB</A> are lists of
+subgroups of <A>A</A> and <A>B</A>, respectively.
+<P/>
+In the version with four arguments, <A>A</A> and <A>B</A> are assumed to be
+subgroups of a common supergroup.
+</Description>
+</ManSection>
+
+<ManSection>
+<Func Name="AreTotallyFPermutableSubgroups" Arg="[G, ]A, B, fA, fB" Comm="checks whether two subgroups are totally f-permutable" />
+<Description>
+
+This function returns <K>true</K> if the subgroup <A>A</A> permutes
+with all subgroups in the list <A>fB</A> and <A>B</A> permutes with
+all subgroups in the list <A>fA</A>, and <K>false</K> otherwise. Here <A>A</A> and <A>B</A> are subgroups
+of <A>G</A>, <A>fA</A> is a list of subgroups of <A>A</A> and <A>fB</A> is a list of subgroups of <A>B</A>.
+<P/>
+
+In the version with four arguments, <A>A</A> and <A>B</A> are assumed to be
+subgroups of a common supergroup.
+</Description>
+</ManSection>
+
+<ManSection>
+<Func Name="OnePairShowingNotTotallyFPermutableSubgroups" Arg="[G, ]A, B, fA, fB" Comm="finds two f-subgroups which do not permute." />
+<Description>
+This function returns a pair of the form [ <A>U</A>, <A>V</A> ] with <A>U</A> a
+subgroup in <A>fA</A> or <A>A</A> and <A>V</A> a
+subgroup in <A>fB</A> or <A>B</A>
+in which both subgroups do not permute, or <K>fail</K> if this pair does not
+exist. Here <A>A</A> and <A>B</A> are
+subgroups of <A>G</A>, <A>fA</A> is a list of subgroups of <A>A</A> and <A>fB</A> is a list of subgroups of <A>B</A>.
+<P/>
+
+In the version with two arguments, <A>A</A> and <A>B</A> are assumed to be
+subgroups of a common supergroup.
+<P/>
+
+<Example><![CDATA[
+gap> g:=SymmetricGroup(4);
+Sym( [ 1 .. 4 ] )
+gap> a:=AlternatingGroup(4);
+Alt( [ 1 .. 4 ] )
+gap> b:=Subgroup(g,[(1,2,3,4),(1,3)]);
+Group([ (1,2,3,4), (1,3) ])
+gap> AreTotallyFPermutableSubgroups(g,a,b,
+>      MaximalSubgroups(a),MaximalSubgroups(b));
+false
+gap> OnePairShowingNotTotallyFPermutableSubgroups(g,a,b,
+>      MaximalSubgroups(a),MaximalSubgroups(b));
+[ Group([ (1,2,3) ]), Group([ (2,4), (1,3)(2,4) ]) ]
+gap> AreTotallyFPermutableSubgroups(g,a,b,DerivedSeries(a),DerivedSeries(b));
+true
+]]></Example>
+</Description>
+</ManSection>
+
+
+
+</Section>
+</Chapter>
+<Chapter><Heading>Other Functions in the <Package>PERMUT</Package> Package</Heading>
+
+In this chapter we define some miscellaneous functions which have
+appeared in the context of permutability, or some functions which have
+been used for some of the functions of the package. 
+<Section><Heading>Functions</Heading>
+
+<ManSection>
+<Attr Name="AllSubnormalSubgroups" Arg="G" Comm="all subnormal subgroups of a group" />
+<Description>
+
+This function computes all subnormal subgroups of <A>G</A>. The method used
+to obtain this list consists in beginning with the list of all normal
+subgroups of <A>G</A> and by adding all normal subgroups of the subgroups
+in the list until no new subnormal subgroups appear. This computes the
+complete list of subgroups, not only a representative of each
+conjugacy class as other functions do.
+<P/> 
+
+<Example><![CDATA[
+gap> g:=SymmetricGroup(4);
+Sym( [ 1 .. 4 ] )
+gap> AllSubnormalSubgroups(g);
+[ Sym( [ 1 .. 4 ] ), Group([ (2,4,3), (1,4)(2,3), (1,3)(2,4) ]), Group([ (1,4)
+  (2,3), (1,3)(2,4) ]), Group(()), Group([ (1,3)(2,4) ]), Group([ (1,2)
+  (3,4) ]), Group([ (1,4)(2,3) ]) ]
+]]></Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Attr Name="PrimesDividingSize" Arg="G" Comm="primes dividing the size of a group" />
+
+<Description>
+This attribute gives a list of primes dividing the size of the finite
+group <A>G</A>, without repetitions. Its code has been borrowed from the
+&GAP; manual.
+<P/>
+
+<Example><![CDATA[
+gap> g:=SymmetricGroup(4);
+Sym( [ 1 .. 4 ] )
+gap> PrimesDividingSize(g);
+[ 2, 3 ]
+]]></Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Attr Name="SylowSubgroups" Arg="G" Comm="Sylow subgroups of a group" />
+
+<Description>
+
+This attribute returns a list composed by one Sylow subgroup for every
+prime dividing the size of&nbsp;<A>G</A>. If <A>G</A> is soluble, then it returns a
+Sylow system or Sylow basis of <A>G</A>  by means of the function
+<Ref Attr="SylowSystem" BookName="Ref" /> (a set composed of a Sylow subgroup for each prime
+dividing the order of <A>G</A> permuting in pairs).
+<P/>
+<Log>
+gap> g:=SymmetricGroup(4);
+Sym( [ 1 .. 4 ] )
+gap> SylowSubgroups(g);
+[ Group([ (1,2), (3,4), (1,3)(2,4) ]), Group([ (1,2,3) ]) ]
+gap> s5:=SymmetricGroup(5);
+Sym( [ 1 .. 5 ] )
+gap> SylowSubgroups(s5);
+[ Group([ (1,2), (3,4), (1,3)(2,4) ]), Group([ (1,2,3) ]), Group([ (1,2,3,4,
+   5) ]) ]
+</Log>
+</Description>
+</ManSection>
+
+<ManSection>
+<Prop Name="IsSCGroup" Arg="G" Comm="checks whether the group has simple chief factors" />
+
+<Description>
+This property is <K>true</K> if <A>G</A> is an SC-group, and <K>false</K>
+otherwise. A group <A>G</A> is an SC-group if all its chief factors are
+simple. Note that a soluble group <A>G</A> is an SC-group if and only if
+<A>G</A> is supersoluble. The method used to check this property uses the
+chief series if its is available or the group is not soluble.
+<P/>
+
+Since the methods for insoluble groups might on the computation
+of a chief series with the function <Ref Oper="ChiefSeries"
+BookName="Ref" />, they might not be available if the group is not
+given as a permutation group.
+<P/>
+
+<Example><![CDATA[
+gap> g:=SymmetricGroup(4);
+Sym( [ 1 .. 4 ] )
+gap> IsSCGroup(g);
+false
+gap> g:=GL(2,5);
+GL(2,5)
+gap> IsSCGroup(g);
+true
+]]></Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Prop Name="IsSylowTowerGroup" Arg="G" Comm="checks whether the group has a Sylow tower of supersolvable type" />
+<Description>
+
+This property takes the value <K>true</K> if <M>G</M> has a Sylow tower of
+supersoluble type, and <K>false</K> otherwise.
+<P/>
+<Example><![CDATA[
+gap> g:=SymmetricGroup(4);
+Sym( [ 1 .. 4 ] )
+gap> IsSylowTowerGroup(g);
+false
+gap> g:=SmallGroup(75,1);
+<pc group of size 75 with 3 generators>
+gap> IsSylowTowerGroup(g);
+true
+]]></Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Func Name="Permutizer" Arg="G, U" Comm="permutizer of a subgroup" />
+<Func Name="Permutiser" Arg="G, U" Comm="permutiser of a subgroup" />
+<Description>
+
+
+The permutiser of a subgroup <A>U</A> of a group <A>G</A> is the subgroup generated by all cyclic
+subgroups of <A>G</A> which permute with <A>U</A>. If <A>U</A> is
+permutable in <A>G</A> (in particular, if <A>U</A> is normal in <A>G</A>), then its
+permutizer coincides with&nbsp;<A>G</A>.
+<P/>
+<Example><![CDATA[
+gap> g:=SymmetricGroup(4);
+Sym( [ 1 .. 4 ] )
+gap> Permutizer(g,Subgroup(g,[(1,2,3)]));
+Group([ (1,2,3), (2,3) ])
+gap> Size(last);
+6
+]]></Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Func Name="AllGeneratorsCyclicPGroup" Arg="g, p" Comm="all generators of a cyclic p-group" />
+<Description>
+
+
+This auxiliary function returns the list of all generators of the cyclic
+<M>p</M>-group generated by the <M>p</M>-element <M>g</M>. Here
+<M>p</M> is a prime number. Since this function is not intended to be
+used in interactive mode, no check is done that the
+argument is a <M>p</M>-element. 
+
+<Example><![CDATA[
+gap> AllGeneratorsCyclicPGroup((1,2,3,4,5,6,7,8,9),3);
+[ (1,2,3,4,5,6,7,8,9), (1,3,5,7,9,2,4,6,8), (1,5,9,4,8,3,7,2,6),
+  (1,6,2,7,3,8,4,9,5), (1,8,6,4,2,9,7,5,3), (1,9,8,7,6,5,4,3,2) ]
+]]></Example>
+</Description>
+</ManSection>
+
+</Section>
+</Chapter>
+</Body>
+<Bibliography Databases="biblio.xml" Style="alpha" />
+<TheIndex />
+</Book>
