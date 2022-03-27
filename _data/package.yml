@@ -57,13 +57,19 @@ citeas: |
 
 bibtex: |
     @misc{ permut2.0.4,
-      author =           {Ballester-Bolinches, A. and Cosme-Ll{\a'o}pez, E. and Esteban-Romero, R.},
-      title =            {{permut}, A package to deal with permutability in finite groups, {V}ersion 2.0.4},
+      author =           {Ballester-Bolinches,  A. and Cosme-Ll{\a'o}pez, E. and
+                          Esteban-Romero, R.},
+      title =            {{permut},  A  package  to  deal  with permutability in
+                          finite groups, {V}ersion 2.0.4},
       month =            {Mar},
       year =             {2022},
       note =             {Refereed GAP package},
-      howpublished =     {\href {https://gap-packages.github.io/permut/} {\texttt{https://gap-packages.github.io/}\discretionary {}{}{}\texttt{permut/}}},
-      keywords =         {permutability; PT-group; PST-group; T-group; mutually permutable; totally permutable; Dedekind group; Iwasawa group},
+      howpublished =     {\href         {https://gap-packages.github.io/permut/}
+                          {\texttt{https://gap-packages.github.io/}\discretionary
+                          {}{}{}\texttt{permut/}}},
+      keywords =         {permutability;  PT-group; PST-group; T-group; mutually
+                          permutable;   totally   permutable;   Dedekind  group;
+                          Iwasawa group},
       printedkey =       {BCE22}
     }
 

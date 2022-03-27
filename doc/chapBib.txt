@@ -2,38 +2,56 @@
   
   [1XReferences[101X
   
-  [[20XBBBC+09[120X]  [16XBallester-Bolinches,  A., Beidleman, J. C., Cossey, J., Esteban-Romero, R., Ragland, M. F. and Schmidt, J.[116X, [17XPermutable subnormal subgroups of finite groups[117X,
-  [18XArch. Math.[118X, [19X92[119X (2009), 549-557.
+  [[20XBBBC+09[120X]   [16XBallester-Bolinches,   A.,   Beidleman,   J.   C.,  Cossey,  J.,
+  Esteban-Romero,  R.,  Ragland,  M.  F. and Schmidt, J.[116X, [17XPermutable subnormal
+  subgroups of finite groups[117X, [18XArch. Math.[118X, [19X92[119X (2009), 549-557.
   
-  [[20XBBBH03a[120X]  [16XBallester-Bolinches,  A.,  Beidleman,  J.  C.  and  Heineken, H.[116X, [17XGroups in which Sylow subgroups and subnormal subgroups permute[117X, [18XIllinois J. Math[118X, [19X47[119X, 1-2
-  (2003), 63-69.
+  [[20XBBBH03a[120X] [16XBallester-Bolinches, A., Beidleman, J. C. and Heineken, H.[116X, [17XGroups
+  in  which Sylow subgroups and subnormal subgroups permute[117X, [18XIllinois J. Math[118X,
+  [19X47[119X, 1-2 (2003), 63-69.
   
-  [[20XBBBH03b[120X] [16XBallester-Bolinches, A., Beidleman, J. C. and Heineken, H.[116X, [17XA local approach to certain classes of finite groups[117X, [18XComm. Algebra[118X, [19X31[119X, 12 (2003), 5931-5942.
+  [[20XBBBH03b[120X]  [16XBallester-Bolinches,  A.,  Beidleman,  J.  C. and Heineken, H.[116X, [17XA
+  local  approach  to  certain classes of finite groups[117X, [18XComm. Algebra[118X, [19X31[119X, 12
+  (2003), 5931-5942.
   
-  [[20XBBCLER13[120X]  [16XBallester-Bolinches,  A.,  Cosme-Llópez,  E.  and  Esteban-Romero,  R.[116X,  [17XAlgorithms for permutability in finite groups[117X, [18XCent. Eur. J. Math.[118X, [19X11[119X, 11 (2013),
-  1914-1922.
+  [[20XBBCLER13[120X] [16XBallester-Bolinches, A., Cosme-Llópez, E. and Esteban-Romero, R.[116X,
+  [17XAlgorithms  for  permutability in finite groups[117X, [18XCent. Eur. J. Math.[118X, [19X11[119X, 11
+  (2013), 1914-1922.
   
-  [[20XBBER02[120X] [16XBallester-Bolinches, A. and Esteban-Romero, R.[116X, [17XSylow permutable subnormal subgroups of finite groups[117X, [18XJ. Algebra[118X, [19X251[119X, 2 (2002), 727-738.
+  [[20XBBER02[120X]  [16XBallester-Bolinches,  A.  and Esteban-Romero, R.[116X, [17XSylow permutable
+  subnormal subgroups of finite groups[117X, [18XJ. Algebra[118X, [19X251[119X, 2 (2002), 727-738.
   
-  [[20XBBERA10[120X] [16XBallester-Bolinches, A., Esteban-Romero, R. and Asaad, M.[116X, [17XProducts of finite groups[117X, Walter de Gruyter, Berlin (2010).
+  [[20XBBERA10[120X]   [16XBallester-Bolinches,  A.,  Esteban-Romero,  R.  and  Asaad,  M.[116X,
+  [17XProducts of finite groups[117X, Walter de Gruyter, Berlin (2010).
   
-  [[20XBBERR07[120X] [16XBallester-Bolinches, A., Esteban-Romero, R. and Ragland, M.[116X, [17XA note on finite PST-groups[117X, [18XJ. Group Theory[118X, [19X10[119X, 2 (2007), 205-210.
+  [[20XBBERR07[120X]  [16XBallester-Bolinches,  A.,  Esteban-Romero,  R. and Ragland, M.[116X, [17XA
+  note on finite PST-groups[117X, [18XJ. Group Theory[118X, [19X10[119X, 2 (2007), 205-210.
   
-  [[20XBBERR09[120X] [16XBallester-Bolinches, A., Esteban-Romero, R. and Ragland, M.[116X, [17XCorrigendum: A note on finite PST-groups[117X, [18XJ. Group Theory[118X, [19X12[119X, 6 (2009), 961-963.
+  [[20XBBERR09[120X]  [16XBallester-Bolinches,  A.,  Esteban-Romero,  R.  and  Ragland, M.[116X,
+  [17XCorrigendum:  A  note  on  finite PST-groups[117X, [18XJ. Group Theory[118X, [19X12[119X, 6 (2009),
+  961-963.
   
-  [[20XBBR99[120X] [16XBeidleman, J. C., Brewster, B. and Robinson, D. J. S.[116X, [17XCriteria for Permutability to Be Transitive in Finite Groups[117X, [18XJ. Algebra[118X, [19X222[119X, 2 (1999), 400-412.
+  [[20XBBR99[120X]  [16XBeidleman, J. C., Brewster, B. and Robinson, D. J. S.[116X, [17XCriteria for
+  Permutability  to Be Transitive in Finite Groups[117X, [18XJ. Algebra[118X, [19X222[119X, 2 (1999),
+  400-412.
   
-  [[20XBH03[120X]  [16XBeidleman,  J.  C.  and  Heineken, H.[116X, [17XFinite soluble groups whose subnormal subgroups permute with certain classes of subgroups[117X, [18XJ. Group Theory[118X, [19X6[119X, 2 (2003),
-  139-158.
+  [[20XBH03[120X]  [16XBeidleman,  J.  C.  and  Heineken,  H.[116X,  [17XFinite soluble groups whose
+  subnormal  subgroups  permute  with  certain  classes of subgroups[117X, [18XJ. Group
+  Theory[118X, [19X6[119X, 2 (2003), 139-158.
   
-  [[20XEW03[120X]   [16XEick,   B.   and  Wright,  C.  R.  B.[116X,  [17XGAP  package  FORMAT  ---  Computing  with  formations  of  finite  solvable  groups  v.~1.3[117X  (2003),  ((Available  on
-  https://www.uoregon.edu/~wright/RESEARCH/format/ (last visited 30th July 2015))).
+  [[20XEW03[120X]  [16XEick, B. and Wright, C. R. B.[116X, [17XGAP package FORMAT --- Computing with
+  formations   of   finite  solvable  groups  v.~1.3[117X  (2003),  ((Available  on
+  https://www.uoregon.edu/~wright/RESEARCH/format/  (last  visited  30th  July
+  2015))).
   
-  [[20XFog97[120X] [16XFoguel, T.[116X, [17XConjugate-permutable subgroups[117X, [18XJ. Algebra[118X, [19X191[119X (1997), 235-239.
+  [[20XFog97[120X]  [16XFoguel, T.[116X, [17XConjugate-permutable subgroups[117X, [18XJ. Algebra[118X, [19X191[119X (1997),
+  235-239.
   
-  [[20XRob68[120X] [16XRobinson, D. J. S.[116X, [17XA note on finite groups in which normality is transitive[117X, [18XProc. Amer. Math. Soc.[118X, [19X19[119X (1968), 933-937.
+  [[20XRob68[120X]  [16XRobinson,  D.  J. S.[116X, [17XA note on finite groups in which normality is
+  transitive[117X, [18XProc. Amer. Math. Soc.[118X, [19X19[119X (1968), 933-937.
   
-  [[20XSch94[120X] [16XSchmidt, R.[116X, [17XSubgroup lattices of groups[117X, Walter de Gruyter, De Gruyter Expositions in Mathematics, [19X14[119X, Berlin (1994).
+  [[20XSch94[120X]  [16XSchmidt,  R.[116X,  [17XSubgroup  lattices  of groups[117X, Walter de Gruyter, De
+  Gruyter Expositions in Mathematics, [19X14[119X, Berlin (1994).
   
   
   
