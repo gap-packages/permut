@@ -1,0 +1,333 @@
+  
+  [1X4 [33X[0;0YT-groups, PT-groups, and PST-groups[133X[101X
+  
+  [33X[0;0YThis  chapter  explains  the  functions  to check whether a given group is a
+  T-group, a PT-group, or a PST-group.[133X
+  
+  [33X[0;0YRecall that a group [22XG[122X is:[133X
+  
+  [8Xa T-group[108X
+        [33X[0;6Ywhen every subnormal subgroup of [22XG[122X is normal,[133X
+  
+  [8Xa PT-group[108X
+        [33X[0;6Ywhen every subnormal subgroup of [22XG[122X is permutable,[133X
+  
+  [8Xa PST-group[108X
+        [33X[0;6Ywhen every subnormal subgroup of [22XG[122X is S-permutable.[133X
+  
+  [33X[0;0YWe  also  present  functions  to identify groups in other classes related to
+  these ones.[133X
+  
+  [33X[0;0YThe  [21XOne[121X  functions are defined to provide examples of subgroups or elements
+  showing  that  a group theoretical property for a group or for a subgroup is
+  false.[133X
+  
+  
+  [1X4.1 [33X[0;0Y[21XOne[121X[101X[1X functions[133X[101X
+  
+  [1X4.1-1 OneSubnormalNonNormalSubgroup[101X
+  
+  [33X[1;0Y[29X[2XOneSubnormalNonNormalSubgroup[102X( [3XG[103X ) [32X attribute[133X
+  
+  [33X[0;0Y[2XOneSubnormalNonNormalSubgroup[102X returns a subnormal subgroup of defect [22X2[122X which
+  is  not normal in the group [3XG[103X, if such a subgroup exists. If such a subgroup
+  does not exist because the group is a T-group, it returns [9Xfail[109X.[133X
+  
+  [33X[0;0YA  T-group  is  a group in which normality is transitive, that is, if [22XH[122X is a
+  normal  subgroup  of  [22XK[122X  and [22XK[122X is a normal subgroup of [22XG[122X, then [22XH[122X is a normal
+  subgroup  of [22XG[122X.  Finite  T-groups  are  the  groups in which every subnormal
+  subgroup is normal.[133X
+  
+  [33X[0;0YThis  function  tries  to set the property [2XIsTGroup[102X ([14X4.2-1[114X) to [9Xtrue[109X or [9Xfalse[109X
+  according to its result.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=SmallGroup(320,152);[127X[104X
+    [4X[28X<pc group of size 320 with 7 generators>[128X[104X
+    [4X[25Xgap>[125X [27Xx:=OneSubnormalNonNormalSubgroup(g);[127X[104X
+    [4X[28XGroup([ f2, f3, f5, f7 ])[128X[104X
+    [4X[25Xgap>[125X [27XIsNormal(g,x);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsSubnormal(g,x);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X4.1-2 OneSubnormalNonPermutableSubgroup[101X
+  
+  [33X[1;0Y[29X[2XOneSubnormalNonPermutableSubgroup[102X( [3XG[103X ) [32X attribute[133X
+  
+  [33X[0;0Y[2XOneSubnormalNonPermutableSubgroup[102X  returns a subnormal subgroup which is not
+  permutable  in  the  group  [3XG[103X, if such a subgroup exists. If such a subgroup
+  does not exist because the group is a PT-group, it returns [9Xfail[109X.[133X
+  
+  [33X[0;0YA  group  [22XG[122X  is a PT-group when permutability is a transitive relation in [22XG[122X,
+  that  is,  if [22XH[122X is a permutable subgroup of [22XK[122X and [22XK[122X is a permutable subgroup
+  of  [22XG[122X,  then  [22XH[122X  is  a permutable subgroupof [22XG[122X. This is equivalent in finite
+  groups to affirming that every subnormal subgroup of [22XG[122X is permutable.[133X
+  
+  [33X[0;0YThis  function  tries to set the property [2XIsPTGroup[102X ([14X4.2-2[114X) to [9Xtrue[109X or [9Xfalse[109X
+  according to its result.[133X
+  
+  [33X[0;0YSince this function checks all subnormal subgroups for permutability, it may
+  take a long time if there are many subnormal subgroups.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=SmallGroup(320,152);[127X[104X
+    [4X[28X<pc group of size 320 with 7 generators>[128X[104X
+    [4X[25Xgap>[125X [27XOneSubnormalNonPermutableSubgroup(g);[127X[104X
+    [4X[28Xfail[128X[104X
+    [4X[25Xgap>[125X [27XIsPTGroup(g);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xg:=SmallGroup(8,3);[127X[104X
+    [4X[28X<pc group of size 8 with 3 generators>[128X[104X
+    [4X[25Xgap>[125X [27XOneSubnormalNonPermutableSubgroup(g);[127X[104X
+    [4X[28XGroup([ f1*f3 ])[128X[104X
+  [4X[32X[104X
+  
+  [1X4.1-3 OneSubnormalNonSPermutableSubgroup[101X
+  
+  [33X[1;0Y[29X[2XOneSubnormalNonSPermutableSubgroup[102X( [3XG[103X ) [32X attribute[133X
+  
+  [33X[0;0Y[2XOneSubnormalNonSPermutableSubgroup[102X  returns a subnormal subgroup of defect [22X2[122X
+  which  is  not  S-permutable  in  [3XG[103X,  if  such  a subgroup exists. If such a
+  subgroup does not exist because the group is a PST-group, it returns [9Xfail[109X.[133X
+  
+  [33X[0;0YA  group  [22XG[122X  is  a PST-group when S-permutability (Sylow permutability) is a
+  transitive relation in [22XG[122X, that is, if [22XH[122X is an S-permutable subgroup of [22XK[122X and
+  [22XK[122X is an S-permutable subgroup of [22XG[122X, then [22XH[122X is an S-permutable subgroup of [22XG[122X.
+  This  is  equivalent  in  finite  groups  to  affirming that every subnormal
+  subgroup   of  [22XG[122X  is  S-permutable.  By  a  result  of  Ballester-Bolinches,
+  Esteban-Romero,  and  Ragland  [BBERR07],  it  is  enough to check this last
+  condition for all subnormal subgroups of defect [22X2[122X.[133X
+  
+  [33X[0;0YThis  function tries to set the property [2XIsPSTGroup[102X ([14X4.2-3[114X) to [9Xtrue[109X or [9Xfalse[109X
+  according to its result.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=AlternatingGroup(4);[127X[104X
+    [4X[28XAlt( [ 1 .. 4 ] )[128X[104X
+    [4X[25Xgap>[125X [27XOneSubnormalNonSPermutableSubgroup(g);[127X[104X
+    [4X[28XGroup([ (1,2)(3,4) ])[128X[104X
+  [4X[32X[104X
+  
+  [1X4.1-4 OneSubnormalNonConjugatePermutableSubgroup[101X
+  
+  [33X[1;0Y[29X[2XOneSubnormalNonConjugatePermutableSubgroup[102X( [3XG[103X ) [32X attribute[133X
+  
+  [33X[0;0YThis  function  finds a subnormal subgroup [22XH[122X which does not permute with all
+  its conjugates, if such a subgroup exist; otherwise, it returns [9Xfail[109X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=AlternatingGroup(4);[127X[104X
+    [4X[28XAlt( [ 1 .. 4 ] )[128X[104X
+    [4X[25Xgap>[125X [27XOneSubnormalNonConjugatePermutableSubgroup(g);[127X[104X
+    [4X[28Xfail[128X[104X
+    [4X[25Xgap>[125X [27Xg:=DihedralGroup(16);[127X[104X
+    [4X[28X<pc group of size 16 with 4 generators>[128X[104X
+    [4X[25Xgap>[125X [27XOneSubnormalNonConjugatePermutableSubgroup(g);[127X[104X
+    [4X[28XGroup([ f1*f4 ])[128X[104X
+    [4X[25Xgap>[125X [27Xg:=SymmetricGroup(4);[127X[104X
+    [4X[28XSym( [ 1 .. 4 ] )[128X[104X
+    [4X[25Xgap>[125X [27XOneSubnormalNonConjugatePermutableSubgroup(g);[127X[104X
+    [4X[28Xfail[128X[104X
+    [4X[25Xgap>[125X [27XOneSubnormalNonPermutableSubgroup(g);[127X[104X
+    [4X[28XGroup([ (1,2)(3,4) ])[128X[104X
+  [4X[32X[104X
+  
+  [1X4.1-5 OneSubnormalNonSNPermutableSubgroup[101X
+  
+  [33X[1;0Y[29X[2XOneSubnormalNonSNPermutableSubgroup[102X( [3XG[103X ) [32X attribute[133X
+  
+  [33X[0;0YThis  attribute  returns  a subnormal subgroup [22XH[122X of the soluble group [22XG[122X such
+  that  [22XH[122X does not permute with a system normaliser if such a subgroup exists;
+  otherwise,  it  returns  [9Xfail[109X.  This  system normaliser is obtained with the
+  function [2XSystemNormalizer[102X ([14XFORMAT: SystemNormalizer[114X) of the [5XFormat[105X package.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=SymmetricGroup(4);[127X[104X
+    [4X[28XSym( [ 1 .. 4 ] )[128X[104X
+    [4X[25Xgap>[125X [27XOneSubnormalNonSNPermutableSubgroup(g);[127X[104X
+    [4X[28XGroup([ (1,3)(2,4) ])[128X[104X
+    [4X[25Xgap>[125X [27Xg:=Group((1,2,3)(4,5,6),(1,2));[127X[104X
+    [4X[28XGroup([ (1,2,3)(4,5,6), (1,2) ])[128X[104X
+    [4X[25Xgap>[125X [27XOneSubnormalNonSNPermutableSubgroup(g);[127X[104X
+    [4X[28Xfail[128X[104X
+    [4X[25Xgap>[125X [27XOneSubnormalNonSPermutableSubgroup(g); [127X[104X
+    [4X[28XGroup([ (1,2,3)(4,6,5) ])[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X4.2 [33X[0;0YGroup properties related to permutability[133X[101X
+  
+  [33X[0;0YThe next function names correspond to properties.[133X
+  
+  [1X4.2-1 IsTGroup[101X
+  
+  [33X[1;0Y[29X[2XIsTGroup[102X( [3XG[103X ) [32X property[133X
+  
+  [33X[0;0YThis function returns [9Xtrue[109X if [3XG[103X is a T-group, and [9Xfalse[109X otherwise.[133X
+  
+  [33X[0;0YT-groups  are  the  groups in which normality is a transitive relation, that
+  is,  if  [22XH[122X is a subgroup of [22XK[122X and [22XK[122X is a subgroup of [22XG[122X, then [22XH[122X is a subgroup
+  of [22XG[122X.  In  the  finite  case,  they  are the groups in which every subnormal
+  subgroup is normal.[133X
+  
+  [33X[0;0YFor soluble groups, the algorithm checks that for every prime [22Xp[122X dividing its
+  order,  [22XG[122X  is  [22Xp[122X-nilpotent  and  has a Dedekind Sylow [22Xp[122X-subgroup or [22XG[122X has an
+  abelian Sylow [22Xp[122X-subgroup [22XP[122X and every subgroup of [22XP[122X is normal in [22XN_G(P)[122X.[133X
+  
+  [33X[0;0YFor  insoluble  groups, the function checks whether the group is an SC-group
+  with  the function [2XIsSCGroup[102X ([14X7.1-4[114X), because PT-groups are SC-groups. Since
+  the methods for insoluble groups depend on the computation of a chief series
+  with  the  function  [2XChiefSeries[102X ([14XReference: ChiefSeries[114X), they might not be
+  available  if  the  group  is  not  given as a permutation group. Then it is
+  checked that every subnormal subgroup of defect [22X2[122X is normal with the help of
+  the function [2XOneSubnormalNonNormalSubgroup[102X ([14X4.1-1[114X). The methods based on the
+  ideas  of  [BBBH03a], [BBBH03b], and [BH03] have not been implemented so far
+  because  they  require the computation of quotients by all normal subgroups,
+  which could be a time-consuming task.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=SmallGroup(40,4);[127X[104X
+    [4X[28X<pc group of size 40 with 4 generators>[128X[104X
+    [4X[25Xgap>[125X [27XIsTGroup(g);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xg:=SymmetricGroup(3);[127X[104X
+    [4X[28XSym( [ 1 .. 3 ] )[128X[104X
+    [4X[25Xgap>[125X [27XIsTGroup(g);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X4.2-2 IsPTGroup[101X
+  
+  [33X[1;0Y[29X[2XIsPTGroup[102X( [3XG[103X ) [32X property[133X
+  
+  [33X[0;0YThis  property  takes the value [9Xtrue[109X if [3XG[103X is a PT-group, and the value [9Xfalse[109X
+  otherwise.[133X
+  
+  [33X[0;0YFor  a  soluble  group [22XG[122X, the function checks whether for all primes [22Xp[122X, [22XG[122X is
+  [22Xp[122X-nilpotent  and  has  an Iwasawa Sylow [22Xp[122X-subgroup or [22XG[122X has an abelian Sylow
+  [22Xp[122X-subgroup  and  it satisfies the property [22XC_p[122X (that is, every subgroup of a
+  Sylow [22Xp[122X-subgroup [22XP[122X of [22XG[122X is normal in the Sylow normaliser [22XN_G(P)[122X).[133X
+  
+  [33X[0;0YFor insoluble groups, the function checks that the group is an SC-group with
+  the  function  [2XIsSCGroup[102X ([14X7.1-4[114X), because PT-groups are SC-groups. Since the
+  methods  for  insoluble  groups  depend on the computation of a chief series
+  with  the  function  [2XChiefSeries[102X ([14XReference: ChiefSeries[114X), they might not be
+  available if the group is not given as a permutation group. Then it uses the
+  function  [2XOneSubnormalNonPermutableSubgroup[102X  ([14X4.1-2[114X) to check whether or not
+  every  subnormal  subgroup  is permutable. The methods based on the ideas of
+  [BBBH03a],  [BBBH03b],  and  [BH03] have not been implemented so far because
+  they  require  the  computation  of quotients by all normal subgroups, which
+  could be a time-consuming task.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=SmallGroup(1323,37);[127X[104X
+    [4X[28X<pc group of size 1323 with 5 generators>[128X[104X
+    [4X[25Xgap>[125X [27XIsPTGroup(g);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsTGroup(g);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XOneSubnormalNonNormalSubgroup(g);[127X[104X
+    [4X[28XGroup([ f2*f3, f4, f5 ])[128X[104X
+  [4X[32X[104X
+  
+  [1X4.2-3 IsPSTGroup[101X
+  
+  [33X[1;0Y[29X[2XIsPSTGroup[102X( [3XG[103X ) [32X property[133X
+  
+  [33X[0;0YThis  function  returns  true  if  the  group  [3XG[103X  is  a PST-group, and false
+  otherwise.[133X
+  
+  [33X[0;0YA  finite group [22XG[122X is a PST-group if S-permutability (Sylow-permutability) is
+  a  transitive  relation  in  [22XG[122X,  that is, if [22XH[122X is S-permutable in [22XK[122X and [22XK[122X is
+  S-permutable  in  [22XG[122X,  then  [22XH[122X  is  S-permutable  in [22XG[122X. This is equivalent to
+  affirming that every subnormal subgroup of [22XG[122X is S-permutable in [22XG[122X.[133X
+  
+  [33X[0;0YFor  a  soluble  group [22XG[122X, the function checks whether for all primes [22Xp[122X, [22XG[122X is
+  [22Xp[122X-nilpotent,  or  [22XG[122X  has  an  abelian  Sylow  [22Xp[122X-subgroup and [22XG[122X satisfies the
+  property [22XC_p[122X (that is, every subgroup of a Sylow [22Xp[122X-subgroup [22XP[122X of [22XG[122X is normal
+  in the Sylow normaliser [22XN_G(P)[122X)[133X
+  
+  [33X[0;0YFor  insoluble  groups, the function checks whether the group is an SC-group
+  with the function [2XIsSCGroup[102X ([14X7.1-4[114X), because PST-groups are SC-groups. Since
+  the methods for insoluble groups depend on the computation of a chief series
+  with  the  function  [2XChiefSeries[102X ([14XReference: ChiefSeries[114X), they might not be
+  available if the group is not given as a permutation group. Then it uses the
+  function  [2XOneSubnormalNonSPermutableSubgroup[102X ([14X4.1-3[114X) to check whether or not
+  every  subnormal  subgroup of defect [22X2[122X is S-permutable. The methods based on
+  the  ideas  of [BBBH03a], [BBBH03b], and [BH03] have not been implemented so
+  far  because  they  require  the  computation  of  quotients  by  all normal
+  subgroups, which could be a time-consuming task.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=SmallGroup(24,6);[127X[104X
+    [4X[28X<pc group of size 24 with 4 generators>[128X[104X
+    [4X[25Xgap>[125X [27XIsPSTGroup(g);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsPTGroup(g);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XOneSubnormalNonPermutableSubgroup(g);[127X[104X
+    [4X[28XGroup([ f1*f3, f4 ])[128X[104X
+    [4X[25Xgap>[125X [27Xg:=SmallGroup(24,6);[127X[104X
+    [4X[28X<pc group of size 24 with 4 generators>[128X[104X
+    [4X[25Xgap>[125X [27XIsPSTGroup(g);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsPTGroup(g);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XOneSubnormalNonPermutableSubgroup(g);[127X[104X
+    [4X[28XGroup([ f1*f3, f4 ])[128X[104X
+    [4X[25Xgap>[125X [27XOneSubgroupNotPermutingWith(g,last);[127X[104X
+    [4X[28XGroup([ f1*f2 ])[128X[104X
+  [4X[32X[104X
+  
+  [1X4.2-4 IsCPTGroup[101X
+  
+  [33X[1;0Y[29X[2XIsCPTGroup[102X( [3XG[103X ) [32X property[133X
+  
+  [33X[0;0YThis  property  returns  true if every subnormal subgroup of [3XG[103X permutes with
+  all its conjugates, and false otherwise.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=SymmetricGroup(4);[127X[104X
+    [4X[28XSym( [ 1 .. 4 ] )[128X[104X
+    [4X[25Xgap>[125X [27XIsCPTGroup(g);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsPTGroup(g);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsPSTGroup(g);[127X[104X
+    [4X[28Xfalse[128X[104X
+  [4X[32X[104X
+  
+  [1X4.2-5 IsPSNTGroup[101X
+  
+  [33X[1;0Y[29X[2XIsPSNTGroup[102X( [3XG[103X ) [32X property[133X
+  
+  [33X[0;0YThis  property  takes  the  value  [9Xtrue[109X  if  every subnormal subgroup of the
+  soluble  group  [22XG[122X  permutes  with  every  system  normaliser of [22XG[122X, and [9Xfalse[109X
+  otherwise.  If  the  function  is applied to an insoluble group, it gives an
+  error.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=Group((1,2,3)(4,5,6),(1,3));[127X[104X
+    [4X[28XGroup([ (1,2,3)(4,5,6), (1,3) ])[128X[104X
+    [4X[25Xgap>[125X [27XIsPSTGroup(g);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsPSNTGroup(g);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsCPTGroup(g);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xg:=SmallGroup(16,7);[127X[104X
+    [4X[28X<pc group of size 16 with 4 generators>[128X[104X
+    [4X[25Xgap>[125X [27XIsPSTGroup(g);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsCPTGroup(g);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27Xg:=SymmetricGroup(4);[127X[104X
+    [4X[28XSym( [ 1 .. 4 ] )[128X[104X
+    [4X[25Xgap>[125X [27XIsPSNTGroup(g);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsCPTGroup(g);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  

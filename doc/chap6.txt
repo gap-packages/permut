@@ -1,0 +1,156 @@
+  
+  [1X6 [33X[0;0YTotally and Mutually Permutable Products[133X[101X
+  
+  [33X[0;0YIn   recent  years,  many  authors  have  considered  totally  and  mutually
+  permutable  subgroups.  Recall  that  two subgroups [22XA[122X and [22XB[122X of a group [22XG[122X are
+  [13Xtotally permutable[113X if every subgroup of [22XA[122X permutes with every subgroup of [22XB[122X,
+  and  they are [13Xmutually permutable[113X if every subgroup of [22XA[122X permutes with [22XB[122X and
+  every subgroup of [22XB[122X permutes with [22XA[122X.[133X
+  
+  [33X[0;0YWe  have  defined some [21XOne[121X functions which give a pair of subgroups which do
+  not permute and prove that two subgroups fail to have a certain property.[133X
+  
+  [33X[0;0YWe  have  also  defined  some  functions  to  work with totally and mutually
+  [22Xf[122X-permutable subgroups, where [22Xf[122X is a subgroup embedding functor.[133X
+  
+  [33X[0;0YThe functions of this chapter are defined in a preliminary state.[133X
+  
+  
+  [1X6.1 [33X[0;0YFunctions for Mutually and Totally Permutable Products[133X[101X
+  
+  [1X6.1-1 AreMutuallyPermutableSubgroups[101X
+  
+  [33X[1;0Y[29X[2XAreMutuallyPermutableSubgroups[102X( [[3XG[103X, ][3XA[103X, [3XB[103X ) [32X function[133X
+  
+  [33X[0;0YThis  function  returns  [9Xtrue[109X  if  the  subgroups  [22XA[122X and [22XB[122X of [22XG[122X are mutually
+  permutable subgroups, that is, every subgroup of [22XA[122X permutes with [22XB[122X and every
+  subgroup  of  [22XB[122X  permutes  with [22XA[122X, and [9Xfalse[109X otherwise. The method used here
+  checks  only  that  [22XA[122X  permutes  with  all  cyclic subgroups of [22XB[122X and that [22XB[122X
+  permutes with all cyclic subgroups of [22XA[122X.[133X
+  
+  [33X[0;0YThe method with two arguments assume that [22XA[122X and [22XB[122X have a common supergroup.[133X
+  
+  [1X6.1-2 OnePairShowingNotMutuallyPermutableSubgroups[101X
+  
+  [33X[1;0Y[29X[2XOnePairShowingNotMutuallyPermutableSubgroups[102X( [[3XG[103X, ][3XA[103X, [3XB[103X ) [32X function[133X
+  
+  [33X[0;0YThis  function returns a pair of the form [ [3XA[103X, [3XV[103X ] with [3XV[103X a subgroup of [3XB[103X or
+  of  the  form [ [3XW[103X, [3XB[103X ] with [3XW[103X a subgroup of [3XA[103X in which both subgroups do not
+  permute, or [9Xfail[109X if this pair does not exist because the product is mutually
+  permutable.[133X
+  
+  [1X6.1-3 AreTotallyPermutableSubgroups[101X
+  
+  [33X[1;0Y[29X[2XAreTotallyPermutableSubgroups[102X( [[3XG[103X, ][3XA[103X, [3XB[103X ) [32X function[133X
+  
+  [33X[0;0YThis  function  returns  [9Xtrue[109X  if  the  subgroups  [22XA[122X  and [22XB[122X of [22XG[122X are totally
+  permutable,  that is, every subgroup of [22XA[122X permutes with every subgroup of [22XB[122X,
+  and  [9Xfalse[109X  otherwise.  The  method  used here checks only that every cyclic
+  subgroup of [22XA[122X permutes with every cyclic subgroup of [22XB[122X.[133X
+  
+  [33X[0;0YThe method with two arguments assume that [22XA[122X and [22XB[122X have a common supergroup.[133X
+  
+  [1X6.1-4 OnePairShowingNotTotallyPermutableSubgroups[101X
+  
+  [33X[1;0Y[29X[2XOnePairShowingNotTotallyPermutableSubgroups[102X( [[3XG[103X, ][3XA[103X, [3XB[103X ) [32X function[133X
+  
+  [33X[0;0YThis  function  returns  a pair of the form [ [3XV[103X, [3XW[103X ], with [3XV[103X a subgroup of [3XA[103X
+  and  [3XW[103X  a subgroup of [3XB[103X, such that both subgroups do not permute, or [9Xfail[109X if
+  this pair does not exist because the product is totally permutable.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=SymmetricGroup(4);[127X[104X
+    [4X[28XSym( [ 1 .. 4 ] )[128X[104X
+    [4X[25Xgap>[125X [27Xa:=AlternatingGroup(4);[127X[104X
+    [4X[28XAlt( [ 1 .. 4 ] )[128X[104X
+    [4X[25Xgap>[125X [27Xb:=Subgroup(g,[(1,2,3,4),(1,3)]);[127X[104X
+    [4X[28XGroup([ (1,2,3,4), (1,3) ])[128X[104X
+    [4X[25Xgap>[125X [27XAreMutuallyPermutableSubgroups(g,a,b);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XAreTotallyPermutableSubgroups(g,a,b);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XOnePairShowingNotTotallyPermutableSubgroups(g,a,b);[127X[104X
+    [4X[28X[ Group([ (2,3,4) ]), Group([ (1,2)(3,4) ]) ][128X[104X
+    [4X[25Xgap>[125X [27Xc:=Subgroup(g,[(1,2,3)]);[127X[104X
+    [4X[28XGroup([ (1,2,3) ])[128X[104X
+    [4X[25Xgap>[125X [27XAreMutuallyPermutableSubgroups(g,a,c);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XOnePairShowingNotMutuallyPermutableSubgroups(g,a,c);[127X[104X
+    [4X[28X[ Group([ (2,3,4) ]), Group([ (1,2,3) ]) ][128X[104X
+    [4X[25Xgap>[125X [27XAreMutuallyPermutableSubgroups(a,c);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27Xg:=SymmetricGroup(3);[127X[104X
+    [4X[28XSym( [ 1 .. 3 ] )[128X[104X
+    [4X[25Xgap>[125X [27Xa:=AlternatingGroup(3);[127X[104X
+    [4X[28XAlt( [ 1 .. 3 ] )[128X[104X
+    [4X[25Xgap>[125X [27Xb:=Subgroup(g,[(1,2)]);[127X[104X
+    [4X[28XGroup([ (1,2) ])[128X[104X
+    [4X[25Xgap>[125X [27XAreTotallyPermutableSubgroups(g,a,b);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X6.1-5 AreMutuallyFPermutableSubgroups[101X
+  
+  [33X[1;0Y[29X[2XAreMutuallyFPermutableSubgroups[102X( [[3XG[103X, ][3XA[103X, [3XB[103X, [3XfA[103X, [3XfB[103X ) [32X function[133X
+  
+  [33X[0;0YThis   function  returns  [9Xtrue[109X  if  the  subgroups  [3XA[103X  and  [3XB[103X  are  mutually
+  [3Xf[103X-permutable,  and  [9Xfalse[109X  otherwise. Here [3XA[103X and [3XB[103X are subgroups of [3XG[103X and [3XfA[103X
+  and [3XfB[103X are, respectively, lists of subgroups of [3XA[103X and [3XB[103X, respectively.[133X
+  
+  [33X[0;0YIn the version with four arguments, [22XA[122X and [22XB[122X are assumed to be subgroups of a
+  common supergroup.[133X
+  
+  [1X6.1-6 OnePairShowingNotMutuallyFPermutableSubgroups[101X
+  
+  [33X[1;0Y[29X[2XOnePairShowingNotMutuallyFPermutableSubgroups[102X( [[3XG[103X, ][3XA[103X, [3XB[103X, [3XfA[103X, [3XfB[103X ) [32X function[133X
+  
+  [33X[0;0YThis function returns a pair of the form [ [3XA[103X, [3XV[103X ] with [3XV[103X a subgroup in [3XfB[103X or
+  [3XB[103X  or  of  the  form  [ [3XW[103X,  [3XB[103X ]  with  [3XW[103X a subgroup in [3XfA[103X or [3XA[103X in which both
+  subgroups  do not permute, or [9Xfail[109X if this pair does not exist. Here [3XA[103X and [3XB[103X
+  are  subgroups  of  [3XG[103X  and  [3XfA[103X  and  [3XfB[103X  are  lists of subgroups of [3XA[103X and [3XB[103X,
+  respectively.[133X
+  
+  [33X[0;0YIn the version with four arguments, [3XA[103X and [3XB[103X are assumed to be subgroups of a
+  common supergroup.[133X
+  
+  [1X6.1-7 AreTotallyFPermutableSubgroups[101X
+  
+  [33X[1;0Y[29X[2XAreTotallyFPermutableSubgroups[102X( [[3XG[103X, ][3XA[103X, [3XB[103X, [3XfA[103X, [3XfB[103X ) [32X function[133X
+  
+  [33X[0;0YThis  function returns [9Xtrue[109X if the subgroup [3XA[103X permutes with all subgroups in
+  the  list  [3XfB[103X  and  [3XB[103X  permutes with all subgroups in the list [3XfA[103X, and [9Xfalse[109X
+  otherwise.  Here  [3XA[103X and [3XB[103X are subgroups of [3XG[103X, [3XfA[103X is a list of subgroups of [3XA[103X
+  and [3XfB[103X is a list of subgroups of [3XB[103X.[133X
+  
+  [33X[0;0YIn the version with four arguments, [3XA[103X and [3XB[103X are assumed to be subgroups of a
+  common supergroup.[133X
+  
+  [1X6.1-8 OnePairShowingNotTotallyFPermutableSubgroups[101X
+  
+  [33X[1;0Y[29X[2XOnePairShowingNotTotallyFPermutableSubgroups[102X( [[3XG[103X, ][3XA[103X, [3XB[103X, [3XfA[103X, [3XfB[103X ) [32X function[133X
+  
+  [33X[0;0YThis function returns a pair of the form [ [3XU[103X, [3XV[103X ] with [3XU[103X a subgroup in [3XfA[103X or
+  [3XA[103X  and  [3XV[103X  a  subgroup in [3XfB[103X or [3XB[103X in which both subgroups do not permute, or
+  [9Xfail[109X  if  this pair does not exist. Here [3XA[103X and [3XB[103X are subgroups of [3XG[103X, [3XfA[103X is a
+  list of subgroups of [3XA[103X and [3XfB[103X is a list of subgroups of [3XB[103X.[133X
+  
+  [33X[0;0YIn  the version with two arguments, [3XA[103X and [3XB[103X are assumed to be subgroups of a
+  common supergroup.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=SymmetricGroup(4);[127X[104X
+    [4X[28XSym( [ 1 .. 4 ] )[128X[104X
+    [4X[25Xgap>[125X [27Xa:=AlternatingGroup(4);[127X[104X
+    [4X[28XAlt( [ 1 .. 4 ] )[128X[104X
+    [4X[25Xgap>[125X [27Xb:=Subgroup(g,[(1,2,3,4),(1,3)]);[127X[104X
+    [4X[28XGroup([ (1,2,3,4), (1,3) ])[128X[104X
+    [4X[25Xgap>[125X [27XAreTotallyFPermutableSubgroups(g,a,b,[127X[104X
+    [4X[25X>[125X [27X     MaximalSubgroups(a),MaximalSubgroups(b));[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XOnePairShowingNotTotallyFPermutableSubgroups(g,a,b,[127X[104X
+    [4X[25X>[125X [27X     MaximalSubgroups(a),MaximalSubgroups(b));[127X[104X
+    [4X[28X[ Group([ (1,2,3) ]), Group([ (2,4), (1,3)(2,4) ]) ][128X[104X
+    [4X[25Xgap>[125X [27XAreTotallyFPermutableSubgroups(g,a,b,DerivedSeries(a),DerivedSeries(b));[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  

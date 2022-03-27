@@ -1,0 +1,477 @@
+  
+  [1X3 [33X[0;0YPermutability of Subgroups in Finite Groups[133X[101X
+  
+  [33X[0;0YThis  chapter  describes  functions to check permutability of subgroups in a
+  given  group.  First  we  present  a  function  to  check whether a subgroup
+  permutes  with  another  one,  then  we  present functions to test whether a
+  subgroup  permutes  with  the  members  of  a given family of subgroups, and
+  finally  we  introduce  some  other subgroup embedding properties related to
+  permutability.[133X
+  
+  
+  [1X3.1 [33X[0;0YPermutability functions[133X[101X
+  
+  [1X3.1-1 ArePermutableSubgroups[101X
+  
+  [33X[1;0Y[29X[2XArePermutableSubgroups[102X( [[3XG[103X, ][3XU[103X, [3XV[103X ) [32X function[133X
+  
+  [33X[0;0YThis  function returns [9Xtrue[109X if [3XU[103X and [3XV[103X permute in [3XG[103X. The groups [3XU[103X and [3XV[103X must
+  be  subgroups  of  [3XG[103X.  The  subgroups  [22XU[122X and [22XV[122X [13Xpermute[113X when [22XUV = VU[122X. This is
+  equivalent to affirming that [22XUV[122X is a subgroup of [22XG[122X.[133X
+  
+  [33X[0;0YThis  is  done  by checking that the order of [22X⟨ U, V ⟩[122X is the order of their
+  Frobenius product [22XUV[122X, that is, [22X|U||V|/|U ∩ V|[122X. Hence the performance of this
+  function depends strongly on the existence of good algorithms to compute the
+  intersection  of  two  subgroups  and,  of  course, the order of a subgroup.
+  Shorthands  are provided for the cases in which one of [3XU[103X and [3XV[103X is a subgroup
+  of the other one or [3XU[103X or [3XV[103X are permutable in a common supergroup.[133X
+  
+  [33X[0;0YIn  the  version  with  two  arguments, [3XU[103X and [3XV[103X must have a common parent or
+  [10XClosureGroup(  U, V )[110X (see [2XClosureGroup[102X ([14XReference: ClosureGroup[114X)) is called
+  to construct a common supergroup for [3XU[103X and [3XV[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=SymmetricGroup(4);[127X[104X
+    [4X[28XSym( [ 1 .. 4 ] )[128X[104X
+    [4X[25Xgap>[125X [27Xa:=Subgroup(g,[(1,2)(3,4)]);[127X[104X
+    [4X[28XGroup([ (1,2)(3,4) ])[128X[104X
+    [4X[25Xgap>[125X [27Xb:=Subgroup(g,[(1,2,3)]);[127X[104X
+    [4X[28XGroup([ (1,2,3) ])[128X[104X
+    [4X[25Xgap>[125X [27Xc:=Subgroup(g,[(1,2)]);[127X[104X
+    [4X[28XGroup([ (1,2) ])[128X[104X
+    [4X[25Xgap>[125X [27XArePermutableSubgroups(g,a,b);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XArePermutableSubgroups(g,a,c);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XArePermutableSubgroups(g,b,c);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XArePermutableSubgroups(b,c);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XArePermutableSubgroups(b,a);[127X[104X
+    [4X[28Xfalse[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X3.2 [33X[0;0YEmbedding properties related to permutability[133X[101X
+  
+  [33X[0;0YIn the following we describe some functions which allow us to test whether a
+  subgroup  permutes  with  the  members of some families of subgroups. We pay
+  special  attention  to the families of all subgroups and all Sylow subgroups
+  of  the  group.  In some cases, we have introduced some [21XOne[121X functions, which
+  give  an  element  or  a subgroup in the relevant family of subgroups of the
+  group which shows that the given property fails, or [9Xfail[109X otherwise.[133X
+  
+  [1X3.2-1 PermutMaxTries[101X
+  
+  [33X[1;0Y[29X[2XPermutMaxTries[102X[32X global variable[133X
+  
+  [33X[0;0YThis   variable   contains   the   maximum  number  of  random  attempts  of
+  permutability  checks  before  trying  general  deterministic methods in the
+  functions [2XIsPermutable[102X ([14X3.2-2[114X) and [2XIsIwasawaSylow[102X ([14X5.3-5[114X). Its default value
+  is [22X10[122X.[133X
+  
+  [1X3.2-2 IsPermutable[101X
+  
+  [33X[1;0Y[29X[2XIsPermutable[102X( [3XG[103X, [3XH[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XIsPermutableInParent[102X( [3XH[103X ) [32X property[133X
+  
+  [33X[0;0YThis  property  returns [9Xtrue[109X if the subgroup [3XH[103X is permutable in [3XG[103X, otherwise
+  it  returns  [9Xfalse[109X. We say that a subgroup [22XH[122X of a group [22XG[122X is [13Xpermutable[113X in [22XG[122X
+  if [22XH[122X permutes with all subgroups of [22XG[122X.[133X
+  
+  [33X[0;0YIf  the  attribute [2XOneSubgroupNotPermutingWithInParent[102X ([14X3.2-3[114X) has been set,
+  it  is  used if possible. Otherwise, the algorithm checks looks for a cyclic
+  subgroup  not  permuting  with  [3XH[103X.  The  number  of such cyclic subgroups is
+  controlled  by  the  variable  [2XPermutMaxTries[102X  ([14X3.2-1[114X), by default, [22X10[122X. If [3XH[103X
+  permutes  with  all  these subgroups, then the algorithm checks whether [3XH[103X is
+  hypercentrally embedded in [3XG[103X and that the Sylow [22Xp[122X-subgroups of [22XH/H_G[122X permute
+  with  all cyclic [22Xp[122X-subgroups of [22XG/H_G[122X for each prime [22Xp[122X dividing the order of
+  [22XG/H_G[122X. This is a sufficient condition for permutability.[133X
+  
+  [1X3.2-3 OneSubgroupNotPermutingWith[101X
+  
+  [33X[1;0Y[29X[2XOneSubgroupNotPermutingWith[102X( [3XG[103X, [3XH[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XOneSubgroupNotPermutingWithInParent[102X( [3XH[103X ) [32X attribute[133X
+  
+  [33X[0;0YThis  attribute  finds a cyclic subgroup of [3XG[103X which does not permute with [3XH[103X,
+  that is, a subgroup which shows that [3XH[103X is not permutable in [3XG[103X. Recall that a
+  subgroup  [22XH[122X of a group [22XG[122X is [13Xpermutable[113X in [22XG[122X if [22XH[122X permutes with all subgroups
+  of [22XG[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=SymmetricGroup(4);[127X[104X
+    [4X[28XSym( [ 1 .. 4 ] )[128X[104X
+    [4X[25Xgap>[125X [27Xa:=Subgroup(g,[(1,2)(3,4)]);[127X[104X
+    [4X[28XGroup([ (1,2)(3,4) ])[128X[104X
+    [4X[25Xgap>[125X [27Xb:=Subgroup(g,[(1,2,3)]);[127X[104X
+    [4X[28XGroup([ (1,2,3) ])[128X[104X
+    [4X[25Xgap>[125X [27Xc:=Subgroup(g,[(1,2)]);[127X[104X
+    [4X[28XGroup([ (1,2) ])[128X[104X
+    [4X[25Xgap>[125X [27XIsPermutable(g,a);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsPermutable(g,b);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsPermutable(g,c);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XOneSubgroupNotPermutingWith(g,b);[127X[104X
+    [4X[28XGroup([ (1,3,4) ])[128X[104X
+    [4X[25Xgap>[125X [27Xv:=Subgroup(g,[(1,2)(3,4),(1,3)(2,4)]);[127X[104X
+    [4X[28XGroup([ (1,2)(3,4), (1,3)(2,4) ])[128X[104X
+    [4X[25Xgap>[125X [27XOneSubgroupNotPermutingWith(g,v);[127X[104X
+    [4X[28Xfail[128X[104X
+    [4X[25Xgap>[125X [27XIsPermutable(g,b);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsPermutable(g,v);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=SmallGroup(16,6);[127X[104X
+    [4X[28X<pc group of size 16 with 4 generators>[128X[104X
+    [4X[25Xgap>[125X [27Xh:=Subgroup(g,[g.2]);[127X[104X
+    [4X[28XGroup([ f2 ])[128X[104X
+    [4X[25Xgap>[125X [27XIsNormal(g,h);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsPermutable(g,h);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YSometimes  one  does not require a subgroup to permute with all subgroups of
+  the  group,  but  only with a selected family of subgroups of the group. The
+  general case is the following.[133X
+  
+  [1X3.2-4 IsFPermutable[101X
+  
+  [33X[1;0Y[29X[2XIsFPermutable[102X( [3XG[103X, [3XH[103X, [3Xf[103X ) [32X function[133X
+  
+  [33X[0;0YIn  this function, [3XH[103X is a subgroup of [3XG[103X and [3Xf[103X must be a list of subgroups of
+  [3XG[103X. It returns [9Xtrue[109X if [3XH[103X permutes with all members of [3Xf[103X and [9Xfalse[109X otherwise.[133X
+  
+  [33X[0;0YThis  function uses the function [2XOneFSubgroupNotPermutingWith[102X ([14X3.2-5[114X). Hence
+  it   tries   to   use   the   values  of  [2XIsPermutableInParent[102X  ([14X3.2-2[114X)  and
+  [2XOneSubgroupNotPermutingWithInParent[102X ([14X3.2-3[114X) if one of them is set, and if it
+  returns [9Xfalse[109X it tries to set the values of [2XIsPermutableInParent[102X ([14X3.2-2[114X) and
+  [2XOneSubgroupNotPermutingWithInParent[102X ([14X3.2-3[114X).[133X
+  
+  [1X3.2-5 OneFSubgroupNotPermutingWith[101X
+  
+  [33X[1;0Y[29X[2XOneFSubgroupNotPermutingWith[102X( [3XG[103X, [3XH[103X, [3Xf[103X ) [32X operation[133X
+  
+  [33X[0;0YIn this operation, [3XH[103X is a subgroup of [3XG[103X and [3Xf[103X must be a list of subgroups of
+  [3XG[103X.  It  returns  a  subgroup  in  [3Xf[103X  not permuting with [3XH[103X if such a subgroup
+  exists, and [9Xfail[109X otherwise.[133X
+  
+  [33X[0;0YThis  function  tries  to use the values of [2XIsPermutableInParent[102X ([14X3.2-2[114X) and
+  [2XOneSubgroupNotPermutingWithInParent[102X  ([14X3.2-3[114X)  if  one  of them is set. If it
+  returns [9Xfail[109X, then it tries to set the value of [2XIsPermutableInParent[102X ([14X3.2-2[114X)
+  and [2XOneSubgroupNotPermutingWithInParent[102X ([14X3.2-3[114X).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=SymmetricGroup(4);[127X[104X
+    [4X[28XSym( [ 1 .. 4 ] )[128X[104X
+    [4X[25Xgap>[125X [27Xa:=Subgroup(g,[(1,2,3,4),(1,3)]);[127X[104X
+    [4X[28XGroup([ (1,2,3,4), (1,3) ])[128X[104X
+    [4X[25Xgap>[125X [27XSize(a);[127X[104X
+    [4X[28X8[128X[104X
+    [4X[25Xgap>[125X [27XOneFSubgroupNotPermutingWith(g,a,MaximalSubgroups(g));[127X[104X
+    [4X[28XGroup([ (1,2), (3,4), (1,3)(2,4) ])[128X[104X
+    [4X[25Xgap>[125X [27XIsFPermutable(g,a,MaximalSubgroups(g));[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XHasIsPermutableInParent(a);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsPermutableInParent(a);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XHasOneSubgroupNotPermutingWithInParent(a);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XOneSubgroupNotPermutingWithInParent(a);[127X[104X
+    [4X[28XGroup([ (1,2), (3,4), (1,3)(2,4) ])[128X[104X
+    [4X[25Xgap>[125X [27XIsFPermutable(g,a,AllSubnormalSubgroups(g));[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XOneFSubgroupNotPermutingWith(g,a,AllSubnormalSubgroups(g));[127X[104X
+    [4X[28Xfail[128X[104X
+    [4X[25Xgap>[125X [27Xsylows:=g->Union(List(SylowSubgroups(g),[127X[104X
+    [4X[25X>[125X [27X          t->ConjugacyClassSubgroups(g,t)));[127X[104X
+    [4X[28Xfunction( g ) ... end[128X[104X
+    [4X[25Xgap>[125X [27XOneFSubgroupNotPermutingWith(g,a,sylows(g));[127X[104X
+    [4X[28XGroup([ (3,4), (1,4)(2,3), (1,3)(2,4) ])[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YThe  following  functions  can  be  considered  as  particular  cases of the
+  previous function for some subgroup embedding functors. However, they can be
+  stored as [21Xin parent[121X attributes or properties and in some cases we have tried
+  to give more efficient code.[133X
+  
+  [1X3.2-6 IsSPermutable[101X
+  
+  [33X[1;0Y[29X[2XIsSPermutable[102X( [3XG[103X, [3XH[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XIsSPermutableInParent[102X( [3XH[103X ) [32X property[133X
+  
+  [33X[0;0YThis  operation returns [9Xtrue[109X if a subgroup [3XH[103X of [3XG[103X is S-permutable in [3XG[103X, that
+  is, [3XH[103X permutes with all Sylow subgroups of [3XG[103X, and returns [9Xfalse[109X otherwise.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=SmallGroup(8,3);[127X[104X
+    [4X[28X<pc group of size 8 with 3 generators>[128X[104X
+    [4X[25Xgap>[125X [27XIsSPermutable(g,Subgroup(g,[g.1]));[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsPermutable(g,Subgroup(g,[g.1]));[127X[104X
+    [4X[28Xfalse[128X[104X
+  [4X[32X[104X
+  
+  [1X3.2-7 OneSylowSubgroupNotPermutingWith[101X
+  
+  [33X[1;0Y[29X[2XOneSylowSubgroupNotPermutingWith[102X( [3XG[103X, [3XH[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XOneSylowSubgroupNotPermutingWithInParent[102X( [3XH[103X ) [32X attribute[133X
+  
+  [33X[0;0YThe  argument  [3XH[103X must be a subgroup of [3XG[103X. If [3XH[103X is S-permutable in [3XG[103X, then it
+  returns  [9Xfail[109X.  Otherwise,  it  returns a Sylow subgroup of [3XG[103X which does not
+  permute  with  [3XH[103X. We say that a subgroup [22XH[122X of a group [22XG[122X is S-permutable in [22XG[122X
+  if [22XH[122X permutes with all Sylow subgroups of [22XG[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=SymmetricGroup(4);;[127X[104X
+    [4X[25Xgap>[125X [27Xa:=Subgroup(g,[(1,2)(3,4)]);;[127X[104X
+    [4X[25Xgap>[125X [27XOneSylowSubgroupNotPermutingWith(g,a);[127X[104X
+    [4X[28XGroup([ (2,4,3) ])[128X[104X
+  [4X[32X[104X
+  
+  [1X3.2-8 IsSNPermutable[101X
+  
+  [33X[1;0Y[29X[2XIsSNPermutable[102X( [3XG[103X, [3XH[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XIsSNPermutableInParent[102X( [3XH[103X ) [32X attribute[133X
+  
+  [33X[0;0YThis  operation returns [9Xtrue[109X if [3XH[103X permutes with all system normalisers of [3XG[103X,
+  and [9Xfalse[109X otherwise. Here [3XG[103X must be a soluble group and [3XH[103X must be a subgroup
+  of [3XG[103X. If the function is applied to an insoluble group, it gives an error.[133X
+  
+  [1X3.2-9 OneSystemNormaliserNotPermutingWith[101X
+  
+  [33X[1;0Y[29X[2XOneSystemNormaliserNotPermutingWith[102X( [3XG[103X, [3XH[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XOneSystemNormaliserNotPermutingWithInParent[102X( [3XH[103X ) [32X attribute[133X
+  
+  [33X[0;0YHere  [3XG[103X must be a soluble group and [3XH[103X must be a subgroup of [3XG[103X. If [3XH[103X permutes
+  with  all  system  normalisers  of  [3XG[103X,  then  this  operation  returns [9Xfail[109X.
+  Otherwise,  it  returns  a  system  normaliser  [22XD[122X  of [22XG[122X such that [22XH[122X does not
+  permute with [22XD[122X. If the group [3XG[103X is not soluble, then it gives an error.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=Group((1,2,3),(4,5,6),(1,2));[127X[104X
+    [4X[28XGroup([ (1,2,3), (4,5,6), (1,2) ])[128X[104X
+    [4X[25Xgap>[125X [27Xa:=Subgroup(g,[(1,2,3)(4,5,6)]);[127X[104X
+    [4X[28XGroup([ (1,2,3)(4,5,6) ])[128X[104X
+    [4X[25Xgap>[125X [27XIsSNPermutable(g,a);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsSPermutable(g,a);[127X[104X
+    [4X[28Xfalse[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YThe  next  functions  are  not  particular cases of [2XIsFPermutable[102X ([14X3.2-4[114X) or
+  [2XOneFSubgroupNotPermutingWith[102X  ([14X3.2-5[114X),  but  we  include them in the package
+  because  every  subgroup permuting with all its conjugates is subnormal (see
+  [Fog97]).[133X
+  
+  [1X3.2-10 IsConjugatePermutable[101X
+  
+  [33X[1;0Y[29X[2XIsConjugatePermutable[102X( [3XG[103X, [3XH[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XIsConjugatePermutableInParent[102X( [3XH[103X ) [32X property[133X
+  
+  [33X[0;0YThis  operation  takes the value [9Xtrue[109X if [3XH[103X permutes with all its conjugates,
+  and the value [9Xfalse[109X otherwise.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=SymmetricGroup(4);[127X[104X
+    [4X[28XSym( [ 1 .. 4 ] )[128X[104X
+    [4X[25Xgap>[125X [27Xa:=Subgroup(g,[(1,2)(3,4)]);[127X[104X
+    [4X[28XGroup([ (1,2)(3,4) ])[128X[104X
+    [4X[25Xgap>[125X [27XIsPermutable(g,a);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsConjugatePermutable(g,a);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X3.2-11 OneConjugateSubgroupNotPermutingWith[101X
+  
+  [33X[1;0Y[29X[2XOneConjugateSubgroupNotPermutingWith[102X( [3XG[103X, [3XH[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XOneConjugateSubgroupNotPermutingWithInParent[102X( [3XH[103X ) [32X attribute[133X
+  
+  [33X[0;0YThis operation finds a conjugate subgroup of [3XH[103X which does not permute with [3XH[103X
+  if  such a subgroup exists. If [3XH[103X permutes with all its conjugates, then this
+  operation returns [9Xfail[109X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=SmallGroup(16,7);[127X[104X
+    [4X[28X<pc group of size 16 with 4 generators>[128X[104X
+    [4X[25Xgap>[125X [27Xh:=Subgroup(g,[g.1*g.4]);[127X[104X
+    [4X[28XGroup([ f1*f4 ])[128X[104X
+    [4X[25Xgap>[125X [27XIsConjugatePermutable(g,h);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XOneConjugateSubgroupNotPermutingWith(g,h);[127X[104X
+    [4X[28XGroup([ f1*f3 ])[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YNext we introduce some subgroup embedding functions related to permutability
+  which  have  proved  to  be  useful  in  some  characterisations  of soluble
+  T-groups,  PT-groups, and PST-groups. The [21XOne[121X functions return a value which
+  proves that the corresponding subgroup embedding property is false.[133X
+  
+  [1X3.2-12 IsWeaklySPermutable[101X
+  
+  [33X[1;0Y[29X[2XIsWeaklySPermutable[102X( [3XG[103X, [3XH[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XIsWeaklySPermutableInParent[102X( [3XH[103X ) [32X property[133X
+  
+  [33X[0;0YThe value returned by this operation is [9Xtrue[109X when [3XH[103X is a [13Xweakly S-permutable[113X
+  subgroup  of  [3XG[103X,  that is, [22XH[122X is S-permutable in [22X⟨ H, H^g ⟩[122X implies that [22XH[122X is
+  S-permutable in [22X⟨ H, g ⟩[122X, and [9Xfalse[109X otherwise.[133X
+  
+  [1X3.2-13 OneElementShowingNotWeaklySPermutable[101X
+  
+  [33X[1;0Y[29X[2XOneElementShowingNotWeaklySPermutable[102X( [3XG[103X, [3XH[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XOneElementShowingNotWeaklySPermutableInParent[102X( [3XH[103X ) [32X attribute[133X
+  
+  [33X[0;0YIf  [3XH[103X  is  a  weakly S-permutable subgroup of [3XG[103X, then this operation returns
+  [9Xfail[109X.  Otherwise,  the  value returned by this operation is an element [22Xg ∈ G[122X
+  such that [3XH[103X is S-permutable in [22X⟨ H, H^g ⟩[122X, but [22XH[122X is not S-permutable in [22X⟨ H,
+  g  ⟩[122X.  A  subgroup  [22XH[122X of a group [22XG[122X is said to be weakly S-permutable if [22XH[122X is
+  S-permutable in [22X⟨ H, H^g ⟩[122X implies that [22XH[122X is S-permutable in [22X⟨ H, g ⟩[122X.[133X
+  
+  [1X3.2-14 IsWeaklyPermutable[101X
+  
+  [33X[1;0Y[29X[2XIsWeaklyPermutable[102X( [3XG[103X, [3XH[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XIsWeaklyPermutableInParent[102X( [3XH[103X ) [32X property[133X
+  
+  [33X[0;0YThis  operation  returns  [9Xtrue[109X  if  [3XH[103X  is  weakly permutable in [3XG[103X, and [9Xfalse[109X
+  otherwise.  A  subgroup  [22XH[122X  of  [22XG[122X is [13Xweakly permutable[113X if the fact that [22XH[122X is
+  S-permutable in [22X⟨ H, H^g ⟩[122X, implies that [22XH[122X is S-permutable in [22X⟨ H, g ⟩[122X.[133X
+  
+  [1X3.2-15 OneElementShowingNotWeaklyPermutable[101X
+  
+  [33X[1;0Y[29X[2XOneElementShowingNotWeaklyPermutable[102X( [3XG[103X, [3XH[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XOneElementShowingNotWeaklyPermutableInParent[102X( [3XH[103X ) [32X attribute[133X
+  
+  [33X[0;0YIf [3XH[103X is a weakly permutable subgroup of [3XG[103X, then this operation returns [9Xfail[109X.
+  Otherwise,  the  value  returned  by this operation is an element [22Xg ∈ G[122X such
+  that  [3XH[103X  is permutable in [22X⟨ H, H^g ⟩[122X, but [22XH[122X is not permutable in [22X⟨ H, g ⟩[122X. A
+  subgroup  [22XH[122X  of a group [22XG[122X is said to be [13Xweakly permutable[113X if the fact that [22XH[122X
+  is permutable in [22X⟨ H, H^g ⟩[122X implies that [22XH[122X is permutable in [22X⟨ H, g ⟩[122X.[133X
+  
+  [1X3.2-16 IsWeaklyNormal[101X
+  
+  [33X[1;0Y[29X[2XIsWeaklyNormal[102X( [3XG[103X, [3XH[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XIsWeaklyNormalInParent[102X( [3XH[103X ) [32X property[133X
+  
+  [33X[0;0YThis operation returns [9Xtrue[109X if [3XH[103X is weakly normal in [3XG[103X, and [9Xfalse[109X otherwise.
+  A  subgroup  [22XH[122X  of  [22XG[122X  is  [13Xweakly  normal[113X whenever if [22XH^g ≤ N_G(H)[122X, then [22Xg ∈
+  N_G(H)[122X.[133X
+  
+  [1X3.2-17 OneElementShowingNotWeaklyNormal[101X
+  
+  [33X[1;0Y[29X[2XOneElementShowingNotWeaklyNormal[102X( [3XG[103X, [3XH[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XOneElementShowingNotWeaklyNormalInParent[102X( [3XH[103X ) [32X attribute[133X
+  
+  [33X[0;0YIf  [3XH[103X  is  a  weakly  normal subgruop of [3XG[103X, then this function returns [9Xfail[109X.
+  Otherwise,  the  value  returned by this operation is an element [22Xg[122X such that
+  [22XH^g≤ N_G(H)[122X is a subgroup of [22XN_G(H)[122X but [22Xg ∉ N_G(H)[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=DihedralGroup(8);[127X[104X
+    [4X[28X<pc group of size 8 with 3 generators>[128X[104X
+    [4X[25Xgap>[125X [27Xa:=Subgroup(g,[g.1]);[127X[104X
+    [4X[28XGroup([ f1 ])[128X[104X
+    [4X[25Xgap>[125X [27XIsWeaklySPermutable(g,a);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsWeaklyPermutable(g,a);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27Xx:=OneElementShowingNotWeaklyPermutable(g,a);[127X[104X
+    [4X[28Xf2[128X[104X
+    [4X[25Xgap>[125X [27XIsSubgroup(Normalizer(g,a),ConjugateSubgroup(a,x));[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xx in Normalizer(g,a);[127X[104X
+    [4X[28Xfalse[128X[104X
+  [4X[32X[104X
+  
+  [1X3.2-18 IsWithSubnormalizerCondition[101X
+  
+  [33X[1;0Y[29X[2XIsWithSubnormalizerCondition[102X( [3XG[103X, [3XH[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XIsWithSubnormalizerConditionInParent[102X( [3XH[103X ) [32X property[133X
+  [33X[1;0Y[29X[2XIsWithSubnormaliserCondition[102X( [3XG[103X, [3XH[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XIsWithSubnormaliserConditionInParent[102X( [3XH[103X ) [32X property[133X
+  
+  [33X[0;0YThis  operation  returns  [9Xtrue[109X if the subgroup [22XH[122X satisfies the subnormaliser
+  condition in [22XG[122X, and [9Xfalse[109X otherwise.[133X
+  
+  [33X[0;0YA  subgroup  [22XH[122X  is  said  to [13Xsatisfy the subnormaliser condition[113X in [22XG[122X if the
+  condition  that [22XH[122X is subnormal in a subgroup [22XK[122X of [22XG[122X implies that [22XH[122X is normal
+  in [22XK[122X.[133X
+  
+  [1X3.2-19 OneSubgroupInWhichSubnormalNotNormal[101X
+  
+  [33X[1;0Y[29X[2XOneSubgroupInWhichSubnormalNotNormal[102X( [3XG[103X, [3XH[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XOneSubgroupInWhichSubnormalNotNormalInParent[102X( [3XH[103X ) [32X attribute[133X
+  
+  [33X[0;0YThis  function returns a subgroup [22XK[122X of [22XG[122X such that [22XH[122X is subnormal in [22XK[122X and [22XH[122X
+  is not normal in [22XK[122X, if this subgroup exists; otherwise, it returns [9Xfail[109X.[133X
+  
+  [1X3.2-20 IsWithSubpermutizerCondition[101X
+  
+  [33X[1;0Y[29X[2XIsWithSubpermutizerCondition[102X( [3XG[103X, [3XH[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XIsWithSubpermutizerConditionInParent[102X( [3XH[103X ) [32X property[133X
+  [33X[1;0Y[29X[2XIsWithSubpermutiserCondition[102X( [3XG[103X, [3XH[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XIsWithSubpermutiserConditionInParent[102X( [3XH[103X ) [32X property[133X
+  
+  [33X[0;0YThis  operation  returns  [9Xtrue[109X if the subgroup [22XH[122X satisfies the subpermutiser
+  condition in [22XG[122X, and [9Xfalse[109X otherwise.[133X
+  
+  [33X[0;0YA  subgroup  [22XH[122X  is  said  to [13Xsatisfy the subpermutiser condition[113X in [22XG[122X if the
+  condition  that  [22XH[122X  is  subnormal  in  a  subgroup  [22XK[122X of [22XG[122X implies that [22XH[122X is
+  permutable in [22XK[122X.[133X
+  
+  [1X3.2-21 OneSubgroupInWhichSubnormalNotPermutable[101X
+  
+  [33X[1;0Y[29X[2XOneSubgroupInWhichSubnormalNotPermutable[102X( [3XG[103X, [3XH[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XOneSubgroupInWhichSubnormalNotPermutableInParent[102X( [3XH[103X ) [32X attribute[133X
+  
+  [33X[0;0YThis  function returns a subgroup [22XK[122X of [22XG[122X such that [22XH[122X is subnormal in [22XK[122X and [22XH[122X
+  is not permutable in [22XK[122X if this subgroup exists; otherwise it returns [9Xfail[109X.[133X
+  
+  [1X3.2-22 IsWithSSubpermutizerCondition[101X
+  
+  [33X[1;0Y[29X[2XIsWithSSubpermutizerCondition[102X( [3XG[103X, [3XH[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XIsWithSSubpermutizerConditionInParent[102X( [3XH[103X ) [32X property[133X
+  [33X[1;0Y[29X[2XIsWithSSubpermutiserCondition[102X( [3XG[103X, [3XH[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XIsWithSSubpermutiserConditionInParent[102X( [3XH[103X ) [32X property[133X
+  
+  [33X[0;0YThis  operation returns [9Xtrue[109X if the subgroup [22XH[122X satisfies the S-subpermutiser
+  condition in [22XG[122X, and [9Xfalse[109X otherwise.[133X
+  
+  [33X[0;0YA  subgroup  [22XH[122X  is said to [13Xsatisfy the S-subpermutiser condition[113X in [22XG[122X if the
+  condition  that  [22XH[122X  is  subnormal  in  a  subgroup  [22XK[122X of [22XG[122X implies that [22XH[122X is
+  S-permutable in [22XK[122X.[133X
+  
+  [1X3.2-23 OneSubgroupInWhichSubnormalNotSPermutable[101X
+  
+  [33X[1;0Y[29X[2XOneSubgroupInWhichSubnormalNotSPermutable[102X( [3XG[103X, [3XH[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XOneSubgroupInWhichSubnormalNotSPermutableInParent[102X( [3XH[103X ) [32X attribute[133X
+  
+  [33X[0;0YThis  function returns a subgroup [22XK[122X of [22XG[122X such that [22XH[122X is subnormal in [22XK[122X and [22XH[122X
+  is  not  S-permutable  in [22XK[122X  if such a subgroup exists; otherwise it returns
+  [9Xfail[109X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=SmallGroup(324,160);[127X[104X
+    [4X[28X<pc group of size 324 with 6 generators>[128X[104X
+    [4X[25Xgap>[125X [27Xa:=Subgroup(g,[g.3,g.5]);[127X[104X
+    [4X[28XGroup([ f3, f5 ])[128X[104X
+    [4X[25Xgap>[125X [27XIsWithSubnormalizerCondition(g,a);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsWeaklyNormal(g,a);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsWeaklySPermutable(g,a);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27Xx:=OneElementShowingNotWeaklyNormal(g,a);[127X[104X
+    [4X[28Xf1[128X[104X
+    [4X[25Xgap>[125X [27XConjugateSubgroup(a,x)=a;[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsSubset(Normalizer(g,a),ConjugateSubgroup(a,x));[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  

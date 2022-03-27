@@ -1,0 +1,63 @@
+  
+  [1X1 [33X[0;0YIntroduction to the [5XPERMUT[105X[101X[1X Package[133X[101X
+  
+  [33X[0;0Y[13XAll  functions  defined  in  this  package  deal  only  with  finite groups.[113X
+  Moreover,  some of the functions assume that the orders of all subgroups are
+  easily  computable  and  that the decomposition of the order of a group as a
+  product of prime numbers can be done in a reasonable time.[133X
+  
+  [33X[0;0YThe  package  [5XPERMUT[105X  contains  some functions to deal with permutability in
+  finite  groups.  It  includes  functions  to  test  some  subgroup embedding
+  properties   related   to   permutability,   like   permutability  or  Sylow
+  permutability.  It  also  includes  some  functions to check whether a group
+  belongs to the classes of T-groups, PT-groups, and PST-groups, which are the
+  classes   of   groups   in   which   normality,   permutability,  and  Sylow
+  permutability, respectively, are transitive. These properties and classes of
+  groups  have  been  widely  studied  during the last years. Most of them are
+  described in [BBERA10].[133X
+  
+  [33X[0;0YThe  algorithms  for T-groups, PT-groups, and PST-groups of this package use
+  some  interesting  local  descriptions  of groups in these classes, that is,
+  given  in  terms  of some information related to the primes [22Xp[122X dividing their
+  order,   usually  by  looking  at  [22Xp[122X-subgroups  or  [22Xp[122X-chief  factors.  These
+  characterisations show that the only difference between all three classes of
+  groups   in  the  soluble  universe  corresponds  to  the  Sylow  structure.
+  Nevertheless,  for  the sake of completeness, we also provide functions that
+  use  directly  the  definition of these classes. In the case of T-groups and
+  PST-groups,  as  well  as  for  soluble  PT-groups,  we  reduce  the test to
+  subnormal  subgroups  of defect [22X2[122X (see [BBERR07], [BBERR09], and [BBBC+09]).
+  Of  course, to do this we must introduce some functions to check whether two
+  subgroups permute and whether a subgroup is permutable or S-permutable.[133X
+  
+  [33X[0;0YSome  of  the definitions of group-related concepts appear more than once in
+  this  manual,  in  the  description  of  different functions. Although these
+  repetitions may seem unnecessary when reading the whole manual, we hope that
+  they benefit users who read the online help in [5XGAP[105X.[133X
+  
+  [33X[0;0YIn  order  to  obtain  easily  counterexamples  which show that a group or a
+  subgroup  does  not  satisfy  a certain property, we have introduced what we
+  have  called [21XOne[121X functions, which store such counterexamples. In some cases,
+  the  property  can  be  checked by proving that these counterexamples do not
+  exist.[133X
+  
+  [33X[0;0YThis package requires the [5XFormat[105X package by B. Eick and C. R. B. Wright (see
+  [EW03]),  because  it  uses  the functions [2XPResidual[102X ([14XFORMAT: PResidual[114X) and
+  [2XSystemNormalizer[102X  ([14XFORMAT:  SystemNormalizer[114X), which are defined there. Some
+  of the examples in this manual use the library of groups of small order.[133X
+  
+  [33X[0;0YThe  mathematical  foundations  of  the algorithms presented in this package
+  have been described in [BBCLER13].[133X
+  
+  [33X[0;0YThe  authors  acknowledge the support of the grants MTM2010-19938-C03-01 and
+  MTM2014-54707-C3-1-P  funded by the [13XMinisterio de Economía y Competitividad[113X,
+  Spanish   Government   (all   authors),   PGC2018-095140-B-I00,   funded  by
+  MCIN/AEI/10.13039/501100011033  and  by ``ERDF A way of making Europe'' (all
+  authors),  the  grant  PROMETEO/2017/057 funded by GVA/10.13039/501100003359
+  (A.  Ballester-Bolinches  and  R.  Esteban-Romero),  the grant 11271085 from
+  National  Natural  Science  Foundation of China (A. Ballester-Bolinches) and
+  the  predoctoral grant AP2010-2764 from the [13XMinisterio de Educación[113X, Spanish
+  Government  (E.  Cosme-Llópez). The authors are also indebted to the members
+  of  the  [5XGAP[105X  council, especially Leonard Soicher, Alice Niemeyer, Max Horn,
+  and  Alexander  Konovalov,  as  well as to the anonymous referees, for their
+  comments which have helped us to improve the package and its documentation.[133X
+  
