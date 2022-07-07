@@ -103,7 +103,7 @@ SetPackageInfo( rec(
                                         LongTitle := "PERMUT: A package to deal with permutability in finite groups",
                                         SixFile   := "doc/manual.six",
                                         ArchiveURLSubset:=["doc"],
-                                        HTMLStart :="doc/chap0.html",
+                                        HTMLStart :="doc/chap0_mj.html",
                                         PDFFile:="doc/manual.pdf"),
                      TestFile  := "tst/testall.g"
                                       
