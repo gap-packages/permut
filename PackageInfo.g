@@ -43,13 +43,12 @@ SetPackageInfo( rec(
                                      IsMaintainer:=false,
                                      Email:="Adolfo.Ballester@uv.es",
                                      PostalAddress:=Concatenation(
-                                                                  ["Adolfo Ballester-Bolinches\n",
-                                                                   "Departament de Matem\\`atiques\n",
-                                                                   "Universitat de Val\\`encia\n",
-                                                                   "Dr.\\ Moliner, 50\n",
-                                                                   "46100 Burjassot, Val\\`encia, Spain"]),
-                                     Place:="Burjassot, Val\\`encia",
-                                     Institution:="Departament de Matem\\`atiques, Universitat de Val\\`encia"
+                                                                  ["Departament de Matemàtiques\n",
+                                                                   "Universitat de València\n",
+                                                                   "Dr. Moliner, 50\n",
+                                                                   "46100 Burjassot, València, Spain"]),
+                                     Place:="Burjassot, València",
+                                     Institution:="Departament de Matemàtiques, Universitat de València"
                                     ),
                                 rec(
                                      LastName:="Cosme-Llópez",
@@ -59,13 +58,12 @@ SetPackageInfo( rec(
                                      WWWHome:="https://www.uv.es/coslloen",
                                      Email:="Enric.Cosme@uv.es",
                                      PostalAddress:=Concatenation(
-                                                                  ["Enric Cosme-Ll\\'opez\n",
-                                                                   "Departament de Matem\\`atiques\n",
-                                                                   "Universitat de Val\\`encia\n",
-                                                                   "Dr.\\ Moliner, 50\n",
-                                                                   "46100 Burjassot, Val\\`encia, Spain"]),
-                                     Place:="Burjassot, Val\\`encia",
-                                     Institution:="Departament de Matem\\`atiques, Universitat de Val\\`encia"
+                                                                  ["Departament de Matemàtiques\n",
+                                                                   "Universitat de València\n",
+                                                                   "Dr. Moliner, 50\n",
+                                                                   "46100 Burjassot, València, Spain"]),
+                                     Place:="Burjassot, València",
+                                     Institution:="Departament de Matemàtiques, Universitat de València"
                                     ),
                                 rec(
                                      LastName:="Esteban-Romero",
@@ -75,13 +73,12 @@ SetPackageInfo( rec(
                                      WWWHome:="https://www.uv.es/estebanr",
                                      Email:="Ramon.Esteban@uv.es",
                                      PostalAddres:=Concatenation(
-                                                                  ["Ramon Esteban-Romero\n",
-                                                                   "Departament de Matem\\`atiques\n",
-                                                                   "Universitat de Val\\`encia\n",
-                                                                   "Dr.\\ Moliner, 50\n",
-                                                                   "46100 Burjassot, Val\\`encia, Spain\n"]),
-                                     Place:="Burjassot, Val\\`encia",
-                                     Institution:="Departament de Matem\\`atiques, Universitat de Val\\`encia"
+                                                                  ["Departament de Matemàtiques\n",
+                                                                   "Universitat de València\n",
+                                                                   "Dr. Moliner, 50\n",
+                                                                   "46100 Burjassot, València, Spain\n"]),
+                                     Place:="Burjassot, València",
+                                     Institution:="Departament de Matemàtiques, Universitat de València"
                                     )
                      ],
                      
