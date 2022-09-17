@@ -15,7 +15,6 @@ gap> g:=SymmetricGroup(3);;h:=Subgroup(g,[(1,2,3)]);;k:=Subgroup(h,[(1,2,3)]);;
 gap> OneSubgroupInWhichSubnormalNotPermutable(g,k);
 fail
 gap> STOP_TEST( "bugtest.tst", 7000000 );
-permut.tst
 
 ##############################################################################
 ##
