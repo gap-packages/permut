@@ -1,5 +1,5 @@
 v2.0.4:
-- Change mispelled name PostalAddres by PostalAddress in PackageInfo.g
+- Change misspelled name PostalAddres by PostalAddress in PackageInfo.g
 - Add license field, revise travis files
 - Removed old address of RER in PackageInfo.g
 - Include other changes suggested by Alex Konovalov and Max Horn
@@ -32,7 +32,7 @@ v1.02:
 
 v1.01: 
 - Changed the path of PackageInfo.g, as suggested by Alexander Konovalov.
-- Corected two typos in the manual.
+- Corrected two typos in the manual.
   
 
 v1.00: The package has been accepted by the GAP Council. Changes proposed by Alice Niemeyer and the anonymous referee:

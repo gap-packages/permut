@@ -19,7 +19,7 @@ Inside GAP, help can be obtained by using
 
 `  ?permut:`
 
-The `tst/` directory contains the file permut.tst which can be used to
+The `tst/` directory contains the file `permut.tst` which can be used to
 test the installation. In the `doc/` directory, the file `manual.pdf`
 contains the manual in PDF format. The HTML version starting page is
 the file `chap0.html` of the `doc/` directory.
