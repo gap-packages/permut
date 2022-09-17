@@ -6,21 +6,7 @@
 <!DOCTYPE Book SYSTEM "gapdoc.dtd">
 
 <Book Name="PERMUT">
-<TitlePage>
-  <Title><Package>PERMUT</Package></Title>
-  <Subtitle>A &GAP;4 package to deal with permutability</Subtitle>
-  <Version>Version 2.0.4</Version>
-  <Author>Adolfo Ballester-Bolinches
-  <Email>Adolfo.Ballester@uv.es</Email>
-  <Address>Departament de Matemàtiques, Universitat de València</Address></Author>
-  <Author>Enric Cosme-Llópez
-  <Homepage>https://www.uv.es/coslloen/</Homepage>
-  <Email>Enric.Cosme@uv.es</Email>
-  <Address>Departament de Matemàtiques, Universitat de València</Address></Author>
-  <Author>Ramón Esteban-Romero
-  <Email>Ramon.Esteban@uv.es</Email><Homepage>https://www.uv.es/estebanr/</Homepage><Address>Departament
-  de Matemàtiques, Universitat de València</Address></Author>
-</TitlePage>
+<#Include SYSTEM "title.xml">
 
 <TableOfContents/>
 

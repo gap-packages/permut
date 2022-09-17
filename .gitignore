@@ -18,6 +18,8 @@
 /doc/*.tex
 /doc/*.toc
 /doc/*.xml.bib
+/doc/_*.xml
+/doc/title.xml
 /doc/manual.pdf
 
 /tmp/
