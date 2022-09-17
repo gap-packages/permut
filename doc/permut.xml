@@ -605,7 +605,7 @@ This operation returns <K>true</K> if <A>H</A> is weakly normal in <A>G</A>, and
 <Attr Name="OneElementShowingNotWeaklyNormalInParent" Arg="H" Comm="returns why a subgroup is not weakly normal" />
 <Description>
 
-If <A>H</A> is a weakly normal subgruop of <A>G</A>, then this
+If <A>H</A> is a weakly normal subgroup of <A>G</A>, then this
 function returns <K>fail</K>. Otherwise, the value returned by this operation is an element <M>g</M> such that <M>H^g\leq {\rm N}_G(H)</M> is a subgroup of <M>{\rm N}_G(H)</M> but <M>g \notin{\rm N}_G(H)</M>.
 <P/>
 
@@ -820,7 +820,7 @@ exist because the group is a PT-group, it returns
 
 A group <M>G</M> is a PT-group when permutability is a transitive relation
 in <M>G</M>, that is, if <M>H</M> is a permutable subgroup of <M>K</M> and <M>K</M> is a
-permutable subgroup of <M>G</M>, then <M>H</M> is a permutable subgroupof&nbsp;<M>G</M>. This is equivalent in finite groups to affirming that every
+permutable subgroup of <M>G</M>, then <M>H</M> is a permutable subgroup of <M>G</M>. This is equivalent in finite groups to affirming that every
 subnormal subgroup of <M>G</M> is permutable.
 <P/>
 
