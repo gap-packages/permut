@@ -127,19 +127,26 @@ defined there. The <Package>Format</Package> package can be downloaded from the 
 The <Package>PERMUT</Package> package can be loaded with
 <Log>
 gap> LoadPackage("permut");
-─────────────────────────────────────────────────────────────────────────────
-Loading  FORMAT 1.3 (Formations of Finite Soluble Groups)
-by Bettina Eick (http://www.icm.tu-bs.de/~beick) and
-   Charles R.B. Wright (http://www.uoregon.edu/~wright).
-Homepage: http://www.uoregon.edu/~wright/RESEARCH/format/
-─────────────────────────────────────────────────────────────────────────────
-─────────────────────────────────────────────────────────────────────────────
-Loading  permut 2.0.3 (PERMUT: A package to deal with permutability in finite groups)
+-----------------------------------------------------------------------------
+Loading  FORMAT 1.4.3 (Formations of Finite Soluble Groups)
+by Bettina Eick (http://www.iaa.tu-bs.de/beick) and
+   Charles R.B. Wright (https://pages.uoregon.edu/wright/).
+maintained by:
+   Bettina Eick (http://www.iaa.tu-bs.de/beick) and
+   The GAP Team (support@gap-system.org).
+Homepage: https://gap-packages.github.io/format/
+Report issues at https://github.com/gap-packages/format/issues
+-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+Loading  permut 2.0.4 (PERMUT: A package to deal with permutability in finite groups)
 by Adolfo Ballester-Bolinches (Adolfo.Ballester@uv.es),
-   Enric Cosme-Ll\'opez (https://www.uv.es/coslloen), and
-   Ram\'on Esteban-Romero (https://www.uv.es/estebanr).
+   Enric Cosme-Llópez (https://www.uv.es/coslloen), and
+   Ramón Esteban-Romero (https://www.uv.es/estebanr).
+maintained by:
+   Ramón Esteban-Romero (https://www.uv.es/estebanr).
 Homepage: https://gap-packages.github.io/permut/
-─────────────────────────────────────────────────────────────────────────────
+Report issues at https://github.com/gap-packages/permut/issues
+-----------------------------------------------------------------------------
 true
 </Log>
 <P/>
