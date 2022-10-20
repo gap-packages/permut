@@ -33,12 +33,7 @@ DeclareProperty("IsSylowTowerGroup",IsGroup);
 KeyDependentOperation("IsPSupersolvable", IsGroup, IsPosInt, "prime");
 
 
-
 InstallTrueMethod(IsSylowTowerGroup,IsSupersolvableGroup);
 
 Transatlantic(IsPSupersolvable);
 Transatlantic(IsPSupersolvableOp);
-
-
-  #############################################################################
-#E psoluble.gd ends here

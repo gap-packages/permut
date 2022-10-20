@@ -11,6 +11,3 @@
 
 ReadPackage( "permut", "lib/psoluble.gi" );
 ReadPackage( "permut", "lib/permut.gi" );
-
-
-#E read.g . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ends here

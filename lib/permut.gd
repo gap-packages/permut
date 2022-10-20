@@ -679,15 +679,3 @@ InstallTrueMethod(IsWithSSubpermutizerConditionInParent,IsWithSubpermutizerCondi
 InstallTrueMethod(IsWithSubnormalizerConditionInParent,IsWeaklyNormalInParent);
 InstallTrueMethod(IsWithSubpermutizerConditionInParent,IsWeaklyPermutableInParent);
 InstallTrueMethod(IsWithSubpermutizerConditionInParent,IsWithSubnormalizerConditionInParent);
-
-
-
-
-#############################################################################
-
-#E permut.gd ends here
-
-
-
-
-

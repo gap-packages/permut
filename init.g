@@ -11,5 +11,3 @@
 
 ReadPackage( "permut", "lib/psoluble.gd" );
 ReadPackage( "permut", "lib/permut.gd" );
-
-#E init.g . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ends here

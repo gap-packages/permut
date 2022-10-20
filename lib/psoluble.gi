@@ -25,9 +25,7 @@ InstallMethod(IsPSupersolvableOp,
         [IsGroup and IsFinite and IsSupersolvableGroup,IsPosInt],
         function(G,p)
     return true;
-end
-);
-
+end);
 
 
 InstallMethod(IsPSupersolvableOp,
@@ -43,8 +41,8 @@ InstallMethod(IsPSupersolvableOp,
     return ForAll([1..Length(cs)-1],
                   j->(l[j]=p) or
                   (l[j] mod p <> 0));
-end
-  );
+end);
+
 
 InstallMethod(IsPSupersolvableOp,
         "generic method for a finite group and prime",
@@ -56,9 +54,7 @@ InstallMethod(IsPSupersolvableOp,
     fi;
     cs:=ChiefSeries(G);
     return IsPSupersolvable(G,p);
-end
-    );
-
+end);
 
 
 #############################################################################
@@ -78,6 +74,3 @@ InstallMethod(IsSylowTowerGroup,"for finite groups",
     return IsSolvableGroup(g) and
            ForAll([1..l],n->IsNormal(g, HallSubgroup(g, pr{[n..l]})));
 end);
-
-#############################################################################
-#E psoluble.gi ends here

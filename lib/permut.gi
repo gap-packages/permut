@@ -2800,15 +2800,4 @@ InstallOtherMethod(OnePairShowingNotMutuallyFPermutableSubgroups, "with three ar
             return fail;
         fi;
     fi;
-end
-  );
-
-
-
-
-
-
-
-
-#############################################################################
-#E permut.gi ends here
+end);
