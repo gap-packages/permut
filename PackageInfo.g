@@ -10,9 +10,9 @@
 SetPackageInfo( rec(
                      PackageName := "permut",
                      Subtitle:= "A package to deal with permutability in finite groups",
-                     Date:="27/03/2022", # dd/mm/yyyy format
+                     Date:="11/01/2024", # dd/mm/yyyy format
                      License :="GPL-2.0-or-later",
-                     Version := "2.0.4",
+                     Version := "2.0.5",
                      SourceRepository := rec(
                                               Type := "git",
                                               URL := Concatenation( "https://github.com/gap-packages/", ~.PackageName ),
@@ -43,13 +43,12 @@ SetPackageInfo( rec(
                                      IsMaintainer:=false,
                                      Email:="Adolfo.Ballester@uv.es",
                                      PostalAddress:=Concatenation(
-                                                                  ["Adolfo Ballester-Bolinches\n",
-                                                                   "Departament de Matem\\`atiques\n",
-                                                                   "Universitat de Val\\`encia\n",
-                                                                   "Dr.\\ Moliner, 50\n",
-                                                                   "46100 Burjassot, Val\\`encia, Spain"]),
-                                     Place:="Burjassot, Val\\`encia",
-                                     Institution:="Departament de Matem\\`atiques, Universitat de Val\\`encia"
+                                                                  ["Departament de Matemàtiques\n",
+                                                                   "Universitat de València\n",
+                                                                   "Dr. Moliner, 50\n",
+                                                                   "46100 Burjassot, València, Spain"]),
+                                     Place:="Burjassot, València",
+                                     Institution:="Departament de Matemàtiques, Universitat de València"
                                     ),
                                 rec(
                                      LastName:="Cosme-Llópez",
@@ -59,13 +58,12 @@ SetPackageInfo( rec(
                                      WWWHome:="https://www.uv.es/coslloen",
                                      Email:="Enric.Cosme@uv.es",
                                      PostalAddress:=Concatenation(
-                                                                  ["Enric Cosme-Ll\\'opez\n",
-                                                                   "Departament de Matem\\`atiques\n",
-                                                                   "Universitat de Val\\`encia\n",
-                                                                   "Dr.\\ Moliner, 50\n",
-                                                                   "46100 Burjassot, Val\\`encia, Spain"]),
-                                     Place:="Burjassot, Val\\`encia",
-                                     Institution:="Departament de Matem\\`atiques, Universitat de Val\\`encia"
+                                                                  ["Departament de Matemàtiques\n",
+                                                                   "Universitat de València\n",
+                                                                   "Dr. Moliner, 50\n",
+                                                                   "46100 Burjassot, València, Spain"]),
+                                     Place:="Burjassot, València",
+                                     Institution:="Departament de Matemàtiques, Universitat de València"
                                     ),
                                 rec(
                                      LastName:="Esteban-Romero",
@@ -75,13 +73,12 @@ SetPackageInfo( rec(
                                      WWWHome:="https://www.uv.es/estebanr",
                                      Email:="Ramon.Esteban@uv.es",
                                      PostalAddres:=Concatenation(
-                                                                  ["Ramon Esteban-Romero\n",
-                                                                   "Departament de Matem\\`atiques\n",
-                                                                   "Universitat de Val\\`encia\n",
-                                                                   "Dr.\\ Moliner, 50\n",
-                                                                   "46100 Burjassot, Val\\`encia, Spain\n"]),
-                                     Place:="Burjassot, Val\\`encia",
-                                     Institution:="Departament de Matem\\`atiques, Universitat de Val\\`encia"
+                                                                  ["Departament de Matemàtiques\n",
+                                                                   "Universitat de València\n",
+                                                                   "Dr. Moliner, 50\n",
+                                                                   "46100 Burjassot, València, Spain\n"]),
+                                     Place:="Burjassot, València",
+                                     Institution:="Departament de Matemàtiques, Universitat de València"
                                     )
                      ],
                      
@@ -103,7 +100,7 @@ SetPackageInfo( rec(
                                         LongTitle := "PERMUT: A package to deal with permutability in finite groups",
                                         SixFile   := "doc/manual.six",
                                         ArchiveURLSubset:=["doc"],
-                                        HTMLStart :="doc/chap0.html",
+                                        HTMLStart :="doc/chap0_mj.html",
                                         PDFFile:="doc/manual.pdf"),
                      TestFile  := "tst/testall.g"
                                       

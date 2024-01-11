@@ -1,12 +1,15 @@
   
   
-                                     [1X[5XPERMUT[105X[101X
+                                    [1X permut [101X
   
   
-                   [1XA [5XGAP[105X4 package to deal with permutability[101X
+            [1X A package to deal with permutability in finite groups [101X
   
   
-                                 Version 2.0.4
+                                     2.0.5
+  
+  
+                                11 January 2024
   
   
                            Adolfo Ballester-Bolinches
@@ -19,21 +22,24 @@
   
   Adolfo Ballester-Bolinches
       Email:    [7Xmailto:Adolfo.Ballester@uv.es[107X
-      Address:  [33X[0;14YDepartament de Matemàtiques, Universitat de València[133X
+      Address:  [33X[0;14YDepartament de Matemàtiques[133X
+                [33X[0;14YUniversitat de València[133X
+                [33X[0;14YDr. Moliner, 50[133X
+                [33X[0;14Y46100 Burjassot, València, Spain[133X
   
   
   Enric Cosme-Llópez
       Email:    [7Xmailto:Enric.Cosme@uv.es[107X
-      Homepage: [7Xhttps://www.uv.es/coslloen/[107X
-      Address:  [33X[0;14YDepartament de Matemàtiques, Universitat de València[133X
+      Homepage: [7Xhttps://www.uv.es/coslloen[107X
+      Address:  [33X[0;14YDepartament de Matemàtiques[133X
+                [33X[0;14YUniversitat de València[133X
+                [33X[0;14YDr. Moliner, 50[133X
+                [33X[0;14Y46100 Burjassot, València, Spain[133X
   
   
   Ramón Esteban-Romero
       Email:    [7Xmailto:Ramon.Esteban@uv.es[107X
-      Homepage: [7Xhttps://www.uv.es/estebanr/[107X
-      Address:  [33X[0;14YDepartament de Matemàtiques, Universitat de València[133X
-  
-  
+      Homepage: [7Xhttps://www.uv.es/estebanr[107X
   
   -------------------------------------------------------
   

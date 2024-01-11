@@ -63,7 +63,7 @@
   
   [1X3.2-1 PermutMaxTries[101X
   
-  [33X[1;0Y[29X[2XPermutMaxTries[102X[32X global variable[133X
+  [33X[1;0Y[29X[2XPermutMaxTries[102X [32X global variable[133X
   
   [33X[0;0YThis   variable   contains   the   maximum  number  of  random  attempts  of
   permutability  checks  before  trying  general  deterministic methods in the
@@ -368,7 +368,7 @@
   [33X[1;0Y[29X[2XOneElementShowingNotWeaklyNormal[102X( [3XG[103X, [3XH[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XOneElementShowingNotWeaklyNormalInParent[102X( [3XH[103X ) [32X attribute[133X
   
-  [33X[0;0YIf  [3XH[103X  is  a  weakly  normal subgruop of [3XG[103X, then this function returns [9Xfail[109X.
+  [33X[0;0YIf  [3XH[103X  is  a  weakly  normal subgroup of [3XG[103X, then this function returns [9Xfail[109X.
   Otherwise,  the  value  returned by this operation is an element [22Xg[122X such that
   [22XH^g≤ N_G(H)[122X is a subgroup of [22XN_G(H)[122X but [22Xg ∉ N_G(H)[122X.[133X
   

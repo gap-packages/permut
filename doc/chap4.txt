@@ -62,7 +62,7 @@
   
   [33X[0;0YA  group  [22XG[122X  is a PT-group when permutability is a transitive relation in [22XG[122X,
   that  is,  if [22XH[122X is a permutable subgroup of [22XK[122X and [22XK[122X is a permutable subgroup
-  of  [22XG[122X,  then  [22XH[122X  is  a permutable subgroupof [22XG[122X. This is equivalent in finite
+  of  [22XG[122X,  then  [22XH[122X  is a permutable subgroup of [22XG[122X. This is equivalent in finite
   groups to affirming that every subnormal subgroup of [22XG[122X is permutable.[133X
   
   [33X[0;0YThis  function  tries to set the property [2XIsPTGroup[102X ([14X4.2-2[114X) to [9Xtrue[109X or [9Xfalse[109X

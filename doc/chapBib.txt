@@ -40,9 +40,9 @@
   Theory[118X, [19X6[119X, 2 (2003), 139-158.
   
   [[20XEW03[120X]  [16XEick, B. and Wright, C. R. B.[116X, [17XGAP package FORMAT --- Computing with
-  formations   of   finite  solvable  groups  v.~1.3[117X  (2003),  ((Available  on
+  formations   of   finite   solvable  groups  v.~1.3[117X  (2003),  (Available  on
   https://www.uoregon.edu/~wright/RESEARCH/format/  (last  visited  30th  July
-  2015))).
+  2015)).
   
   [[20XFog97[120X]  [16XFoguel, T.[116X, [17XConjugate-permutable subgroups[117X, [18XJ. Algebra[118X, [19X191[119X (1997),
   235-239.

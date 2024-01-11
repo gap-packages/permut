@@ -1,7 +1,7 @@
 name: permut
-version: "2.0.4"
+version: "2.0.5"
 license: "GPL-2.0-or-later"
-date: 2022-03-27
+date: 2024-01-11
 description: |
     A package to deal with permutability in finite groups
 
@@ -30,39 +30,39 @@ packageinfo: https://gap-packages.github.io/permut/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-packages/permut/releases/download/v2.0.4/permut-2.0.4.tar.gz
+      url: https://github.com/gap-packages/permut/releases/download/v2.0.5/permut-2.0.5.tar.gz
     - name: .tar.bz2
-      url: https://github.com/gap-packages/permut/releases/download/v2.0.4/permut-2.0.4.tar.bz2
+      url: https://github.com/gap-packages/permut/releases/download/v2.0.5/permut-2.0.5.tar.bz2
     - name: .zip
-      url: https://github.com/gap-packages/permut/releases/download/v2.0.4/permut-2.0.4.zip
+      url: https://github.com/gap-packages/permut/releases/download/v2.0.5/permut-2.0.5.zip
 
 abstract: |
     This package provides functions for computing with permutability in finite groups.
 
 status: accepted
-doc-html: doc/chap0.html
+doc-html: doc/chap0_mj.html
 doc-pdf: doc/manual.pdf
 keywords: |
     permutability, PT-group, PST-group, T-group, mutually permutable, totally permutable, Dedekind group, Iwasawa group.
 citeas: |
     <p class='BibEntry'>
-    [<span class='BibKey'>BCE22</span>]   <b class='BibAuthor'>Ballester-Bolinches, A., Cosme-Llópez, E. and Esteban-Romero, R.</b>,
+    [<span class='BibKey'>BCE24</span>]   <b class='BibAuthor'>Ballester-Bolinches, A., Cosme-Llópez, E. and Esteban-Romero, R.</b>,
      <i class='BibTitle'>permut, A package to deal with permutability in finite groups,
-             Version 2.0.4</i>
-     (<span class='BibYear'>2022</span>)<br />
+             Version 2.0.5</i>
+     (<span class='BibYear'>2024</span>)<br />
     (<span class='BibNote'>Refereed GAP package</span>),
     <span class='BibHowpublished'><a href="https://gap-packages.github.io/permut/">https://gap-packages.github.io/permut/</a></span>.
     </p>
     
 
 bibtex: |
-    @misc{ permut2.0.4,
+    @misc{ permut2.0.5,
       author =           {Ballester-Bolinches,  A. and Cosme-Ll{\a'o}pez, E. and
                           Esteban-Romero, R.},
       title =            {{permut},  A  package  to  deal  with permutability in
-                          finite groups, {V}ersion 2.0.4},
-      month =            {Mar},
-      year =             {2022},
+                          finite groups, {V}ersion 2.0.5},
+      month =            {Jan},
+      year =             {2024},
       note =             {Refereed GAP package},
       howpublished =     {\href         {https://gap-packages.github.io/permut/}
                           {\texttt{https://gap-packages.github.io/}\discretionary
@@ -70,6 +70,6 @@ bibtex: |
       keywords =         {permutability;  PT-group; PST-group; T-group; mutually
                           permutable;   totally   permutable;   Dedekind  group;
                           Iwasawa group},
-      printedkey =       {BCE22}
+      printedkey =       {BCE24}
     }
 
