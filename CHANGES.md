@@ -1,5 +1,12 @@
 This file describes changes in the Permut package.
 
+## 2.0.6 (2026-07-31)
+
+  - Remove the SmallGrp package dependency from the test suite
+  - Require GAP >= 4.11 to enable use of `#@if` in `.tst` files
+  - Convert the changelog to Markdown
+  - Update the CI setup
+
 ## 2.0.5 (2024-01-11)
 
   - Remove an obsolete email address from the package metadata
