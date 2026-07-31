@@ -13,19 +13,21 @@ gap> sym4:=SymmetricGroup(4);
 Sym( [ 1 .. 4 ] )
 gap> ArePermutableSubgroups(sym4, Subgroup(sym4, [(1,2)(3,4)]), Subgroup(sym4, [(1,2,3)]));
 false
-gap> List(Set(AllSubnormalSubgroups(sym4), IdGroup));
-[ [ 1, 1 ], [ 2, 1 ], [ 4, 2 ], [ 12, 3 ], [ 24, 12 ] ]
+gap> List(Set(AllSubnormalSubgroups(sym4), StructureDescription));
+[ "1", "A4", "C2", "C2 x C2", "S4" ]
 gap> IsTGroup(SymmetricGroup(3));
 true
 gap> IsPTGroup(ExtraspecialGroup(125, 5));
 false
 gap> IsPTGroup(ExtraspecialGroup(125, 25));
 true
+#@if IsPackageMarkedForLoading( "smallgrp", "" )
 gap> IdsOfAllSmallGroups(Size, 48, IsPTGroup, true) =
-> [ [ 48, 1 ], [ 48, 2 ], [ 48, 4 ], [ 48, 5 ], [ 48, 9 ], [ 48, 10 ], 
->   [ 48, 11 ], [ 48, 20 ], [ 48, 23 ], [ 48, 24 ], [ 48, 34 ], [ 48, 35 ], 
+> [ [ 48, 1 ], [ 48, 2 ], [ 48, 4 ], [ 48, 5 ], [ 48, 9 ], [ 48, 10 ],
+>   [ 48, 11 ], [ 48, 20 ], [ 48, 23 ], [ 48, 24 ], [ 48, 34 ], [ 48, 35 ],
 >   [ 48, 40 ], [ 48, 42 ], [ 48, 44 ], [ 48, 46 ], [ 48, 51 ], [ 48, 52 ] ];
 true
+#@fi
 gap> IsSCGroup(Group((3,7,5)(4,8,6), (1,2,6)(3,4,8), (9,10,11,12,13)));
 true
 gap> ArePermutableSubgroups(sym4, AlternatingGroup(4), Subgroup(sym4, [(1,2,3,4), (1,3)]));
