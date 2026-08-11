@@ -3,7 +3,7 @@ This file describes changes in the Permut package.
 ## 2.0.7 (2026-08-11)
 
   - Correct spelling of Oleksandr Konovalov
-  - Correct dependency number in README.md file
+  - Correct dependency number in `README.md` file
 
 ## 2.0.6 (2026-07-31)
 
