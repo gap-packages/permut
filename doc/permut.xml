@@ -112,8 +112,8 @@ which have helped us to improve the package and its documentation.
 
 Since all functions of this package are written in the &GAP; language,
 it is enough to unpack the archive file in a directory in the <F>pkg</F>
-hierarchy of your &GAP; 4 distribution. It has been tested on version 4.7.4 of
-&GAP;.
+hierarchy of your &GAP; 4 distribution. It should work on version 4.11.0 of
+&GAP; and later.
 <P/>
 
 
