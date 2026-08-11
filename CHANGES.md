@@ -45,7 +45,7 @@ This file describes changes in the Permut package.
     web page
   - Switch to a new version numbering scheme
   - Modify the banner, improve `PrimesDividingSize`, remove obsolete code and
-    other minor changes suggested by Max Horn and Alexander Konovalov
+    other minor changes suggested by Max Horn and Olexandr Konovalov
 
 ## 1.03 (2015-07-30)
 
