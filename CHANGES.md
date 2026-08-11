@@ -1,5 +1,9 @@
 This file describes changes in the Permut package.
 
+## 2.0.7 (2026-08-11)
+
+  - Correct spelling of Oleksandr Konovalov
+
 ## 2.0.6 (2026-07-31)
 
   - Remove the SmallGrp package dependency from the test suite
