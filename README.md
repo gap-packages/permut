@@ -14,7 +14,7 @@ previously installed. Use then
     LoadPackage("permut");
 
 to load it.
-GAP 4.7.4 or later is required.
+GAP 4.11.4 or later is required.
 Inside GAP, help can be obtained by using
 
     ?permut:
